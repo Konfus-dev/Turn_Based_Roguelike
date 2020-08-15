@@ -61,7 +61,16 @@ public class Player : MonoBehaviour
         }
     }
 
-    protected void Check()
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(collision.gameObject.tag == "Interactable")
+        {
+            collision.gameObject.GetComponent<Interactable>()
+                .Interact<Player>(this);
+        }
+    }
+
+    private void Check()
     {
         CheckIfGameOver();
 
