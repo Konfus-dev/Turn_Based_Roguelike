@@ -42,7 +42,6 @@ public class Player : MonoBehaviour
 
         if (horizontal != 0 || vertical != 0)
         {
-
             if (vertical > 0)
             {
                 //move up
