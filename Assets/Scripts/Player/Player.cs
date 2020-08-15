@@ -63,7 +63,7 @@ public class Player : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if(collision.gameObject.tag == "Interactable")
+        if(collision.gameObject.CompareTag("Interactable"))
         {
             collision.gameObject.GetComponent<Interactable>()
                 .Interact<Player>(this);
