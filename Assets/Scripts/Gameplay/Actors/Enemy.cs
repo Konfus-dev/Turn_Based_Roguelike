@@ -17,7 +17,8 @@ public class Enemy : MonoBehaviour
         Moving,
         Wandering,
         Attacking,
-        TakingDamage
+        TakingDamage,
+        Healing
     }
 
 

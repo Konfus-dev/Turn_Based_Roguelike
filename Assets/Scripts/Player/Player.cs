@@ -16,7 +16,8 @@ public class Player : MonoBehaviour
         NotMoving,
         Interacting,
         Attacking,
-        TakingDamage
+        TakingDamage,
+        Healing
     }
 
     public PlayerState CurrentState;
