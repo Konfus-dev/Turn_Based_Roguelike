@@ -15,7 +15,6 @@ public class Player : MonoBehaviour
     {
         //Get a component reference to the Player's animator component
         //animator = GetComponent<Animator>();
-
     }
 
     private void OnDisable()
@@ -23,7 +22,7 @@ public class Player : MonoBehaviour
         //When Player object is disabled, store stuff in the GameManager so it can be re-loaded in next level.
     }
 
-    private void LateUpdate()
+    private void Update()
     {
         if (!GameManager.Instance.PlayersTurn || IsMoving) return;
 
