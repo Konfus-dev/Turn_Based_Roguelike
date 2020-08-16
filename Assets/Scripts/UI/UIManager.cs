@@ -20,9 +20,9 @@ public class UIManager : MonoBehaviour
         PlayerUIView = this.GetComponent<UIView>();
         PlayerUIImage = this.GetComponent<Image>();
         PlayerUIText = this.GetComponentInChildren<TMP_Text>();
+        PlayerUIView.ViewName = this.transform.parent.parent.name;
         PlayerUIView.AutoHideAfterShowDelay = AutoHideDelay;
         PlayerUIView.AutoHideAfterShow = true;
-        PlayerUIView.ViewName = this.transform.parent.parent.name;
     }
 
     /*private void Update()
