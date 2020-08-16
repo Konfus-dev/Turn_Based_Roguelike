@@ -1,0 +1,1106 @@
+fileFormatVersion: 2
+guid: 9855f5cc4077f4d46b16153d5cefb787
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 4886330594623508586
+    second: Char_WeaponLess_0
+  - first:
+      213: 4681576753938219541
+    second: Char_WeaponLess_1
+  - first:
+      213: -6505391645667105977
+    second: Char_WeaponLess_2
+  - first:
+      213: 7837541264382683931
+    second: Char_WeaponLess_3
+  - first:
+      213: -8135909024930345854
+    second: Char_WeaponLess_4
+  - first:
+      213: 7423701443174336902
+    second: Char_WeaponLess_5
+  - first:
+      213: 3607086396499133329
+    second: Char_WeaponLess_6
+  - first:
+      213: 761328731611253230
+    second: Char_WeaponLess_7
+  - first:
+      213: -2840319232095490169
+    second: Char_WeaponLess_8
+  - first:
+      213: -7553026518428913841
+    second: Char_WeaponLess_9
+  - first:
+      213: -4808753805457937016
+    second: Char_WeaponLess_10
+  - first:
+      213: -499279107556306860
+    second: Char_WeaponLess_11
+  - first:
+      213: 9083377379682637782
+    second: Char_WeaponLess_12
+  - first:
+      213: -2098095593856911049
+    second: Char_WeaponLess_13
+  - first:
+      213: 3217700966136829468
+    second: Char_WeaponLess_14
+  - first:
+      213: 6409716753553611148
+    second: Char_WeaponLess_15
+  - first:
+      213: 700862476046958911
+    second: Char_WeaponLess_16
+  - first:
+      213: -8129331663751690017
+    second: Char_WeaponLess_17
+  - first:
+      213: -1605403412620659865
+    second: Char_WeaponLess_18
+  - first:
+      213: -8611217232960059091
+    second: Char_WeaponLess_19
+  - first:
+      213: -2818352564331548018
+    second: Char_WeaponLess_20
+  - first:
+      213: -4943215115105874639
+    second: Char_WeaponLess_21
+  - first:
+      213: -1179375271710872832
+    second: Char_WeaponLess_22
+  - first:
+      213: -6864797954174859093
+    second: Char_WeaponLess_23
+  - first:
+      213: -587113155922393678
+    second: Char_WeaponLess_24
+  - first:
+      213: -8458450850841324679
+    second: Char_WeaponLess_25
+  - first:
+      213: 9167037033496823865
+    second: Char_WeaponLess_26
+  - first:
+      213: 7918428394203885486
+    second: Char_WeaponLess_27
+  - first:
+      213: 6879333458059900420
+    second: Char_WeaponLess_28
+  - first:
+      213: -8998841562406283810
+    second: Char_WeaponLess_29
+  - first:
+      213: -6898220772633974310
+    second: Char_WeaponLess_30
+  - first:
+      213: -645519565765761808
+    second: Char_WeaponLess_31
+  - first:
+      213: 4215627827461302357
+    second: Char_WeaponLess_32
+  - first:
+      213: 4272938530099049585
+    second: Char_WeaponLess_33
+  - first:
+      213: -9034369294484019136
+    second: Char_WeaponLess_34
+  - first:
+      213: -2925240992781022067
+    second: Char_WeaponLess_35
+  - first:
+      213: -2288453949488077819
+    second: Char_WeaponLess_36
+  - first:
+      213: -8429432186429047371
+    second: Char_WeaponLess_37
+  - first:
+      213: -236519469766172683
+    second: Char_WeaponLess_38
+  - first:
+      213: -7052358225417316502
+    second: Char_WeaponLess_39
+  - first:
+      213: 4047869755944026402
+    second: Char_WeaponLess_40
+  - first:
+      213: -3339600960310866061
+    second: Char_WeaponLess_41
+  - first:
+      213: 2376276287615778312
+    second: Char_WeaponLess_42
+  - first:
+      213: 4126961759946761544
+    second: Char_WeaponLess_43
+  - first:
+      213: -2752313741598974470
+    second: Char_WeaponLess_44
+  - first:
+      213: 3114758920766942429
+    second: Char_WeaponLess_45
+  - first:
+      213: -3353063944870743566
+    second: Char_WeaponLess_46
+  - first:
+      213: 5714779229441786686
+    second: Char_WeaponLess_47
+  - first:
+      213: -8725538083231888123
+    second: Char_WeaponLess_48
+  - first:
+      213: -6835551079189664223
+    second: Char_WeaponLess_49
+  - first:
+      213: -6742294863186818073
+    second: Char_WeaponLess_50
+  - first:
+      213: -2198061588543622998
+    second: Char_WeaponLess_51
+  - first:
+      213: -4249848937490448586
+    second: Char_WeaponLess_52
+  - first:
+      213: -4016646699767913789
+    second: Char_WeaponLess_53
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Char_WeaponLess_0
+      rect:
+        serializedVersion: 2
+        x: 408
+        y: 357
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6058a379cbbfc340800000000000000
+      internalID: 4886330594623508586
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_WeaponLess_1
+      rect:
+        serializedVersion: 2
+        x: 425
+        y: 357
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 512c63fe04d48f040800000000000000
+      internalID: 4681576753938219541
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_WeaponLess_2
+      rect:
+        serializedVersion: 2
+        x: 442
+        y: 357
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 743e73be3c438b5a0800000000000000
+      internalID: -6505391645667105977
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_WeaponLess_3
+      rect:
+        serializedVersion: 2
+        x: 459
+        y: 357
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b1beeff314a84cc60800000000000000
+      internalID: 7837541264382683931
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_WeaponLess_4
+      rect:
+        serializedVersion: 2
+        x: 476
+        y: 357
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 28cc12409d1771f80800000000000000
+      internalID: -8135909024930345854
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_WeaponLess_5
+      rect:
+        serializedVersion: 2
+        x: 493
+        y: 357
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 68906fe4129460760800000000000000
+      internalID: 7423701443174336902
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_WeaponLess_6
+      rect:
+        serializedVersion: 2
+        x: 510
+        y: 357
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 193897967f1fe0230800000000000000
+      internalID: 3607086396499133329
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_WeaponLess_7
+      rect:
+        serializedVersion: 2
+        x: 527
+        y: 357
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee9ccfc9278c09a00800000000000000
+      internalID: 761328731611253230
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_WeaponLess_8
+      rect:
+        serializedVersion: 2
+        x: 408
+        y: 340
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 78fec3205b82598d0800000000000000
+      internalID: -2840319232095490169
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_WeaponLess_9
+      rect:
+        serializedVersion: 2
+        x: 425
+        y: 340
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f4f60fd26624e2790800000000000000
+      internalID: -7553026518428913841
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_WeaponLess_10
+      rect:
+        serializedVersion: 2
+        x: 442
+        y: 340
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 88d2f5d44efd34db0800000000000000
+      internalID: -4808753805457937016
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_WeaponLess_11
+      rect:
+        serializedVersion: 2
+        x: 459
+        y: 340
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 45015560c443219f0800000000000000
+      internalID: -499279107556306860
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_WeaponLess_12
+      rect:
+        serializedVersion: 2
+        x: 476
+        y: 340
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d75dccd993ae0e70800000000000000
+      internalID: 9083377379682637782
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_WeaponLess_13
+      rect:
+        serializedVersion: 2
+        x: 493
+        y: 340
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 739b85f6c2112e2e0800000000000000
+      internalID: -2098095593856911049
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_WeaponLess_14
+      rect:
+        serializedVersion: 2
+        x: 510
+        y: 340
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c1654080bf197ac20800000000000000
+      internalID: 3217700966136829468
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_WeaponLess_15
+      rect:
+        serializedVersion: 2
+        x: 527
+        y: 340
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c89de6e5d63e3f850800000000000000
+      internalID: 6409716753553611148
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_WeaponLess_16
+      rect:
+        serializedVersion: 2
+        x: 408
+        y: 323
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f310e2965b6f9b900800000000000000
+      internalID: 700862476046958911
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_WeaponLess_17
+      rect:
+        serializedVersion: 2
+        x: 425
+        y: 323
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd8ceb04cefce2f80800000000000000
+      internalID: -8129331663751690017
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_WeaponLess_18
+      rect:
+        serializedVersion: 2
+        x: 442
+        y: 323
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 763bb8d1a1678b9e0800000000000000
+      internalID: -1605403412620659865
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_WeaponLess_19
+      rect:
+        serializedVersion: 2
+        x: 459
+        y: 323
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d2981b10d8fce7880800000000000000
+      internalID: -8611217232960059091
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_WeaponLess_20
+      rect:
+        serializedVersion: 2
+        x: 476
+        y: 323
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e82f437664333e8d0800000000000000
+      internalID: -2818352564331548018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_WeaponLess_21
+      rect:
+        serializedVersion: 2
+        x: 493
+        y: 323
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 13dc5c70b0c266bb0800000000000000
+      internalID: -4943215115105874639
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_WeaponLess_22
+      rect:
+        serializedVersion: 2
+        x: 510
+        y: 323
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00b2bc0607402afe0800000000000000
+      internalID: -1179375271710872832
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_WeaponLess_23
+      rect:
+        serializedVersion: 2
+        x: 527
+        y: 323
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba84496c1a65bb0a0800000000000000
+      internalID: -6864797954174859093
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_WeaponLess_24
+      rect:
+        serializedVersion: 2
+        x: 408
+        y: 306
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b5894202b72ad7f0800000000000000
+      internalID: -587113155922393678
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_WeaponLess_25
+      rect:
+        serializedVersion: 2
+        x: 425
+        y: 306
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 973908514cb8d9a80800000000000000
+      internalID: -8458450850841324679
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_WeaponLess_26
+      rect:
+        serializedVersion: 2
+        x: 442
+        y: 306
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 938cd68ec9bd73f70800000000000000
+      internalID: 9167037033496823865
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_WeaponLess_27
+      rect:
+        serializedVersion: 2
+        x: 459
+        y: 306
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eafa3efbba8e3ed60800000000000000
+      internalID: 7918428394203885486
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_WeaponLess_28
+      rect:
+        serializedVersion: 2
+        x: 476
+        y: 306
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 406be13f45d487f50800000000000000
+      internalID: 6879333458059900420
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_WeaponLess_29
+      rect:
+        serializedVersion: 2
+        x: 493
+        y: 306
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed590c2e641bd1380800000000000000
+      internalID: -8998841562406283810
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_WeaponLess_30
+      rect:
+        serializedVersion: 2
+        x: 510
+        y: 306
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad96ee071c89440a0800000000000000
+      internalID: -6898220772633974310
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_WeaponLess_31
+      rect:
+        serializedVersion: 2
+        x: 527
+        y: 306
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f4a7f20067aa07f0800000000000000
+      internalID: -645519565765761808
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_WeaponLess_32
+      rect:
+        serializedVersion: 2
+        x: 408
+        y: 289
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 55825197c2be08a30800000000000000
+      internalID: 4215627827461302357
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_WeaponLess_33
+      rect:
+        serializedVersion: 2
+        x: 425
+        y: 289
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 17432a144f68c4b30800000000000000
+      internalID: 4272938530099049585
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_WeaponLess_34
+      rect:
+        serializedVersion: 2
+        x: 442
+        y: 289
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 04865982ef87f9280800000000000000
+      internalID: -9034369294484019136
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_WeaponLess_35
+      rect:
+        serializedVersion: 2
+        x: 459
+        y: 289
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d8c40eec0d47767d0800000000000000
+      internalID: -2925240992781022067
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_WeaponLess_36
+      rect:
+        serializedVersion: 2
+        x: 476
+        y: 289
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5046ce7f147cd30e0800000000000000
+      internalID: -2288453949488077819
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_WeaponLess_37
+      rect:
+        serializedVersion: 2
+        x: 493
+        y: 289
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5bdf6a56614a40b80800000000000000
+      internalID: -8429432186429047371
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_WeaponLess_38
+      rect:
+        serializedVersion: 2
+        x: 510
+        y: 289
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ff9f1e9bc6b7bcf0800000000000000
+      internalID: -236519469766172683
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_WeaponLess_39
+      rect:
+        serializedVersion: 2
+        x: 527
+        y: 289
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6752391f8df02e90800000000000000
+      internalID: -7052358225417316502
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

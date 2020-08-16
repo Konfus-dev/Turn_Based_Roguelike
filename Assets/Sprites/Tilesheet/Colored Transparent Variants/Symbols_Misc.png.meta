@@ -1,0 +1,2744 @@
+fileFormatVersion: 2
+guid: 672245b42bc3f01438218557cd347b33
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -7594703872656613998
+    second: Symbols_Misc_0
+  - first:
+      213: -6796258360869058942
+    second: Symbols_Misc_1
+  - first:
+      213: 2262504747916126509
+    second: Symbols_Misc_2
+  - first:
+      213: 8261760187123808991
+    second: Symbols_Misc_3
+  - first:
+      213: 4656352398702954757
+    second: Symbols_Misc_4
+  - first:
+      213: 6720105558399096929
+    second: Symbols_Misc_5
+  - first:
+      213: -5278017587360758217
+    second: Symbols_Misc_6
+  - first:
+      213: 1118176595244396650
+    second: Symbols_Misc_7
+  - first:
+      213: -7141487709765416867
+    second: Symbols_Misc_8
+  - first:
+      213: -9168996920593552496
+    second: Symbols_Misc_9
+  - first:
+      213: 7964347806130370393
+    second: Symbols_Misc_10
+  - first:
+      213: -1766285933637880342
+    second: Symbols_Misc_11
+  - first:
+      213: -3002691153339803163
+    second: Symbols_Misc_12
+  - first:
+      213: -1051649076408037743
+    second: Symbols_Misc_13
+  - first:
+      213: -8169399053425721931
+    second: Symbols_Misc_14
+  - first:
+      213: 2323488025615810823
+    second: Symbols_Misc_15
+  - first:
+      213: -3686576963986491039
+    second: Symbols_Misc_16
+  - first:
+      213: 509440415902724096
+    second: Symbols_Misc_17
+  - first:
+      213: 2354439663148342377
+    second: Symbols_Misc_18
+  - first:
+      213: 3659497282135860845
+    second: Symbols_Misc_19
+  - first:
+      213: 7999069130852242150
+    second: Symbols_Misc_20
+  - first:
+      213: -3063145022928860128
+    second: Symbols_Misc_21
+  - first:
+      213: -1467706572953114849
+    second: Symbols_Misc_22
+  - first:
+      213: -8263152534542689839
+    second: Symbols_Misc_23
+  - first:
+      213: 6026575081203837449
+    second: Symbols_Misc_24
+  - first:
+      213: 484533330046839694
+    second: Symbols_Misc_25
+  - first:
+      213: 9214783808068987366
+    second: Symbols_Misc_26
+  - first:
+      213: -6016523521943317395
+    second: Symbols_Misc_27
+  - first:
+      213: -5201402987209873942
+    second: Symbols_Misc_28
+  - first:
+      213: -1671685710855682568
+    second: Symbols_Misc_29
+  - first:
+      213: 749698086095037843
+    second: Symbols_Misc_30
+  - first:
+      213: -598779412526001747
+    second: Symbols_Misc_31
+  - first:
+      213: -9149433049675333851
+    second: Symbols_Misc_32
+  - first:
+      213: 742354808505158742
+    second: Symbols_Misc_33
+  - first:
+      213: -1284677433627080524
+    second: Symbols_Misc_34
+  - first:
+      213: -8076791922031384343
+    second: Symbols_Misc_35
+  - first:
+      213: -6057319436859697450
+    second: Symbols_Misc_36
+  - first:
+      213: 2314126393366787868
+    second: Symbols_Misc_37
+  - first:
+      213: 8627628166937178357
+    second: Symbols_Misc_38
+  - first:
+      213: 1722275622714262879
+    second: Symbols_Misc_39
+  - first:
+      213: 2524417590923141852
+    second: Symbols_Misc_40
+  - first:
+      213: 1485744852150969477
+    second: Symbols_Misc_41
+  - first:
+      213: 760776530685641277
+    second: Symbols_Misc_42
+  - first:
+      213: -6164863942386702745
+    second: Symbols_Misc_43
+  - first:
+      213: -6477734374630474145
+    second: Symbols_Misc_44
+  - first:
+      213: -2474279537082089307
+    second: Symbols_Misc_45
+  - first:
+      213: -4493373902097833123
+    second: Symbols_Misc_46
+  - first:
+      213: -8793890489024787751
+    second: Symbols_Misc_47
+  - first:
+      213: 1324011495533930535
+    second: Symbols_Misc_48
+  - first:
+      213: -6851677721497510705
+    second: Symbols_Misc_49
+  - first:
+      213: 390970852965941057
+    second: Symbols_Misc_50
+  - first:
+      213: -616349015645521868
+    second: Symbols_Misc_51
+  - first:
+      213: -3131554749122894238
+    second: Symbols_Misc_52
+  - first:
+      213: 3262132917094450024
+    second: Symbols_Misc_53
+  - first:
+      213: -7019067877827958889
+    second: Symbols_Misc_54
+  - first:
+      213: -1614570732500738921
+    second: Symbols_Misc_55
+  - first:
+      213: -827833621421456433
+    second: Symbols_Misc_56
+  - first:
+      213: -5077834819775349468
+    second: Symbols_Misc_57
+  - first:
+      213: -4493202859387576472
+    second: Symbols_Misc_58
+  - first:
+      213: 7948735635767008423
+    second: Symbols_Misc_59
+  - first:
+      213: 2423875413210827139
+    second: Symbols_Misc_60
+  - first:
+      213: 3332228445242214113
+    second: Symbols_Misc_61
+  - first:
+      213: 6639085969961420423
+    second: Symbols_Misc_62
+  - first:
+      213: -5671123852834588414
+    second: Symbols_Misc_63
+  - first:
+      213: -405926402915686139
+    second: Symbols_Misc_64
+  - first:
+      213: 4577048679465600297
+    second: Symbols_Misc_65
+  - first:
+      213: -4203442285632480630
+    second: Symbols_Misc_66
+  - first:
+      213: -1940635551273295469
+    second: Symbols_Misc_67
+  - first:
+      213: -8870985069752307129
+    second: Symbols_Misc_68
+  - first:
+      213: -6333308952862805064
+    second: Symbols_Misc_69
+  - first:
+      213: -7412356859996383944
+    second: Symbols_Misc_70
+  - first:
+      213: 6450523542141516946
+    second: Symbols_Misc_71
+  - first:
+      213: 9197853218538729512
+    second: Symbols_Misc_72
+  - first:
+      213: -7628607048972686449
+    second: Symbols_Misc_73
+  - first:
+      213: 4228691969811654744
+    second: Symbols_Misc_74
+  - first:
+      213: -7226459024167464504
+    second: Symbols_Misc_75
+  - first:
+      213: 4476510361437433323
+    second: Symbols_Misc_76
+  - first:
+      213: 9079297644953678643
+    second: Symbols_Misc_77
+  - first:
+      213: 7938300326309264532
+    second: Symbols_Misc_78
+  - first:
+      213: -6197595119729871383
+    second: Symbols_Misc_79
+  - first:
+      213: -7837957825853724577
+    second: Symbols_Misc_80
+  - first:
+      213: -7131190935512562209
+    second: Symbols_Misc_81
+  - first:
+      213: 213387656223917559
+    second: Symbols_Misc_82
+  - first:
+      213: -5129083526116151725
+    second: Symbols_Misc_83
+  - first:
+      213: -1659247707813274903
+    second: Symbols_Misc_84
+  - first:
+      213: 6137307687283936631
+    second: Symbols_Misc_85
+  - first:
+      213: -4372494637599836049
+    second: Symbols_Misc_86
+  - first:
+      213: -3937172146306952117
+    second: Symbols_Misc_87
+  - first:
+      213: -2404525646594567903
+    second: Symbols_Misc_88
+  - first:
+      213: 5231286318673423835
+    second: Symbols_Misc_89
+  - first:
+      213: 5375143878757841586
+    second: Symbols_Misc_90
+  - first:
+      213: -8401956452280844866
+    second: Symbols_Misc_91
+  - first:
+      213: -1432116262053069584
+    second: Symbols_Misc_92
+  - first:
+      213: -2260793641798870549
+    second: Symbols_Misc_93
+  - first:
+      213: 8176681200506918602
+    second: Symbols_Misc_94
+  - first:
+      213: 3392956583877224711
+    second: Symbols_Misc_95
+  - first:
+      213: -1385684157029976503
+    second: Symbols_Misc_96
+  - first:
+      213: 8844607324958163293
+    second: Symbols_Misc_97
+  - first:
+      213: -6521698538501766032
+    second: Symbols_Misc_98
+  - first:
+      213: -8363000280321900833
+    second: Symbols_Misc_99
+  - first:
+      213: 6817034062329114910
+    second: Symbols_Misc_100
+  - first:
+      213: -6146087125222059241
+    second: Symbols_Misc_101
+  - first:
+      213: -5162239871970115373
+    second: Symbols_Misc_102
+  - first:
+      213: -8930879212025636883
+    second: Symbols_Misc_103
+  - first:
+      213: -4468238984105120898
+    second: Symbols_Misc_104
+  - first:
+      213: -3792508874778819682
+    second: Symbols_Misc_105
+  - first:
+      213: -481011819313820100
+    second: Symbols_Misc_106
+  - first:
+      213: 4030272502026322775
+    second: Symbols_Misc_107
+  - first:
+      213: 7974772784822397248
+    second: Symbols_Misc_108
+  - first:
+      213: 8013551024524741972
+    second: Symbols_Misc_109
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Symbols_Misc_0
+      rect:
+        serializedVersion: 2
+        x: 595
+        y: 187
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 29dd408f0113a9690800000000000000
+      internalID: -7594703872656613998
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Symbols_Misc_1
+      rect:
+        serializedVersion: 2
+        x: 612
+        y: 187
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2860f966707dea1a0800000000000000
+      internalID: -6796258360869058942
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Symbols_Misc_2
+      rect:
+        serializedVersion: 2
+        x: 629
+        y: 187
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d29ec2ab418066f10800000000000000
+      internalID: 2262504747916126509
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Symbols_Misc_3
+      rect:
+        serializedVersion: 2
+        x: 646
+        y: 187
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fdabaf41e1ba7a270800000000000000
+      internalID: 8261760187123808991
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Symbols_Misc_4
+      rect:
+        serializedVersion: 2
+        x: 731
+        y: 187
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5094ab116dfae9040800000000000000
+      internalID: 4656352398702954757
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Symbols_Misc_5
+      rect:
+        serializedVersion: 2
+        x: 748
+        y: 187
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1689185966c924d50800000000000000
+      internalID: 6720105558399096929
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Symbols_Misc_6
+      rect:
+        serializedVersion: 2
+        x: 765
+        y: 187
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 736091be7f6b0c6b0800000000000000
+      internalID: -5278017587360758217
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Symbols_Misc_7
+      rect:
+        serializedVersion: 2
+        x: 782
+        y: 187
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a60b2b360bf848f00800000000000000
+      internalID: 1118176595244396650
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Symbols_Misc_8
+      rect:
+        serializedVersion: 2
+        x: 799
+        y: 187
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d584d93e3c654ec90800000000000000
+      internalID: -7141487709765416867
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Symbols_Misc_9
+      rect:
+        serializedVersion: 2
+        x: 731
+        y: 170
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 09bee5151ed21c080800000000000000
+      internalID: -9168996920593552496
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Symbols_Misc_10
+      rect:
+        serializedVersion: 2
+        x: 748
+        y: 170
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 957ff0cf12c078e60800000000000000
+      internalID: 7964347806130370393
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Symbols_Misc_11
+      rect:
+        serializedVersion: 2
+        x: 765
+        y: 170
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae5beb13d44ec77e0800000000000000
+      internalID: -1766285933637880342
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Symbols_Misc_12
+      rect:
+        serializedVersion: 2
+        x: 782
+        y: 170
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e919f21e4c4456d0800000000000000
+      internalID: -3002691153339803163
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Symbols_Misc_13
+      rect:
+        serializedVersion: 2
+        x: 799
+        y: 170
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 19ec454acbac761f0800000000000000
+      internalID: -1051649076408037743
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Symbols_Misc_14
+      rect:
+        serializedVersion: 2
+        x: 408
+        y: 153
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5bdb52028d670ae80800000000000000
+      internalID: -8169399053425721931
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Symbols_Misc_15
+      rect:
+        serializedVersion: 2
+        x: 425
+        y: 153
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 70144b68c00be3020800000000000000
+      internalID: 2323488025615810823
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Symbols_Misc_16
+      rect:
+        serializedVersion: 2
+        x: 442
+        y: 153
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 169727898c5a6dcc0800000000000000
+      internalID: -3686576963986491039
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Symbols_Misc_17
+      rect:
+        serializedVersion: 2
+        x: 595
+        y: 153
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 000fb10fb55e11700800000000000000
+      internalID: 509440415902724096
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Symbols_Misc_18
+      rect:
+        serializedVersion: 2
+        x: 612
+        y: 153
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 96c1c073666aca020800000000000000
+      internalID: 2354439663148342377
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Symbols_Misc_19
+      rect:
+        serializedVersion: 2
+        x: 629
+        y: 153
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d662736a36529c230800000000000000
+      internalID: 3659497282135860845
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Symbols_Misc_20
+      rect:
+        serializedVersion: 2
+        x: 646
+        y: 153
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e29d3e5ef6620f60800000000000000
+      internalID: 7999069130852242150
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Symbols_Misc_21
+      rect:
+        serializedVersion: 2
+        x: 663
+        y: 153
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 02cc1d4b4d58d75d0800000000000000
+      internalID: -3063145022928860128
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Symbols_Misc_22
+      rect:
+        serializedVersion: 2
+        x: 680
+        y: 153
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f17af9ce5a8a1abe0800000000000000
+      internalID: -1467706572953114849
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Symbols_Misc_23
+      rect:
+        serializedVersion: 2
+        x: 697
+        y: 153
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d9d6b5cc82635d80800000000000000
+      internalID: -8263152534542689839
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Symbols_Misc_24
+      rect:
+        serializedVersion: 2
+        x: 714
+        y: 153
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 90a206f2b12b2a350800000000000000
+      internalID: 6026575081203837449
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Symbols_Misc_25
+      rect:
+        serializedVersion: 2
+        x: 731
+        y: 153
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e8b674b1f7869b600800000000000000
+      internalID: 484533330046839694
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Symbols_Misc_26
+      rect:
+        serializedVersion: 2
+        x: 748
+        y: 153
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e929f92d0d71ef70800000000000000
+      internalID: 9214783808068987366
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Symbols_Misc_27
+      rect:
+        serializedVersion: 2
+        x: 765
+        y: 153
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d6459c3dbb3018ca0800000000000000
+      internalID: -6016523521943317395
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Symbols_Misc_28
+      rect:
+        serializedVersion: 2
+        x: 782
+        y: 153
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae523b59a87e0d7b0800000000000000
+      internalID: -5201402987209873942
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Symbols_Misc_29
+      rect:
+        serializedVersion: 2
+        x: 799
+        y: 153
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f5c954f3bafcc8e0800000000000000
+      internalID: -1671685710855682568
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Symbols_Misc_30
+      rect:
+        serializedVersion: 2
+        x: 408
+        y: 136
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3952c7eef66776a00800000000000000
+      internalID: 749698086095037843
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Symbols_Misc_31
+      rect:
+        serializedVersion: 2
+        x: 425
+        y: 136
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da11299fb45b0b7f0800000000000000
+      internalID: -598779412526001747
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Symbols_Misc_32
+      rect:
+        serializedVersion: 2
+        x: 442
+        y: 136
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 52ff1e9fd1fa60180800000000000000
+      internalID: -9149433049675333851
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Symbols_Misc_33
+      rect:
+        serializedVersion: 2
+        x: 459
+        y: 136
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 65cc042e3cf5d4a00800000000000000
+      internalID: 742354808505158742
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Symbols_Misc_34
+      rect:
+        serializedVersion: 2
+        x: 476
+        y: 136
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b882bd3ea8eb2ee0800000000000000
+      internalID: -1284677433627080524
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Symbols_Misc_35
+      rect:
+        serializedVersion: 2
+        x: 493
+        y: 136
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e823922a8879ef80800000000000000
+      internalID: -8076791922031384343
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Symbols_Misc_36
+      rect:
+        serializedVersion: 2
+        x: 510
+        y: 136
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d698e2b01410fba0800000000000000
+      internalID: -6057319436859697450
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Symbols_Misc_37
+      rect:
+        serializedVersion: 2
+        x: 527
+        y: 136
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c17bbf9a1bd6d1020800000000000000
+      internalID: 2314126393366787868
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Symbols_Misc_38
+      rect:
+        serializedVersion: 2
+        x: 663
+        y: 136
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f0f1705b1e7bb770800000000000000
+      internalID: 8627628166937178357
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Symbols_Misc_39
+      rect:
+        serializedVersion: 2
+        x: 680
+        y: 136
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f55c239cd80c6e710800000000000000
+      internalID: 1722275622714262879
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Symbols_Misc_40
+      rect:
+        serializedVersion: 2
+        x: 697
+        y: 136
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd2a8bb8c68880320800000000000000
+      internalID: 2524417590923141852
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Symbols_Misc_41
+      rect:
+        serializedVersion: 2
+        x: 714
+        y: 136
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 584e25b321d6e9410800000000000000
+      internalID: 1485744852150969477
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Symbols_Misc_42
+      rect:
+        serializedVersion: 2
+        x: 731
+        y: 136
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d32c8f05932de8a00800000000000000
+      internalID: 760776530685641277
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Symbols_Misc_43
+      rect:
+        serializedVersion: 2
+        x: 748
+        y: 136
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7662d6148e0027aa0800000000000000
+      internalID: -6164863942386702745
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Symbols_Misc_44
+      rect:
+        serializedVersion: 2
+        x: 765
+        y: 136
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f5e30d228e67a16a0800000000000000
+      internalID: -6477734374630474145
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Symbols_Misc_45
+      rect:
+        serializedVersion: 2
+        x: 782
+        y: 136
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a0443dced799add0800000000000000
+      internalID: -2474279537082089307
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Symbols_Misc_46
+      rect:
+        serializedVersion: 2
+        x: 799
+        y: 136
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d53a2723e3454a1c0800000000000000
+      internalID: -4493373902097833123
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Symbols_Misc_47
+      rect:
+        serializedVersion: 2
+        x: 323
+        y: 119
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9dacdf73133d5f580800000000000000
+      internalID: -8793890489024787751
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Symbols_Misc_48
+      rect:
+        serializedVersion: 2
+        x: 340
+        y: 119
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 72865d5b075df5210800000000000000
+      internalID: 1324011495533930535
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Symbols_Misc_49
+      rect:
+        serializedVersion: 2
+        x: 357
+        y: 119
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fccdeaef963f9e0a0800000000000000
+      internalID: -6851677721497510705
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Symbols_Misc_50
+      rect:
+        serializedVersion: 2
+        x: 374
+        y: 119
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 14ff0985be10d6500800000000000000
+      internalID: 390970852965941057
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Symbols_Misc_51
+      rect:
+        serializedVersion: 2
+        x: 391
+        y: 119
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 43879c8f5d94277f0800000000000000
+      internalID: -616349015645521868
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Symbols_Misc_52
+      rect:
+        serializedVersion: 2
+        x: 408
+        y: 119
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 266a7df1c8b7a84d0800000000000000
+      internalID: -3131554749122894238
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Symbols_Misc_53
+      rect:
+        serializedVersion: 2
+        x: 425
+        y: 119
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8630685ca9c654d20800000000000000
+      internalID: 3262132917094450024
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Symbols_Misc_54
+      rect:
+        serializedVersion: 2
+        x: 442
+        y: 119
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 797a5b724f2479e90800000000000000
+      internalID: -7019067877827958889
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Symbols_Misc_55
+      rect:
+        serializedVersion: 2
+        x: 459
+        y: 119
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 79c1d802974e799e0800000000000000
+      internalID: -1614570732500738921
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Symbols_Misc_56
+      rect:
+        serializedVersion: 2
+        x: 476
+        y: 119
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc38c0615b1f284f0800000000000000
+      internalID: -827833621421456433
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Symbols_Misc_57
+      rect:
+        serializedVersion: 2
+        x: 493
+        y: 119
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 42d3e2b8228e789b0800000000000000
+      internalID: -5077834819775349468
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Symbols_Misc_58
+      rect:
+        serializedVersion: 2
+        x: 510
+        y: 119
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 86f1f6e2ecfe4a1c0800000000000000
+      internalID: -4493202859387576472
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Symbols_Misc_59
+      rect:
+        serializedVersion: 2
+        x: 527
+        y: 119
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ac916f42f49f4e60800000000000000
+      internalID: 7948735635767008423
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Symbols_Misc_60
+      rect:
+        serializedVersion: 2
+        x: 323
+        y: 102
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3890c3898d553a120800000000000000
+      internalID: 2423875413210827139
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Symbols_Misc_61
+      rect:
+        serializedVersion: 2
+        x: 340
+        y: 102
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e64d15bd147e3e20800000000000000
+      internalID: 3332228445242214113
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Symbols_Misc_62
+      rect:
+        serializedVersion: 2
+        x: 357
+        y: 102
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 78684d8a385c22c50800000000000000
+      internalID: 6639085969961420423
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Symbols_Misc_63
+      rect:
+        serializedVersion: 2
+        x: 374
+        y: 102
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 209bc8a17ee1c41b0800000000000000
+      internalID: -5671123852834588414
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Symbols_Misc_64
+      rect:
+        serializedVersion: 2
+        x: 391
+        y: 102
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5092245561cdd5af0800000000000000
+      internalID: -405926402915686139
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Symbols_Misc_65
+      rect:
+        serializedVersion: 2
+        x: 408
+        y: 102
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 925c7331681f48f30800000000000000
+      internalID: 4577048679465600297
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Symbols_Misc_66
+      rect:
+        serializedVersion: 2
+        x: 425
+        y: 102
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a8a1503138f5aa5c0800000000000000
+      internalID: -4203442285632480630
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Symbols_Misc_67
+      rect:
+        serializedVersion: 2
+        x: 442
+        y: 102
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3916cdf7f3a7115e0800000000000000
+      internalID: -1940635551273295469
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Symbols_Misc_68
+      rect:
+        serializedVersion: 2
+        x: 459
+        y: 102
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 742be9d541ee3e480800000000000000
+      internalID: -8870985069752307129
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Symbols_Misc_69
+      rect:
+        serializedVersion: 2
+        x: 476
+        y: 102
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b3bfcb00119b18a0800000000000000
+      internalID: -6333308952862805064
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Symbols_Misc_70
+      rect:
+        serializedVersion: 2
+        x: 493
+        y: 102
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8355c7b45b4022990800000000000000
+      internalID: -7412356859996383944
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Symbols_Misc_71
+      rect:
+        serializedVersion: 2
+        x: 510
+        y: 102
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 29cb3a83cfcd48950800000000000000
+      internalID: 6450523542141516946
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Symbols_Misc_72
+      rect:
+        serializedVersion: 2
+        x: 527
+        y: 102
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8203f2b15c655af70800000000000000
+      internalID: 9197853218538729512
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Symbols_Misc_73
+      rect:
+        serializedVersion: 2
+        x: 629
+        y: 85
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f8b21fa9e4eb12690800000000000000
+      internalID: -7628607048972686449
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Symbols_Misc_74
+      rect:
+        serializedVersion: 2
+        x: 646
+        y: 85
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 858ab2521f45faa30800000000000000
+      internalID: 4228691969811654744
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Symbols_Misc_75
+      rect:
+        serializedVersion: 2
+        x: 663
+        y: 85
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c115901ec576bb90800000000000000
+      internalID: -7226459024167464504
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Symbols_Misc_76
+      rect:
+        serializedVersion: 2
+        x: 680
+        y: 85
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bed65d6c472cf1e30800000000000000
+      internalID: 4476510361437433323
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Symbols_Misc_77
+      rect:
+        serializedVersion: 2
+        x: 697
+        y: 85
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 33331899a15200e70800000000000000
+      internalID: 9079297644953678643
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Symbols_Misc_78
+      rect:
+        serializedVersion: 2
+        x: 714
+        y: 85
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49cf70e76128a2e60800000000000000
+      internalID: 7938300326309264532
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Symbols_Misc_79
+      rect:
+        serializedVersion: 2
+        x: 731
+        y: 85
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e57eca2318bdf9a0800000000000000
+      internalID: -6197595119729871383
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Symbols_Misc_80
+      rect:
+        serializedVersion: 2
+        x: 748
+        y: 85
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f58ee7972eaf93390800000000000000
+      internalID: -7837957825853724577
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Symbols_Misc_81
+      rect:
+        serializedVersion: 2
+        x: 765
+        y: 85
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd5c94770abe80d90800000000000000
+      internalID: -7131190935512562209
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Symbols_Misc_82
+      rect:
+        serializedVersion: 2
+        x: 782
+        y: 85
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f50ea851fa16f200800000000000000
+      internalID: 213387656223917559
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Symbols_Misc_83
+      rect:
+        serializedVersion: 2
+        x: 799
+        y: 85
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 35ee98245b5d1d8b0800000000000000
+      internalID: -5129083526116151725
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Symbols_Misc_84
+      rect:
+        serializedVersion: 2
+        x: 323
+        y: 17
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ea9865300b29f8e0800000000000000
+      internalID: -1659247707813274903
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Symbols_Misc_85
+      rect:
+        serializedVersion: 2
+        x: 340
+        y: 17
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77d45d123d81c2550800000000000000
+      internalID: 6137307687283936631
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Symbols_Misc_86
+      rect:
+        serializedVersion: 2
+        x: 357
+        y: 17
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f68bf872b47c153c0800000000000000
+      internalID: -4372494637599836049
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Symbols_Misc_87
+      rect:
+        serializedVersion: 2
+        x: 374
+        y: 17
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b44dfcffaca5c59c0800000000000000
+      internalID: -3937172146306952117
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Symbols_Misc_88
+      rect:
+        serializedVersion: 2
+        x: 391
+        y: 17
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1211a650aa861aed0800000000000000
+      internalID: -2404525646594567903
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Symbols_Misc_89
+      rect:
+        serializedVersion: 2
+        x: 408
+        y: 17
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bdde3e6b033499840800000000000000
+      internalID: 5231286318673423835
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Symbols_Misc_90
+      rect:
+        serializedVersion: 2
+        x: 425
+        y: 17
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2baf9f501e8589a40800000000000000
+      internalID: 5375143878757841586
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Symbols_Misc_91
+      rect:
+        serializedVersion: 2
+        x: 442
+        y: 17
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ebdbf734f11466b80800000000000000
+      internalID: -8401956452280844866
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Symbols_Misc_92
+      rect:
+        serializedVersion: 2
+        x: 459
+        y: 17
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0fc344be8d9102ce0800000000000000
+      internalID: -1432116262053069584
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Symbols_Misc_93
+      rect:
+        serializedVersion: 2
+        x: 476
+        y: 17
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be9dd16392c00a0e0800000000000000
+      internalID: -2260793641798870549
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Symbols_Misc_94
+      rect:
+        serializedVersion: 2
+        x: 493
+        y: 17
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac654ddda38697170800000000000000
+      internalID: 8176681200506918602
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Symbols_Misc_95
+      rect:
+        serializedVersion: 2
+        x: 510
+        y: 17
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 70923505904361f20800000000000000
+      internalID: 3392956583877224711
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Symbols_Misc_96
+      rect:
+        serializedVersion: 2
+        x: 527
+        y: 17
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9467751d99f05cce0800000000000000
+      internalID: -1385684157029976503
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Symbols_Misc_97
+      rect:
+        serializedVersion: 2
+        x: 323
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d5103f5508b5eba70800000000000000
+      internalID: 8844607324958163293
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Symbols_Misc_98
+      rect:
+        serializedVersion: 2
+        x: 340
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0740b609bb54e75a0800000000000000
+      internalID: -6521698538501766032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Symbols_Misc_99
+      rect:
+        serializedVersion: 2
+        x: 357
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fdebbeadd87a0fb80800000000000000
+      internalID: -8363000280321900833
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Symbols_Misc_100
+      rect:
+        serializedVersion: 2
+        x: 374
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e117dda8c58fa9e50800000000000000
+      internalID: 6817034062329114910
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Symbols_Misc_101
+      rect:
+        serializedVersion: 2
+        x: 391
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 713998ea256b4baa0800000000000000
+      internalID: -6146087125222059241
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Symbols_Misc_102
+      rect:
+        serializedVersion: 2
+        x: 408
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d00dd9ef2a0c58b0800000000000000
+      internalID: -5162239871970115373
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Symbols_Misc_103
+      rect:
+        serializedVersion: 2
+        x: 425
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de79a4baca42f0480800000000000000
+      internalID: -8930879212025636883
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Symbols_Misc_104
+      rect:
+        serializedVersion: 2
+        x: 442
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e7bacd45150adf1c0800000000000000
+      internalID: -4468238984105120898
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Symbols_Misc_105
+      rect:
+        serializedVersion: 2
+        x: 459
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e93ca4f954d4e5bc0800000000000000
+      internalID: -3792508874778819682
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Symbols_Misc_106
+      rect:
+        serializedVersion: 2
+        x: 476
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3e09018c4a1359f0800000000000000
+      internalID: -481011819313820100
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Symbols_Misc_107
+      rect:
+        serializedVersion: 2
+        x: 493
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 753cd4fbc776ee730800000000000000
+      internalID: 4030272502026322775
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Symbols_Misc_108
+      rect:
+        serializedVersion: 2
+        x: 510
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 049aacb78951cae60800000000000000
+      internalID: 7974772784822397248
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Symbols_Misc_109
+      rect:
+        serializedVersion: 2
+        x: 527
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 45dc34ef23ad53f60800000000000000
+      internalID: 8013551024524741972
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

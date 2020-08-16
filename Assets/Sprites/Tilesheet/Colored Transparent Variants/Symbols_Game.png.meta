@@ -1,0 +1,2168 @@
+fileFormatVersion: 2
+guid: ba08026acd94d0f4f905e13351f46916
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -2385593582083348143
+    second: Symbols_Game_0
+  - first:
+      213: 1406064921637153122
+    second: Symbols_Game_1
+  - first:
+      213: -2085862316318391072
+    second: Symbols_Game_2
+  - first:
+      213: -1606966438331655461
+    second: Symbols_Game_3
+  - first:
+      213: -3598654816114326063
+    second: Symbols_Game_4
+  - first:
+      213: 1216612359169644759
+    second: Symbols_Game_5
+  - first:
+      213: -4176215582788180201
+    second: Symbols_Game_6
+  - first:
+      213: -364031794553711027
+    second: Symbols_Game_7
+  - first:
+      213: -2219460298301464928
+    second: Symbols_Game_8
+  - first:
+      213: 9103978482186406200
+    second: Symbols_Game_9
+  - first:
+      213: 8789024200552905936
+    second: Symbols_Game_10
+  - first:
+      213: -5896316252923133513
+    second: Symbols_Game_11
+  - first:
+      213: -4362420228493862054
+    second: Symbols_Game_12
+  - first:
+      213: 6211851377939988201
+    second: Symbols_Game_13
+  - first:
+      213: 6363885742208146363
+    second: Symbols_Game_14
+  - first:
+      213: 8640203955889992252
+    second: Symbols_Game_15
+  - first:
+      213: -1721135967171115770
+    second: Symbols_Game_16
+  - first:
+      213: -1604780679415656060
+    second: Symbols_Game_17
+  - first:
+      213: -3341046851940146363
+    second: Symbols_Game_18
+  - first:
+      213: -4923165643856513921
+    second: Symbols_Game_19
+  - first:
+      213: -8360384792765557573
+    second: Symbols_Game_20
+  - first:
+      213: -4092761618678809795
+    second: Symbols_Game_21
+  - first:
+      213: 2288391684820114899
+    second: Symbols_Game_22
+  - first:
+      213: -559073599695373218
+    second: Symbols_Game_23
+  - first:
+      213: -1258262573869561601
+    second: Symbols_Game_24
+  - first:
+      213: -8915563487741559437
+    second: Symbols_Game_25
+  - first:
+      213: -5265725049873777760
+    second: Symbols_Game_26
+  - first:
+      213: -5273241070984270131
+    second: Symbols_Game_27
+  - first:
+      213: 2767304908780694039
+    second: Symbols_Game_28
+  - first:
+      213: -4859753001064895236
+    second: Symbols_Game_29
+  - first:
+      213: 5048659134351972527
+    second: Symbols_Game_30
+  - first:
+      213: 8856394583442411476
+    second: Symbols_Game_31
+  - first:
+      213: 7634359246846643112
+    second: Symbols_Game_32
+  - first:
+      213: 2187520822786658106
+    second: Symbols_Game_33
+  - first:
+      213: 715417221514495628
+    second: Symbols_Game_34
+  - first:
+      213: 1885558744153251150
+    second: Symbols_Game_35
+  - first:
+      213: 529538359352779248
+    second: Symbols_Game_36
+  - first:
+      213: 8057301025891996071
+    second: Symbols_Game_37
+  - first:
+      213: 8325097326631785900
+    second: Symbols_Game_38
+  - first:
+      213: -4944760505897684025
+    second: Symbols_Game_39
+  - first:
+      213: -1889626234012478363
+    second: Symbols_Game_40
+  - first:
+      213: 4977260840377526553
+    second: Symbols_Game_41
+  - first:
+      213: -4005985879386092512
+    second: Symbols_Game_42
+  - first:
+      213: -244733880072684244
+    second: Symbols_Game_43
+  - first:
+      213: -9050041665724798383
+    second: Symbols_Game_44
+  - first:
+      213: -367179515599027136
+    second: Symbols_Game_45
+  - first:
+      213: 1205140081536136498
+    second: Symbols_Game_46
+  - first:
+      213: 8146786610591217039
+    second: Symbols_Game_47
+  - first:
+      213: -1644283370892253293
+    second: Symbols_Game_48
+  - first:
+      213: -4155877202983454700
+    second: Symbols_Game_49
+  - first:
+      213: 3196675564566945900
+    second: Symbols_Game_50
+  - first:
+      213: -8444357935475910967
+    second: Symbols_Game_51
+  - first:
+      213: 7357648718346608529
+    second: Symbols_Game_52
+  - first:
+      213: -2989520321725386226
+    second: Symbols_Game_53
+  - first:
+      213: 3377640180676210892
+    second: Symbols_Game_54
+  - first:
+      213: 3767470461522314580
+    second: Symbols_Game_55
+  - first:
+      213: -804544722321570254
+    second: Symbols_Game_56
+  - first:
+      213: 3075418102886639236
+    second: Symbols_Game_57
+  - first:
+      213: 8602828930831843138
+    second: Symbols_Game_58
+  - first:
+      213: -5458575953391321685
+    second: Symbols_Game_59
+  - first:
+      213: 5776518108859285579
+    second: Symbols_Game_60
+  - first:
+      213: -7067274782858777326
+    second: Symbols_Game_61
+  - first:
+      213: -5389890496353569878
+    second: Symbols_Game_62
+  - first:
+      213: 4540192836301553017
+    second: Symbols_Game_63
+  - first:
+      213: -5085728317453843581
+    second: Symbols_Game_64
+  - first:
+      213: -2692253773340119681
+    second: Symbols_Game_65
+  - first:
+      213: 1620907064290565077
+    second: Symbols_Game_66
+  - first:
+      213: 1126371316216342598
+    second: Symbols_Game_67
+  - first:
+      213: 4624149805520354150
+    second: Symbols_Game_68
+  - first:
+      213: -4921447005829891208
+    second: Symbols_Game_69
+  - first:
+      213: 3624788885166589932
+    second: Symbols_Game_70
+  - first:
+      213: 7371136222938311464
+    second: Symbols_Game_71
+  - first:
+      213: -5066758449755358934
+    second: Symbols_Game_72
+  - first:
+      213: 7364559518346076388
+    second: Symbols_Game_73
+  - first:
+      213: -70516416840271837
+    second: Symbols_Game_74
+  - first:
+      213: 4999480724189688104
+    second: Symbols_Game_75
+  - first:
+      213: -6679389245797091728
+    second: Symbols_Game_76
+  - first:
+      213: 7530278367612267662
+    second: Symbols_Game_77
+  - first:
+      213: -1026567607251266122
+    second: Symbols_Game_78
+  - first:
+      213: 6575422037172406529
+    second: Symbols_Game_79
+  - first:
+      213: 6900075003634077482
+    second: Symbols_Game_80
+  - first:
+      213: 543641306800539792
+    second: Symbols_Game_81
+  - first:
+      213: -1453514367372032984
+    second: Symbols_Game_82
+  - first:
+      213: -671752726782453894
+    second: Symbols_Game_83
+  - first:
+      213: 7572286461116307621
+    second: Symbols_Game_84
+  - first:
+      213: 5428772803883280135
+    second: Symbols_Game_85
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Symbols_Game_0
+      rect:
+        serializedVersion: 2
+        x: 663
+        y: 119
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1596879c64ba4eed0800000000000000
+      internalID: -2385593582083348143
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Symbols_Game_1
+      rect:
+        serializedVersion: 2
+        x: 680
+        y: 119
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 269e159b898538310800000000000000
+      internalID: 1406064921637153122
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Symbols_Game_2
+      rect:
+        serializedVersion: 2
+        x: 697
+        y: 119
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e4087156478d03e0800000000000000
+      internalID: -2085862316318391072
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Symbols_Game_3
+      rect:
+        serializedVersion: 2
+        x: 714
+        y: 119
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bda5445d988e2b9e0800000000000000
+      internalID: -1606966438331655461
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Symbols_Game_4
+      rect:
+        serializedVersion: 2
+        x: 731
+        y: 119
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d5c140e2820f0ec0800000000000000
+      internalID: -3598654816114326063
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Symbols_Game_5
+      rect:
+        serializedVersion: 2
+        x: 748
+        y: 119
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d818a9ae7642e010800000000000000
+      internalID: 1216612359169644759
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Symbols_Game_6
+      rect:
+        serializedVersion: 2
+        x: 765
+        y: 119
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 717a572dd0a1b06c0800000000000000
+      internalID: -4176215582788180201
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Symbols_Game_7
+      rect:
+        serializedVersion: 2
+        x: 782
+        y: 119
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d469da6f203b2faf0800000000000000
+      internalID: -364031794553711027
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Symbols_Game_8
+      rect:
+        serializedVersion: 2
+        x: 799
+        y: 119
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ae98ae2e94e231e0800000000000000
+      internalID: -2219460298301464928
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Symbols_Game_9
+      rect:
+        serializedVersion: 2
+        x: 663
+        y: 102
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8394581d134d75e70800000000000000
+      internalID: 9103978482186406200
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Symbols_Game_10
+      rect:
+        serializedVersion: 2
+        x: 680
+        y: 102
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0dc7444b1f2e8f970800000000000000
+      internalID: 8789024200552905936
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Symbols_Game_11
+      rect:
+        serializedVersion: 2
+        x: 697
+        y: 102
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b18725ab931c2ea0800000000000000
+      internalID: -5896316252923133513
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Symbols_Game_12
+      rect:
+        serializedVersion: 2
+        x: 714
+        y: 102
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a5b15af4ae19573c0800000000000000
+      internalID: -4362420228493862054
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Symbols_Game_13
+      rect:
+        serializedVersion: 2
+        x: 731
+        y: 102
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ee32ab9aede43650800000000000000
+      internalID: 6211851377939988201
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Symbols_Game_14
+      rect:
+        serializedVersion: 2
+        x: 748
+        y: 102
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bbb5d7f7d50115850800000000000000
+      internalID: 6363885742208146363
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Symbols_Game_15
+      rect:
+        serializedVersion: 2
+        x: 765
+        y: 102
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c327fb958bb28e770800000000000000
+      internalID: 8640203955889992252
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Symbols_Game_16
+      rect:
+        serializedVersion: 2
+        x: 782
+        y: 102
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6050e92f4fb4d18e0800000000000000
+      internalID: -1721135967171115770
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Symbols_Game_17
+      rect:
+        serializedVersion: 2
+        x: 799
+        y: 102
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 481150d797caab9e0800000000000000
+      internalID: -1604780679415656060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Symbols_Game_18
+      rect:
+        serializedVersion: 2
+        x: 323
+        y: 85
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 543ab2cf69732a1d0800000000000000
+      internalID: -3341046851940146363
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Symbols_Game_19
+      rect:
+        serializedVersion: 2
+        x: 340
+        y: 85
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f7476835ee66dabb0800000000000000
+      internalID: -4923165643856513921
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Symbols_Game_20
+      rect:
+        serializedVersion: 2
+        x: 357
+        y: 85
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb491a18352f9fb80800000000000000
+      internalID: -8360384792765557573
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Symbols_Game_21
+      rect:
+        serializedVersion: 2
+        x: 374
+        y: 85
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d3bfb400ef69337c0800000000000000
+      internalID: -4092761618678809795
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Symbols_Game_22
+      rect:
+        serializedVersion: 2
+        x: 391
+        y: 85
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3dd19a8ec1002cf10800000000000000
+      internalID: 2288391684820114899
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Symbols_Game_23
+      rect:
+        serializedVersion: 2
+        x: 408
+        y: 85
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e5cbbdee585cd38f0800000000000000
+      internalID: -559073599695373218
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Symbols_Game_24
+      rect:
+        serializedVersion: 2
+        x: 425
+        y: 85
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff8065a0bd0c98ee0800000000000000
+      internalID: -1258262573869561601
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Symbols_Game_25
+      rect:
+        serializedVersion: 2
+        x: 442
+        y: 85
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37db8bc9e3e854480800000000000000
+      internalID: -8915563487741559437
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Symbols_Game_26
+      rect:
+        serializedVersion: 2
+        x: 459
+        y: 85
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0abb56557f26ce6b0800000000000000
+      internalID: -5265725049873777760
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Symbols_Game_27
+      rect:
+        serializedVersion: 2
+        x: 476
+        y: 85
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dce6bfc4f2fa1d6b0800000000000000
+      internalID: -5273241070984270131
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Symbols_Game_28
+      rect:
+        serializedVersion: 2
+        x: 493
+        y: 85
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71a61191721776620800000000000000
+      internalID: 2767304908780694039
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Symbols_Game_29
+      rect:
+        serializedVersion: 2
+        x: 510
+        y: 85
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cfc6363c460be8cb0800000000000000
+      internalID: -4859753001064895236
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Symbols_Game_30
+      rect:
+        serializedVersion: 2
+        x: 527
+        y: 85
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa89417dbb0701640800000000000000
+      internalID: 5048659134351972527
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Symbols_Game_31
+      rect:
+        serializedVersion: 2
+        x: 544
+        y: 85
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4df47c053fb38ea70800000000000000
+      internalID: 8856394583442411476
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Symbols_Game_32
+      rect:
+        serializedVersion: 2
+        x: 323
+        y: 68
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ab43045941b2f960800000000000000
+      internalID: 7634359246846643112
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Symbols_Game_33
+      rect:
+        serializedVersion: 2
+        x: 340
+        y: 68
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3f08fc2992ab5e10800000000000000
+      internalID: 2187520822786658106
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Symbols_Game_34
+      rect:
+        serializedVersion: 2
+        x: 357
+        y: 68
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c86819a2c2cade900800000000000000
+      internalID: 715417221514495628
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Symbols_Game_35
+      rect:
+        serializedVersion: 2
+        x: 374
+        y: 68
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e4dd26c00b9da2a10800000000000000
+      internalID: 1885558744153251150
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Symbols_Game_36
+      rect:
+        serializedVersion: 2
+        x: 391
+        y: 68
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f16a2c055c495700800000000000000
+      internalID: 529538359352779248
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Symbols_Game_37
+      rect:
+        serializedVersion: 2
+        x: 408
+        y: 68
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a1dea8f79841df60800000000000000
+      internalID: 8057301025891996071
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Symbols_Game_38
+      rect:
+        serializedVersion: 2
+        x: 425
+        y: 68
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca5117a09efa88370800000000000000
+      internalID: 8325097326631785900
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Symbols_Game_39
+      rect:
+        serializedVersion: 2
+        x: 442
+        y: 68
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c37692b48ea06bb0800000000000000
+      internalID: -4944760505897684025
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Symbols_Game_40
+      rect:
+        serializedVersion: 2
+        x: 459
+        y: 68
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5645d6ba3f2b6c5e0800000000000000
+      internalID: -1889626234012478363
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Symbols_Game_41
+      rect:
+        serializedVersion: 2
+        x: 476
+        y: 68
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9192a291d58c21540800000000000000
+      internalID: 4977260840377526553
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Symbols_Game_42
+      rect:
+        serializedVersion: 2
+        x: 493
+        y: 68
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 02c06fb3111e768c0800000000000000
+      internalID: -4005985879386092512
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Symbols_Game_43
+      rect:
+        serializedVersion: 2
+        x: 510
+        y: 68
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c2db3cd25d78a9cf0800000000000000
+      internalID: -244733880072684244
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Symbols_Game_44
+      rect:
+        serializedVersion: 2
+        x: 527
+        y: 68
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 15a2dffdd0bc76280800000000000000
+      internalID: -9050041665724798383
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Symbols_Game_45
+      rect:
+        serializedVersion: 2
+        x: 544
+        y: 68
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0448beb0d2487eaf0800000000000000
+      internalID: -367179515599027136
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Symbols_Game_46
+      rect:
+        serializedVersion: 2
+        x: 323
+        y: 51
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 235fb80e48489b010800000000000000
+      internalID: 1205140081536136498
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Symbols_Game_47
+      rect:
+        serializedVersion: 2
+        x: 340
+        y: 51
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f85b23142433f0170800000000000000
+      internalID: 8146786610591217039
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Symbols_Game_48
+      rect:
+        serializedVersion: 2
+        x: 357
+        y: 51
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 397a2e76cf45e29e0800000000000000
+      internalID: -1644283370892253293
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Symbols_Game_49
+      rect:
+        serializedVersion: 2
+        x: 374
+        y: 51
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 418f602e3bb5356c0800000000000000
+      internalID: -4155877202983454700
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Symbols_Game_50
+      rect:
+        serializedVersion: 2
+        x: 391
+        y: 51
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c602f204d7fdc5c20800000000000000
+      internalID: 3196675564566945900
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Symbols_Game_51
+      rect:
+        serializedVersion: 2
+        x: 408
+        y: 51
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c615b3a23d9fca80800000000000000
+      internalID: -8444357935475910967
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Symbols_Game_52
+      rect:
+        serializedVersion: 2
+        x: 425
+        y: 51
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 19f582fd68e9b1660800000000000000
+      internalID: 7357648718346608529
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Symbols_Game_53
+      rect:
+        serializedVersion: 2
+        x: 442
+        y: 51
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e023fb64b171386d0800000000000000
+      internalID: -2989520321725386226
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Symbols_Game_54
+      rect:
+        serializedVersion: 2
+        x: 459
+        y: 51
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc0ba4c49d9cfde20800000000000000
+      internalID: 3377640180676210892
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Symbols_Game_55
+      rect:
+        serializedVersion: 2
+        x: 476
+        y: 51
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 45580d08c6eb84430800000000000000
+      internalID: 3767470461522314580
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Symbols_Game_56
+      rect:
+        serializedVersion: 2
+        x: 493
+        y: 51
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2368b1476dea5d4f0800000000000000
+      internalID: -804544722321570254
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Symbols_Game_57
+      rect:
+        serializedVersion: 2
+        x: 510
+        y: 51
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4862d5668741eaa20800000000000000
+      internalID: 3075418102886639236
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Symbols_Game_58
+      rect:
+        serializedVersion: 2
+        x: 527
+        y: 51
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 24f7fa53553636770800000000000000
+      internalID: 8602828930831843138
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Symbols_Game_59
+      rect:
+        serializedVersion: 2
+        x: 544
+        y: 51
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: badfe96571e3f34b0800000000000000
+      internalID: -5458575953391321685
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Symbols_Game_60
+      rect:
+        serializedVersion: 2
+        x: 323
+        y: 34
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b404b2d5d905a2050800000000000000
+      internalID: 5776518108859285579
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Symbols_Game_61
+      rect:
+        serializedVersion: 2
+        x: 340
+        y: 34
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21d60ad670ffbed90800000000000000
+      internalID: -7067274782858777326
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Symbols_Game_62
+      rect:
+        serializedVersion: 2
+        x: 357
+        y: 34
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa3779286234335b0800000000000000
+      internalID: -5389890496353569878
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Symbols_Game_63
+      rect:
+        serializedVersion: 2
+        x: 374
+        y: 34
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 97df6836451020f30800000000000000
+      internalID: 4540192836301553017
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Symbols_Game_64
+      rect:
+        serializedVersion: 2
+        x: 391
+        y: 34
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 383c4066a0ddb69b0800000000000000
+      internalID: -5085728317453843581
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Symbols_Game_65
+      rect:
+        serializedVersion: 2
+        x: 408
+        y: 34
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f7d6bd2157133aad0800000000000000
+      internalID: -2692253773340119681
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Symbols_Game_66
+      rect:
+        serializedVersion: 2
+        x: 425
+        y: 34
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5dbd5f4136e9e7610800000000000000
+      internalID: 1620907064290565077
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Symbols_Game_67
+      rect:
+        serializedVersion: 2
+        x: 442
+        y: 34
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 648a34c8ebca1af00800000000000000
+      internalID: 1126371316216342598
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Symbols_Game_68
+      rect:
+        serializedVersion: 2
+        x: 459
+        y: 34
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 66b7b329fb74c2040800000000000000
+      internalID: 4624149805520354150
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Symbols_Game_69
+      rect:
+        serializedVersion: 2
+        x: 476
+        y: 34
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 87b799ce50283bbb0800000000000000
+      internalID: -4921447005829891208
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Symbols_Game_70
+      rect:
+        serializedVersion: 2
+        x: 493
+        y: 34
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce7832e3946dd4230800000000000000
+      internalID: 3624788885166589932
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Symbols_Game_71
+      rect:
+        serializedVersion: 2
+        x: 510
+        y: 34
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 82ba04f37598b4660800000000000000
+      internalID: 7371136222938311464
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Symbols_Game_72
+      rect:
+        serializedVersion: 2
+        x: 527
+        y: 34
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a297f97e8024fa9b0800000000000000
+      internalID: -5066758449755358934
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Symbols_Game_73
+      rect:
+        serializedVersion: 2
+        x: 544
+        y: 34
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e06d32ecdb243660800000000000000
+      internalID: 7364559518346076388
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Symbols_Game_74
+      rect:
+        serializedVersion: 2
+        x: 714
+        y: 17
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 328f66741b9750ff0800000000000000
+      internalID: -70516416840271837
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Symbols_Game_75
+      rect:
+        serializedVersion: 2
+        x: 731
+        y: 17
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8213db2fa39b16540800000000000000
+      internalID: 4999480724189688104
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Symbols_Game_76
+      rect:
+        serializedVersion: 2
+        x: 748
+        y: 17
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 07633bfaeda0e43a0800000000000000
+      internalID: -6679389245797091728
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Symbols_Game_77
+      rect:
+        serializedVersion: 2
+        x: 765
+        y: 17
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e8c6659374ce08860800000000000000
+      internalID: 7530278367612267662
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Symbols_Game_78
+      rect:
+        serializedVersion: 2
+        x: 782
+        y: 17
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b59ddf3336e0c1f0800000000000000
+      internalID: -1026567607251266122
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Symbols_Game_79
+      rect:
+        serializedVersion: 2
+        x: 799
+        y: 17
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 109cfe53187904b50800000000000000
+      internalID: 6575422037172406529
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Symbols_Game_80
+      rect:
+        serializedVersion: 2
+        x: 714
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a2f492b58adf1cf50800000000000000
+      internalID: 6900075003634077482
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Symbols_Game_81
+      rect:
+        serializedVersion: 2
+        x: 731
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 098431163e66b8700800000000000000
+      internalID: 543641306800539792
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Symbols_Game_82
+      rect:
+        serializedVersion: 2
+        x: 748
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8240dd8426414dbe0800000000000000
+      internalID: -1453514367372032984
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Symbols_Game_83
+      rect:
+        serializedVersion: 2
+        x: 765
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a775b3f34747da6f0800000000000000
+      internalID: -671752726782453894
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Symbols_Game_84
+      rect:
+        serializedVersion: 2
+        x: 782
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a8565caa6a261960800000000000000
+      internalID: 7572286461116307621
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Symbols_Game_85
+      rect:
+        serializedVersion: 2
+        x: 799
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 707a3cd2a10e65b40800000000000000
+      internalID: 5428772803883280135
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
