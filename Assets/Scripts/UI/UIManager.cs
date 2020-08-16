@@ -2,7 +2,6 @@
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.XR.WSA;
 
 public class UIManager : MonoBehaviour
 {
