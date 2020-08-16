@@ -12,9 +12,9 @@ public class GameManager : MonoBehaviour
 	public bool PlayersTurn = true;
 	public bool EnemiesTurn = false;
 
-	private Text LevelText;
+	/*private Text LevelText;
 	private GameObject LevelImage;
-	private int Level = 1;
+	private int Level = 1;*/
 	private List<Enemy> Enemies;  
 
 	//Awake is always called before any Start functions
