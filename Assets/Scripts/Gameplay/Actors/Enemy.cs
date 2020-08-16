@@ -29,6 +29,7 @@ public class Enemy : MonoBehaviour
         //animator = GetComponent<Animator>();
         int startState = Random.Range(0, 1);
 
+        //randomly decide if enemy starts in sleeping or wandering state
         if (startState == 0) CurrentState = EnemyState.Sleeping;
         else CurrentState = EnemyState.Wandering;
 
