@@ -17,6 +17,7 @@ public class Player : MonoBehaviour
         Interacting,
         Attacking,
         TakingDamage,
+        Ghosting,
         Healing
     }
 
