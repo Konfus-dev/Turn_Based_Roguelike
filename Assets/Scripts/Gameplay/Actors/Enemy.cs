@@ -9,12 +9,29 @@ public class Enemy : MonoBehaviour
 
     private Animator Animator;                   
 	private Transform Target;                          
-    Vector3 MoveTo;                                    
-    private bool SkipMove;                             
+    Vector3 MoveTo;
+
+    public enum EnemyState
+    {
+        Sleeping,
+        Moving,
+        Wandering,
+        Attacking,
+        TakingDamage,
+        Healing
+    }
+
+
+    public EnemyState CurrentState;
 
     protected void Start()
     {
         //animator = GetComponent<Animator>();
+        int startState = Random.Range(0, 1);
+
+        //randomly decide if enemy starts in sleeping or wandering state
+        if (startState == 0) CurrentState = EnemyState.Sleeping;
+        else CurrentState = EnemyState.Wandering;
 
         GameManager.Instance.AddEnemyToList(this);
 

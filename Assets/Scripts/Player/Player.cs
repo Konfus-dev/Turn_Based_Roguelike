@@ -9,13 +9,27 @@ public class Player : MonoBehaviour
     public int HP;                            
     public int Hunger;
     public bool IsMoving = false;
+
+    public enum PlayerState
+    {
+        Moving,
+        NotMoving,
+        Interacting,
+        Attacking,
+        TakingDamage,
+        Ghosting,
+        Healing
+    }
+
+    public PlayerState CurrentState;
+
     //public Inventory Inventory;             
 
     protected void Start()
     {
+        CurrentState = PlayerState.NotMoving;
         //Get a component reference to the Player's animator component
         //animator = GetComponent<Animator>();
-
     }
 
     private void OnDisable()
@@ -23,13 +37,12 @@ public class Player : MonoBehaviour
         //When Player object is disabled, store stuff in the GameManager so it can be re-loaded in next level.
     }
 
-    private void LateUpdate()
+    private void Update()
     {
-        if (!GameManager.Instance.PlayersTurn || IsMoving) return;
+        if (!GameManager.Instance.PlayersTurn || CurrentState == PlayerState.Moving) return;
 
         int horizontal; 
-        int vertical;        
-
+        int vertical;  
 
         horizontal = (int)(Input.GetAxisRaw("Horizontal"));
 
