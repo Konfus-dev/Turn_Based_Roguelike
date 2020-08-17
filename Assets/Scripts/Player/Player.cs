@@ -38,7 +38,7 @@ public class Player : MonoBehaviour
         //Get a component reference to the Player's animator component
         //animator = GetComponent<Animator>();
 
-        ItemWorld.SpawnItemWorld(new Vector3(20,20), new Item { Type = Item.ItemType.Weapon, Name = "Sword_6", Amount = 1 });
+        ItemWorld.SpawnItemWorld(new Vector3(2,2), new Item { Type = Item.ItemType.Weapon, Name = "Sword_6", Amount = 1 }, GameObject.Find("Interactables").transform);
     }
 
     private void OnDisable()
