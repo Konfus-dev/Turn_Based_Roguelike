@@ -5,10 +5,13 @@ using UnityEngine.SceneManagement;        //Allows us to use SceneManager
 //Player inherits from MovingObject, our base class for objects that can move, Enemy also inherits from this.
 public class Player : MonoBehaviour
 {
+    public static Player Instance { get; private set; }
     public int Damage = 1;                    
-    public int HP;                            
-    public int Hunger;
-    public bool IsMoving = false;
+    public int HP;    
+
+    [SerializeField]
+    private InventoryUI InventoryUI;
+    private Inventory Inventory;
 
     public enum PlayerState
     {
@@ -25,11 +28,17 @@ public class Player : MonoBehaviour
 
     //public Inventory Inventory;             
 
-    protected void Start()
+    private void Start()
     {
+        Instance = this;
         CurrentState = PlayerState.NotMoving;
+
+        this.Inventory = new Inventory();
+        this.InventoryUI.SetInventory(this.Inventory);
         //Get a component reference to the Player's animator component
         //animator = GetComponent<Animator>();
+
+        ItemWorld.SpawnItemWorld(new Vector3(2,2), new Item { Type = Item.ItemType.Weapon, Name = "Sword_6", Amount = 1 }, GameObject.Find("Interactables").transform);
     }
 
     private void OnDisable()
