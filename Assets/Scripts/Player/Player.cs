@@ -7,7 +7,8 @@ public class Player : MonoBehaviour
 {
     public static Player Instance { get; private set; }
     public int Damage = 1;                    
-    public int HP;    
+    public int HP;
+    public int InventorySize = 6;
 
     [SerializeField]
     private InventoryUI InventoryUI;
@@ -34,6 +35,7 @@ public class Player : MonoBehaviour
         CurrentState = PlayerState.NotMoving;
 
         this.Inventory = new Inventory();
+        this.Inventory.Size = InventorySize;
         this.InventoryUI.SetInventory(this.Inventory);
         //Get a component reference to the Player's animator component
         //animator = GetComponent<Animator>();
@@ -83,6 +85,8 @@ public class Player : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        Debug.Log("Triggered!");
+
         ItemWorld itemWorld = collision.GetComponent<ItemWorld>();
         if (itemWorld != null)
         {

@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -25,7 +26,7 @@ public class InventoryUI : MonoBehaviour
     {
         this.Inventory = inventory;
 
-        Inventory.OnItemListChanged += Inventory_OnItemListChanged;
+        //Inventory.OnItemListChanged += Inventory_OnItemListChanged;
 
         Refresh();
     }
@@ -48,6 +49,7 @@ public class InventoryUI : MonoBehaviour
 
         foreach (Item item in Inventory.GetItems())
         {
+            //Debug.Log(item.Name);
             RectTransform itemSlotRectTransform = Instantiate(ItemSlotTemplate, ItemSlotContainer).GetComponent<RectTransform>();
             itemSlotRectTransform.gameObject.SetActive(true);
             itemSlotRectTransform.anchoredPosition = new Vector2(x, y);
@@ -59,12 +61,19 @@ public class InventoryUI : MonoBehaviour
             Image itemIcon = itemRectTransform.gameObject.GetComponent<Image>();
             itemIcon.sprite = item.GetSprite();
 
+            Text text = itemRectTransform.Find("Number").GetComponent<Text>();
+
+            if (item.Amount > 1)
+            {
+                text.text = item.Amount.ToString();
+            }
+            else
+            {
+                text.text = "";
+            }
+
             x += itemSlotCellSize;
 
-            if (x > Inventory.Size)
-            {
-                break;
-            }
         }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class ItemAssets : MonoBehaviour
@@ -14,6 +15,7 @@ public class ItemAssets : MonoBehaviour
     public Sprite[] Valuables;
 
     public Dictionary<string, Sprite> SpriteDictionary;
+    public string[] temp;
 
     public Transform ItemWorld;
 
@@ -46,6 +48,7 @@ public class ItemAssets : MonoBehaviour
         {
             Instance.SpriteDictionary.Add(Consumables[i].name, Consumables[i]);
         }
+        Instance.temp = SpriteDictionary.Keys.ToArray();
     }
 
 }
