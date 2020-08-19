@@ -1,27 +1,40 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using CodeMonkey.Utils;
 
 public class Testing : MonoBehaviour
 {
-    private Grid grid;
+    public Grid grid;
+    [SerializeField]
+    public GameObject player;
+    [SerializeField]
+    public GameObject tileSelect;
+    [SerializeField]
+    public Vector2Int gridSize;
 
-    private void Start()
+    public void Start()
     {
-        grid = new Grid(4, 2, 1f, new Vector3(20, 0));
+        grid = new Grid(gridSize.x, gridSize.y, 1f, new Vector3(0, 0), tileSelect, this.transform);
+        if (player != null)
+        {
+            Node n = grid.GetNode(1, 1);
+            PlayerMovement pm = player.GetComponent<PlayerMovement>();
+            if (pm.myNode == null && n != null)
+            {
+                pm.MoveTo(n);
+            }
+        }
     }
 
     private void Update()
     {
         if (Input.GetMouseButtonDown(0))
         {
-            //Debug.Log(UtilsClass.GetMouseWorldPosition().x + " " + UtilsClass.GetMouseWorldPosition().y + " " + UtilsClass.GetMouseWorldPosition().z);
             if (grid != null)
             {
-                Vector3 pos = UtilsClass.GetMouseWorldPosition();
+                Vector3 pos = player.transform.position;
                 if (grid.ValueExists(pos)) {
-                    grid.SetValue(pos, grid.GetValue(pos) + 1);
+                    grid.SetValue(pos, grid.GetValue(pos) + "1");
                 }
             }
         }
@@ -29,10 +42,9 @@ public class Testing : MonoBehaviour
         {
             if (grid != null)
             {
-                Vector3 pos = UtilsClass.GetMouseWorldPosition();
+                Vector3 pos = player.transform.position;
                 if (grid.ValueExists(pos))
                 {
-                    //grid.SetValue(UtilsClass.GetMouseWorldPosition(), 17);
                     Debug.Log(grid.GetValue(pos));
                 }
             }

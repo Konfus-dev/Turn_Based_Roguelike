@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-//using CodeMonkey.Utils;
 
 public class Grid {
 
@@ -9,30 +8,56 @@ public class Grid {
     private int height;
     private float cellSize;
     private Vector3 originPosition;
-    private int[,] gridArray;
+    private Node[,] nodeArray;
     private TextMesh[,] debugTextArray;
 
-    public Grid(int width, int height, float cellSize, Vector3 originPosition)
+    public Grid(int width, int height, float cellSize, Vector3 originPosition, GameObject nodeTile, Transform t)
     {
         this.width = width;
         this.height = height;
         this.cellSize = cellSize;
         this.originPosition = originPosition;
 
-        gridArray = new int[width, height];
+        nodeArray = new Node[width, height];
         debugTextArray = new TextMesh[width, height];
 
-        for(int x = 0; x < gridArray.GetLength(0); x++)
+        for (int x = 0; x < nodeArray.GetLength(0); x++)
         {
-            for (int y = 0; y < gridArray.GetLength(1); y++)
+            for (int y = 0; y < nodeArray.GetLength(1); y++)
             {
-                //debugTextArray[x, y] = UtilsClass.CreateWorldText(gridArray[x, y].ToString(), null, GetWorldPosition(x, y) + new Vector3(cellSize, cellSize) * 0.5f, 5, Color.white, TextAnchor.MiddleCenter);
                 Debug.DrawLine(GetWorldPosition(x, y), GetWorldPosition(x, y + 1), Color.white, 100f);
                 Debug.DrawLine(GetWorldPosition(x, y), GetWorldPosition(x + 1, y), Color.white, 100f);
+                Node n = GameObject.Instantiate(nodeTile, GetWorldPosition(x, y) + new Vector3(0.5f, 0.5f, 0), Quaternion.identity, t).GetComponent<Node>();
+                n.gameObject.name = x + "," + y;
+                n.name = x + "," + y;
+                nodeArray[x, y] = n;
             }
         }
         Debug.DrawLine(GetWorldPosition(0, height), GetWorldPosition(width, height), Color.white, 100f);
         Debug.DrawLine(GetWorldPosition(width, 0), GetWorldPosition(width, height), Color.white, 100f);
+
+        for (int x = 0; x < nodeArray.GetLength(0); x++)
+        {
+            for (int y = 0; y < nodeArray.GetLength(1); y++)
+            {
+                if (x > 0)
+                {
+                    nodeArray[x, y].left = nodeArray[x - 1, y];
+                }
+                else if (x < nodeArray.GetLength(0) - 1)
+                {
+                    nodeArray[x, y].right = nodeArray[x + 1, y];
+                }
+                else if (y > 0)
+                {
+                    nodeArray[x, y].down = nodeArray[x, y - 1];
+                }
+                else if (y < nodeArray.GetLength(1) - 1)
+                {
+                    nodeArray[x, y].up = nodeArray[x, y + 1];
+                }
+            } 
+        }
     }
 
     private Vector3 GetWorldPosition(int x, int y)
@@ -46,16 +71,16 @@ public class Grid {
         y = Mathf.FloorToInt((worldPosition - originPosition).y / cellSize);
     }
 
-    public void SetValue(int x, int y, int value)
+    public void SetValue(int x, int y, string value)
     {
         if (x >= 0 && y >= 0 && x < width && y < height)
         {
-            gridArray[x, y] = value;
-            debugTextArray[x, y].text = gridArray[x, y].ToString();
+            nodeArray[x, y].name = value;
+            Debug.Log(nodeArray[x, y].name);
         }
     }
 
-    public void SetValue(Vector3 worldPosition, int value)
+    public void SetValue(Vector3 worldPosition, string value)
     {
         int x, y;
         GetXY(worldPosition, out x, out y);
@@ -74,23 +99,32 @@ public class Grid {
         return ValueExists(x, y);
     }
 
-    public int GetValue(int x, int y)
+    public string GetValue(int x, int y)
     {
         if (ValueExists(x, y))
         {
-            return gridArray[x, y];
+            return nodeArray[x, y].name;
         }
         else
         {
-            return 0;
+            return "";
         }
     }
 
-    public int GetValue(Vector3 worldPosition)
+    public string GetValue(Vector3 worldPosition)
     {
         int x, y;
         GetXY(worldPosition, out x, out y);
         return GetValue(x, y);
+    }
+
+    public Node GetNode(int x, int y)
+    {
+        if (ValueExists(x, y))
+        {
+            return nodeArray[x, y];
+        }
+        return null;
     }
 
 }
