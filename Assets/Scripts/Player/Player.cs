@@ -6,12 +6,14 @@ using UnityEngine.SceneManagement;        //Allows us to use SceneManager
 public class Player : MonoBehaviour
 {
     public static Player Instance { get; private set; }
-    public int Damage = 1;                    
-    public int HP;
-    public int InventorySize = 6;
+   
+    private int Damage = 1;                    
+    private int HP = 2;
+    private int InventorySize = 6;
 
     [SerializeField]
     private InventoryUI InventoryUI;
+
     private Inventory Inventory;
 
     public enum PlayerState
@@ -22,7 +24,8 @@ public class Player : MonoBehaviour
         Attacking,
         TakingDamage,
         Ghosting,
-        Healing
+        Healing,
+        InInventory
     }
 
     public PlayerState CurrentState;
@@ -49,6 +52,7 @@ public class Player : MonoBehaviour
     private void Update()
     {
         if (!GameManager.Instance.PlayersTurn || CurrentState == PlayerState.Moving) return;
+        CheckForPlayerPause();
 
         int horizontal; 
         int vertical;  
@@ -79,6 +83,23 @@ public class Player : MonoBehaviour
             else if (horizontal < 0)
             {
                 //move left
+            }
+        }
+    }
+
+    private void CheckForPlayerPause()
+    {
+        if (Input.GetButtonDown("Pause"))
+        {
+            if (!(CurrentState == PlayerState.InInventory))
+            {
+                InventoryUI.OpenInventory();
+                CurrentState = PlayerState.InInventory;
+            }
+            else
+            {
+                InventoryUI.CloseInventory();
+                CurrentState = PlayerState.NotMoving;
             }
         }
     }
@@ -134,6 +155,18 @@ public class Player : MonoBehaviour
             //somthing to do with a health particle effect probably
 
             HP += gain;
+        }
+    }
+
+    public void ManageDamage(int amountToAddToTotalDamage, int amountToSubFromTotalDamage)
+    {
+        if (amountToAddToTotalDamage > 0)
+        {
+            Damage += amountToAddToTotalDamage;
+        }
+        else
+        {
+            Damage -= amountToSubFromTotalDamage;
         }
     }
 

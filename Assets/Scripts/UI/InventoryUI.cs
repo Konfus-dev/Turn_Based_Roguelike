@@ -6,7 +6,6 @@ using UnityEngine.UI;
 
 public class InventoryUI : MonoBehaviour
 {
-    private Inventory Inventory;
     [SerializeField]
     private Transform ItemSlotContainer;
     [SerializeField]
@@ -15,12 +14,27 @@ public class InventoryUI : MonoBehaviour
     private Transform ItemContainer;
     [SerializeField]
     private Transform ItemTemplate;
+    [SerializeField]
+    private UIManager InventoryManager;
 
-    /*private void Awake()
+    private Inventory Inventory;
+
+    private void Awake()
     {
-        ItemsContainer = transform.Find("InventoryContainer");
-        ItemSlotTemplate = transform.Find("InvSlot");
-    }*/
+        /*ItemContainer = transform.Find("InventoryContainer");
+        ItemSlotTemplate = transform.Find("InvSlot");*/
+        this.CloseInventory();
+    }
+
+    public void OpenInventory()
+    {
+        InventoryManager.ShowItem();
+    }
+
+    public void CloseInventory()
+    {
+        InventoryManager.HideItem();
+    }
 
     public void SetInventory(Inventory inventory)
     {

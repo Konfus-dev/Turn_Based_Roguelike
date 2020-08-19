@@ -5,23 +5,30 @@ using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
-    //[Tooltip("Doozy UI View here")]
+    [Tooltip("Doozy UI View here")]
+    [SerializeField]
     private UIView PlayerUIView;
-    //[Tooltip("Image from UIView here")]
+    [Tooltip("Image from UIView here")]
+    [SerializeField]
     private Image PlayerUIImage;
-    //[Tooltip("Text from UIView here")]
+    [Tooltip("Text from UIView here")]
+    [SerializeField]
     private TMP_Text PlayerUIText;
-    //[Tooltip("How long it takes for UI to go away after showing")]
-    private readonly float AutoHideDelay = .5f;
+    [Tooltip("How long it takes for UI to go away after showing")]
+    [SerializeField]
+    private float AutoHideDelay = .5f;
+    [Tooltip("How long it takes for UI to go away after showing")]
+    [SerializeField]
+    private bool AutoHide = false;
 
     private void Awake()
     {
-        PlayerUIView = this.GetComponent<UIView>();
+        /*PlayerUIView = this.GetComponent<UIView>();
         PlayerUIImage = this.GetComponent<Image>();
         PlayerUIText = this.GetComponentInChildren<TMP_Text>();
-        PlayerUIView.ViewName = this.transform.parent.parent.name;
+        PlayerUIView.ViewName = this.transform.parent.parent.name;*/
         PlayerUIView.AutoHideAfterShowDelay = AutoHideDelay;
-        PlayerUIView.AutoHideAfterShow = true;
+        PlayerUIView.AutoHideAfterShow = AutoHide;
     }
 
     /*private void Update()

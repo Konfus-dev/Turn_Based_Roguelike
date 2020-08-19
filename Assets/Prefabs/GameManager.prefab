@@ -246,4 +246,4 @@ MonoBehaviour:
   - {fileID: 1692367894764041381, guid: 25e812556ef76414aa5ba31c7ab309d5, type: 3}
   - {fileID: -3820646347252445403, guid: 25e812556ef76414aa5ba31c7ab309d5, type: 3}
   temp: []
-  ItemWorld: {fileID: 0}
+  ItemWorldTemplate: {fileID: 0}

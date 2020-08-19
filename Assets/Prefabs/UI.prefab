@@ -180,6 +180,7 @@ GameObject:
   - component: {fileID: 5040289951155148966}
   - component: {fileID: 5040289951155148967}
   - component: {fileID: 5040289951155148964}
+  - component: {fileID: 764286116}
   m_Layer: 0
   m_Name: PlayerCanvas
   m_TagString: Untagged
@@ -287,6 +288,23 @@ MonoBehaviour:
   CanvasName: MasterCanvas
   CustomCanvasName: 0
   DontDestroyCanvasOnLoad: 0
+--- !u!114 &764286116
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5040289951155148962}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4633235e9045b8a40a15c8ff646309be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlayerUIView: {fileID: 5040289951689469744}
+  PlayerUIImage: {fileID: 0}
+  PlayerUIText: {fileID: 0}
+  AutoHideDelay: 0.5
+  AutoHide: 0
 --- !u!1 &5040289951210258425
 GameObject:
   m_ObjectHideFlags: 0
@@ -979,14 +997,13 @@ GameObject:
   - component: {fileID: 5040289951689469745}
   - component: {fileID: 5040289951689469751}
   - component: {fileID: 5040289951689469758}
-  - component: {fileID: 5040289951689469748}
   m_Layer: 0
   m_Name: View - Inventory
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &5040289951689469759
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1114,7 +1131,7 @@ MonoBehaviour:
         Duration: 1
       Rotate:
         AnimationType: 2
-        Enabled: 1
+        Enabled: 0
         From: {x: 0, y: 0, z: 0}
         To: {x: 180, y: -180, z: 360}
         By: {x: 0, y: 0, z: 0}
@@ -1388,7 +1405,7 @@ MonoBehaviour:
         Duration: 1
       Rotate:
         AnimationType: 1
-        Enabled: 1
+        Enabled: 0
         From: {x: -90, y: -90, z: -90}
         To: {x: 0, y: 0, z: 0}
         By: {x: 0, y: 0, z: 0}
@@ -1553,18 +1570,7 @@ MonoBehaviour:
   ItemSlotTemplate: {fileID: 5040289951830686056}
   ItemContainer: {fileID: 5040289951632910655}
   ItemTemplate: {fileID: 5040289951419622794}
---- !u!114 &5040289951689469748
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5040289951689469756}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4633235e9045b8a40a15c8ff646309be, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  InventoryManager: {fileID: 764286116}
 --- !u!1 &5040289951801866621
 GameObject:
   m_ObjectHideFlags: 0
