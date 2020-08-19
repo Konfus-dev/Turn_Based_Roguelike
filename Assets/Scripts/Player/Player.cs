@@ -37,8 +37,6 @@ public class Player : MonoBehaviour
         this.InventoryUI.SetInventory(this.Inventory);
         //Get a component reference to the Player's animator component
         //animator = GetComponent<Animator>();
-
-        ItemWorld.SpawnItemWorld(new Vector3(2,2), new Item { Type = Item.ItemType.Weapon, Name = "Sword_6", Amount = 1 }, GameObject.Find("Interactables").transform);
     }
 
     private void OnDisable()
@@ -83,9 +81,19 @@ public class Player : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.CompareTag("Interactable"))
+        ItemWorld itemWorld = collision.GetComponent<ItemWorld>();
+        if (itemWorld != null)
+        {
+            Inventory.AddItem(itemWorld.GetItem());
+            itemWorld.SelfDestruct();
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Interactable"))
         {
             collision.gameObject.GetComponent<Interactable>()
                 .Interact<Player>(this);
@@ -94,6 +102,8 @@ public class Player : MonoBehaviour
 
     private void Check()
     {
+        //any checks that need done put in here (check should be performed at the start of a turn and end) 
+
         CheckIfGameOver();
 
         GameManager.Instance.PlayersTurn = false;

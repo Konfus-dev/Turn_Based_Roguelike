@@ -1,16 +1,18 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
+[Serializable]
 public class Item 
 {
-    public enum ItemType
+    /*public enum ItemType
     {
         Weapon,
         Armor,
         Consumable,
         Valuable
-    }
+    }*/
 
-    public ItemType Type;
+    //public ItemType Type;
     public string Name;
     public int Amount;
 
