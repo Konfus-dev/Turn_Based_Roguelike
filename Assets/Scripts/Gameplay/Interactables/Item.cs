@@ -1,5 +1,7 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
+[Serializable]
 public class Item 
 {
     public enum ItemType
@@ -17,5 +19,18 @@ public class Item
     public Sprite GetSprite()
     {
         return ItemAssets.Instance.SpriteDictionary[Name];
+    }
+
+    public bool IsStackable()
+    {
+        if(Type == ItemType.Armor || Type == ItemType.Weapon)
+        {
+            return false;
+        }
+        else if (Type == ItemType.Consumable || Type == ItemType.Valuable)
+        {
+            return true;
+        }
+        return true;
     }
 }

@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Grid {
+public class Grid
+{
 
     private int width;
     private int height;
@@ -56,7 +57,7 @@ public class Grid {
                 {
                     nodeArray[x, y].up = nodeArray[x, y + 1];
                 }
-            } 
+            }
         }
     }
 

@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class ItemAssets : MonoBehaviour
@@ -9,11 +10,12 @@ public class ItemAssets : MonoBehaviour
 
     public Sprite[] Weapons;
     public Sprite[] Armor;
-    public Sprite[] Potions;
+    public Sprite[] Tools;
+    public Sprite[] Consumables;
     public Sprite[] Valuables;
-    public Sprite[] Other;
 
     public Dictionary<string, Sprite> SpriteDictionary;
+    public string[] temp;
 
     public Transform ItemWorld;
 
@@ -34,18 +36,19 @@ public class ItemAssets : MonoBehaviour
         {
             Instance.SpriteDictionary.Add(Armor[i].name, Armor[i]);
         }
-        for (int i = 0; i < Potions.Length; i++)
+        for (int i = 0; i < Tools.Length; i++)
         {
-            Instance.SpriteDictionary.Add(Potions[i].name, Potions[i]);
+            Instance.SpriteDictionary.Add(Tools[i].name, Tools[i]);
         }
         for (int i = 0; i < Valuables.Length; i++)
         {
             Instance.SpriteDictionary.Add(Valuables[i].name, Valuables[i]);
         }
-        for (int i = 0; i < Other.Length; i++)
+        for (int i = 0; i < Consumables.Length; i++)
         {
-            Instance.SpriteDictionary.Add(Other[i].name, Other[i]);
+            Instance.SpriteDictionary.Add(Consumables[i].name, Consumables[i]);
         }
+        Instance.temp = SpriteDictionary.Keys.ToArray();
     }
 
 }
