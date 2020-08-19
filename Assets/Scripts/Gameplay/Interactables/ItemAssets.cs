@@ -17,7 +17,7 @@ public class ItemAssets : MonoBehaviour
     public Dictionary<string, Sprite> SpriteDictionary;
     public string[] temp;
 
-    public Transform ItemWorld;
+    public Transform ItemWorldTemplate;
 
     private void Awake()
     {

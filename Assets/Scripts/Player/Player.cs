@@ -87,7 +87,7 @@ public class Player : MonoBehaviour
     {
         Debug.Log("Triggered!");
 
-        ItemWorld itemWorld = collision.GetComponent<ItemWorld>();
+        ItemInWorld itemWorld = collision.GetComponent<ItemInWorld>();
         if (itemWorld != null)
         {
             Inventory.AddItem(itemWorld.GetItem());

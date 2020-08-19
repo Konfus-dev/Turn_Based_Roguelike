@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -8,13 +6,11 @@ public class PlayerMovement : MonoBehaviour
     bool moveable = true;
     bool axisInUse = false;     //used to have GetButtonDown functionality while using an axis
 
-    // Start is called before the first frame update
     void Start()
     {
         
     }
 
-    // Update is called once per frame
     void Update()
     {
 

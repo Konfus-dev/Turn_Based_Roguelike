@@ -26,7 +26,7 @@ public class InventoryUI : MonoBehaviour
     {
         this.Inventory = inventory;
 
-        //Inventory.OnItemListChanged += Inventory_OnItemListChanged;
+        Inventory.OnItemListChanged += Inventory_OnItemListChanged;
 
         Refresh();
     }
@@ -41,6 +41,10 @@ public class InventoryUI : MonoBehaviour
         foreach (Transform itemSlot in ItemSlotContainer)
         {
             if (itemSlot != ItemSlotTemplate && itemSlot.name != "Background" && itemSlot.name != "Border") Destroy(itemSlot.gameObject);
+        }
+        foreach (Transform item in ItemContainer)
+        {
+            if (item != ItemTemplate) Destroy(item.gameObject);
         }
 
         int x = -150;
