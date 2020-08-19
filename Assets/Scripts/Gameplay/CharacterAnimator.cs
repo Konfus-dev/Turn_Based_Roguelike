@@ -18,8 +18,4 @@ public class CharacterAnimator : MonoBehaviour
         CharTransform.DOScale(new Vector3(CharTransform.localScale.x, MinHieght, CharTransform.localScale.z), .8f).SetLoops(-1, LoopType.Yoyo);
     }
 
-    void Update()
-    {
-        
-    }
 }
