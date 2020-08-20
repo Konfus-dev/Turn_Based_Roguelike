@@ -227,6 +227,11 @@ PrefabInstance:
       propertyPath: field of view
       value: 70
       objectReference: {fileID: 0}
+    - target: {fileID: 5813322924828949560, guid: 573aed4084102ab418dd66bcf8c36dfb,
+        type: 3}
+      propertyPath: m_AllowMSAA
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5813322924828949561, guid: 573aed4084102ab418dd66bcf8c36dfb,
         type: 3}
       propertyPath: m_LocalPosition.x
