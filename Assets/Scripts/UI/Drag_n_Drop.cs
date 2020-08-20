@@ -3,11 +3,13 @@ using UnityEngine.EventSystems;
 
 public class Drag_n_Drop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, IEndDragHandler, IDragHandler, IDropHandler
 {
-    [SerializeField] private Inventory Inventory;
-    [SerializeField] private Canvas Canvas;
+    [SerializeField] 
+    private Canvas Canvas;
     private RectTransform RectTransform;
     private CanvasGroup CanvasGroup;
-    
+    private Item Item;
+    private Inventory Inventory;
+
     void Awake()
     {
         this.RectTransform = this.GetComponent<RectTransform>();
@@ -47,6 +49,26 @@ public class Drag_n_Drop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler
     public void OnDrop(PointerEventData eventData)
     {
         //Debug.Log("Dropped");
+    }
+
+    public void SetItem(Item item)
+    {
+        this.Item = item;
+    }
+
+    public void SetInventory(Inventory inv)
+    {
+        this.Inventory = inv;
+    }
+
+    public Item GetItem()
+    {
+        return this.Item;
+    }
+
+    public Inventory GetInventory()
+    {
+        return this.Inventory;
     }
 }
 

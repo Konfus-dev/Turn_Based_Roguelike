@@ -49,8 +49,6 @@ public class ItemInWorld : MonoBehaviour
 
         ItemInWorld itemInWorld = ItemWorldTemplate.gameObject.AddComponent<ItemInWorld>();
 
-        Debug.Log(item.Type);
-
         itemInWorld.gameObject.SetActive(true);
         itemInWorld.SpriteRenderer = ItemWorldTemplate.GetComponent<SpriteRenderer>();
         itemInWorld.SetItem(item);
@@ -66,7 +64,6 @@ public class ItemInWorld : MonoBehaviour
 
     public void SetItem(Item item)
     {
-        Debug.Log(item.Type);
         this.tag = item.Type.ToString();
         this.Item = item;
         SpriteRenderer.sprite = Item.GetSprite();

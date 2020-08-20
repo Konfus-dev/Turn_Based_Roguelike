@@ -107,7 +107,7 @@ public class Player : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log(this.Inventory.GetItems().Count);
+        //Debug.Log(this.Inventory.GetItems().Count);
 
         ItemInWorld itemWorld = collision.GetComponent<ItemInWorld>();
         if (itemWorld != null && this.Inventory.GetItems().Count < this.Inventory.Size)

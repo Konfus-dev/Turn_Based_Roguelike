@@ -81,6 +81,9 @@ public class InventoryUI : MonoBehaviour
             
             RectTransform itemRectTransform = Instantiate(ItemTemplate, ItemContainer).GetComponent<RectTransform>();
 
+            itemRectTransform.GetComponent<Drag_n_Drop>().SetInventory(this.Inventory);
+            itemRectTransform.GetComponent<Drag_n_Drop>().SetItem(item);
+
             itemRectTransform.GetComponent<Button_UI>().ClickFunc = () =>
             {
                 // use item
