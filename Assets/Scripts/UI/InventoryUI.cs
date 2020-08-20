@@ -87,8 +87,9 @@ public class InventoryUI : MonoBehaviour
             itemRectTransform.GetComponent<Button_UI>().ClickFunc = () =>
             {
                 // use item
+                Inventory.UseItem(item);
             };
-            itemRectTransform.GetComponent<Button_UI>().ClickFunc = () =>
+            itemRectTransform.GetComponent<Button_UI>().MouseRightClickFunc = () =>
             {
                 // drop item
                 Item itemDup = new Item { Type = item.Type, Name = item.Name, Amount = item.Amount };

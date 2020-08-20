@@ -37,7 +37,7 @@ public class Player : MonoBehaviour
         Instance = this;
         CurrentState = PlayerState.NotMoving;
 
-        this.Inventory = new Inventory();
+        this.Inventory = new Inventory(UseItem);
         this.Inventory.Size = InventorySize;
         this.InventoryUI.SetInventory(this.Inventory);
         this.InventoryUI.SetPlayer(this);
@@ -86,6 +86,14 @@ public class Player : MonoBehaviour
                 //move left
             }
         }*/
+    }
+
+    private void UseItem(Item item)
+    {
+        Debug.Log(item.Amount);
+        //put what items do here in switch statements I guess
+        if(item.Type == Item.ItemType.Consumable) 
+            Inventory.RemoveItem(new Item { Type = item.Type, Name = item.Name, Amount = 1} );
     }
 
     private void CheckForPlayerPause()

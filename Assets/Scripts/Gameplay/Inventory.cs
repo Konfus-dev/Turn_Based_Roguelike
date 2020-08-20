@@ -8,12 +8,12 @@ public class Inventory
     public int Size = 5;
     public event EventHandler OnItemListChanged;
     private List<Item> Items;
-
+    private Action<Item> UseItemAction;
     public static Inventory Instance { get; private set; }
 
-    public Inventory()
+    public Inventory(Action<Item> useItemAction)
     {
-
+        this.UseItemAction = useItemAction;
         Items = new List<Item>();
 
         //AddItem(new Item { Type = Item.ItemType.Weapon, Name = "Sword_6", Amount = 1 });
@@ -68,7 +68,7 @@ public class Inventory
             }
             if (itemInInventory != null && itemInInventory.Amount <= 0)
             {
-                Items.Remove(item);
+                Items.Remove(itemInInventory);
             }
         }
         else
@@ -77,6 +77,11 @@ public class Inventory
         }
 
         OnItemListChanged?.Invoke(this, EventArgs.Empty);
+    }
+
+    public void UseItem(Item item)
+    {
+        UseItemAction(item);
     }
 
     public List<Item> GetItems()
