@@ -9,7 +9,7 @@ public class Player : MonoBehaviour
    
     private int Damage = 1;                    
     private int HP = 2;
-    private int InventorySize = 6;
+    private int InventorySize = 5;
 
     [SerializeField]
     private InventoryUI InventoryUI;
@@ -40,6 +40,7 @@ public class Player : MonoBehaviour
         this.Inventory = new Inventory();
         this.Inventory.Size = InventorySize;
         this.InventoryUI.SetInventory(this.Inventory);
+        this.InventoryUI.SetPlayer(this);
         //Get a component reference to the Player's animator component
         //animator = GetComponent<Animator>();
     }
@@ -54,7 +55,7 @@ public class Player : MonoBehaviour
         if (!GameManager.Instance.PlayersTurn || CurrentState == PlayerState.Moving) return;
         CheckForPlayerPause();
 
-        int horizontal; 
+       /* int horizontal; 
         int vertical;  
 
         horizontal = (int)(Input.GetAxisRaw("Horizontal"));
@@ -84,7 +85,7 @@ public class Player : MonoBehaviour
             {
                 //move left
             }
-        }
+        }*/
     }
 
     private void CheckForPlayerPause()
@@ -106,12 +107,12 @@ public class Player : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("Triggered!");
+        Debug.Log(this.Inventory.GetItems().Count);
 
         ItemInWorld itemWorld = collision.GetComponent<ItemInWorld>();
-        if (itemWorld != null)
+        if (itemWorld != null && this.Inventory.GetItems().Count < this.Inventory.Size)
         {
-            Inventory.AddItem(itemWorld.GetItem());
+            this.Inventory.AddItem(itemWorld.GetItem());
             itemWorld.SelfDestruct();
         }
     }

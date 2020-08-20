@@ -6,9 +6,11 @@ TagManager:
   tags:
   - Weapon
   - Consumable
-  - Armor
   - Valuable
   - Interactable
+  - HelmArmor
+  - Shield
+  - ChestArmor
   layers:
   - Default
   - TransparentFX

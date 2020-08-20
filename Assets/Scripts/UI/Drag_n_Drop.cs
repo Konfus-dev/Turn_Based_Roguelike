@@ -3,7 +3,7 @@ using UnityEngine.EventSystems;
 
 public class Drag_n_Drop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, IEndDragHandler, IDragHandler, IDropHandler
 {
-
+    [SerializeField] private Inventory Inventory;
     [SerializeField] private Canvas Canvas;
     private RectTransform RectTransform;
     private CanvasGroup CanvasGroup;

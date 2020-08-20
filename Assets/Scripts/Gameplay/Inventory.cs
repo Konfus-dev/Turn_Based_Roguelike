@@ -51,6 +51,34 @@ public class Inventory
         OnItemListChanged?.Invoke(this, EventArgs.Empty);
     }
 
+    public void RemoveItem(Item item)
+    {
+        if (Items.Count == 0) return;
+
+        if (item.IsStackable())
+        {
+            Item itemInInventory = null;
+            foreach (Item inventoryItem in Items)
+            {
+                if (inventoryItem.Name == item.Name)
+                {
+                    inventoryItem.Amount -= item.Amount;
+                    itemInInventory = inventoryItem;
+                }
+            }
+            if (itemInInventory != null && itemInInventory.Amount <= 0)
+            {
+                Items.Remove(item);
+            }
+        }
+        else
+        {
+            Items.Remove(item);
+        }
+
+        OnItemListChanged?.Invoke(this, EventArgs.Empty);
+    }
+
     public List<Item> GetItems()
     {
         return Items;

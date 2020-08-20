@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using CodeMonkey.Utils;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
@@ -18,12 +19,18 @@ public class InventoryUI : MonoBehaviour
     private UIManager InventoryManager;
 
     private Inventory Inventory;
+    private Player Player;
 
     private void Awake()
     {
         /*ItemContainer = transform.Find("InventoryContainer");
         ItemSlotTemplate = transform.Find("InvSlot");*/
         this.CloseInventory();
+    }
+
+    public void SetPlayer(Player player)
+    {
+        this.Player = player;
     }
 
     public void OpenInventory()
@@ -52,10 +59,10 @@ public class InventoryUI : MonoBehaviour
 
     private void Refresh()
     {
-        foreach (Transform itemSlot in ItemSlotContainer)
+        /*foreach (Transform itemSlot in ItemSlotContainer)
         {
             if (itemSlot != ItemSlotTemplate && itemSlot.name != "Background" && itemSlot.name != "Border") Destroy(itemSlot.gameObject);
-        }
+        }*/
         foreach (Transform item in ItemContainer)
         {
             if (item != ItemTemplate) Destroy(item.gameObject);
@@ -68,13 +75,27 @@ public class InventoryUI : MonoBehaviour
         foreach (Item item in Inventory.GetItems())
         {
             //Debug.Log(item.Name);
-            RectTransform itemSlotRectTransform = Instantiate(ItemSlotTemplate, ItemSlotContainer).GetComponent<RectTransform>();
+           /* RectTransform itemSlotRectTransform = Instantiate(ItemSlotTemplate, ItemSlotContainer).GetComponent<RectTransform>();
             itemSlotRectTransform.gameObject.SetActive(true);
-            itemSlotRectTransform.anchoredPosition = new Vector2(x, y);
-
+            itemSlotRectTransform.anchoredPosition = new Vector2(x, y);*/
+            
             RectTransform itemRectTransform = Instantiate(ItemTemplate, ItemContainer).GetComponent<RectTransform>();
+
+            itemRectTransform.GetComponent<Button_UI>().ClickFunc = () =>
+            {
+                // use item
+            };
+            itemRectTransform.GetComponent<Button_UI>().ClickFunc = () =>
+            {
+                // drop item
+                Item itemDup = new Item { Type = item.Type, Name = item.Name, Amount = item.Amount };
+                Inventory.RemoveItem(item);
+                ItemInWorld.DropItem(this.Player.transform.position, itemDup);
+            };
+
             itemRectTransform.gameObject.SetActive(true);
-            itemRectTransform.sizeDelta = new Vector2(itemSlotRectTransform.sizeDelta.x * 1.6f, itemSlotRectTransform.sizeDelta.y * 1.6f);
+            itemRectTransform.sizeDelta = new Vector2(ItemSlotTemplate.GetComponent<RectTransform>().sizeDelta.x * 1.6f, 
+                ItemSlotTemplate.GetComponent<RectTransform>().sizeDelta.y * 1.6f);
             itemRectTransform.anchoredPosition = new Vector2(x, y);
             Image itemIcon = itemRectTransform.gameObject.GetComponent<Image>();
             itemIcon.sprite = item.GetSprite();
