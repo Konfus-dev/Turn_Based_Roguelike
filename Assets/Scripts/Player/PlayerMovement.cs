@@ -8,10 +8,10 @@ public class PlayerMovement : MonoBehaviour
     bool axisInUse = false;     //used to have GetButtonDown functionality while using an axis
     bool moving = false;
 
-    void Start()
+    /*void Start()
     {
         
-    }
+    }*/
 
     void Update()
     {
