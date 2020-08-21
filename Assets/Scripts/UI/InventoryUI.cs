@@ -63,8 +63,16 @@ public class InventoryUI : MonoBehaviour
         {
             if (itemSlot != ItemSlotTemplate && itemSlot.name != "Background" && itemSlot.name != "Border") Destroy(itemSlot.gameObject);
         }*/
+
+        Dictionary<Item, int> occupiedSlots = new Dictionary<Item, int>();
+
         foreach (Transform item in ItemContainer)
         {
+            if(item.GetComponent<Drag_n_Drop>().GetItem() != null)
+            {
+                occupiedSlots.Add(item.GetComponent<Drag_n_Drop>().GetItem(), 
+                    (int)item.GetComponent<Drag_n_Drop>().GetComponent<RectTransform>().anchoredPosition.x);
+            }
             if (item != ItemTemplate) Destroy(item.gameObject);
         }
 
@@ -75,9 +83,9 @@ public class InventoryUI : MonoBehaviour
         foreach (Item item in Inventory.GetItems())
         {
             //Debug.Log(item.Name);
-           /* RectTransform itemSlotRectTransform = Instantiate(ItemSlotTemplate, ItemSlotContainer).GetComponent<RectTransform>();
-            itemSlotRectTransform.gameObject.SetActive(true);
-            itemSlotRectTransform.anchoredPosition = new Vector2(x, y);*/
+            /* RectTransform itemSlotRectTransform = Instantiate(ItemSlotTemplate, ItemSlotContainer).GetComponent<RectTransform>();
+             itemSlotRectTransform.gameObject.SetActive(true);
+             itemSlotRectTransform.anchoredPosition = new Vector2(x, y);*/
             
             RectTransform itemRectTransform = Instantiate(ItemTemplate, ItemContainer).GetComponent<RectTransform>();
 
@@ -97,12 +105,31 @@ public class InventoryUI : MonoBehaviour
                 ItemInWorld.DropItem(this.Player.transform.position, itemDup);
             };
 
-            itemRectTransform.gameObject.SetActive(true);
-            itemRectTransform.sizeDelta = new Vector2(ItemSlotTemplate.GetComponent<RectTransform>().sizeDelta.x * 1.6f, 
-                ItemSlotTemplate.GetComponent<RectTransform>().sizeDelta.y * 1.6f);
-            itemRectTransform.anchoredPosition = new Vector2(x, y);
-            Image itemIcon = itemRectTransform.gameObject.GetComponent<Image>();
+            if(item != null && occupiedSlots.Count > 0 && occupiedSlots.ContainsKey(item))
+            {
+                itemRectTransform.anchoredPosition = new Vector2(occupiedSlots[item], y);
+            }
+            else
+            {
+
+                while (occupiedSlots.ContainsValue(x))
+                {
+                    x += itemSlotCellSize;
+                }
+                itemRectTransform.anchoredPosition = new Vector2(x, y);
+            }
+
+            Image itemIcon = itemRectTransform.Find("Icon").gameObject.GetComponent<Image>();
             itemIcon.sprite = item.GetSprite();
+
+            /*foreach (Transform itemSlot in ItemSlotContainer)
+            {
+                if (itemSlot != ItemSlotTemplate && itemSlot.name != "Background" && itemSlot.name != "Border")
+                {
+                    if (itemSlot.GetComponent<RectTransform>().anchoredPosition == itemRectTransform.anchoredPosition)
+                        itemRectTransform.GetComponent<Drag_n_Drop>().SetSlot(itemSlot.GetComponent<ItemSlot>());
+                }
+            }*/
 
             Text text = itemRectTransform.Find("Number").GetComponent<Text>();
 
@@ -115,7 +142,8 @@ public class InventoryUI : MonoBehaviour
                 text.text = "";
             }
 
-            x += itemSlotCellSize;
+
+            itemRectTransform.gameObject.SetActive(true);
 
         }
     }

@@ -23,7 +23,7 @@ public class ItemInWorld : MonoBehaviour
             if (this.tag == "Weapon") this.Item = new Item { Type = Item.ItemType.Weapon, Name = ItemName, Amount = this.Item.Amount };
             else if (this.tag == "Shield") this.Item = new Item { Type = Item.ItemType.Shield, Name = ItemName, Amount = this.Item.Amount };
             else if (this.tag == "ChestArmor") this.Item = new Item { Type = Item.ItemType.ChestArmor, Name = ItemName, Amount = this.Item.Amount };
-            else if (this.tag == "HelmArmor") this.Item = new Item { Type = Item.ItemType.ChestArmor, Name = ItemName, Amount = this.Item.Amount };
+            else if (this.tag == "HelmArmor") this.Item = new Item { Type = Item.ItemType.HelmetArmor, Name = ItemName, Amount = this.Item.Amount };
             else if (this.tag == "Consumable") this.Item = new Item { Type = Item.ItemType.Consumable, Name = ItemName, Amount = this.Item.Amount };
             else if (this.tag == "Valuable") this.Item = new Item { Type = Item.ItemType.Valuable, Name = ItemName, Amount = this.Item.Amount };
 

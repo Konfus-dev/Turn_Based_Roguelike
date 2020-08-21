@@ -13,8 +13,9 @@ public class Item
         Consumable,
         Valuable
     }
-
+    [HideInInspector]
     public ItemType Type;
+    [HideInInspector]
     public string Name;
     public int Amount;
 
