@@ -98,6 +98,9 @@ MonoBehaviour:
   up: {fileID: 0}
   right: {fileID: 0}
   down: {fileID: 0}
-  traverseCost: 50
+  traverseCost: 40
   name: 
   occupied: 0
+  gCost: 0
+  hCost: 0
+  Parent: {fileID: 0}

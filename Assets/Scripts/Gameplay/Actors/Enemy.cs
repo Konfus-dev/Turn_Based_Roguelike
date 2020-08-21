@@ -3,12 +3,17 @@
 public class Enemy : MonoBehaviour
 {
 
-    public int HP = 1;                            
+    public int HP = 1;             
     public int Damage = 1;
     public float MoveTime = 0.1f;
+    public float AggroDistance = 5;
+    public int travelTurns = 1;
 
     private Animator Animator;                   
-	private Transform Target;                          
+	private Transform Target;
+    public ActorMovement movement;
+    private NodePathfinding pathfinding;
+    public GridNodes grid;
     Vector3 MoveTo;
 
     public enum EnemyState
@@ -27,11 +32,14 @@ public class Enemy : MonoBehaviour
     protected void Start()
     {
         //animator = GetComponent<Animator>();
-        int startState = Random.Range(0, 1);
+        int startState = Random.Range(0, 2);
+        movement = transform.GetComponent<ActorMovement>();
+        pathfinding = transform.GetComponent<NodePathfinding>();
+        grid = pathfinding.grid;
 
         //randomly decide if enemy starts in sleeping or wandering state
-        if (startState == 0) CurrentState = EnemyState.Sleeping;
-        else CurrentState = EnemyState.Wandering;
+        //if (startState == 0) CurrentState = EnemyState.Sleeping;
+        //else CurrentState = EnemyState.Wandering;
 
         GameManager.Instance.AddEnemyToList(this);
 
@@ -61,25 +69,50 @@ public class Enemy : MonoBehaviour
         }
     }
 	
-	public void MoveEnemy()
+	public bool MoveEnemy()
 	{
-        Debug.Log("enemy moving");
-
+        if (CurrentState == EnemyState.Sleeping)
+        {
+            return false;
+        }
         float distance = Vector3.Distance(Target.transform.position, this.transform.position);
-		
+        
+        if (distance <= AggroDistance)
+        {
+            CurrentState = EnemyState.Moving;
+            Node bestFootForward = pathfinding.FindStep(transform.position, Target.position);
+            if (bestFootForward != null)
+            {
+                movement.nextNode = bestFootForward;
+                movement.MoveTo(bestFootForward);
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        else
+        {
+            CurrentState = EnemyState.Wandering;
+            RandomMovePos();
+            return true;
+        }
 	}
 
     private void RandomMovePos()
     {
         Random rnd = new Random();
         int rand = Random.Range(0, 4);
-        if (rand == 0)
-            MoveTo = Vector3.forward;
-        else if (rand == 1)
-            MoveTo = Vector3.left;
-        else if (rand == 2)
-            MoveTo = Vector3.right;
-        else if (rand == 3)
-            MoveTo = Vector3.back;
+        if (movement.myNode != null) {
+            if (rand == 0)
+                movement.MoveTo(movement.myNode.left);
+            else if (rand == 1)
+                movement.MoveTo(movement.myNode.right);
+            else if (rand == 2)
+                movement.MoveTo(movement.myNode.up);
+            else if (rand == 3)
+                movement.MoveTo(movement.myNode.down);
+        }
     }
 }

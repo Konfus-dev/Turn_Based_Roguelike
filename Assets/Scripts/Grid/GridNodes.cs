@@ -8,11 +8,7 @@ public class GridNodes : MonoBehaviour
     public Node[] nodeList;
     public Vector3[] locations;
     public PlayerMovement player;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-    }
+    public Dictionary<Vector3, Node> nodeFromLocation = new Dictionary<Vector3, Node>();
 
     // Update is called once per frame
     void Update()
@@ -21,7 +17,7 @@ public class GridNodes : MonoBehaviour
         {
             checkItems = false;
             MakeChildrenUseful();
-            
+            player.Spawn(NodeFromPosition(player.transform.position));
         }
     }
 
@@ -38,11 +34,7 @@ public class GridNodes : MonoBehaviour
             {
                 nodeList[i] = n;
                 locations[i] = child.localPosition;
-                if (n.name.Equals("SpawnPoint"))
-                {
-                    Debug.Log("o no");
-                    player.Spawn(n);
-                }
+                nodeFromLocation.Add(child.localPosition, n);
             }
         }
 
@@ -77,6 +69,42 @@ public class GridNodes : MonoBehaviour
             }
         }
 
+    }
+
+    public Node NodeFromPosition(Vector3 pos)
+    {
+        Vector3 key = new Vector3(Mathf.Floor(pos.x) + 0.5f, Mathf.Floor(pos.y) + 0.5f, 0);
+        if (nodeFromLocation.TryGetValue(key, out Node n))
+        {
+            return n;
+        }
+        return null;
+    }
+
+    public List<Node> GetNeighboringNodes(Node n)
+    {
+        if (n == null)
+        {
+            return null;
+        }
+        List<Node> NeighboringNodes = new List<Node>();
+        if (n.left != null)
+        {
+            NeighboringNodes.Add(n.left);
+        }
+        if (n.right != null)
+        {
+            NeighboringNodes.Add(n.right);
+        }
+        if (n.up != null)
+        {
+            NeighboringNodes.Add(n.up);
+        }
+        if (n.down != null)
+        {
+            NeighboringNodes.Add(n.down);
+        }
+        return NeighboringNodes;
     }
 
 }

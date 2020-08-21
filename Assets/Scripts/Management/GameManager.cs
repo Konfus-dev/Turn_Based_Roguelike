@@ -3,6 +3,7 @@ using UnityEngine.SceneManagement;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.UI;
+using System.Security.Cryptography;
 
 public class GameManager : MonoBehaviour
 {
@@ -56,7 +57,7 @@ public class GameManager : MonoBehaviour
 
 	IEnumerator MoveEnemies()
 	{
-		Debug.Log("enemies turn");
+		//Debug.Log("enemies' turn");
 
 		EnemiesTurn = true;
 
@@ -69,8 +70,20 @@ public class GameManager : MonoBehaviour
 
 		for (int i = 0; i < Enemies.Count; i++)
 		{
-			Debug.Log("moving enemy " + i);
-			Enemies[i].MoveEnemy();
+			Enemies[i].movement.myNode = Enemies[i].grid.NodeFromPosition(Enemies[i].transform.position);
+			Debug.Log("enemy moving " + Enemies[i].travelTurns + " time(s)");
+			for (int j = 0; j < Enemies[i].travelTurns; j++)
+			{
+				if (Enemies[i].MoveEnemy())
+				{
+
+
+				}
+				else
+				{
+
+				}
+			}
 
 			yield return new WaitForSeconds(Enemies[i].MoveTime);
 		}
