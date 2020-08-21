@@ -18,16 +18,10 @@ public class InventoryUI : MonoBehaviour
 
     private Inventory Inventory;
     private Inventory EquipedItems;
-    private Player Player;
 
     private void Awake()
     {
         this.CloseInventory();
-    }
-
-    public void SetPlayer(Player player)
-    {
-        this.Player = player;
     }
 
     public void OpenInventory()
@@ -97,7 +91,7 @@ public class InventoryUI : MonoBehaviour
                 occupiedSlots.Remove(item);
                 Item itemDup = new Item { Type = item.Type, Name = item.Name, Amount = item.Amount, ArmorMod = item.ArmorMod, DamageMod = item.DamageMod, HealthMod = item.HealthMod };
                 Inventory.RemoveItem(item);
-                ItemInWorld.DropItem(this.Player.transform.position, itemDup);
+                ItemInWorld.DropItem(Player.Instance.transform.position, itemDup);
             };
 
             if(item != null && occupiedSlots.Count > 0 && occupiedSlots.ContainsKey(item))

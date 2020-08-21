@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 public class GridNodes : MonoBehaviour
@@ -7,17 +6,16 @@ public class GridNodes : MonoBehaviour
     bool checkItems = true;
     public Node[] nodeList;
     public Vector3[] locations;
-    public PlayerMovement player;
     public Dictionary<Vector3, Node> nodeFromLocation = new Dictionary<Vector3, Node>();
 
-    // Update is called once per frame
     void Update()
     {
         if (checkItems)
         {
             checkItems = false;
             MakeChildrenUseful();
-            player.Spawn(NodeFromPosition(player.transform.position));
+            PlayerMovement playerMovement = Player.Instance.GetComponent<PlayerMovement>();
+            playerMovement.Spawn(NodeFromPosition(playerMovement.transform.position));
         }
     }
 

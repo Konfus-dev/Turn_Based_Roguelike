@@ -1,12 +1,10 @@
 ﻿using Doozy.Engine.UI;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class StartMenu : MonoBehaviour
 {
     public GameObject StartMenuUI;
-    public Player Player;
     public UIPopup ControlsPopUp;
 
     private void Start()

@@ -1,11 +1,8 @@
 ﻿using UnityEngine;
-using UnityEngine.SceneManagement;        //Allows us to use SceneManager
+using UnityEngine.SceneManagement;
 
-//Player inherits from MovingObject, our base class for objects that can move, Enemy also inherits from this.
 public class Player : MonoBehaviour
 {
-    public static Player Instance { get; private set; }
-
     [SerializeField]
     private int Damage = 1;
     [SerializeField]
@@ -23,6 +20,8 @@ public class Player : MonoBehaviour
     private Inventory EquippedItems;
     private Inventory Inventory;
 
+    public static Player Instance = null;
+
     public enum PlayerState
     {
         Moving,
@@ -37,6 +36,17 @@ public class Player : MonoBehaviour
 
     public PlayerState CurrentState;
 
+    private void Awake()
+    {
+        if (Instance == null)
+            Instance = this;
+
+        else if (Instance != this)
+            Destroy(gameObject);
+
+        DontDestroyOnLoad(gameObject);
+    }
+
     private void Start()
     {
         Instance = this;
@@ -48,7 +58,7 @@ public class Player : MonoBehaviour
         this.EquippedItems.Size = 3;
         this.InventoryUI.SetInventory(this.Inventory);
         this.InventoryUI.SetEquippedItems(this.EquippedItems);
-        this.InventoryUI.SetPlayer(this);
+
         //Get a component reference to the Player's animator component
         //animator = GetComponent<Animator>();
     }
@@ -110,7 +120,7 @@ public class Player : MonoBehaviour
         }
     }
 
-    private void Check()
+    public void Check()
     {
         //any checks that need done put in here (check should be performed at the start of a turn and end) 
 
@@ -154,14 +164,12 @@ public class Player : MonoBehaviour
 
         if (loss > 0)
         {
-            Debug.Log("loss " + loss);
             MaxHP -= loss;
             if (MaxHP <= 0) MaxHP = 1;
             if (CurrHP > MaxHP) CurrHP = MaxHP;
         }
         else
         {
-            Debug.Log("gain " + gain);
             MaxHP += gain;
             if (CurrHP > MaxHP) CurrHP = MaxHP;
         }
@@ -200,6 +208,16 @@ public class Player : MonoBehaviour
     public Inventory GetInventory()
     {
         return this.Inventory;
+    }
+
+    public Inventory GetEquippedItems()
+    {
+        return this.EquippedItems;
+    }
+
+    public void SetEquippedItems(Inventory items)
+    {
+        this.EquippedItems = items;
     }
 
     private void CheckIfGameOver()

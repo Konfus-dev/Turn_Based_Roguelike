@@ -1,7 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
+﻿
 public class Chest : Interactable
 {
 
@@ -13,10 +10,9 @@ public class Chest : Interactable
         //animator = GetComponent<Animator>();
     }
 
-
     public override void Interact<T>(T component)
     {
-        Player player = component as Player;
+        //Player player = component as Player;
 
         OpenChest();
     }

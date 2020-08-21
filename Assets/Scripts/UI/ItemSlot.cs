@@ -19,11 +19,7 @@ public class ItemSlot : MonoBehaviour, IDropHandler
     public ItemSlotType Type;
 
     [SerializeField]
-    private Transform Player;
-    [SerializeField]
     private GameObject Background;
-    [SerializeField]
-    private Inventory PlayerEquipedItems;
     [SerializeField]
     private Transform ItemContainer;
     [SerializeField]
@@ -82,7 +78,7 @@ public class ItemSlot : MonoBehaviour, IDropHandler
 
         Inventory equipped = drag.GetEquippedItems();
 
-        PlayerEquipedItems = equipped;
+        Player.Instance.SetEquippedItems(equipped);
 
         equipped.AddItem(itemDup);
 
@@ -97,7 +93,7 @@ public class ItemSlot : MonoBehaviour, IDropHandler
             // on right click drop item
             Item itemDup2 = new Item { Type = itemDup.Type, Name = itemDup.Name, Amount = itemDup.Amount, ArmorMod = itemDup.ArmorMod, DamageMod = itemDup.DamageMod, HealthMod = itemDup.HealthMod };
             equipped.RemoveItem(itemDup);
-            ItemInWorld.DropItem(Player.transform.position, itemDup2);
+            ItemInWorld.DropItem(Player.Instance.transform.position, itemDup2);
             Destroy(itemRectTransform.gameObject);
         };
 
@@ -125,7 +121,7 @@ public class ItemSlot : MonoBehaviour, IDropHandler
 
     private void CheckIfEquiped()
     {
-        if (PlayerEquipedItems != null)
+        if (Player.Instance.GetEquippedItems() != null)
         {
             bool itemAlreayEquiped = false;
 
@@ -152,7 +148,7 @@ public class ItemSlot : MonoBehaviour, IDropHandler
             equiped = drag.GetEquippedItems().GetItems();
             match = drag.GetItem().Type.ToString() == this.Type.ToString();
         }
-        else equiped = PlayerEquipedItems.GetItems();
+        else equiped = Player.Instance.GetEquippedItems().GetItems();
 
         foreach (Item i in equiped)
         {
@@ -169,27 +165,26 @@ public class ItemSlot : MonoBehaviour, IDropHandler
 
     private void ApplyItemMods(Item item)
     {
-        Debug.Log(item.HealthMod);
-        if (item.ArmorMod < 0) Player.GetComponent<Player>().ManageArmor(item.ArmorMod, 0);
-        else Player.GetComponent<Player>().ManageArmor(0, item.ArmorMod);
+        if (item.ArmorMod < 0) Player.Instance.ManageArmor(item.ArmorMod, 0);
+        else Player.Instance.ManageArmor(0, item.ArmorMod);
 
-        if (item.HealthMod < 0) Player.GetComponent<Player>().ManageMaxHealth(item.HealthMod, 0);
-        else Player.GetComponent<Player>().ManageMaxHealth(0, item.HealthMod);
+        if (item.HealthMod < 0) Player.Instance.ManageMaxHealth(item.HealthMod, 0);
+        else Player.Instance.ManageMaxHealth(0, item.HealthMod);
 
-        if (item.DamageMod < 0) Player.GetComponent<Player>().ManageDamage(item.DamageMod, 0);
-        else Player.GetComponent<Player>().ManageDamage(0, item.DamageMod);
+        if (item.DamageMod < 0) Player.Instance.ManageDamage(item.DamageMod, 0);
+        else Player.Instance.ManageDamage(0, item.DamageMod);
     }
 
     private void UnApplyItemMods(Item item)
     {
-        if (item.ArmorMod > 0) Player.GetComponent<Player>().ManageArmor(item.ArmorMod, 0);
-        else Player.GetComponent<Player>().ManageArmor(0, item.ArmorMod);
+        if (item.ArmorMod > 0) Player.Instance.ManageArmor(item.ArmorMod, 0);
+        else Player.Instance.ManageArmor(0, item.ArmorMod);
 
-        if (item.HealthMod > 0) Player.GetComponent<Player>().ManageMaxHealth(item.HealthMod, 0);
-        else Player.GetComponent<Player>().ManageMaxHealth(0, item.HealthMod);
+        if (item.HealthMod > 0) Player.Instance.ManageMaxHealth(item.HealthMod, 0);
+        else Player.Instance.ManageMaxHealth(0, item.HealthMod);
 
-        if (item.DamageMod > 0) Player.GetComponent<Player>().ManageDamage(item.DamageMod, 0);
-        else Player.GetComponent<Player>().ManageDamage(0, item.DamageMod);
+        if (item.DamageMod > 0) Player.Instance.ManageDamage(item.DamageMod, 0);
+        else Player.Instance.ManageDamage(0, item.DamageMod);
     }
 
 }

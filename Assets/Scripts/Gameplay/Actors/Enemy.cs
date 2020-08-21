@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class Enemy : MonoBehaviour
+public class Enemy : MonoBehaviour, IMovement
 {
 
     public int HP = 1;             
@@ -8,6 +8,9 @@ public class Enemy : MonoBehaviour
     public float MoveTime = 0.1f;
     public float AggroDistance = 5;
     public int travelTurns = 1;
+    public int InventorySize = 1;
+
+    private Inventory Inventory;
 
     private Animator Animator;                   
 	private Transform Target;
@@ -31,6 +34,10 @@ public class Enemy : MonoBehaviour
 
     protected void Start()
     {
+        this.Inventory = new Inventory(null);
+
+        this.Inventory.Size = InventorySize;
+
         //animator = GetComponent<Animator>();
         int startState = Random.Range(0, 2);
         movement = transform.GetComponent<ActorMovement>();
@@ -43,7 +50,7 @@ public class Enemy : MonoBehaviour
 
         GameManager.Instance.AddEnemyToList(this);
 
-        Target = GameObject.Find("Player").transform;
+        Target = Player.Instance.transform;
     }
 
     public void ManageHealth(int loss, int gain)
@@ -113,6 +120,43 @@ public class Enemy : MonoBehaviour
                 movement.MoveTo(movement.myNode.up);
             else if (rand == 3)
                 movement.MoveTo(movement.myNode.down);
+        }
+    }
+
+    public void TryMove()
+    {
+        RaycastHit2D hit;
+
+        bool canMove = false; // base.CanMove(out hit); <- should be apart of movement class to check if can move using the raycast toward player movement
+
+        Interactable Interactable = null;
+        Enemy Enemy = null;
+        if (!canMove) Interactable = null;// hit.transform.GetComponent<Interactable>();
+        if (!canMove) Enemy = null;// hit.transform.GetComponent<Enemy>();
+
+        if (Interactable != null) OnCantMove(Interactable); //maybe enemys can interact with things?
+        else if (Enemy != null) OnCantMove(Enemy);
+
+        Player.Instance.Check();
+
+        GameManager.Instance.PlayersTurn = false; // this is how gamemanager should be called because it is a singleton you do not need to keep reference there is only one, 
+                                                  // look into singleton design pattern, anything there is only one of should follow this pattern (player maybe should do this).
+    }
+
+    public void OnCantMove<T>(T component) where T : Component
+    {
+        Interactable interactable = component.GetComponent<Interactable>();
+
+        if (interactable != null)
+        {
+            // interact with interactable
+            interactable.Interact<Enemy>(this);
+        }
+        else
+        {
+            // do stuff with enemy (if running into enemy player is prolly trying to attack enemy so maybe do something like:
+            // enemy.HP -+ player.Damage;
+            Enemy enemy = component.GetComponent<Enemy>();
         }
     }
 }
