@@ -19,7 +19,7 @@ public class Player : MonoBehaviour
     [SerializeField]
     private InventoryUI InventoryUI;
 
-    private Inventory EquipedItems;
+    private Inventory EquippedItems;
     private Inventory Inventory;
 
     public enum PlayerState
@@ -43,10 +43,10 @@ public class Player : MonoBehaviour
 
         this.Inventory = new Inventory(UseItem);
         this.Inventory.Size = InventorySize;
-        this.EquipedItems = new Inventory(null);
-        this.EquipedItems.Size = 3;
+        this.EquippedItems = new Inventory(null);
+        this.EquippedItems.Size = 3;
         this.InventoryUI.SetInventory(this.Inventory);
-        this.InventoryUI.SetEquipedItems(this.EquipedItems);
+        this.InventoryUI.SetEquippedItems(this.EquippedItems);
         this.InventoryUI.SetPlayer(this);
         //Get a component reference to the Player's animator component
         //animator = GetComponent<Animator>();

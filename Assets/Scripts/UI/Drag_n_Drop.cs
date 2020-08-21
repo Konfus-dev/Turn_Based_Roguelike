@@ -57,7 +57,7 @@ public class Drag_n_Drop : MonoBehaviour, IBeginDragHandler, IEndDragHandler, ID
         this.EquipedItems = equiped;
     }
 
-    public Inventory GetEquipedItems()
+    public Inventory GetEquippedItems()
     {
         return this.EquipedItems;
     }

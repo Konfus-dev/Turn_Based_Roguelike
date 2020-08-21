@@ -51,7 +51,7 @@ public class InventoryUI : MonoBehaviour
         Refresh();
     }
 
-    public void SetEquipedItems(Inventory equiped)
+    public void SetEquippedItems(Inventory equiped)
     {
         this.EquipedItems = equiped;
     }
