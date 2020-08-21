@@ -11,11 +11,11 @@ public class ItemSlot : MonoBehaviour, IDropHandler
 
     public enum ItemSlotType
     {
-        HelmSlot,
-        ChestSlot,
-        WeaponSlot,
-        ShieldSlot,
-        InventorySlot
+        HelmArmor,
+        ChestArmor,
+        Weapon,
+        Shield,
+        Inventory
     }
 
     public ItemSlotType Type;
@@ -35,53 +35,22 @@ public class ItemSlot : MonoBehaviour, IDropHandler
 
     private void Update()
     {
-        CheckIfEquiped();
+        if (!Type.Equals(ItemSlotType.Inventory)) CheckIfEquiped();
     }
 
     public void OnDrop(PointerEventData eventData)
     {
         if(eventData.pointerDrag != null)
         {
+            
             RectTransform rectTrans = eventData.pointerDrag.GetComponent<RectTransform>();
             Drag_n_Drop drag = rectTrans.GetComponent<Drag_n_Drop>();
-            List<Item> equiped = drag.GetEquippedItems().GetItems();
-            bool helmAlreadyEquiped = false;
-            bool chestAlreadyEquiped = false;
-            bool weaponAlreadyEquiped = false;
-            bool shieldAlreadyEquiped = false;
 
-            foreach (Item i in equiped)
+            if (!Type.Equals(ItemSlotType.Inventory))
             {
-                if (i.Type.Equals(Item.ItemType.HelmArmor)) helmAlreadyEquiped = true;
-                else if (i.Type.Equals(Item.ItemType.ChestArmor)) chestAlreadyEquiped = true;
-                else if (i.Type.Equals(Item.ItemType.Weapon)) weaponAlreadyEquiped = true;
-                else if (i.Type.Equals(Item.ItemType.Shield)) shieldAlreadyEquiped = true;
-            }
+                bool itemAlreadyEquipedandMatch = CheckEquippedAndMatch(drag);
 
-            if (Type.Equals(ItemSlotType.HelmSlot) && !helmAlreadyEquiped)
-            {
-                if(drag.GetItem().Type.Equals(Item.ItemType.HelmArmor))
-                {
-                    EquipItem(drag);
-                }
-            }
-            else if (Type.Equals(ItemSlotType.ChestSlot) && !chestAlreadyEquiped)
-            {
-                if (drag.GetItem().Type.Equals(Item.ItemType.ChestArmor))
-                {
-                    EquipItem(drag);
-                }
-            }
-            else if (Type.Equals(ItemSlotType.WeaponSlot) && !weaponAlreadyEquiped)
-            {
-                if (drag.GetItem().Type.Equals(Item.ItemType.Weapon))
-                {
-                    EquipItem(drag);
-                }
-            }
-            else if (Type.Equals(ItemSlotType.ShieldSlot) && !shieldAlreadyEquiped)
-            {
-                if (drag.GetItem().Type.Equals(Item.ItemType.Shield))
+                if (itemAlreadyEquipedandMatch)
                 {
                     EquipItem(drag);
                 }
@@ -151,74 +120,55 @@ public class ItemSlot : MonoBehaviour, IDropHandler
 
         itemRectTransform.tag = "Equiped";
 
-        if (itemDup.Type.Equals(Item.ItemType.ChestArmor) || itemDup.Type.Equals(Item.ItemType.HelmArmor) || itemDup.Type.Equals(Item.ItemType.Shield))
-        {
-            Player.GetComponent<Player>().ManageArmor(0, itemDup.ArmorMod);
-            Player.GetComponent<Player>().ManageMaxHealth(0, itemDup.HealthMod);
-        }
-        else if (itemDup.Type.Equals(Item.ItemType.Weapon))
-        {
-            Player.GetComponent<Player>().ManageDamage(0, itemDup.DamageMod);
-        }
+        Player.GetComponent<Player>().ManageArmor(0, itemDup.ArmorMod);
+        Player.GetComponent<Player>().ManageMaxHealth(0, itemDup.HealthMod);
+        Player.GetComponent<Player>().ManageDamage(0, itemDup.DamageMod);
     }
 
     private void CheckIfEquiped()
     {
         if (PlayerEquipedItems != null)
         {
-            bool helmAlreadyEquiped = false;
-            bool chestAlreadyEquiped = false;
-            bool weaponAlreadyEquiped = false;
-            bool shieldAlreadyEquiped = false;
+            bool itemAlreayEquiped = false;
 
-            foreach (Item i in PlayerEquipedItems.GetItems())
-            {
-                if (i.Type.Equals(Item.ItemType.HelmArmor)) helmAlreadyEquiped = true;
-                else if (i.Type.Equals(Item.ItemType.ChestArmor)) chestAlreadyEquiped = true;
-                else if (i.Type.Equals(Item.ItemType.Weapon)) weaponAlreadyEquiped = true;
-                else if (i.Type.Equals(Item.ItemType.Shield)) shieldAlreadyEquiped = true;
-            }
+            if(LastItemEquipped != null) itemAlreayEquiped = CheckEquippedAndMatch(null);
 
-            if (Type.Equals(ItemSlotType.HelmSlot))
+            if (itemAlreayEquiped)
             {
-                if (!helmAlreadyEquiped && LastItemEquipped != null)
-                {
-                    this.Background.SetActive(true);
-                    this.Player.GetComponent<Player>().ManageCurrHealth(LastItemEquipped.HealthMod, 0);
-                    this.Player.GetComponent<Player>().ManageArmor(LastItemEquipped.ArmorMod, 0);
-                    this.LastItemEquipped = null;
-                }
-            }
-            else if (Type.Equals(ItemSlotType.ChestSlot) && LastItemEquipped != null)
-            {
-                if (!chestAlreadyEquiped)
-                {
-                    this.Background.SetActive(true);
-                    this.Player.GetComponent<Player>().ManageCurrHealth(LastItemEquipped.HealthMod, 0);
-                    this.Player.GetComponent<Player>().ManageArmor(LastItemEquipped.ArmorMod, 0);
-                    this.LastItemEquipped = null;
-                }
-            }
-            else if (Type.Equals(ItemSlotType.WeaponSlot) && LastItemEquipped != null)
-            {
-                if (!weaponAlreadyEquiped)
-                {
-                    this.Background.SetActive(true);
-                    this.Player.GetComponent<Player>().ManageDamage(LastItemEquipped.DamageMod, 0);
-                    this.LastItemEquipped = null;
-                }
-            }
-            else if (Type.Equals(ItemSlotType.ShieldSlot) && LastItemEquipped != null)
-            {
-                if (!shieldAlreadyEquiped)
-                {
-                    this.Background.SetActive(true);
-                    this.Player.GetComponent<Player>().ManageCurrHealth(LastItemEquipped.HealthMod, 0);
-                    this.Player.GetComponent<Player>().ManageArmor(LastItemEquipped.ArmorMod, 0);
-                    this.LastItemEquipped = null;
-                }
+                this.Background.SetActive(true);
+                this.Player.GetComponent<Player>().ManageMaxHealth(LastItemEquipped.HealthMod, 0);
+                this.Player.GetComponent<Player>().ManageArmor(LastItemEquipped.ArmorMod, 0);
+                this.Player.GetComponent<Player>().ManageDamage(LastItemEquipped.DamageMod, 0);
+                this.LastItemEquipped = null;
             }
         }
+    }
+
+    private bool CheckEquippedAndMatch(Drag_n_Drop drag)
+    {
+        List<Item> equiped;
+
+        bool itemEquiped = false;
+        bool match = false;
+
+        if (drag != null)
+        {
+            equiped = drag.GetEquippedItems().GetItems();
+            match = drag.GetItem().Type.ToString() == this.Type.ToString();
+        }
+        else equiped = PlayerEquipedItems.GetItems();
+
+        foreach (Item i in equiped)
+        {
+            if (i.Type.ToString() == this.Type.ToString()) itemEquiped = true;
+        }
+
+        if (drag != null)
+        {
+            return !itemEquiped && match;
+        }
+
+        return !itemEquiped;
     }
 
 }
