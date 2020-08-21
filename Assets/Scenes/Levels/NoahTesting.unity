@@ -329,6 +329,11 @@ PrefabInstance:
       propertyPath: Item.Amount
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 9050992287246356204, guid: c45f268a5301ce14f8d61bce673665e4,
+        type: 3}
+      propertyPath: Item.HealthMod
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9050992287246356205, guid: c45f268a5301ce14f8d61bce673665e4,
         type: 3}
       propertyPath: m_SortingOrder
@@ -909,6 +914,11 @@ PrefabInstance:
       propertyPath: Item.Name
       value: Sword_5
       objectReference: {fileID: 0}
+    - target: {fileID: 9050992287246356204, guid: c45f268a5301ce14f8d61bce673665e4,
+        type: 3}
+      propertyPath: Item.DamageMod
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9050992287246356205, guid: c45f268a5301ce14f8d61bce673665e4,
         type: 3}
       propertyPath: m_Sprite
@@ -1158,12 +1168,12 @@ PrefabInstance:
     - target: {fileID: 9050992287246356203, guid: c45f268a5301ce14f8d61bce673665e4,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 6.493
+      value: 2.49
       objectReference: {fileID: 0}
     - target: {fileID: 9050992287246356203, guid: c45f268a5301ce14f8d61bce673665e4,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.505
+      value: 2.49
       objectReference: {fileID: 0}
     - target: {fileID: 9050992287246356203, guid: c45f268a5301ce14f8d61bce673665e4,
         type: 3}
@@ -1179,6 +1189,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9050992287246356204, guid: c45f268a5301ce14f8d61bce673665e4,
+        type: 3}
+      propertyPath: Item.ArmorMod
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9050992287246356204, guid: c45f268a5301ce14f8d61bce673665e4,
+        type: 3}
+      propertyPath: Item.HealthMod
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 9050992287246356205, guid: c45f268a5301ce14f8d61bce673665e4,
         type: 3}
@@ -1478,12 +1498,12 @@ PrefabInstance:
     - target: {fileID: 2835973007337667530, guid: 71a57c160359e814598619d5a2cc35b5,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 3e-45
+      value: -1e-45
       objectReference: {fileID: 0}
     - target: {fileID: 2835973008045532590, guid: 71a57c160359e814598619d5a2cc35b5,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 3e-45
+      value: -1e-45
       objectReference: {fileID: 0}
     - target: {fileID: 2835973008045532591, guid: 71a57c160359e814598619d5a2cc35b5,
         type: 3}
@@ -1672,6 +1692,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9050992287246356204, guid: c45f268a5301ce14f8d61bce673665e4,
+        type: 3}
+      propertyPath: Item.HealthMod
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9050992287246356205, guid: c45f268a5301ce14f8d61bce673665e4,
         type: 3}
@@ -2441,6 +2466,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9050992287246356204, guid: c45f268a5301ce14f8d61bce673665e4,
+        type: 3}
+      propertyPath: Item.ArmorMod
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9050992287246356205, guid: c45f268a5301ce14f8d61bce673665e4,
         type: 3}
@@ -4594,6 +4624,11 @@ PrefabInstance:
       propertyPath: Item.Amount
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 9050992287246356204, guid: c45f268a5301ce14f8d61bce673665e4,
+        type: 3}
+      propertyPath: Item.HealthMod
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 9050992287246356205, guid: c45f268a5301ce14f8d61bce673665e4,
         type: 3}
       propertyPath: m_Sprite
@@ -4604,6 +4639,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_SortingOrder
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 9050992287246356205, guid: c45f268a5301ce14f8d61bce673665e4,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0.9528302
+      objectReference: {fileID: 0}
+    - target: {fileID: 9050992287246356205, guid: c45f268a5301ce14f8d61bce673665e4,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0.5985079
+      objectReference: {fileID: 0}
+    - target: {fileID: 9050992287246356205, guid: c45f268a5301ce14f8d61bce673665e4,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0.43147027
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c45f268a5301ce14f8d61bce673665e4, type: 3}
@@ -4849,6 +4899,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9050992287246356204, guid: c45f268a5301ce14f8d61bce673665e4,
+        type: 3}
+      propertyPath: Item.ArmorMod
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9050992287246356205, guid: c45f268a5301ce14f8d61bce673665e4,
         type: 3}
@@ -5260,6 +5315,11 @@ PrefabInstance:
         type: 3}
       propertyPath: Item.Name
       value: Sword_7
+      objectReference: {fileID: 0}
+    - target: {fileID: 9050992287246356204, guid: c45f268a5301ce14f8d61bce673665e4,
+        type: 3}
+      propertyPath: Item.DamageMod
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 9050992287246356205, guid: c45f268a5301ce14f8d61bce673665e4,
         type: 3}

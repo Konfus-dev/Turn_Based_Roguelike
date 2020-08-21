@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 public class ItemInWorld : MonoBehaviour
@@ -20,12 +18,12 @@ public class ItemInWorld : MonoBehaviour
         if (this.Item != null)
         {
 
-            if (this.tag == "Weapon") this.Item = new Item { Type = Item.ItemType.Weapon, Name = ItemName, Amount = this.Item.Amount, DamageMod = this.Item.DamageMod, HealthMod = this.Item.HealthMod, ArmorMod = this.Item.HealthMod };
-            else if (this.tag == "Shield") this.Item = new Item { Type = Item.ItemType.Shield, Name = ItemName, Amount = this.Item.Amount, DamageMod = this.Item.DamageMod, HealthMod = this.Item.HealthMod, ArmorMod = this.Item.HealthMod };
-            else if (this.tag == "ChestArmor") this.Item = new Item { Type = Item.ItemType.ChestArmor, Name = ItemName, Amount = this.Item.Amount, DamageMod = this.Item.DamageMod, HealthMod = this.Item.HealthMod, ArmorMod = this.Item.HealthMod };
-            else if (this.tag == "HelmArmor") this.Item = new Item { Type = Item.ItemType.HelmArmor, Name = ItemName, Amount = this.Item.Amount, DamageMod = this.Item.DamageMod, HealthMod = this.Item.HealthMod, ArmorMod = this.Item.HealthMod };
-            else if (this.tag == "Consumable") this.Item = new Item { Type = Item.ItemType.Consumable, Name = ItemName, Amount = this.Item.Amount, DamageMod = this.Item.DamageMod, HealthMod = this.Item.HealthMod, ArmorMod = this.Item.HealthMod };
-            else if (this.tag == "Valuable") this.Item = new Item { Type = Item.ItemType.Valuable, Name = ItemName, Amount = this.Item.Amount, DamageMod = this.Item.DamageMod, HealthMod = this.Item.HealthMod, ArmorMod = this.Item.HealthMod };
+            if (this.tag == "Weapon") this.Item = new Item { Type = Item.ItemType.Weapon, Name = ItemName, Amount = this.Item.Amount, DamageMod = this.Item.DamageMod, HealthMod = this.Item.HealthMod, ArmorMod = this.Item.ArmorMod };
+            else if (this.tag == "Shield") this.Item = new Item { Type = Item.ItemType.Shield, Name = ItemName, Amount = this.Item.Amount, DamageMod = this.Item.DamageMod, HealthMod = this.Item.HealthMod, ArmorMod = this.Item.ArmorMod };
+            else if (this.tag == "ChestArmor") this.Item = new Item { Type = Item.ItemType.ChestArmor, Name = ItemName, Amount = this.Item.Amount, DamageMod = this.Item.DamageMod, HealthMod = this.Item.HealthMod, ArmorMod = this.Item.ArmorMod };
+            else if (this.tag == "HelmArmor") this.Item = new Item { Type = Item.ItemType.HelmArmor, Name = ItemName, Amount = this.Item.Amount, DamageMod = this.Item.DamageMod, HealthMod = this.Item.HealthMod, ArmorMod = this.Item.ArmorMod };
+            else if (this.tag == "Consumable") this.Item = new Item { Type = Item.ItemType.Consumable, Name = ItemName, Amount = this.Item.Amount, DamageMod = this.Item.DamageMod, HealthMod = this.Item.HealthMod, ArmorMod = this.Item.ArmorMod };
+            else if (this.tag == "Valuable") this.Item = new Item { Type = Item.ItemType.Valuable, Name = ItemName, Amount = this.Item.Amount, DamageMod = this.Item.DamageMod, HealthMod = this.Item.HealthMod, ArmorMod = this.Item.ArmorMod };
 
             if (this.Item.Amount > 1)
             {

@@ -1,6 +1,4 @@
 ﻿using CodeMonkey.Utils;
-using Doozy.Engine.Extensions;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -99,30 +97,30 @@ public class ItemSlot : MonoBehaviour, IDropHandler
             // on right click drop item
             Item itemDup2 = new Item { Type = itemDup.Type, Name = itemDup.Name, Amount = itemDup.Amount, ArmorMod = itemDup.ArmorMod, DamageMod = itemDup.DamageMod, HealthMod = itemDup.HealthMod };
             equipped.RemoveItem(itemDup);
-            ItemInWorld.DropItem(this.Player.transform.position, itemDup2);
+            ItemInWorld.DropItem(Player.transform.position, itemDup2);
             Destroy(itemRectTransform.gameObject);
         };
 
         Image itemIcon = itemRectTransform.Find("Icon").gameObject.GetComponent<Image>();
         itemIcon.sprite = itemDup.GetSprite();
 
-        itemRectTransform.anchoredPosition = this.GetComponent<RectTransform>().anchoredPosition;
+        itemRectTransform.anchoredPosition = GetComponent<RectTransform>().anchoredPosition;
 
         itemRectTransform.GetComponent<Drag_n_Drop>().SetInventory(inv);
         itemRectTransform.GetComponent<Drag_n_Drop>().SetEquipedItems(equipped);
         itemRectTransform.GetComponent<Drag_n_Drop>().SetItem(itemDup);
 
+        ApplyItemMods(itemDup);
+
         itemRectTransform.gameObject.SetActive(true);
 
-        itemRectTransform.GetChild(0).GetComponent<RectTransform>().sizeDelta = this.transform.GetChild(1).GetComponent<RectTransform>().sizeDelta * 5;
+        itemRectTransform.GetChild(0).GetComponent<RectTransform>().sizeDelta = transform.GetChild(1).GetComponent<RectTransform>().sizeDelta * 5;
 
-        this.Background.SetActive(false);
+        Background.SetActive(false);
 
         itemRectTransform.tag = "Equiped";
 
-        Player.GetComponent<Player>().ManageArmor(0, itemDup.ArmorMod);
-        Player.GetComponent<Player>().ManageMaxHealth(0, itemDup.HealthMod);
-        Player.GetComponent<Player>().ManageDamage(0, itemDup.DamageMod);
+        
     }
 
     private void CheckIfEquiped()
@@ -135,11 +133,9 @@ public class ItemSlot : MonoBehaviour, IDropHandler
 
             if (itemAlreayEquiped)
             {
-                this.Background.SetActive(true);
-                this.Player.GetComponent<Player>().ManageMaxHealth(LastItemEquipped.HealthMod, 0);
-                this.Player.GetComponent<Player>().ManageArmor(LastItemEquipped.ArmorMod, 0);
-                this.Player.GetComponent<Player>().ManageDamage(LastItemEquipped.DamageMod, 0);
-                this.LastItemEquipped = null;
+                Background.SetActive(true);
+                UnApplyItemMods(LastItemEquipped);
+                LastItemEquipped = null;
             }
         }
     }
@@ -169,6 +165,31 @@ public class ItemSlot : MonoBehaviour, IDropHandler
         }
 
         return !itemEquiped;
+    }
+
+    private void ApplyItemMods(Item item)
+    {
+        Debug.Log(item.HealthMod);
+        if (item.ArmorMod < 0) Player.GetComponent<Player>().ManageArmor(item.ArmorMod, 0);
+        else Player.GetComponent<Player>().ManageArmor(0, item.ArmorMod);
+
+        if (item.HealthMod < 0) Player.GetComponent<Player>().ManageMaxHealth(item.HealthMod, 0);
+        else Player.GetComponent<Player>().ManageMaxHealth(0, item.HealthMod);
+
+        if (item.DamageMod < 0) Player.GetComponent<Player>().ManageDamage(item.DamageMod, 0);
+        else Player.GetComponent<Player>().ManageDamage(0, item.DamageMod);
+    }
+
+    private void UnApplyItemMods(Item item)
+    {
+        if (item.ArmorMod > 0) Player.GetComponent<Player>().ManageArmor(item.ArmorMod, 0);
+        else Player.GetComponent<Player>().ManageArmor(0, item.ArmorMod);
+
+        if (item.HealthMod > 0) Player.GetComponent<Player>().ManageMaxHealth(item.HealthMod, 0);
+        else Player.GetComponent<Player>().ManageMaxHealth(0, item.HealthMod);
+
+        if (item.DamageMod > 0) Player.GetComponent<Player>().ManageDamage(item.DamageMod, 0);
+        else Player.GetComponent<Player>().ManageDamage(0, item.DamageMod);
     }
 
 }

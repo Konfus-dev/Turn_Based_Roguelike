@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using System.Collections;
 using UnityEngine.SceneManagement;        //Allows us to use SceneManager
 
 //Player inherits from MovingObject, our base class for objects that can move, Enemy also inherits from this.
@@ -67,13 +66,10 @@ public class Player : MonoBehaviour
 
     private void UseItem(Item item)
     {
-        Debug.Log(item.Amount);
-
-        //put what items do here in switch statements I guess
         if(item.Type == Item.ItemType.Consumable)
         {
             ManageCurrHealth(0, item.HealthMod);
-            Inventory.RemoveItem(new Item { Type = item.Type, Name = item.Name, Amount = 1 });
+            Inventory.RemoveItem(new Item { Type = item.Type, Name = item.Name, Amount = 1, ArmorMod = item.ArmorMod, DamageMod = item.DamageMod, HealthMod = item.HealthMod });
         }
     }
 
@@ -130,17 +126,20 @@ public class Player : MonoBehaviour
 
     public void ManageCurrHealth(int loss, int gain)
     {
+        loss = Mathf.Abs(loss);
+        gain = Mathf.Abs(gain);
+
         if (loss > 0)
         {
-            //animator.SetTrigger("Hit");
+            //TODO: animator.SetTrigger("Hit");
 
             CurrHP -= loss;
-
+            if (CurrHP > MaxHP) CurrHP = MaxHP;
             CheckIfGameOver();
         }
         else
         {
-            //Set the trigger for player get health
+            //TODO: Set the trigger for player get health
             //somthing to do with a health particle effect probably
 
             CurrHP += gain;
@@ -150,25 +149,29 @@ public class Player : MonoBehaviour
 
     public void ManageMaxHealth(int loss, int gain)
     {
+        loss = Mathf.Abs(loss);
+        gain = Mathf.Abs(gain);
+
         if (loss > 0)
         {
-            //animator.SetTrigger("Hit");
-
+            Debug.Log("loss " + loss);
             MaxHP -= loss;
-
             if (MaxHP <= 0) MaxHP = 1;
+            if (CurrHP > MaxHP) CurrHP = MaxHP;
         }
         else
         {
-            //Set the trigger for player get health
-            //somthing to do with a health particle effect probably
-
+            Debug.Log("gain " + gain);
             MaxHP += gain;
+            if (CurrHP > MaxHP) CurrHP = MaxHP;
         }
     }
 
     public void ManageDamage(int loss, int gain)
     {
+        loss = Mathf.Abs(loss);
+        gain = Mathf.Abs(gain);
+
         if (gain > 0)
         {
             Damage += gain;
@@ -181,6 +184,9 @@ public class Player : MonoBehaviour
 
     public void ManageArmor(int loss, int gain)
     {
+        loss = Mathf.Abs(loss);
+        gain = Mathf.Abs(gain);
+
         if (gain > 0)
         {
             Armor += gain;
@@ -189,6 +195,11 @@ public class Player : MonoBehaviour
         {
             Armor -= loss;
         }
+    }
+
+    public Inventory GetInventory()
+    {
+        return this.Inventory;
     }
 
     private void CheckIfGameOver()
