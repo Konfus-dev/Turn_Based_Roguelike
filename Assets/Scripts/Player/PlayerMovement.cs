@@ -7,53 +7,47 @@ public class PlayerMovement : Movement, IMovement
 
     private void Update()
     {
+        if (!GameManager.Instance.PlayersTurn && !moveable) return;
 
         if (myNode != null)
         {
-            if (GameManager.Instance.PlayersTurn && moveable)
+            float x_movement = Input.GetAxisRaw("Horizontal");
+            float y_movement = Input.GetAxisRaw("Vertical");
+            if (x_movement != 0 || y_movement != 0)
             {
-                float x_movement = Input.GetAxisRaw("Horizontal");
-                float y_movement = Input.GetAxisRaw("Vertical");
-                if (x_movement != 0 || y_movement != 0)
+                if (!axisInUse && !moving)
                 {
-                    if (!axisInUse && !moving)
+                    axisInUse = true;
+                    Player.Instance.CurrentState = Player.PlayerState.Moving;
+                    if (x_movement > 0)
                     {
-                        axisInUse = true;
-                        Player.Instance.CurrentState = Player.PlayerState.Moving;
-                        if (x_movement > 0)
-                        {
-                            MoveTo(myNode.right);
-                        }
-                        else if (x_movement < 0)
-                        {
-                            MoveTo(myNode.left);
-                        }
-                        else if (y_movement > 0)
-                        {
-                            MoveTo(myNode.up);
-                        }
-                        else if (y_movement < 0)
-                        {
-                            MoveTo(myNode.down);
-                        }
-                        Player.Instance.CurrentState = Player.PlayerState.NotMoving;
-                        GameManager.Instance.PlayersTurn = false;
+                        MoveTo(myNode.right);
                     }
-                }
-                else
-                {
-                    axisInUse = false;
-                    if (Input.GetButtonDown("Skip"))
+                    else if (x_movement < 0)
                     {
-                        Debug.Log("Player Skipped turn");
-                        GameManager.Instance.PlayersTurn = false;
+                        MoveTo(myNode.left);
                     }
+                    else if (y_movement > 0)
+                    {
+                        MoveTo(myNode.up);
+                    }
+                    else if (y_movement < 0)
+                    {
+                        MoveTo(myNode.down);
+                    }
+                    Player.Instance.CurrentState = Player.PlayerState.NotMoving;
+                    GameManager.Instance.PlayersTurn = false;
                 }
             }
-        }
-        else
-        {
-
+            else
+            {
+                axisInUse = false;
+                if (Input.GetButtonDown("Skip"))
+                {
+                    Debug.Log("Player Skipped turn");
+                    GameManager.Instance.PlayersTurn = false;
+                }
+            }
         }
     }
 
