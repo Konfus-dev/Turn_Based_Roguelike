@@ -18,8 +18,6 @@ public class Inventory
 
     public void AddItem(Item item)
     {
-        if (Items.Count > Size) return;
-
         if (item.IsStackable())
         {
             bool itemInInventory = false;

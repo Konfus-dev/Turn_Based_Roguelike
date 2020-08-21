@@ -17,6 +17,7 @@ public class Player : MonoBehaviour
     [SerializeField]
     private InventoryUI InventoryUI;
 
+    private bool CheckedAtStartOfTurn = false;
     private Inventory EquippedItems;
     private Inventory Inventory;
 
@@ -31,7 +32,7 @@ public class Player : MonoBehaviour
         TakingDamage,
         Ghosting,
         Healing,
-        InInventory
+        InMenu
     }
 
     public PlayerState CurrentState;
@@ -70,7 +71,16 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
-        if (!GameManager.Instance.PlayersTurn || CurrentState == PlayerState.Moving) return;
+        if (!GameManager.Instance.PlayersTurn)
+        {
+            CheckedAtStartOfTurn = false;
+            return;
+        }
+        else if (!CheckedAtStartOfTurn)
+        {
+            CheckedAtStartOfTurn = true;
+            Check();
+        }
         CheckForPlayerPause();
     }
 
@@ -87,10 +97,10 @@ public class Player : MonoBehaviour
     {
         if (Input.GetButtonDown("Pause"))
         {
-            if (!(CurrentState == PlayerState.InInventory))
+            if (!(CurrentState == PlayerState.InMenu))
             {
                 InventoryUI.OpenInventory();
-                CurrentState = PlayerState.InInventory;
+                CurrentState = PlayerState.InMenu;
             }
             else
             {
@@ -103,7 +113,7 @@ public class Player : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         ItemInWorld itemWorld = collision.GetComponent<ItemInWorld>();
-        if (itemWorld != null && this.Inventory.GetItems().Count < this.Inventory.Size)
+        if (itemWorld != null && (this.Inventory.GetItems().Count < this.Inventory.Size || itemWorld.Item.IsStackable()) ) 
         {
             this.Inventory.AddItem(itemWorld.GetItem());
             itemWorld.SelfDestruct();
@@ -125,8 +135,6 @@ public class Player : MonoBehaviour
         //any checks that need done put in here (check should be performed at the start of a turn and end) 
 
         CheckIfGameOver();
-
-        GameManager.Instance.PlayersTurn = false;
     }
 
     private void Restart()
