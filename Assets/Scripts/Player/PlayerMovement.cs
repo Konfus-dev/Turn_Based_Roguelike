@@ -4,14 +4,13 @@ public class PlayerMovement : Movement, IMovement
 {
     private bool moveable = true;
     private bool axisInUse = false;     //used to have GetButtonDown functionality while using an axis
-    public GameManager gM;
 
     private void Update()
     {
 
         if (myNode != null)
         {
-            if (gM.PlayersTurn && moveable)
+            if (GameManager.Instance.PlayersTurn && moveable)
             {
                 float x_movement = Input.GetAxisRaw("Horizontal");
                 float y_movement = Input.GetAxisRaw("Vertical");
@@ -38,7 +37,7 @@ public class PlayerMovement : Movement, IMovement
                             MoveTo(myNode.down);
                         }
                         Player.Instance.CurrentState = Player.PlayerState.NotMoving;
-                        gM.PlayersTurn = false;
+                        GameManager.Instance.PlayersTurn = false;
                     }
                 }
                 else
@@ -47,7 +46,7 @@ public class PlayerMovement : Movement, IMovement
                     if (Input.GetButtonDown("Skip"))
                     {
                         Debug.Log("Player Skipped turn");
-                        gM.PlayersTurn = false;
+                        GameManager.Instance.PlayersTurn = false;
                     }
                 }
             }
