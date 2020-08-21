@@ -63,38 +63,6 @@ public class Player : MonoBehaviour
     {
         if (!GameManager.Instance.PlayersTurn || CurrentState == PlayerState.Moving) return;
         CheckForPlayerPause();
-
-       /* int horizontal; 
-        int vertical;  
-
-        horizontal = (int)(Input.GetAxisRaw("Horizontal"));
-
-        vertical = (int)(Input.GetAxisRaw("Vertical"));
-
-        if (horizontal != 0)
-        {
-            vertical = 0;
-        }
-
-        if (horizontal != 0 || vertical != 0)
-        {
-            if (vertical > 0)
-            {
-                //move up
-            }
-            else if (vertical < 0)
-            {
-                //move down
-            }
-            else if (horizontal > 0)
-            {
-                //move right
-            }
-            else if (horizontal < 0)
-            {
-                //move left
-            }
-        }*/
     }
 
     private void UseItem(Item item)

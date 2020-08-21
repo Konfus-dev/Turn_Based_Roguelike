@@ -3,12 +3,17 @@ using UnityEngine;
 
 public class PlayerMovement : Movement
 {
-    bool moveable = true;
-    bool axisInUse = false;     //used to have GetButtonDown functionality while using an axis
+    private bool moveable = true;
+    private bool axisInUse = false;     //used to have GetButtonDown functionality while using an axis
+    private Player player;
     public GameManager gM;
 
-     
-    void Update()
+    private void Awake()
+    {
+        player = this.GetComponent<Player>();
+    }
+
+    private void Update()
     {
 
         if (myNode != null)
@@ -22,6 +27,7 @@ public class PlayerMovement : Movement
                     if (!axisInUse && !moving)
                     {
                         axisInUse = true;
+                        player.CurrentState = Player.PlayerState.Moving;
                         if (x_movement > 0)
                         {
                             MoveTo(myNode.right);
@@ -38,6 +44,7 @@ public class PlayerMovement : Movement
                         {
                             MoveTo(myNode.down);
                         }
+                        player.CurrentState = Player.PlayerState.NotMoving;
                         gM.PlayersTurn = false;
                     }
                 }
