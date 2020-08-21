@@ -19,11 +19,11 @@ public class Item
     [HideInInspector]
     public string Name;
 
-    public int Amount;
+    public int Amount = 1;
 
-    public int DamageMod;
-    public int HealthMod;
-    public int ArmorMod;
+    public int DamageMod = 0;
+    public int HealthMod = 0;
+    public int ArmorMod = 0;
 
     public Sprite GetSprite()
     {

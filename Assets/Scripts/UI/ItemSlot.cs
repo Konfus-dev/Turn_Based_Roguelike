@@ -154,7 +154,7 @@ public class ItemSlot : MonoBehaviour, IDropHandler
         if (itemDup.Type.Equals(Item.ItemType.ChestArmor) || itemDup.Type.Equals(Item.ItemType.HelmArmor) || itemDup.Type.Equals(Item.ItemType.Shield))
         {
             Player.GetComponent<Player>().ManageArmor(0, itemDup.ArmorMod);
-            Player.GetComponent<Player>().ManageHealth(0, itemDup.HealthMod);
+            Player.GetComponent<Player>().ManageMaxHealth(0, itemDup.HealthMod);
         }
         else if (itemDup.Type.Equals(Item.ItemType.Weapon))
         {
@@ -184,7 +184,7 @@ public class ItemSlot : MonoBehaviour, IDropHandler
                 if (!helmAlreadyEquiped && LastItemEquipped != null)
                 {
                     this.Background.SetActive(true);
-                    this.Player.GetComponent<Player>().ManageHealth(LastItemEquipped.HealthMod, 0);
+                    this.Player.GetComponent<Player>().ManageCurrHealth(LastItemEquipped.HealthMod, 0);
                     this.Player.GetComponent<Player>().ManageArmor(LastItemEquipped.ArmorMod, 0);
                     this.LastItemEquipped = null;
                 }
@@ -194,7 +194,7 @@ public class ItemSlot : MonoBehaviour, IDropHandler
                 if (!chestAlreadyEquiped)
                 {
                     this.Background.SetActive(true);
-                    this.Player.GetComponent<Player>().ManageHealth(LastItemEquipped.HealthMod, 0);
+                    this.Player.GetComponent<Player>().ManageCurrHealth(LastItemEquipped.HealthMod, 0);
                     this.Player.GetComponent<Player>().ManageArmor(LastItemEquipped.ArmorMod, 0);
                     this.LastItemEquipped = null;
                 }
@@ -213,7 +213,7 @@ public class ItemSlot : MonoBehaviour, IDropHandler
                 if (!shieldAlreadyEquiped)
                 {
                     this.Background.SetActive(true);
-                    this.Player.GetComponent<Player>().ManageHealth(LastItemEquipped.HealthMod, 0);
+                    this.Player.GetComponent<Player>().ManageCurrHealth(LastItemEquipped.HealthMod, 0);
                     this.Player.GetComponent<Player>().ManageArmor(LastItemEquipped.ArmorMod, 0);
                     this.LastItemEquipped = null;
                 }

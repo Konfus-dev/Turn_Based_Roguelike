@@ -10,7 +10,9 @@ public class Player : MonoBehaviour
     [SerializeField]
     private int Damage = 1;
     [SerializeField]
-    private int HP = 2;
+    private int CurrHP = 2;
+    [SerializeField]
+    private int MaxHP = 2;
     [SerializeField]
     private int Armor = 0;
     [SerializeField]
@@ -100,8 +102,11 @@ public class Player : MonoBehaviour
         Debug.Log(item.Amount);
 
         //put what items do here in switch statements I guess
-        if(item.Type == Item.ItemType.Consumable) 
-            Inventory.RemoveItem(new Item { Type = item.Type, Name = item.Name, Amount = 1} );
+        if(item.Type == Item.ItemType.Consumable)
+        {
+            ManageCurrHealth(0, item.HealthMod);
+            Inventory.RemoveItem(new Item { Type = item.Type, Name = item.Name, Amount = 1 });
+        }
     }
 
     private void CheckForPlayerPause()
@@ -155,13 +160,13 @@ public class Player : MonoBehaviour
         SceneManager.LoadScene(0);
     }
 
-    public void ManageHealth(int loss, int gain)
+    public void ManageCurrHealth(int loss, int gain)
     {
         if (loss > 0)
         {
             //animator.SetTrigger("Hit");
 
-            HP -= loss;
+            CurrHP -= loss;
 
             CheckIfGameOver();
         }
@@ -170,7 +175,27 @@ public class Player : MonoBehaviour
             //Set the trigger for player get health
             //somthing to do with a health particle effect probably
 
-            HP += gain;
+            CurrHP += gain;
+            if (CurrHP > MaxHP) CurrHP = MaxHP;
+        }
+    }
+
+    public void ManageMaxHealth(int loss, int gain)
+    {
+        if (loss > 0)
+        {
+            //animator.SetTrigger("Hit");
+
+            MaxHP -= loss;
+
+            if (MaxHP <= 0) MaxHP = 1;
+        }
+        else
+        {
+            //Set the trigger for player get health
+            //somthing to do with a health particle effect probably
+
+            MaxHP += gain;
         }
     }
 
@@ -200,7 +225,7 @@ public class Player : MonoBehaviour
 
     private void CheckIfGameOver()
     {
-        if (HP <= 0)
+        if (CurrHP <= 0)
         {
             //TODO: 
             //play particle effect here
