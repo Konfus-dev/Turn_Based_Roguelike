@@ -19,12 +19,11 @@ public class InventoryUI : MonoBehaviour
     private UIManager InventoryManager;
 
     private Inventory Inventory;
+    private Inventory EquipedItems;
     private Player Player;
 
     private void Awake()
     {
-        /*ItemContainer = transform.Find("InventoryContainer");
-        ItemSlotTemplate = transform.Find("InvSlot");*/
         this.CloseInventory();
     }
 
@@ -52,6 +51,11 @@ public class InventoryUI : MonoBehaviour
         Refresh();
     }
 
+    public void SetEquipedItems(Inventory equiped)
+    {
+        this.EquipedItems = equiped;
+    }
+
     private void Inventory_OnItemListChanged(object sender, System.EventArgs e)
     {
         Refresh();
@@ -59,19 +63,15 @@ public class InventoryUI : MonoBehaviour
 
     private void Refresh()
     {
-        /*foreach (Transform itemSlot in ItemSlotContainer)
-        {
-            if (itemSlot != ItemSlotTemplate && itemSlot.name != "Background" && itemSlot.name != "Border") Destroy(itemSlot.gameObject);
-        }*/
-
         Dictionary<Item, int> occupiedSlots = new Dictionary<Item, int>();
 
         foreach (Transform item in ItemContainer)
         {
             if(item.GetComponent<Drag_n_Drop>().GetItem() != null)
             {
-                occupiedSlots.Add(item.GetComponent<Drag_n_Drop>().GetItem(), 
-                    (int)item.GetComponent<Drag_n_Drop>().GetComponent<RectTransform>().anchoredPosition.x);
+                if (occupiedSlots.ContainsKey(item.GetComponent<Drag_n_Drop>().GetItem()))
+                    occupiedSlots.Remove(item.GetComponent<Drag_n_Drop>().GetItem());
+                occupiedSlots.Add(item.GetComponent<Drag_n_Drop>().GetItem(), (int)item.GetComponent<Drag_n_Drop>().GetComponent<RectTransform>().anchoredPosition.x);
             }
             if (item != ItemTemplate && !item.CompareTag("Equiped")) Destroy(item.gameObject);
         }
@@ -85,16 +85,18 @@ public class InventoryUI : MonoBehaviour
             RectTransform itemRectTransform = Instantiate(ItemTemplate, ItemContainer).GetComponent<RectTransform>();
 
             itemRectTransform.GetComponent<Drag_n_Drop>().SetInventory(this.Inventory);
+            itemRectTransform.GetComponent<Drag_n_Drop>().SetEquipedItems(this.EquipedItems);
             itemRectTransform.GetComponent<Drag_n_Drop>().SetItem(item);
 
             itemRectTransform.GetComponent<Button_UI>().ClickFunc = () =>
             {
-                // use item
+                // on left click use item
                 Inventory.UseItem(item);
             };
             itemRectTransform.GetComponent<Button_UI>().MouseRightClickFunc = () =>
             {
-                // drop item
+                // on right click drop item
+                occupiedSlots.Remove(item);
                 Item itemDup = new Item { Type = item.Type, Name = item.Name, Amount = item.Amount };
                 Inventory.RemoveItem(item);
                 ItemInWorld.DropItem(this.Player.transform.position, itemDup);
@@ -111,6 +113,8 @@ public class InventoryUI : MonoBehaviour
                 {
                     x += itemSlotCellSize;
                 }
+
+                if (x > 150) x = 0;
 
                 itemRectTransform.anchoredPosition = new Vector2(x, y);
             }

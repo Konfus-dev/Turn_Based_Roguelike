@@ -23,121 +23,65 @@ public class ItemSlot : MonoBehaviour, IDropHandler
     [SerializeField]
     private Transform Player;
     [SerializeField]
+    private GameObject Background;
+    [SerializeField]
+    private Inventory PlayerEquipedItems;
+    [SerializeField]
     private Transform ItemContainer;
     [SerializeField]
     private Transform ItemTemplate;
 
+    private void Update()
+    {
+        CheckIfEquiped();
+    }
+
     public void OnDrop(PointerEventData eventData)
     {
-        //Debug.Log("OnDrop");
         if(eventData.pointerDrag != null)
         {
-            bool dropAllowed = false;
-
             RectTransform rectTrans = eventData.pointerDrag.GetComponent<RectTransform>();
             Drag_n_Drop drag = rectTrans.GetComponent<Drag_n_Drop>();
+            List<Item> equiped = drag.GetEquipedItems().GetItems();
+            bool helmAlreadyEquiped = false;
+            bool chestAlreadyEquiped = false;
+            bool weaponAlreadyEquiped = false;
+            bool shieldAlreadyEquiped = false;
 
-            /*GameObject copy = new GameObject();
-            copy = eventData.pointerDrag.gameObject;*/
-
-            if (Type.Equals(ItemSlotType.HelmSlot))
+            foreach (Item i in equiped)
             {
-                if(drag.GetItem().Type == Item.ItemType.HelmetArmor)
+                if (i.Type.Equals(Item.ItemType.HelmArmor)) helmAlreadyEquiped = true;
+                else if (i.Type.Equals(Item.ItemType.ChestArmor)) chestAlreadyEquiped = true;
+                else if (i.Type.Equals(Item.ItemType.Weapon)) weaponAlreadyEquiped = true;
+                else if (i.Type.Equals(Item.ItemType.Shield)) shieldAlreadyEquiped = true;
+            }
+
+            if (Type.Equals(ItemSlotType.HelmSlot) && !helmAlreadyEquiped)
+            {
+                if(drag.GetItem().Type.Equals(Item.ItemType.HelmArmor))
                 {
-                    Item itemDup = new Item { Type = drag.GetItem().Type, Name = drag.GetItem().Name, Amount = drag.GetItem().Amount };
-
-                    Inventory inv = drag.GetInventory();
-
-                    drag.GetInventory().RemoveItem(drag.GetItem());
-
-                    RectTransform itemRectTransform = Instantiate(ItemTemplate, ItemContainer).GetComponent<RectTransform>();
-
-                    Image itemIcon = itemRectTransform.Find("Icon").gameObject.GetComponent<Image>();
-                    itemIcon.sprite = itemDup.GetSprite();
-
-                    itemRectTransform.anchoredPosition = this.GetComponent<RectTransform>().anchoredPosition;
-
-                    itemRectTransform.GetComponent<Drag_n_Drop>().SetInventory(inv);
-                    itemRectTransform.GetComponent<Drag_n_Drop>().SetItem(itemDup);
-
-                    itemRectTransform.gameObject.SetActive(true);
-
-                    itemRectTransform.tag = "Equiped";
+                    EquipItem(drag);
                 }
             }
-            else if (Type.Equals(ItemSlotType.ChestSlot))
+            else if (Type.Equals(ItemSlotType.ChestSlot) && !chestAlreadyEquiped)
             {
-                if (drag.GetItem().Type == Item.ItemType.ChestArmor)
+                if (drag.GetItem().Type.Equals(Item.ItemType.ChestArmor))
                 {
-                    Item itemDup = new Item { Type = drag.GetItem().Type, Name = drag.GetItem().Name, Amount = drag.GetItem().Amount };
-
-                    Inventory inv = drag.GetInventory();
-
-                    drag.GetInventory().RemoveItem(drag.GetItem());
-
-                    RectTransform itemRectTransform = Instantiate(ItemTemplate, ItemContainer).GetComponent<RectTransform>();
-
-                    Image itemIcon = itemRectTransform.Find("Icon").gameObject.GetComponent<Image>();
-                    itemIcon.sprite = itemDup.GetSprite();
-
-                    itemRectTransform.anchoredPosition = this.GetComponent<RectTransform>().anchoredPosition;
-
-                    itemRectTransform.GetComponent<Drag_n_Drop>().SetInventory(inv);
-                    itemRectTransform.GetComponent<Drag_n_Drop>().SetItem(itemDup);
-
-                    itemRectTransform.gameObject.SetActive(true);
-
-                    itemRectTransform.tag = "Equiped";
+                    EquipItem(drag);
                 }
             }
-            else if (Type.Equals(ItemSlotType.WeaponSlot))
+            else if (Type.Equals(ItemSlotType.WeaponSlot) && !weaponAlreadyEquiped)
             {
-                if (drag.GetItem().Type == Item.ItemType.Weapon)
+                if (drag.GetItem().Type.Equals(Item.ItemType.Weapon))
                 {
-                    Item itemDup = new Item { Type = drag.GetItem().Type, Name = drag.GetItem().Name, Amount = drag.GetItem().Amount };
-
-                    Inventory inv = drag.GetInventory();
-
-                    drag.GetInventory().RemoveItem(drag.GetItem());
-
-                    RectTransform itemRectTransform = Instantiate(ItemTemplate, ItemContainer).GetComponent<RectTransform>();
-
-                    Image itemIcon = itemRectTransform.Find("Icon").gameObject.GetComponent<Image>();
-                    itemIcon.sprite = itemDup.GetSprite();
-
-                    itemRectTransform.anchoredPosition = this.GetComponent<RectTransform>().anchoredPosition;
-
-                    itemRectTransform.GetComponent<Drag_n_Drop>().SetInventory(inv);
-                    itemRectTransform.GetComponent<Drag_n_Drop>().SetItem(itemDup);
-
-                    itemRectTransform.gameObject.SetActive(true);
-
-                    itemRectTransform.tag = "Equiped";
+                    EquipItem(drag);
                 }
             }
-            else if (Type.Equals(ItemSlotType.ShieldSlot))
+            else if (Type.Equals(ItemSlotType.ShieldSlot) && !shieldAlreadyEquiped)
             {
-                if (drag.GetItem().Type == Item.ItemType.Shield)
+                if (drag.GetItem().Type.Equals(Item.ItemType.Shield))
                 {
-                    Item itemDup = new Item { Type = drag.GetItem().Type, Name = drag.GetItem().Name, Amount = drag.GetItem().Amount };
-
-                    Inventory inv = drag.GetInventory();
-
-                    drag.GetInventory().RemoveItem(drag.GetItem());
-
-                    RectTransform itemRectTransform = Instantiate(ItemTemplate, ItemContainer).GetComponent<RectTransform>();
-
-                    Image itemIcon = itemRectTransform.Find("Icon").gameObject.GetComponent<Image>();
-                    itemIcon.sprite = itemDup.GetSprite();
-
-                    itemRectTransform.anchoredPosition = this.GetComponent<RectTransform>().anchoredPosition;
-
-                    itemRectTransform.GetComponent<Drag_n_Drop>().SetInventory(inv);
-                    itemRectTransform.GetComponent<Drag_n_Drop>().SetItem(itemDup);
-
-                    itemRectTransform.gameObject.SetActive(true);
-
-                    itemRectTransform.tag = "Equiped";
+                    EquipItem(drag);
                 }
             }
             else
@@ -145,15 +89,93 @@ public class ItemSlot : MonoBehaviour, IDropHandler
                 drag.GetComponent<RectTransform>().tag = "InInventory";
                 if (! drag.GetInventory().GetItems().Contains(drag.GetItem()) )
                 {
-                    drag.GetComponent<RectTransform>().anchoredPosition = this.GetComponent<RectTransform>().anchoredPosition;
+                    rectTrans.anchoredPosition = this.GetComponent<RectTransform>().anchoredPosition;
+                    drag.GetEquipedItems().RemoveItem(drag.GetItem());
                     drag.GetInventory().AddItem(drag.GetItem());
                 }
                 else
                 {
-                    drag.OriginalPos = this.GetComponent<RectTransform>().anchoredPosition;
+                    drag.SetOrigPos(this.GetComponent<RectTransform>().anchoredPosition);
                 }
             }
 
+        }
+    }
+
+    private void EquipItem(Drag_n_Drop drag)
+    {
+        Item itemDup = new Item { Type = drag.GetItem().Type, Name = drag.GetItem().Name, Amount = drag.GetItem().Amount };
+
+        Inventory equiped = drag.GetEquipedItems();
+
+        PlayerEquipedItems = equiped;
+
+        equiped.AddItem(itemDup);
+
+        Inventory inv = drag.GetInventory();
+
+        drag.GetInventory().RemoveItem(drag.GetItem());
+
+        RectTransform itemRectTransform = Instantiate(ItemTemplate, ItemContainer).GetComponent<RectTransform>();
+
+        itemRectTransform.GetComponent<Button_UI>().MouseRightClickFunc = () =>
+        {
+            // on right click drop item
+            Item itemDup2 = new Item { Type = itemDup.Type, Name = itemDup.Name, Amount = itemDup.Amount };
+            equiped.RemoveItem(itemDup);
+            ItemInWorld.DropItem(this.Player.transform.position, itemDup2);
+            Destroy(itemRectTransform.gameObject);
+        };
+
+        Image itemIcon = itemRectTransform.Find("Icon").gameObject.GetComponent<Image>();
+        itemIcon.sprite = itemDup.GetSprite();
+
+        itemRectTransform.anchoredPosition = this.GetComponent<RectTransform>().anchoredPosition;
+
+        itemRectTransform.GetComponent<Drag_n_Drop>().SetInventory(inv);
+        itemRectTransform.GetComponent<Drag_n_Drop>().SetEquipedItems(equiped);
+        itemRectTransform.GetComponent<Drag_n_Drop>().SetItem(itemDup);
+
+        itemRectTransform.gameObject.SetActive(true);
+
+        this.Background.SetActive(false);
+
+        itemRectTransform.tag = "Equiped";
+    }
+
+    private void CheckIfEquiped()
+    {
+        if (PlayerEquipedItems != null)
+        {
+            bool helmAlreadyEquiped = false;
+            bool chestAlreadyEquiped = false;
+            bool weaponAlreadyEquiped = false;
+            bool shieldAlreadyEquiped = false;
+
+            foreach (Item i in PlayerEquipedItems.GetItems())
+            {
+                if (i.Type.Equals(Item.ItemType.HelmArmor)) helmAlreadyEquiped = true;
+                else if (i.Type.Equals(Item.ItemType.ChestArmor)) chestAlreadyEquiped = true;
+                else if (i.Type.Equals(Item.ItemType.Weapon)) weaponAlreadyEquiped = true;
+                else if (i.Type.Equals(Item.ItemType.Shield)) shieldAlreadyEquiped = true;
+            }
+
+            if (Type.Equals(ItemSlotType.HelmSlot))
+            {
+                if (!helmAlreadyEquiped) this.Background.SetActive(true);
+            }
+            else if (Type.Equals(ItemSlotType.ChestSlot))
+            {
+                if (!chestAlreadyEquiped) this.Background.SetActive(true);
+            }
+            else if (Type.Equals(ItemSlotType.WeaponSlot))
+            {
+                if (!weaponAlreadyEquiped) this.Background.SetActive(true);
+            }
+            else if (Type.Equals(ItemSlotType.ShieldSlot))
+            {
+                if (!shieldAlreadyEquiped) this.Background.SetActive(true);
+            }
         }
     }
 

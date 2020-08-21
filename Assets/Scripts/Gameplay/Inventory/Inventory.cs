@@ -7,6 +7,7 @@ public class Inventory
 {
     public int Size = 5;
     public event EventHandler OnItemListChanged;
+
     private List<Item> Items;
     private Action<Item> UseItemAction;
     public static Inventory Instance { get; private set; }

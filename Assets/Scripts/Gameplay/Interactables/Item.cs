@@ -7,7 +7,7 @@ public class Item
     public enum ItemType
     {
         Weapon,
-        HelmetArmor,
+        HelmArmor,
         ChestArmor,
         Shield,
         Consumable,
@@ -26,7 +26,7 @@ public class Item
 
     public bool IsStackable()
     {
-        if(Type == ItemType.ChestArmor || Type == ItemType.HelmetArmor || Type == ItemType.Shield || Type == ItemType.Weapon)
+        if(Type == ItemType.ChestArmor || Type == ItemType.HelmArmor || Type == ItemType.Shield || Type == ItemType.Weapon)
         {
             return false;
         }

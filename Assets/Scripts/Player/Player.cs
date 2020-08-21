@@ -14,6 +14,7 @@ public class Player : MonoBehaviour
     [SerializeField]
     private InventoryUI InventoryUI;
 
+    private Inventory EquipedItems;
     private Inventory Inventory;
 
     public enum PlayerState
@@ -30,8 +31,6 @@ public class Player : MonoBehaviour
 
     public PlayerState CurrentState;
 
-    //public Inventory Inventory;             
-
     private void Start()
     {
         Instance = this;
@@ -39,7 +38,10 @@ public class Player : MonoBehaviour
 
         this.Inventory = new Inventory(UseItem);
         this.Inventory.Size = InventorySize;
+        this.EquipedItems = new Inventory(null);
+        this.EquipedItems.Size = 3;
         this.InventoryUI.SetInventory(this.Inventory);
+        this.InventoryUI.SetEquipedItems(this.EquipedItems);
         this.InventoryUI.SetPlayer(this);
         //Get a component reference to the Player's animator component
         //animator = GetComponent<Animator>();
@@ -91,6 +93,7 @@ public class Player : MonoBehaviour
     private void UseItem(Item item)
     {
         Debug.Log(item.Amount);
+
         //put what items do here in switch statements I guess
         if(item.Type == Item.ItemType.Consumable) 
             Inventory.RemoveItem(new Item { Type = item.Type, Name = item.Name, Amount = 1} );
@@ -115,8 +118,6 @@ public class Player : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        //Debug.Log(this.Inventory.GetItems().Count);
-
         ItemInWorld itemWorld = collision.GetComponent<ItemInWorld>();
         if (itemWorld != null && this.Inventory.GetItems().Count < this.Inventory.Size)
         {

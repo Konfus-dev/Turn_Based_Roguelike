@@ -1,16 +1,16 @@
 ﻿using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class Drag_n_Drop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, IEndDragHandler, IDragHandler, IDropHandler
+public class Drag_n_Drop : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDragHandler, IDropHandler
 {
     [SerializeField] 
     private Canvas Canvas;
     private RectTransform RectTransform;
     private CanvasGroup CanvasGroup;
     private Item Item;
-    //private ItemSlot Slot;
     private Inventory Inventory;
-    public Vector2 OriginalPos;
+    private Inventory EquipedItems;
+    private Vector2 OriginalPos;
 
     void Awake()
     {
@@ -18,38 +18,20 @@ public class Drag_n_Drop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler
         this.CanvasGroup = this.GetComponent<CanvasGroup>();
     }
 
-    void Update()
-    {
-        
-    }
-
-    public void OnPointerDown(PointerEventData eventData)
-    {
-        //Debug.Log("Clicked");
-    }
-
     public void OnBeginDrag(PointerEventData eventData)
     {
-        //Debug.Log("Begin Drag");
         this.OriginalPos = RectTransform.anchoredPosition;
         CanvasGroup.blocksRaycasts = false;
         CanvasGroup.alpha = .5f;
-        /*if(Slot.BackgroundIcon != null)
-            Slot.BackgroundIcon.color = new Color(Slot.BackgroundIcon.color.r, Slot.BackgroundIcon.color.b, Slot.BackgroundIcon.color.g, 72/255);*/
     }
 
     public void OnDrag(PointerEventData eventData)
     {
-        //Debug.Log("Dragging");
         this.RectTransform.anchoredPosition += eventData.delta / this.Canvas.scaleFactor;
     }
 
     public void OnEndDrag(PointerEventData eventData)
     {
-        //Debug.Log("End Drag");
-        /*if (Slot.BackgroundIcon != null)
-            Slot.BackgroundIcon.color = new Color(Slot.BackgroundIcon.color.r, Slot.BackgroundIcon.color.b, Slot.BackgroundIcon.color.g, 0);*/
-
         this.RectTransform.anchoredPosition = this.OriginalPos;
         CanvasGroup.blocksRaycasts = true;
         CanvasGroup.alpha = 1;
@@ -70,15 +52,25 @@ public class Drag_n_Drop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler
         this.Inventory = inv;
     }
 
-    /*public void SetSlot(ItemSlot slot)
+    public void SetEquipedItems(Inventory equiped)
     {
-        this.Slot = slot;
+        this.EquipedItems = equiped;
     }
 
-    public ItemSlot GetSlot()
+    public Inventory GetEquipedItems()
     {
-        return this.Slot;
-    }*/
+        return this.EquipedItems;
+    }
+
+    public Vector2 GetOrigPos()
+    {
+        return this.OriginalPos;
+    }
+
+    public void SetOrigPos(Vector2 pos)
+    {
+        this.OriginalPos = pos;
+    }
 
     public Item GetItem()
     {
