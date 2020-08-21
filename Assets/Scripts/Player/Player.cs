@@ -6,9 +6,14 @@ using UnityEngine.SceneManagement;        //Allows us to use SceneManager
 public class Player : MonoBehaviour
 {
     public static Player Instance { get; private set; }
-   
-    private int Damage = 1;                    
+
+    [SerializeField]
+    private int Damage = 1;
+    [SerializeField]
     private int HP = 2;
+    [SerializeField]
+    private int Armor = 0;
+    [SerializeField]
     private int InventorySize = 5;
 
     [SerializeField]
@@ -178,6 +183,18 @@ public class Player : MonoBehaviour
         else
         {
             Damage -= amountToSubFromTotalDamage;
+        }
+    }
+
+    public void ManageArmor(int armorToTakeAway, int armorToAdd)
+    {
+        if (armorToAdd > 0)
+        {
+            Armor += armorToAdd;
+        }
+        else
+        {
+            Armor -= armorToTakeAway;
         }
     }
 

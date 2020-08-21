@@ -90,6 +90,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Type: 4
   Player: {fileID: 0}
+  Background: {fileID: 0}
   ItemContainer: {fileID: 5040289951632910655}
   ItemTemplate: {fileID: 5040289951419622794}
 --- !u!1 &918247232219844055
@@ -332,6 +333,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Type: 4
   Player: {fileID: 0}
+  Background: {fileID: 0}
   ItemContainer: {fileID: 5040289951632910655}
   ItemTemplate: {fileID: 5040289951419622794}
 --- !u!1 &2742382648443997288
@@ -578,6 +580,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Type: 2
   Player: {fileID: 0}
+  Background: {fileID: 5040289952425447464}
   ItemContainer: {fileID: 5040289951632910655}
   ItemTemplate: {fileID: 5040289951419622794}
 --- !u!1 &5040289951155148962
@@ -876,7 +879,7 @@ RectTransform:
   m_GameObject: {fileID: 5040289951419622795}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.2, y: 1.2, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 3934343656629800127}
   - {fileID: 9085815818380347560}
@@ -950,7 +953,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Canvas: {fileID: 5040289951155148953}
-  OriginalPos: {x: 0, y: 0}
 --- !u!114 &927856684
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1051,8 +1053,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.43, y: 42.47}
-  m_SizeDelta: {x: 31.499168, y: 31.928177}
+  m_AnchoredPosition: {x: 0.53, y: 42.77}
+  m_SizeDelta: {x: 31.00095, y: 31.62931}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5040289951488773660
 CanvasRenderer:
@@ -1105,6 +1107,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Type: 1
   Player: {fileID: 0}
+  Background: {fileID: 5040289951568751325}
   ItemContainer: {fileID: 5040289951632910655}
   ItemTemplate: {fileID: 5040289951419622794}
 --- !u!1 &5040289951502670615
@@ -2219,6 +2222,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Type: 3
   Player: {fileID: 0}
+  Background: {fileID: 5040289952064561058}
   ItemContainer: {fileID: 5040289951632910655}
   ItemTemplate: {fileID: 5040289951419622794}
 --- !u!1 &5040289952064561058
@@ -2973,6 +2977,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Type: 0
   Player: {fileID: 0}
+  Background: {fileID: 5040289951502670615}
   ItemContainer: {fileID: 5040289951632910655}
   ItemTemplate: {fileID: 5040289951419622794}
 --- !u!1 &5040289953103324589
@@ -3206,6 +3211,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Type: 4
   Player: {fileID: 0}
+  Background: {fileID: 0}
   ItemContainer: {fileID: 5040289951632910655}
   ItemTemplate: {fileID: 5040289951419622794}
 --- !u!1 &5826893651249781896
@@ -3448,6 +3454,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Type: 4
   Player: {fileID: 0}
+  Background: {fileID: 0}
   ItemContainer: {fileID: 5040289951632910655}
   ItemTemplate: {fileID: 5040289951419622794}
 --- !u!1 &7805804889466822040
@@ -3615,5 +3622,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Type: 4
   Player: {fileID: 0}
+  Background: {fileID: 0}
   ItemContainer: {fileID: 5040289951632910655}
   ItemTemplate: {fileID: 5040289951419622794}

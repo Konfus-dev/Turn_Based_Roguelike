@@ -86,7 +86,8 @@ public class ItemSlot : MonoBehaviour, IDropHandler
             }
             else
             {
-                drag.GetComponent<RectTransform>().tag = "InInventory";
+                rectTrans.tag = "InInventory";
+
                 if (! drag.GetInventory().GetItems().Contains(drag.GetItem()) )
                 {
                     rectTrans.anchoredPosition = this.GetComponent<RectTransform>().anchoredPosition;
@@ -97,6 +98,8 @@ public class ItemSlot : MonoBehaviour, IDropHandler
                 {
                     drag.SetOrigPos(this.GetComponent<RectTransform>().anchoredPosition);
                 }
+
+                rectTrans.GetChild(0).GetComponent<RectTransform>().sizeDelta = new Vector2(70, 70);
             }
 
         }
@@ -137,6 +140,8 @@ public class ItemSlot : MonoBehaviour, IDropHandler
         itemRectTransform.GetComponent<Drag_n_Drop>().SetItem(itemDup);
 
         itemRectTransform.gameObject.SetActive(true);
+
+        itemRectTransform.GetChild(0).GetComponent<RectTransform>().sizeDelta = this.transform.GetChild(1).GetComponent<RectTransform>().sizeDelta * 5;
 
         this.Background.SetActive(false);
 
