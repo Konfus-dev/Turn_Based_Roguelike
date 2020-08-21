@@ -1002,12 +1002,12 @@ PrefabInstance:
     - target: {fileID: 2835973007337667530, guid: 71a57c160359e814598619d5a2cc35b5,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -1e-45
+      value: 3e-45
       objectReference: {fileID: 0}
     - target: {fileID: 2835973008045532590, guid: 71a57c160359e814598619d5a2cc35b5,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -1e-45
+      value: 3e-45
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 71a57c160359e814598619d5a2cc35b5, type: 3}
@@ -3173,6 +3173,11 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 2143913183}
+    - target: {fileID: 7953531066875018857, guid: 6d58ea296db37224d98822a08484cc41,
+        type: 3}
+      propertyPath: Item.HealthMod
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7953531066875018862, guid: 6d58ea296db37224d98822a08484cc41,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3307,6 +3312,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Item_Shield_4
       objectReference: {fileID: 0}
+    - target: {fileID: 4667682579956280949, guid: 9008f803bd38f9e4ab98fe79e1591cea,
+        type: 3}
+      propertyPath: Item.ArmorMod
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9008f803bd38f9e4ab98fe79e1591cea, type: 3}
 --- !u!1001 &4425251640237419447
@@ -3381,6 +3391,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Item_Consumable_14
       objectReference: {fileID: 0}
+    - target: {fileID: 4679859502085446367, guid: fc31d53bd9f3e9b46b7ba2c04c9af83d,
+        type: 3}
+      propertyPath: Item.HealthMod
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fc31d53bd9f3e9b46b7ba2c04c9af83d, type: 3}
 --- !u!1001 &5244441449296444315
@@ -3449,6 +3464,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Item_Sword_5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3845064943777452879, guid: dbf033e2f8800854e98eea947e6adbfa,
+        type: 3}
+      propertyPath: Item.DamageMod
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4879252382565406152, guid: dbf033e2f8800854e98eea947e6adbfa,
         type: 3}
@@ -3524,6 +3544,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Item_Consumable_14
       objectReference: {fileID: 0}
+    - target: {fileID: 1497432809251810343, guid: 571cd3caaf7f9d44a887089292868786,
+        type: 3}
+      propertyPath: Item.HealthMod
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7074327313300302496, guid: 571cd3caaf7f9d44a887089292868786,
         type: 3}
       propertyPath: m_Camera
@@ -3598,6 +3623,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1247731362662673694, guid: 5e009f292908d9d44838576f290f94ef,
+        type: 3}
+      propertyPath: Item.ArmorMod
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7474331685891140505, guid: 5e009f292908d9d44838576f290f94ef,
         type: 3}
       propertyPath: m_Camera
@@ -3612,6 +3642,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1145193485}
     m_Modifications:
+    - target: {fileID: 838063941399511049, guid: 116d2fcf523a0d54d886fb2588937a10,
+        type: 3}
+      propertyPath: Item.ArmorMod
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 838063941399511054, guid: 116d2fcf523a0d54d886fb2588937a10,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3745,6 +3780,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Item_Sword_7
+      objectReference: {fileID: 0}
+    - target: {fileID: 418186755800371301, guid: 43c54f67e6cd93f4986ebbd717e980ca,
+        type: 3}
+      propertyPath: Item.DamageMod
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8297687298512951010, guid: 43c54f67e6cd93f4986ebbd717e980ca,
         type: 3}

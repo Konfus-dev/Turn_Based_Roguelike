@@ -31,6 +31,8 @@ public class ItemSlot : MonoBehaviour, IDropHandler
     [SerializeField]
     private Transform ItemTemplate;
 
+    private Item LastItemEquiped;
+
     private void Update()
     {
         CheckIfEquiped();
@@ -107,7 +109,9 @@ public class ItemSlot : MonoBehaviour, IDropHandler
 
     private void EquipItem(Drag_n_Drop drag)
     {
-        Item itemDup = new Item { Type = drag.GetItem().Type, Name = drag.GetItem().Name, Amount = drag.GetItem().Amount };
+        Item itemDup = new Item { Type = drag.GetItem().Type, Name = drag.GetItem().Name, Amount = drag.GetItem().Amount, ArmorMod = drag.GetItem().ArmorMod, DamageMod = drag.GetItem().DamageMod, HealthMod = drag.GetItem().HealthMod };
+
+        LastItemEquiped = itemDup;
 
         Inventory equiped = drag.GetEquipedItems();
 
@@ -124,7 +128,7 @@ public class ItemSlot : MonoBehaviour, IDropHandler
         itemRectTransform.GetComponent<Button_UI>().MouseRightClickFunc = () =>
         {
             // on right click drop item
-            Item itemDup2 = new Item { Type = itemDup.Type, Name = itemDup.Name, Amount = itemDup.Amount };
+            Item itemDup2 = new Item { Type = itemDup.Type, Name = itemDup.Name, Amount = itemDup.Amount, ArmorMod = itemDup.ArmorMod, DamageMod = itemDup.DamageMod, HealthMod = itemDup.HealthMod };
             equiped.RemoveItem(itemDup);
             ItemInWorld.DropItem(this.Player.transform.position, itemDup2);
             Destroy(itemRectTransform.gameObject);
@@ -146,6 +150,16 @@ public class ItemSlot : MonoBehaviour, IDropHandler
         this.Background.SetActive(false);
 
         itemRectTransform.tag = "Equiped";
+
+        if (itemDup.Type.Equals(Item.ItemType.ChestArmor) || itemDup.Type.Equals(Item.ItemType.HelmArmor) || itemDup.Type.Equals(Item.ItemType.Shield))
+        {
+            Player.GetComponent<Player>().ManageArmor(0, itemDup.ArmorMod);
+            Player.GetComponent<Player>().ManageHealth(0, itemDup.HealthMod);
+        }
+        else if (itemDup.Type.Equals(Item.ItemType.Weapon))
+        {
+            Player.GetComponent<Player>().ManageDamage(0, itemDup.DamageMod);
+        }
     }
 
     private void CheckIfEquiped()
@@ -167,19 +181,42 @@ public class ItemSlot : MonoBehaviour, IDropHandler
 
             if (Type.Equals(ItemSlotType.HelmSlot))
             {
-                if (!helmAlreadyEquiped) this.Background.SetActive(true);
+                if (!helmAlreadyEquiped && LastItemEquiped != null)
+                {
+                    this.Background.SetActive(true);
+                    this.Player.GetComponent<Player>().ManageHealth(LastItemEquiped.HealthMod, 0);
+                    this.Player.GetComponent<Player>().ManageArmor(LastItemEquiped.ArmorMod, 0);
+                    this.LastItemEquiped = null;
+                }
             }
-            else if (Type.Equals(ItemSlotType.ChestSlot))
+            else if (Type.Equals(ItemSlotType.ChestSlot) && LastItemEquiped != null)
             {
-                if (!chestAlreadyEquiped) this.Background.SetActive(true);
+                if (!chestAlreadyEquiped)
+                {
+                    this.Background.SetActive(true);
+                    this.Player.GetComponent<Player>().ManageHealth(LastItemEquiped.HealthMod, 0);
+                    this.Player.GetComponent<Player>().ManageArmor(LastItemEquiped.ArmorMod, 0);
+                    this.LastItemEquiped = null;
+                }
             }
-            else if (Type.Equals(ItemSlotType.WeaponSlot))
+            else if (Type.Equals(ItemSlotType.WeaponSlot) && LastItemEquiped != null)
             {
-                if (!weaponAlreadyEquiped) this.Background.SetActive(true);
+                if (!weaponAlreadyEquiped)
+                {
+                    this.Background.SetActive(true);
+                    this.Player.GetComponent<Player>().ManageDamage(LastItemEquiped.DamageMod, 0);
+                    this.LastItemEquiped = null;
+                }
             }
-            else if (Type.Equals(ItemSlotType.ShieldSlot))
+            else if (Type.Equals(ItemSlotType.ShieldSlot) && LastItemEquiped != null)
             {
-                if (!shieldAlreadyEquiped) this.Background.SetActive(true);
+                if (!shieldAlreadyEquiped)
+                {
+                    this.Background.SetActive(true);
+                    this.Player.GetComponent<Player>().ManageHealth(LastItemEquiped.HealthMod, 0);
+                    this.Player.GetComponent<Player>().ManageArmor(LastItemEquiped.ArmorMod, 0);
+                    this.LastItemEquiped = null;
+                }
             }
         }
     }

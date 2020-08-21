@@ -97,7 +97,7 @@ public class InventoryUI : MonoBehaviour
             {
                 // on right click drop item
                 occupiedSlots.Remove(item);
-                Item itemDup = new Item { Type = item.Type, Name = item.Name, Amount = item.Amount };
+                Item itemDup = new Item { Type = item.Type, Name = item.Name, Amount = item.Amount, ArmorMod = item.ArmorMod, DamageMod = item.DamageMod, HealthMod = item.HealthMod };
                 Inventory.RemoveItem(item);
                 ItemInWorld.DropItem(this.Player.transform.position, itemDup);
             };

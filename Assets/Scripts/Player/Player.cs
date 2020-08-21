@@ -174,27 +174,27 @@ public class Player : MonoBehaviour
         }
     }
 
-    public void ManageDamage(int amountToAddToTotalDamage, int amountToSubFromTotalDamage)
+    public void ManageDamage(int loss, int gain)
     {
-        if (amountToAddToTotalDamage > 0)
+        if (gain > 0)
         {
-            Damage += amountToAddToTotalDamage;
+            Damage += gain;
         }
         else
         {
-            Damage -= amountToSubFromTotalDamage;
+            Damage -= loss;
         }
     }
 
-    public void ManageArmor(int armorToTakeAway, int armorToAdd)
+    public void ManageArmor(int loss, int gain)
     {
-        if (armorToAdd > 0)
+        if (gain > 0)
         {
-            Armor += armorToAdd;
+            Armor += gain;
         }
         else
         {
-            Armor -= armorToTakeAway;
+            Armor -= loss;
         }
     }
 

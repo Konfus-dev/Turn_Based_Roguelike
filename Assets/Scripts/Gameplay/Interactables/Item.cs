@@ -13,11 +13,17 @@ public class Item
         Consumable,
         Valuable
     }
+
     [HideInInspector]
     public ItemType Type;
     [HideInInspector]
     public string Name;
+
     public int Amount;
+
+    public int DamageMod;
+    public int HealthMod;
+    public int ArmorMod;
 
     public Sprite GetSprite()
     {
