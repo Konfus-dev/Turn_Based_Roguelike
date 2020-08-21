@@ -12,6 +12,8 @@ TagManager:
   - Shield
   - ChestArmor
   - EquipSlot
+  - Equiped
+  - InInventory
   layers:
   - Default
   - TransparentFX

@@ -73,7 +73,7 @@ public class InventoryUI : MonoBehaviour
                 occupiedSlots.Add(item.GetComponent<Drag_n_Drop>().GetItem(), 
                     (int)item.GetComponent<Drag_n_Drop>().GetComponent<RectTransform>().anchoredPosition.x);
             }
-            if (item != ItemTemplate) Destroy(item.gameObject);
+            if (item != ItemTemplate && !item.CompareTag("Equiped")) Destroy(item.gameObject);
         }
 
         int x = -150;
@@ -82,11 +82,6 @@ public class InventoryUI : MonoBehaviour
 
         foreach (Item item in Inventory.GetItems())
         {
-            //Debug.Log(item.Name);
-            /* RectTransform itemSlotRectTransform = Instantiate(ItemSlotTemplate, ItemSlotContainer).GetComponent<RectTransform>();
-             itemSlotRectTransform.gameObject.SetActive(true);
-             itemSlotRectTransform.anchoredPosition = new Vector2(x, y);*/
-            
             RectTransform itemRectTransform = Instantiate(ItemTemplate, ItemContainer).GetComponent<RectTransform>();
 
             itemRectTransform.GetComponent<Drag_n_Drop>().SetInventory(this.Inventory);
@@ -116,20 +111,12 @@ public class InventoryUI : MonoBehaviour
                 {
                     x += itemSlotCellSize;
                 }
+
                 itemRectTransform.anchoredPosition = new Vector2(x, y);
             }
 
             Image itemIcon = itemRectTransform.Find("Icon").gameObject.GetComponent<Image>();
             itemIcon.sprite = item.GetSprite();
-
-            /*foreach (Transform itemSlot in ItemSlotContainer)
-            {
-                if (itemSlot != ItemSlotTemplate && itemSlot.name != "Background" && itemSlot.name != "Border")
-                {
-                    if (itemSlot.GetComponent<RectTransform>().anchoredPosition == itemRectTransform.anchoredPosition)
-                        itemRectTransform.GetComponent<Drag_n_Drop>().SetSlot(itemSlot.GetComponent<ItemSlot>());
-                }
-            }*/
 
             Text text = itemRectTransform.Find("Number").GetComponent<Text>();
 
@@ -141,7 +128,6 @@ public class InventoryUI : MonoBehaviour
             {
                 text.text = "";
             }
-
 
             itemRectTransform.gameObject.SetActive(true);
 
