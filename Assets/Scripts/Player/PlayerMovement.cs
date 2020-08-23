@@ -3,11 +3,10 @@
 public class PlayerMovement : Movement, IMovement
 {
     private bool moveable = true;
-    private bool axisInUse = false;     //used to have GetButtonDown functionality while using an axis
 
     private void Update()
     {
-        if (!GameManager.Instance.PlayersTurn && !moveable) return;
+        if (!GameManager.Instance.PlayersTurn || !moveable) return;
 
         if (myNode != null)
         {
@@ -15,34 +14,32 @@ public class PlayerMovement : Movement, IMovement
             float y_movement = Input.GetAxisRaw("Vertical");
             if (x_movement != 0 || y_movement != 0)
             {
-                if (!axisInUse && !moving)
+                if (!moving)
                 {
-                    axisInUse = true;
-                    Player.Instance.CurrentState = Player.PlayerState.Moving;
-                    if (x_movement > 0)
+                    Player.Instance.SetState(Player.PlayerState.Moving);
+                    if (x_movement > 0 && TryMove(Vector2.right))
                     {
                         MoveTo(myNode.right);
                     }
-                    else if (x_movement < 0)
+                    else if (x_movement < 0 && TryMove(Vector2.left))
                     {
                         MoveTo(myNode.left);
                     }
-                    else if (y_movement > 0)
+                    else if (y_movement > 0 && TryMove(Vector2.up))
                     {
                         MoveTo(myNode.up);
                     }
-                    else if (y_movement < 0)
+                    else if (y_movement < 0 && TryMove(Vector2.down))
                     {
                         MoveTo(myNode.down);
                     }
-                    Player.Instance.CurrentState = Player.PlayerState.NotMoving;
+                    Player.Instance.SetState(Player.PlayerState.NotMoving);
                     GameManager.Instance.PlayersTurn = false;
                 }
             }
             else
             {
-                axisInUse = false;
-                if (Input.GetButtonDown("Skip"))
+                if (Input.GetButton("Skip"))
                 {
                     Debug.Log("Player Skipped turn");
                     GameManager.Instance.PlayersTurn = false;
@@ -51,16 +48,16 @@ public class PlayerMovement : Movement, IMovement
         }
     }
 
-    public void TryMove()
+    public bool TryMove(Vector2 dir)
     {
         RaycastHit2D hit;
 
-        bool canMove = false; // base.CanMove(out hit); <- should be apart of movement class to check if can move using the raycast toward player movement
+        bool canMove = CanMove(out hit, dir); // base.CanMove(out hit); <- should be apart of movement class to check if can move using the raycast toward player movement
 
         Interactable Interactable = null;
         Enemy Enemy = null;
-        if (!canMove) Interactable = null;// hit.transform.GetComponent<Interactable>();
-        if (!canMove) Enemy = null;// hit.transform.GetComponent<Enemy>();
+        if (!canMove) Interactable = hit.transform.GetComponent<Interactable>();
+        if (!canMove) Enemy = hit.transform.GetComponent<Enemy>();
 
         if (Interactable != null) OnCantMove(Interactable);
         else if (Enemy != null) OnCantMove(Enemy);
@@ -68,23 +65,31 @@ public class PlayerMovement : Movement, IMovement
         Player.Instance.Check();
 
         GameManager.Instance.PlayersTurn = false; // this is how gamemanager should be called because it is a singleton you do not need to keep reference there is only one, 
-                                                  // look into singleton design pattern, anything there is only one of should follow this pattern (player maybe should do this).
+                                                  // look into singleton design pattrn, anything there is only one of should follow this pattern (player maybe should do this).
+        return canMove;
     }
 
     public void OnCantMove<T>(T component) where T : Component
     {
+        if (Player.Instance.GetState() == Player.PlayerState.Ghosting) return;
         Interactable interactable = component.GetComponent<Interactable>();
 
         if (interactable != null)
         {
             // interact with interactable
             interactable.Interact<Player>(Player.Instance);
+            Debug.Log(transform.gameObject.name + " interacting with: " + interactable.transform.gameObject.name);
         }
         else
         {
             // do stuff with enemy (if running into enemy player is prolly trying to attack enemy so maybe do something like:
             // enemy.HP -+ player.Damage;
-            Enemy enemy = component.GetComponent<Enemy>();
+            if (Player.Instance.GetState() != Player.PlayerState.Ghosting)
+            {
+                Enemy enemy = component.GetComponent<Enemy>();
+                Debug.Log(transform.gameObject.name + " attacking npc: " + enemy.transform.gameObject.name);
+                Player.Instance.Attack(enemy);
+            }
         }
     }
 }

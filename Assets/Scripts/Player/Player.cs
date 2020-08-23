@@ -17,9 +17,13 @@ public class Player : MonoBehaviour
     [SerializeField]
     private InventoryUI InventoryUI;
 
+    [SerializeField]
+    private Sprite[] sprites;
+
     private bool CheckedAtStartOfTurn = false;
     private Inventory EquippedItems;
     private Inventory Inventory;
+
 
     public static Player Instance = null;
 
@@ -36,6 +40,22 @@ public class Player : MonoBehaviour
     }
 
     public PlayerState CurrentState;
+
+    public bool SetState(PlayerState state)
+    {
+        if (GetState() != PlayerState.Ghosting && System.Enum.IsDefined(typeof(PlayerState), state))
+        {
+            CurrentState = state;
+            transform.GetChild(0).GetComponent<SpriteRenderer>().sprite = sprites[(int)state];
+            return true;
+        }
+        return false;
+    }
+
+    public PlayerState GetState()
+    {
+        return CurrentState;
+    }
 
     private void Awake()
     {
@@ -105,7 +125,8 @@ public class Player : MonoBehaviour
             else
             {
                 InventoryUI.CloseInventory();
-                CurrentState = PlayerState.NotMoving;
+                SetState(PlayerState.NotMoving);
+                Check();
             }
         }
     }
@@ -113,7 +134,7 @@ public class Player : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         ItemInWorld itemWorld = collision.GetComponent<ItemInWorld>();
-        if (itemWorld != null && (this.Inventory.GetItems().Count < this.Inventory.Size || itemWorld.Item.IsStackable()) ) 
+        if (GetState() != PlayerState.Ghosting && itemWorld != null && (this.Inventory.GetItems().Count < this.Inventory.Size || itemWorld.Item.IsStackable()) ) 
         {
             this.Inventory.AddItem(itemWorld.GetItem());
             itemWorld.SelfDestruct();
@@ -133,7 +154,6 @@ public class Player : MonoBehaviour
     public void Check()
     {
         //any checks that need done put in here (check should be performed at the start of a turn and end) 
-
         CheckIfGameOver();
     }
 
@@ -213,6 +233,23 @@ public class Player : MonoBehaviour
         }
     }
 
+    public void Attack(Enemy enemy)
+    {
+        if (SetState(PlayerState.Attacking)) 
+        {
+            Debug.Log("Attacking " + GetState());
+            enemy.Defense(Damage);
+        }
+    }
+
+    public void Defense(int dmg)
+    {
+        if (SetState(PlayerState.TakingDamage))
+        {
+            ManageCurrHealth(dmg - Armor, 0);
+        }
+    }
+
     public Inventory GetInventory()
     {
         return this.Inventory;
@@ -236,6 +273,9 @@ public class Player : MonoBehaviour
             //play particle effect here
             //Call the GameOver function of GameManager.
             //GameManager.instance.GameOver();
+
+            SetState(PlayerState.Ghosting);
+
         }
     }
 }
