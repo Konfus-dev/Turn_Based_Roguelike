@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 682179481}
   - component: {fileID: 1426303798450304328}
   m_Layer: 0
-  m_Name: HealingPotion_Small
+  m_Name: HealthPotion
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -145,16 +145,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item:
-    itemName: HealthPotion_Small
+    itemName: HealthPotion
     itemID: 1
-    itemDesc: 
+    itemDesc: 'Gives a small amount of health back. '
     itemIcon: {fileID: -6888004981990130499, guid: bfead93a555ffbb44b6af1b177062e58,
       type: 3}
     itemModel: {fileID: 7045331179084693929}
     itemValue: 1
-    itemType: 0
+    itemType: 2
     itemWeight: 0
-    maxStack: 1
+    maxStack: 10
     indexItemInList: 999
     rarity: 0
     itemAttributes: []
