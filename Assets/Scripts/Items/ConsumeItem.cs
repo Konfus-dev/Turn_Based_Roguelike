@@ -29,10 +29,12 @@ public class ConsumeItem : MonoBehaviour, IPointerDownHandler
 
     public void OnPointerDown(PointerEventData data)
     {
+
+        Inventory inventory = transform.parent.parent.parent.GetComponent<Inventory>();
+
         if (this.gameObject.transform.parent.parent.parent.GetComponent<EquipmentSystem>() == null)
         {
             bool gearable = false;
-            Inventory inventory = transform.parent.parent.parent.GetComponent<Inventory>();
 
             if (equipmentSystem != null)
                 itemTypeOfSlot = equipmentSystem.itemTypeOfSlots;
@@ -96,23 +98,16 @@ public class ConsumeItem : MonoBehaviour, IPointerDownHandler
                                     {
                                         GameObject otherItemFromCharacterSystem = equipmentSystem.transform.GetChild(2).GetChild(i).GetChild(0).gameObject;
                                         Item otherSlotItem = otherItemFromCharacterSystem.GetComponent<ItemOnObject>().item;
-                                        if (item.itemType == ItemType.UFPS_Weapon)
-                                        {
-                                            inventory.UnEquipItem1(otherItemFromCharacterSystem.GetComponent<ItemOnObject>().item);
-                                            inventory.EquiptItem(item);
-                                        }
-                                        else
-                                        {
-                                            inventory.EquiptItem(item);
-                                            if (item.itemType != ItemType.Backpack)
-                                                inventory.UnEquipItem1(otherItemFromCharacterSystem.GetComponent<ItemOnObject>().item);
-                                        }
+                                        
+                                        inventory.EquiptItem(item);
+                                        inventory.UnEquipItem1(otherItemFromCharacterSystem.GetComponent<ItemOnObject>().item);
+
                                         if (this == null)
                                         {
                                             GameObject dropItem = (GameObject)Instantiate(otherSlotItem.itemModel);
                                             dropItem.AddComponent<PickUpItem>();
                                             dropItem.GetComponent<PickUpItem>().item = otherSlotItem;
-                                            dropItem.transform.localPosition = GameObject.FindGameObjectWithTag("Player").transform.localPosition;
+                                            dropItem.transform.localPosition = Player.Instance.transform.localPosition;
                                             inventory.OnUpdateItemList();
                                         }
                                         else
@@ -140,7 +135,7 @@ public class ConsumeItem : MonoBehaviour, IPointerDownHandler
                     }
 
                 }
-                if (!gearable && item.itemType != ItemType.UFPS_Ammo && item.itemType != ItemType.UFPS_Grenade)
+                if (!gearable)
                 {
 
                     Item itemFromDup = null;
@@ -172,8 +167,21 @@ public class ConsumeItem : MonoBehaviour, IPointerDownHandler
                 }
                 
             }
-            
 
+        }
+        else
+        {
+            if (data.button == PointerEventData.InputButton.Right)
+            {
+
+                inventory.DeleteItemFromInventory(item);
+
+                Debug.Log(this.gameObject.transform.parent.parent.parent.name);
+                Player.Instance.GetComponent<PlayerInventory>().inventory.GetComponent<Inventory>().AddItemToInventory(item.itemID, item.itemValue);
+                
+                Destroy(this.gameObject);
+
+            }
         }
     }    
 
@@ -184,7 +192,7 @@ public class ConsumeItem : MonoBehaviour, IPointerDownHandler
         bool gearable = false;
 
         if (GameObject.FindGameObjectWithTag("EquipmentSystem") != null)
-            equipmentSystem = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerInventory>().characterSystem.GetComponent<EquipmentSystem>();
+            equipmentSystem = Player.Instance.GetComponent<PlayerInventory>().characterSystem.GetComponent<EquipmentSystem>();
 
         if (equipmentSystem != null)
             itemTypeOfSlot = equipmentSystem.itemTypeOfSlots;
@@ -243,7 +251,7 @@ public class ConsumeItem : MonoBehaviour, IPointerDownHandler
                                 GameObject dropItem = (GameObject)Instantiate(otherSlotItem.itemModel);
                                 dropItem.AddComponent<PickUpItem>();
                                 dropItem.GetComponent<PickUpItem>().item = otherSlotItem;
-                                dropItem.transform.localPosition = GameObject.FindGameObjectWithTag("Player").transform.localPosition;
+                                dropItem.transform.localPosition = Player.Instance.transform.localPosition;
                                 inventory.OnUpdateItemList();
                             }
                             else
@@ -270,7 +278,7 @@ public class ConsumeItem : MonoBehaviour, IPointerDownHandler
 
 
         }
-        if (!gearable && item.itemType != ItemType.UFPS_Ammo && item.itemType != ItemType.UFPS_Grenade)
+        if (!gearable)
         {
 
             if (duplication != null)
