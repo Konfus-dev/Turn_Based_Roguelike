@@ -212,7 +212,7 @@ public class PlayerInventory : MonoBehaviour
                 GameObject dropItem = (GameObject)Instantiate(mainInventory.ItemsInInventory[i].itemModel);
                 dropItem.AddComponent<PickUpItem>();
                 dropItem.GetComponent<PickUpItem>().item = mainInventory.ItemsInInventory[i];
-                dropItem.transform.localPosition = GameObject.FindGameObjectWithTag("Player").transform.localPosition;
+                dropItem.transform.localPosition = Player.Instance.transform.localPosition;
             }
         }
     }
