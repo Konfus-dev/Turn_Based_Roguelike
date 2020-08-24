@@ -33,18 +33,18 @@ public class WorkingStation : MonoBehaviour
             showCraftSystem = !showCraftSystem;
             if (showCraftSystem)
             {
-                craftInventory.openInventory();
+                craftInventory.OpenInventory();
             }
             else
             {
                 cS.backToInventory();
-                craftInventory.closeInventory();
+                craftInventory.CloseInventory();
             }
         }
         if (showCraftSystem && distance > distanceToOpenWorkingStation)
         {
             cS.backToInventory();
-            craftInventory.closeInventory();
+            craftInventory.CloseInventory();
         }
 
 

@@ -34,7 +34,7 @@ public class Hotbar : MonoBehaviour
             Inventory inv = panel.AddComponent<Inventory>();
             panel.AddComponent<InventoryDesign>();
             panel.AddComponent<Hotbar>();
-            inv.getPrefabs();
+            inv.GetPrefabs();
         }
         else
         {
@@ -47,7 +47,7 @@ public class Hotbar : MonoBehaviour
             GameObject draggingItem = (GameObject)Instantiate(Resources.Load("Prefabs/DraggingItem") as GameObject);
             draggingItem.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas").transform, true);
             panel.AddComponent<InventoryDesign>();
-            inv.getPrefabs();
+            inv.GetPrefabs();
         }
     }
 #endif
@@ -64,7 +64,7 @@ public class Hotbar : MonoBehaviour
                     {
                         Destroy(transform.GetChild(1).GetChild(i).GetChild(0).GetComponent<ConsumeItem>().duplication);
                     }
-                    transform.GetChild(1).GetChild(i).GetChild(0).GetComponent<ConsumeItem>().consumeIt();
+                    transform.GetChild(1).GetChild(i).GetChild(0).GetComponent<ConsumeItem>().ConsumeIt();
                 }
             }
         }

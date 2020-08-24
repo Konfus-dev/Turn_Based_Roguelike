@@ -8,6 +8,14 @@ using System.Collections.Generic;
 
 public class Inventory : MonoBehaviour
 {
+    //Inventory Settings
+    public bool mainInventory;
+    public List<Item> ItemsInInventory = new List<Item>();
+    public int height;
+    public int width;
+    public bool stackable;
+    public static bool inventoryOpen;
+
     //Prefabs
     [SerializeField]
     private GameObject prefabCanvasWithPanel;
@@ -44,41 +52,16 @@ public class Inventory : MonoBehaviour
     [SerializeField]
     private RectTransform SlotGridRectTransform;
 
-    //Inventory Settings
-    [SerializeField]
-    public bool mainInventory;
-    [SerializeField]
-    public List<Item> ItemsInInventory = new List<Item>();
-    [SerializeField]
-    public int height;
-    [SerializeField]
-    public int width;
-    [SerializeField]
-    public bool stackable;
-    [SerializeField]
-    public static bool inventoryOpen;
-
-
     //GUI Settings
-    [SerializeField]
     public int slotSize;
-    [SerializeField]
     public int iconSize;
-    [SerializeField]
     public int paddingBetweenX;
-    [SerializeField]
     public int paddingBetweenY;
-    [SerializeField]
     public int paddingLeft;
-    [SerializeField]
     public int paddingRight;
-    [SerializeField]
     public int paddingBottom;
-    [SerializeField]
     public int paddingTop;
-    [SerializeField]
     public int positionNumberX;
-    [SerializeField]
     public int positionNumberY;
 
     InputManager inputManagerDatabase;
@@ -98,12 +81,12 @@ public class Inventory : MonoBehaviour
         if (transform.GetComponent<Hotbar>() == null)
             this.gameObject.SetActive(false);
 
-        updateItemList();
+        UpdateItemList();
 
         inputManagerDatabase = (InputManager)Resources.Load("InputManager");
     }
 
-    public void sortItems()
+    public void SortItems()
     {
         int empty = -1;
         for (int i = 0; i < SlotContainer.transform.childCount; i++)
@@ -127,13 +110,13 @@ public class Inventory : MonoBehaviour
         }
     }
 
-    void Update()
+    private void Update()
     {
-        updateItemIndex();
+        UpdateItemIndex();
     }
 
 
-    public void setAsMain()
+    public void SetAsMain()
     {
         if (mainInventory)
             this.gameObject.tag = "Untagged";
@@ -143,41 +126,39 @@ public class Inventory : MonoBehaviour
 
     public void OnUpdateItemList()
     {
-        updateItemList();
+        UpdateItemList();
     }
 
-    public void closeInventory()
+    public void CloseInventory()
     {
         this.gameObject.SetActive(false);
-        checkIfAllInventoryClosed();
+        CheckIfAllInventoryClosed();
     }
 
-    public void openInventory()
+    public void OpenInventory()
     {
         this.gameObject.SetActive(true);
-        if (InventoryOpen != null)
-            InventoryOpen();
+        InventoryOpen?.Invoke();
     }
 
-    public void checkIfAllInventoryClosed()
+    public void CheckIfAllInventoryClosed()
     {
         GameObject canvas = GameObject.FindGameObjectWithTag("Canvas");
 
         for (int i = 0; i < canvas.transform.childCount; i++)
         {
             GameObject child = canvas.transform.GetChild(i).gameObject;
-            if (!child.activeSelf && (child.tag == "EquipmentSystem" || child.tag == "Panel" || child.tag == "MainInventory" || child.tag == "CraftSystem"))
+            if (!child.activeSelf && (child.CompareTag("EquipmentSystem") || child.CompareTag("Panel") || child.CompareTag("MainInventory") || child.CompareTag("CraftSystem")))
             {
                 if (AllInventoriesClosed != null && i == canvas.transform.childCount - 1)
                     AllInventoriesClosed();
             }
-            else if (child.activeSelf && (child.tag == "EquipmentSystem" || child.tag == "Panel" || child.tag == "MainInventory" || child.tag == "CraftSystem"))
+            else if (child.activeSelf && (child.CompareTag("EquipmentSystem") || child.CompareTag("Panel") || child.CompareTag("MainInventory") || child.CompareTag("CraftSystem")))
                 break;
 
             else if (i == canvas.transform.childCount - 1)
             {
-                if (AllInventoriesClosed != null)
-                    AllInventoriesClosed();
+                AllInventoriesClosed?.Invoke();
             }
 
 
@@ -186,31 +167,30 @@ public class Inventory : MonoBehaviour
 
     public void ConsumeItem(Item item)
     {
-        if (ItemConsumed != null)
-            ItemConsumed(item);
+        ItemConsumed?.Invoke(item);
     }
 
     public void EquiptItem(Item item)
     {
-        if (ItemEquip != null)
-            ItemEquip(item);
+        ItemEquip?.Invoke(item);
     }
 
     public void UnEquipItem1(Item item)
     {
-        if (UnEquipItem != null)
-            UnEquipItem(item);
+        UnEquipItem?.Invoke(item);
     }
 
 #if UNITY_EDITOR
     [MenuItem("Master System/Create/Inventory and Storage")]        //creating the menu item
-    public static void menuItemCreateInventory()       //create the inventory at start
+    public static void MenuItemCreateInventory()       //create the inventory at start
     {
-        GameObject Canvas = null;
+        GameObject Canvas;
         if (GameObject.FindGameObjectWithTag("Canvas") == null)
         {
-            GameObject inventory = new GameObject();
-            inventory.name = "Inventories";
+            GameObject inventory = new GameObject
+            {
+                name = "Inventories"
+            };
             Canvas = (GameObject)Instantiate(Resources.Load("Prefabs/Canvas - Inventory") as GameObject);
             Canvas.transform.SetParent(inventory.transform, true);
             GameObject panel = (GameObject)Instantiate(Resources.Load("Prefabs/Panel - Inventory") as GameObject);
@@ -221,7 +201,7 @@ public class Inventory : MonoBehaviour
             Inventory temp = panel.AddComponent<Inventory>();
             Instantiate(Resources.Load("Prefabs/EventSystem") as GameObject);
             panel.AddComponent<InventoryDesign>();
-            temp.getPrefabs();
+            temp.GetPrefabs();
         }
         else
         {
@@ -233,12 +213,12 @@ public class Inventory : MonoBehaviour
             DestroyImmediate(GameObject.FindGameObjectWithTag("DraggingItem"));
             GameObject draggingItem = (GameObject)Instantiate(Resources.Load("Prefabs/DraggingItem") as GameObject);
             draggingItem.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas").transform, true);
-            temp.getPrefabs();
+            temp.GetPrefabs();
         }
     }
 #endif
 
-    public void setImportantVariables()
+    public void SetImportantVariables()
     {
         PanelRectTransform = GetComponent<RectTransform>();
         SlotContainer = transform.GetChild(1).gameObject;
@@ -246,7 +226,7 @@ public class Inventory : MonoBehaviour
         SlotGridRectTransform = SlotContainer.GetComponent<RectTransform>();
     }
 
-    public void getPrefabs()
+    public void GetPrefabs()
     {
         if (prefabCanvasWithPanel == null)
             prefabCanvasWithPanel = Resources.Load("Prefabs/Canvas - Inventory") as GameObject;
@@ -263,16 +243,16 @@ public class Inventory : MonoBehaviour
         if (prefabPanel == null)
             prefabPanel = Resources.Load("Prefabs/Panel - Inventory") as GameObject;
 
-        setImportantVariables();
-        setDefaultSettings();
-        adjustInventorySize();
-        updateSlotAmount(width, height);
-        updateSlotSize();
-        updatePadding(paddingBetweenX, paddingBetweenY);
+        SetImportantVariables();
+        SetDefaultSettings();
+        AdjustInventorySize();
+        UpdateSlotAmount(width, height);
+        UpdateSlotSize();
+        UpdatePadding(/*paddingBetweenX, paddingBetweenY*/);
 
     }
 
-    public void updateItemList()
+    public void UpdateItemList()
     {
         ItemsInInventory.Clear();
         for (int i = 0; i < SlotContainer.transform.childCount; i++)
@@ -287,7 +267,7 @@ public class Inventory : MonoBehaviour
 
     }
 
-    public bool characterSystem()
+    public bool CharacterSystem()
     {
         if (GetComponent<EquipmentSystem>() != null)
             return true;
@@ -296,7 +276,7 @@ public class Inventory : MonoBehaviour
     }
 
 
-    public void setDefaultSettings()
+    public void SetDefaultSettings()
     {
         if (GetComponent<EquipmentSystem>() == null && GetComponent<Hotbar>() == null && GetComponent<CraftSystem>() == null)
         {
@@ -359,7 +339,7 @@ public class Inventory : MonoBehaviour
         }
     }
 
-    public void adjustInventorySize()
+    public void AdjustInventorySize()
     {
         int x = (((width * slotSize) + ((width - 1) * paddingBetweenX)) + paddingLeft + paddingRight);
         int y = (((height * slotSize) + ((height - 1) * paddingBetweenY)) + paddingTop + paddingBottom);
@@ -368,7 +348,7 @@ public class Inventory : MonoBehaviour
         SlotGridRectTransform.sizeDelta = new Vector2(x, y);
     }
 
-    public void updateSlotAmount(int width, int height)
+    public void UpdateSlotAmount(int width, int height)
     {
         if (prefabSlot == null)
             prefabSlot = Resources.Load("Prefabs/Slot - Inventory") as GameObject;
@@ -391,7 +371,7 @@ public class Inventory : MonoBehaviour
         List<GameObject> slotList = new List<GameObject>();
         foreach (Transform child in SlotContainer.transform)
         {
-            if (child.tag == "Slot") { slotList.Add(child.gameObject); }
+            if (child.CompareTag("Slot")) { slotList.Add(child.gameObject); }
         }
 
         while (slotList.Count > width * height)
@@ -422,14 +402,14 @@ public class Inventory : MonoBehaviour
         {
             foreach (Item i in itemsToMove)
             {
-                addItemToInventory(i.itemID);
+                AddItemToInventory(i.itemID);
             }
         }
 
-        setImportantVariables();
+        SetImportantVariables();
     }
 
-    public void updateSlotAmount()
+    public void UpdateSlotAmount()
     {
 
         if (prefabSlot == null)
@@ -452,7 +432,7 @@ public class Inventory : MonoBehaviour
         List<GameObject> slotList = new List<GameObject>();
         foreach (Transform child in SlotContainer.transform)
         {
-            if (child.tag == "Slot") { slotList.Add(child.gameObject); }
+            if (child.CompareTag("Slot")) { slotList.Add(child.gameObject); }
         }
 
         while (slotList.Count > width * height)
@@ -483,28 +463,28 @@ public class Inventory : MonoBehaviour
         {
             foreach (Item i in itemsToMove)
             {
-                addItemToInventory(i.itemID);
+                AddItemToInventory(i.itemID);
             }
         }
 
-        setImportantVariables();
+        SetImportantVariables();
     }
 
-    public void updateSlotSize(int slotSize)
+    public void UpdateSlotSize(int slotSize)
     {
         SlotGridLayout.cellSize = new Vector2(slotSize, slotSize);
 
-        updateItemSize();
+        UpdateItemSize();
     }
 
-    public void updateSlotSize()
+    public void UpdateSlotSize()
     {
         SlotGridLayout.cellSize = new Vector2(slotSize, slotSize);
 
-        updateItemSize();
+        UpdateItemSize();
     }
 
-    void updateItemSize()
+    private void UpdateItemSize()
     {
         for (int i = 0; i < SlotContainer.transform.childCount; i++)
         {
@@ -517,7 +497,7 @@ public class Inventory : MonoBehaviour
         }
     }
 
-    public void updatePadding(int spacingBetweenX, int spacingBetweenY)
+    public void UpdatePadding(/*int spacingBetweenX, int spacingBetweenY*/)
     {
         SlotGridLayout.spacing = new Vector2(paddingBetweenX, paddingBetweenY);
         SlotGridLayout.padding.bottom = paddingBottom;
@@ -526,16 +506,16 @@ public class Inventory : MonoBehaviour
         SlotGridLayout.padding.top = paddingTop;
     }
 
-    public void updatePadding()
+    /*public void UpdatePadding()
     {
         SlotGridLayout.spacing = new Vector2(paddingBetweenX, paddingBetweenY);
         SlotGridLayout.padding.bottom = paddingBottom;
         SlotGridLayout.padding.right = paddingRight;
         SlotGridLayout.padding.left = paddingLeft;
         SlotGridLayout.padding.top = paddingTop;
-    }
+    }*/
 
-    public void addAllItemsToInventory()
+    public void AddAllItemsToInventory()
     {
         for (int k = 0; k < ItemsInInventory.Count; k++)
         {
@@ -548,18 +528,18 @@ public class Inventory : MonoBehaviour
                     item.transform.SetParent(SlotContainer.transform.GetChild(i));
                     item.GetComponent<RectTransform>().localPosition = Vector3.zero;
                     item.transform.GetChild(0).GetComponent<Image>().sprite = ItemsInInventory[k].itemIcon;
-                    updateItemSize();
+                    UpdateItemSize();
                     break;
                 }
             }
         }
-        stackableSettings();
+        StackableSettings();
     }
 
 
-    public bool checkIfItemAllreadyExist(int itemID, int itemValue)
+    public bool CheckIfItemAllreadyExist(int itemID, int itemValue)
     {
-        updateItemList();
+        UpdateItemList();
         int stack;
         for (int i = 0; i < ItemsInInventory.Count; i++)
         {
@@ -569,7 +549,7 @@ public class Inventory : MonoBehaviour
                 if (stack <= ItemsInInventory[i].maxStack)
                 {
                     ItemsInInventory[i].itemValue = stack;
-                    GameObject temp = getItemGameObject(ItemsInInventory[i]);
+                    GameObject temp = GetItemGameObject(ItemsInInventory[i]);
                     if (temp != null && temp.GetComponent<ConsumeItem>().duplication != null)
                         temp.GetComponent<ConsumeItem>().duplication.GetComponent<ItemOnObject>().item.itemValue = stack;
                     return true;
@@ -579,7 +559,7 @@ public class Inventory : MonoBehaviour
         return false;
     }
 
-    public void addItemToInventory(int id)
+    public void AddItemToInventory(int id)
     {
         for (int i = 0; i < SlotContainer.transform.childCount; i++)
         {
@@ -595,12 +575,12 @@ public class Inventory : MonoBehaviour
             }
         }
 
-        stackableSettings();
-        updateItemList();
+        StackableSettings();
+        UpdateItemList();
 
     }
 
-    public GameObject addItemToInventory(int id, int value)
+    public GameObject AddItemToInventory(int id, int value)
     {
         for (int i = 0; i < SlotContainer.transform.childCount; i++)
         {
@@ -623,13 +603,13 @@ public class Inventory : MonoBehaviour
             }
         }
 
-        stackableSettings();
-        updateItemList();
+        StackableSettings();
+        UpdateItemList();
         return null;
 
     }
 
-    public void addItemToInventoryStorage(int itemID, int value)
+    public void AddItemToInventoryStorage(int itemID, int value)
     {
 
         for (int i = 0; i < SlotContainer.transform.childCount; i++)
@@ -648,16 +628,16 @@ public class Inventory : MonoBehaviour
                 itemOnObject.item.indexItemInList = 999;
                 if (inputManagerDatabase == null)
                     inputManagerDatabase = (InputManager)Resources.Load("InputManager");
-                updateItemSize();
-                stackableSettings();
+                UpdateItemSize();
+                StackableSettings();
                 break;
             }
         }
-        stackableSettings();
-        updateItemList();
+        StackableSettings();
+        UpdateItemList();
     }
 
-    public void updateIconSize(int iconSize)
+    public void UpdateIconSize(int iconSize)
     {
         for (int i = 0; i < SlotContainer.transform.childCount; i++)
         {
@@ -666,11 +646,11 @@ public class Inventory : MonoBehaviour
                 SlotContainer.transform.GetChild(i).GetChild(0).GetChild(0).GetComponent<RectTransform>().sizeDelta = new Vector2(iconSize, iconSize);
             }
         }
-        updateItemSize();
+        UpdateItemSize();
 
     }
 
-    public void updateIconSize()
+    public void UpdateIconSize()
     {
         for (int i = 0; i < SlotContainer.transform.childCount; i++)
         {
@@ -679,11 +659,11 @@ public class Inventory : MonoBehaviour
                 SlotContainer.transform.GetChild(i).GetChild(0).GetChild(0).GetComponent<RectTransform>().sizeDelta = new Vector2(iconSize, iconSize);
             }
         }
-        updateItemSize();
+        UpdateItemSize();
 
     }
 
-    public void stackableSettings(bool stackable, Vector3 posi)
+    public void StackableSettings(bool stackable, Vector3 posi)
     {
         for (int i = 0; i < SlotContainer.transform.childCount; i++)
         {
@@ -702,7 +682,7 @@ public class Inventory : MonoBehaviour
         }
     }
 
-    public void deleteAllItems()
+    public void DeleteAllItems()
     {
         for (int i = 0; i < SlotContainer.transform.childCount; i++)
         {
@@ -713,7 +693,7 @@ public class Inventory : MonoBehaviour
         }
     }
 
-    public List<Item> getItemList()
+    public List<Item> GetItemList()
     {
         List<Item> theList = new List<Item>();
         for (int i = 0; i < SlotContainer.transform.childCount; i++)
@@ -724,7 +704,7 @@ public class Inventory : MonoBehaviour
         return theList;
     }
 
-    public void stackableSettings()
+    public void StackableSettings()
     {
         for (int i = 0; i < SlotContainer.transform.childCount; i++)
         {
@@ -749,7 +729,7 @@ public class Inventory : MonoBehaviour
 
     }
 
-    public GameObject getItemGameObjectByName(Item item)
+    public GameObject GetItemGameObjectByName(Item item)
     {
         for (int k = 0; k < SlotContainer.transform.childCount; k++)
         {
@@ -766,7 +746,7 @@ public class Inventory : MonoBehaviour
         return null;
     }
 
-    public GameObject getItemGameObject(Item item)
+    public GameObject GetItemGameObject(Item item)
     {
         for (int k = 0; k < SlotContainer.transform.childCount; k++)
         {
@@ -783,7 +763,7 @@ public class Inventory : MonoBehaviour
         return null;
     }
 
-    public void changeInventoryPanelDesign(Image image)
+    public void ChangeInventoryPanelDesign(Image image)
     {
         Image inventoryDesign = transform.GetChild(0).GetChild(0).GetComponent<Image>();
         inventoryDesign.sprite = (Sprite)image.sprite;
@@ -793,7 +773,7 @@ public class Inventory : MonoBehaviour
         inventoryDesign.fillCenter = image.fillCenter;
     }
 
-    public void deleteItem(Item item)
+    public void DeleteItem(Item item)
     {
         for (int i = 0; i < ItemsInInventory.Count; i++)
         {
@@ -802,7 +782,7 @@ public class Inventory : MonoBehaviour
         }
     }
 
-    public void deleteItemFromInventory(Item item)
+    public void DeleteItemFromInventory(Item item)
     {
         for (int i = 0; i < ItemsInInventory.Count; i++)
         {
@@ -811,7 +791,7 @@ public class Inventory : MonoBehaviour
         }
     }
 
-    public void deleteItemFromInventoryWithGameObject(Item item)
+    public void DeleteItemFromInventoryWithGameObject(Item item)
     {
         for (int i = 0; i < ItemsInInventory.Count; i++)
         {
@@ -836,7 +816,7 @@ public class Inventory : MonoBehaviour
         }
     }
 
-    public int getPositionOfItem(Item item)
+    public int GetPositionOfItem(Item item)
     {
         for (int i = 0; i < SlotContainer.transform.childCount; i++)
         {
@@ -850,7 +830,7 @@ public class Inventory : MonoBehaviour
         return -1;
     }
 
-    public void addItemToInventory(int ignoreSlot, int itemID, int itemValue)
+    public void AddItemToInventory(int ignoreSlot, int itemID, int itemValue)
     {
 
         for (int i = 0; i < SlotContainer.transform.childCount; i++)
@@ -867,17 +847,17 @@ public class Inventory : MonoBehaviour
                 item.transform.SetParent(SlotContainer.transform.GetChild(i));
                 item.GetComponent<RectTransform>().localPosition = Vector3.zero;
                 itemOnObject.item.indexItemInList = 999;
-                updateItemSize();
-                stackableSettings();
+                UpdateItemSize();
+                StackableSettings();
                 break;
             }
         }
-        stackableSettings();
-        updateItemList();
+        StackableSettings();
+        UpdateItemList();
     }
 
 
-    public void updateItemIndex()
+    public void UpdateItemIndex()
     {
         for (int i = 0; i < ItemsInInventory.Count; i++)
         {

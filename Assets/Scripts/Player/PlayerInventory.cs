@@ -8,19 +8,18 @@ public class PlayerInventory : MonoBehaviour
     public GameObject inventory;
     public GameObject characterSystem;
     public GameObject craftSystem;
+    public GameObject HPMANACanvas;
+
     private Inventory craftSystemInventory;
     private CraftSystem cS;
     private Inventory mainInventory;
     private Inventory characterSystemInventory;
     private Tooltip toolTip;
-
     private InputManager inputManagerDatabase;
 
-    public GameObject HPMANACanvas;
+    private int normalSize = 3;
 
-    int normalSize = 3;
-
-    void Start()
+    private void Start()
     {
         //if (HPMANACanvas != null)
         //{
@@ -51,19 +50,19 @@ public class PlayerInventory : MonoBehaviour
             craftSystemInventory = craftSystem.GetComponent<Inventory>();
     }
 
-    void Update()
+    private void Update()
     {
         if (Input.GetKeyDown(inputManagerDatabase.CharacterSystemKeyCode))
         {
             if (!characterSystem.activeSelf)
             {
-                characterSystemInventory.openInventory();
+                characterSystemInventory.OpenInventory();
             }
             else
             {
                 if (toolTip != null)
                     toolTip.deactivateTooltip();
-                characterSystemInventory.closeInventory();
+                characterSystemInventory.CloseInventory();
             }
         }
 
@@ -71,27 +70,27 @@ public class PlayerInventory : MonoBehaviour
         {
             if (!inventory.activeSelf)
             {
-                mainInventory.openInventory();
+                mainInventory.OpenInventory();
             }
             else
             {
                 if (toolTip != null)
                     toolTip.deactivateTooltip();
-                mainInventory.closeInventory();
+                mainInventory.CloseInventory();
             }
         }
 
         if (Input.GetKeyDown(inputManagerDatabase.CraftSystemKeyCode))
         {
             if (!craftSystem.activeSelf)
-                craftSystemInventory.openInventory();
+                craftSystemInventory.OpenInventory();
             else
             {
                 if (cS != null)
                     cS.backToInventory();
                 if (toolTip != null)
                     toolTip.deactivateTooltip();
-                craftSystemInventory.closeInventory();
+                craftSystemInventory.CloseInventory();
             }
         }
 
@@ -99,31 +98,31 @@ public class PlayerInventory : MonoBehaviour
 
     public void OnEnable()
     {
-        Inventory.ItemEquip += OnBackpack;
-        Inventory.UnEquipItem += UnEquipBackpack;
+        /*Inventory.ItemEquip += OnBackpack;
+        Inventory.UnEquipItem += UnEquipBackpack;*/
 
         Inventory.ItemEquip += OnGearItem;
         Inventory.ItemConsumed += OnConsumeItem;
         Inventory.UnEquipItem += OnUnEquipItem;
 
-        Inventory.ItemEquip += EquipWeapon;
-        Inventory.UnEquipItem += UnEquipWeapon;
+        /*Inventory.ItemEquip += EquipWeapon;
+        Inventory.UnEquipItem += UnEquipWeapon;*/
     }
 
     public void OnDisable()
     {
-        Inventory.ItemEquip -= OnBackpack;
-        Inventory.UnEquipItem -= UnEquipBackpack;
+       /* Inventory.ItemEquip -= OnBackpack;
+        Inventory.UnEquipItem -= UnEquipBackpack;*/
 
         Inventory.ItemEquip -= OnGearItem;
         Inventory.ItemConsumed -= OnConsumeItem;
         Inventory.UnEquipItem -= OnUnEquipItem;
 
-        Inventory.UnEquipItem -= UnEquipWeapon;
-        Inventory.ItemEquip -= EquipWeapon;
+        /*Inventory.UnEquipItem -= UnEquipWeapon;
+        Inventory.ItemEquip -= EquipWeapon;*/
     }
 
-    void EquipWeapon(Item item)
+    /*private void EquipWeapon(Item item)
     {
         if (item.itemType == ItemType.Weapon)
         {
@@ -131,15 +130,15 @@ public class PlayerInventory : MonoBehaviour
         }
     }
 
-    void UnEquipWeapon(Item item)
+    private void UnEquipWeapon(Item item)
     {
         if (item.itemType == ItemType.Weapon)
         {
             //delete the weapon if you unequip the weapon
         }
-    }
+    }*/
 
-    void OnBackpack(Item item)
+    /*private void OnBackpack(Item item)
     {
         if (item.itemType == ItemType.Backpack)
         {
@@ -147,22 +146,22 @@ public class PlayerInventory : MonoBehaviour
             {
                 if (mainInventory == null)
                     mainInventory = inventory.GetComponent<Inventory>();
-                mainInventory.sortItems();
+                mainInventory.SortItems();
                 if (item.itemAttributes[i].attributeName == "Slots")
-                    changeInventorySize(item.itemAttributes[i].attributeValue);
+                    ChangeInventorySize(item.itemAttributes[i].attributeValue);
             }
         }
-    }
+    }*/
 
-    void UnEquipBackpack(Item item)
+    /*private void UnEquipBackpack(Item item)
     {
         if (item.itemType == ItemType.Backpack)
-            changeInventorySize(normalSize);
-    }
+            ChangeInventorySize(normalSize);
+    }*/
 
-    void changeInventorySize(int size)
+    /*private void ChangeInventorySize(int size)
     {
-        dropTheRestItems(size);
+        DropTheRestItems(size);
 
         if (mainInventory == null)
             mainInventory = inventory.GetComponent<Inventory>();
@@ -170,40 +169,40 @@ public class PlayerInventory : MonoBehaviour
         {
             mainInventory.width = 3;
             mainInventory.height = 1;
-            mainInventory.updateSlotAmount();
-            mainInventory.adjustInventorySize();
+            mainInventory.UpdateSlotAmount();
+            mainInventory.AdjustInventorySize();
         }
         if (size == 6)
         {
             mainInventory.width = 3;
             mainInventory.height = 2;
-            mainInventory.updateSlotAmount();
-            mainInventory.adjustInventorySize();
+            mainInventory.UpdateSlotAmount();
+            mainInventory.AdjustInventorySize();
         }
         else if (size == 12)
         {
             mainInventory.width = 4;
             mainInventory.height = 3;
-            mainInventory.updateSlotAmount();
-            mainInventory.adjustInventorySize();
+            mainInventory.UpdateSlotAmount();
+            mainInventory.AdjustInventorySize();
         }
         else if (size == 16)
         {
             mainInventory.width = 4;
             mainInventory.height = 4;
-            mainInventory.updateSlotAmount();
-            mainInventory.adjustInventorySize();
+            mainInventory.UpdateSlotAmount();
+            mainInventory.AdjustInventorySize();
         }
         else if (size == 24)
         {
             mainInventory.width = 6;
             mainInventory.height = 4;
-            mainInventory.updateSlotAmount();
-            mainInventory.adjustInventorySize();
+            mainInventory.UpdateSlotAmount();
+            mainInventory.AdjustInventorySize();
         }
-    }
+    }*/
 
-    void dropTheRestItems(int size)
+    /*private void DropTheRestItems(int size)
     {
         if (size < mainInventory.ItemsInInventory.Count)
         {
@@ -215,7 +214,7 @@ public class PlayerInventory : MonoBehaviour
                 dropItem.transform.localPosition = Player.Instance.transform.localPosition;
             }
         }
-    }
+    }*/
 
     //void UpdateHPBar()
     //{

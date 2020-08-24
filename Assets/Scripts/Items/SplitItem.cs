@@ -37,16 +37,16 @@ public class SplitItem : MonoBehaviour, IPointerDownHandler
                 itemOnObject.item.itemValue = (int)itemOnObject.item.itemValue / 2;                                     //calculate the new value for the splitted item
                 splitPart = splitPart - itemOnObject.item.itemValue;                                                   //take the different
 
-                inv.addItemToInventory(itemOnObject.item.itemID, splitPart);                                            //and add a new item to the inventory
-                inv.stackableSettings();
+                inv.AddItemToInventory(itemOnObject.item.itemID, splitPart);                                            //and add a new item to the inventory
+                inv.StackableSettings();
 
                 if (GetComponent<ConsumeItem>().duplication != null)
                 {
                     GameObject dup = GetComponent<ConsumeItem>().duplication;
                     dup.GetComponent<ItemOnObject>().item.itemValue = itemOnObject.item.itemValue;
-                    dup.GetComponent<SplitItem>().inv.stackableSettings();
+                    dup.GetComponent<SplitItem>().inv.StackableSettings();
                 }
-                inv.updateItemList();
+                inv.UpdateItemList();
 
             }
         }

@@ -131,7 +131,7 @@ public class StorageInventory : MonoBehaviour
                 storageInventory.SetActive(false);
                 playerInventory.SetActive(false);
                 playerEquipment.SetActive(false);
-                inv.deleteAllItems();
+                inv.DeleteAllItems();
             }
             tooltip.deactivateTooltip();
             timerImage.fillAmount = 0;
@@ -166,7 +166,7 @@ public class StorageInventory : MonoBehaviour
             storageInventory.SetActive(false);
             playerInventory.SetActive(false);
             playerEquipment.SetActive(false);
-            inv.deleteAllItems();
+            inv.DeleteAllItems();
             tooltip.deactivateTooltip();
         }
 
@@ -178,7 +178,7 @@ public class StorageInventory : MonoBehaviour
     void setListofStorage()
     {
         Inventory inv = storageInventory.GetComponent<Inventory>();
-        storageItems = inv.getItemList();
+        storageItems = inv.GetItemList();
     }
 
     void addItemsToInventory()
@@ -186,9 +186,9 @@ public class StorageInventory : MonoBehaviour
         Inventory iV = storageInventory.GetComponent<Inventory>();
         for (int i = 0; i < storageItems.Count; i++)
         {
-            iV.addItemToInventory(storageItems[i].itemID, storageItems[i].itemValue);
+            iV.AddItemToInventory(storageItems[i].itemID, storageItems[i].itemValue);
         }
-        iV.stackableSettings();
+        iV.StackableSettings();
     }
 
 

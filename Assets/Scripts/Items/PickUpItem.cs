@@ -20,14 +20,14 @@ public class PickUpItem : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            bool check = inventory.checkIfItemAllreadyExist(item.itemID, item.itemValue);
+            bool check = inventory.CheckIfItemAllreadyExist(item.itemID, item.itemValue);
             if (check)
                 return;
             else if (inventory.ItemsInInventory.Count < (inventory.width * inventory.height))
             {
-                inventory.addItemToInventory(item.itemID, item.itemValue);
-                inventory.updateItemList();
-                inventory.stackableSettings();
+                inventory.AddItemToInventory(item.itemID, item.itemValue);
+                inventory.UpdateItemList();
+                inventory.StackableSettings();
                 Destroy(this.gameObject);
             }
         }

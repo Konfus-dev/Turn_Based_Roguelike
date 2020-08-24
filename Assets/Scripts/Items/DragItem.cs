@@ -63,8 +63,8 @@ public class DragItem : MonoBehaviour, IDragHandler, IPointerDownHandler, IEndDr
     public void createDuplication(GameObject Item)
     {
         Item item = Item.GetComponent<ItemOnObject>().item;
-        GameObject duplication = GameObject.FindGameObjectWithTag("MainInventory").GetComponent<Inventory>().addItemToInventory(item.itemID, item.itemValue);
-        duplication.transform.parent.parent.parent.GetComponent<Inventory>().stackableSettings();
+        GameObject duplication = GameObject.FindGameObjectWithTag("MainInventory").GetComponent<Inventory>().AddItemToInventory(item.itemID, item.itemValue);
+        duplication.transform.parent.parent.parent.GetComponent<Inventory>().StackableSettings();
         Item.GetComponent<ConsumeItem>().duplication = duplication;
         duplication.GetComponent<ConsumeItem>().duplication = Item;
     }
@@ -143,8 +143,8 @@ public class DragItem : MonoBehaviour, IDragHandler, IPointerDownHandler, IEndDr
                                     {
                                         GameObject dup = secondItemGameObject.GetComponent<ConsumeItem>().duplication;
                                         dup.GetComponent<ItemOnObject>().item.itemValue = secondItem.itemValue;
-                                        dup.GetComponent<SplitItem>().inv.stackableSettings();
-                                        dup.transform.parent.parent.parent.GetComponent<Inventory>().updateItemList();
+                                        dup.GetComponent<SplitItem>().inv.StackableSettings();
+                                        dup.transform.parent.parent.parent.GetComponent<Inventory>().UpdateItemList();
                                     }
                                 }
 
@@ -275,8 +275,8 @@ public class DragItem : MonoBehaviour, IDragHandler, IPointerDownHandler, IEndDr
                                 {
                                     GameObject dup = secondItemGameObject.GetComponent<ConsumeItem>().duplication;
                                     dup.GetComponent<ItemOnObject>().item.itemValue = secondItem.itemValue;
-                                    Inventory.GetComponent<Inventory>().stackableSettings();
-                                    dup.transform.parent.parent.parent.GetComponent<Inventory>().updateItemList();
+                                    Inventory.GetComponent<Inventory>().StackableSettings();
+                                    dup.transform.parent.parent.parent.GetComponent<Inventory>().UpdateItemList();
                                 }
                             }
 
@@ -299,7 +299,7 @@ public class DragItem : MonoBehaviour, IDragHandler, IPointerDownHandler, IEndDr
 
                                     createDuplication(this.gameObject);
                                     secondItemGameObject.GetComponent<ConsumeItem>().duplication.GetComponent<ItemOnObject>().item = secondItem;
-                                    secondItemGameObject.GetComponent<SplitItem>().inv.stackableSettings();
+                                    secondItemGameObject.GetComponent<SplitItem>().inv.StackableSettings();
 
                                 }
                             }
@@ -496,8 +496,8 @@ public class DragItem : MonoBehaviour, IDragHandler, IPointerDownHandler, IEndDr
                                 {
                                     GameObject dup = secondItemGameObject.GetComponent<ConsumeItem>().duplication;
                                     dup.GetComponent<ItemOnObject>().item.itemValue = secondItem.itemValue;
-                                    dup.GetComponent<SplitItem>().inv.stackableSettings();
-                                    dup.transform.parent.parent.parent.GetComponent<Inventory>().updateItemList();
+                                    dup.GetComponent<SplitItem>().inv.StackableSettings();
+                                    dup.transform.parent.parent.parent.GetComponent<Inventory>().UpdateItemList();
                                 }
                                 cS.ListWithItem();
                             }

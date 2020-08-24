@@ -18,25 +18,24 @@ public class EquipmentSystem : MonoBehaviour
 
     void Start()
     {
-        ConsumeItem.eS = GetComponent<EquipmentSystem>();
+        ConsumeItem.equipmentSystem = GetComponent<EquipmentSystem>();
         this.tag = "EquipmentSystem";
     }
 
-    public void getSlotsInTotal()
+    public void GetSlotsInTotal()
     {
         Inventory inv = GetComponent<Inventory>();
         slotsInTotal = inv.width * inv.height;
     }
 #if UNITY_EDITOR
     [MenuItem("Master System/Create/Equipment")]        //creating the menu item
-    public static void menuItemCreateInventory()       //create the inventory at start
+    public static void MenuItemCreateInventory()       //create the inventory at start
     {
-        GameObject Canvas = null;
         if (GameObject.FindGameObjectWithTag("Canvas") == null)
         {
             GameObject inventory = new GameObject();
             inventory.name = "Inventories";
-            Canvas = (GameObject)Instantiate(Resources.Load("Prefabs/Canvas - Inventory") as GameObject);
+            GameObject Canvas = (GameObject)Instantiate(Resources.Load("Prefabs/Canvas - Inventory") as GameObject);
             Canvas.transform.SetParent(inventory.transform, true);
             GameObject panel = (GameObject)Instantiate(Resources.Load("Prefabs/Panel - EquipmentSystem") as GameObject);
             panel.GetComponent<RectTransform>().localPosition = new Vector3(0, 0, 0);
@@ -47,7 +46,7 @@ public class EquipmentSystem : MonoBehaviour
             Inventory inv = panel.AddComponent<Inventory>();
             panel.AddComponent<InventoryDesign>();
             panel.AddComponent<EquipmentSystem>();
-            inv.getPrefabs();
+            inv.GetPrefabs();
         }
         else
         {
@@ -60,7 +59,7 @@ public class EquipmentSystem : MonoBehaviour
             GameObject draggingItem = (GameObject)Instantiate(Resources.Load("Prefabs/DraggingItem") as GameObject);
             panel.AddComponent<InventoryDesign>();
             draggingItem.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas").transform, true);
-            inv.getPrefabs();
+            inv.GetPrefabs();
         }
     }
 #endif

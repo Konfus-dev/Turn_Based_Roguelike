@@ -13,31 +13,21 @@ MonoBehaviour:
   m_Name: ItemDatabase
   m_EditorClassIdentifier: 
   itemList:
-  - itemName: HealthPotion_Small
+  - itemName: firstelement
     itemID: 0
-    itemDesc: 'If you drink this nice bottle you will get a small amount of health
-      back.
-
-
-      + 20 Health'
-    itemIcon: {fileID: -6888004981990130499, guid: bfead93a555ffbb44b6af1b177062e58,
-      type: 3}
-    itemModel: {fileID: 7045331179084693929, guid: d67185cfb45945f4482a7458ae44dee6,
-      type: 3}
-    itemValue: 1
-    itemType: 2
+    itemDesc: 
+    itemIcon: {fileID: 0}
+    itemModel: {fileID: 0}
+    itemValue: 0
+    itemType: 0
     itemWeight: 0
     maxStack: 0
-    indexItemInList: 999
+    indexItemInList: 0
     rarity: 0
     itemAttributes: []
-  - itemName: HealthPotion_Small
+  - itemName: HealthPotion
     itemID: 1
-    itemDesc: 'If you drink this nice bottle you will get a small amount of health
-      back.
-
-
-      + 20 Health'
+    itemDesc: Gives a small amount of health back.
     itemIcon: {fileID: -6888004981990130499, guid: bfead93a555ffbb44b6af1b177062e58,
       type: 3}
     itemModel: {fileID: 7045331179084693929, guid: d67185cfb45945f4482a7458ae44dee6,
@@ -45,17 +35,15 @@ MonoBehaviour:
     itemValue: 1
     itemType: 2
     itemWeight: 0
-    maxStack: 0
+    maxStack: 10
     indexItemInList: 999
     rarity: 0
-    itemAttributes: []
-  - itemName: HealthPotion_Large
+    itemAttributes:
+    - attributeName: Health
+      attributeValue: 1
+  - itemName: ManaPotion
     itemID: 2
-    itemDesc: 'If you drink this nice bottle you will get health back.
-
-
-      +
-      20 Health'
+    itemDesc: Gives a small amount of mana back.
     itemIcon: {fileID: 6215604450798711747, guid: bfead93a555ffbb44b6af1b177062e58,
       type: 3}
     itemModel: {fileID: 5533107549871622851, guid: cfd4b9ff22a8bdd4ea5a31775e021cfa,
@@ -63,11 +51,13 @@ MonoBehaviour:
     itemValue: 1
     itemType: 2
     itemWeight: 0
-    maxStack: 0
+    maxStack: 10
     indexItemInList: 999
-    rarity: 0
-    itemAttributes: []
-  - itemName: Sword_1
+    rarity: 1
+    itemAttributes:
+    - attributeName: Mana
+      attributeValue: 1
+  - itemName: Sword_5
     itemID: 3
     itemDesc: An old sword
     itemIcon: {fileID: 4047163999775024368, guid: 45360f37fd7550d4c8b6ff5af32627c0,
@@ -79,9 +69,11 @@ MonoBehaviour:
     itemWeight: 0
     maxStack: 0
     indexItemInList: 999
-    rarity: 0
-    itemAttributes: []
-  - itemName: Helm_1
+    rarity: 2
+    itemAttributes:
+    - attributeName: Damage
+      attributeValue: 1
+  - itemName: Helm_7
     itemID: 4
     itemDesc: 'This helm offers a little protection
 
@@ -94,7 +86,9 @@ MonoBehaviour:
     itemValue: 1
     itemType: 4
     itemWeight: 0
-    maxStack: 0
+    maxStack: 1
     indexItemInList: 999
-    rarity: 0
-    itemAttributes: []
+    rarity: 2
+    itemAttributes:
+    - attributeName: Armor
+      attributeValue: 1

@@ -131,7 +131,7 @@ public class CraftSystem : MonoBehaviour
         int length = itemInCraftSystem.Count;
         for (int i = 0; i < length; i++)
         {
-            GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerInventory>().inventory.GetComponent<Inventory>().addItemToInventory(itemInCraftSystem[i].itemID, itemInCraftSystem[i].itemValue);
+            GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerInventory>().inventory.GetComponent<Inventory>().AddItemToInventory(itemInCraftSystem[i].itemID, itemInCraftSystem[i].itemValue);
             Destroy(itemInCraftSystemGameObject[i]);
         }
 

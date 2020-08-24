@@ -66,7 +66,7 @@ public class InventoryEditor : Editor
         EditorGUILayout.PropertyField(mainInventory, new GUIContent("Player Inventory"));
         if (EditorGUI.EndChangeCheck())
         {
-            inv.setAsMain();
+            inv.SetAsMain();
         }
         GUILayout.EndVertical();
 
@@ -81,7 +81,7 @@ public class InventoryEditor : Editor
         }
         GUILayout.EndVertical();
 
-        if (!inv.characterSystem())
+        if (!inv.CharacterSystem())
         {
             GUILayout.BeginVertical("Box");
             showStackableItemsSettings = EditorGUILayout.Foldout(showStackableItemsSettings, "Stacking/Splitting");
@@ -123,18 +123,18 @@ public class InventoryEditor : Editor
                 EditorGUI.indentLevel--;
                 if (EditorGUI.EndChangeCheck())
                 {
-                    inv.stackableSettings();
+                    inv.StackableSettings();
                 }
             }
             else
             {
-                inv.stackableSettings();
+                inv.StackableSettings();
             }
             EditorGUI.indentLevel--;
         }
         else
         {
-            inv.stackableSettings();
+            inv.StackableSettings();
         }
 
 
@@ -149,28 +149,28 @@ public class InventoryEditor : Editor
         EditorGUILayout.IntSlider(inventoryWidth, 1, 10, new GUIContent("Width"));
         if (EditorGUI.EndChangeCheck())
         {
-            inv.setImportantVariables();
-            inv.updateSlotAmount();
-            inv.adjustInventorySize();
-            inv.updatePadding(slotsPaddingBetweenX.intValue, slotsPaddingBetweenY.intValue);
-            inv.updateSlotSize(inventorySlotSize.intValue);
-            inv.stackableSettings();
+            inv.SetImportantVariables();
+            inv.UpdateSlotAmount();
+            inv.AdjustInventorySize();
+            inv.UpdatePadding(/*slotsPaddingBetweenX.intValue, slotsPaddingBetweenY.intValue*/);
+            inv.UpdateSlotSize(inventorySlotSize.intValue);
+            inv.StackableSettings();
         }
 
         EditorGUI.BeginChangeCheck();
         EditorGUILayout.IntSlider(inventorySlotSize, 20, 100, new GUIContent("Slot Size"));                                                                                        //intfield for the slotsize
         if (EditorGUI.EndChangeCheck())                                                                                                        //if intfield got changed
         {
-            inv.setImportantVariables();
-            inv.adjustInventorySize();
-            inv.updateSlotSize(inventorySlotSize.intValue);
+            inv.SetImportantVariables();
+            inv.AdjustInventorySize();
+            inv.UpdateSlotSize(inventorySlotSize.intValue);
         }
 
         EditorGUI.BeginChangeCheck();
         EditorGUILayout.IntSlider(inventoryIconSize, 20, 100, new GUIContent("Icon Size"));                                                                                        //intfield for the slotsize
         if (EditorGUI.EndChangeCheck())                                                                                                        //if intfield got changed
         {
-            inv.updateIconSize(inventoryIconSize.intValue);
+            inv.UpdateIconSize(inventoryIconSize.intValue);
         }
 
         GUILayout.BeginVertical("Box");
@@ -189,8 +189,8 @@ public class InventoryEditor : Editor
             EditorGUI.indentLevel--;
             if (EditorGUI.EndChangeCheck())
             {
-                inv.adjustInventorySize();
-                inv.updatePadding(slotsPaddingBetweenX.intValue, slotsPaddingBetweenY.intValue);
+                inv.AdjustInventorySize();
+                inv.UpdatePadding(/*slotsPaddingBetweenX.intValue, slotsPaddingBetweenY.intValue*/);
             }
 
         }
@@ -202,10 +202,10 @@ public class InventoryEditor : Editor
 
     void addItemGUI()                                                                                                       //add a item to the inventory through the inspector
     {
-        if (!inv.characterSystem())
+        if (!inv.CharacterSystem())
         {
             GUILayout.Label("Add an item:");
-            inv.setImportantVariables();                                                                                                            //space to the top gui element
+            inv.SetImportantVariables();                                                                                                            //space to the top gui element
             EditorGUILayout.BeginHorizontal();                                                                                  //starting horizontal GUI elements
             ItemDataBaseList inventoryItemList = (ItemDataBaseList)Resources.Load("ItemDatabase");                            //loading the itemdatabase
             string[] items = new string[inventoryItemList.itemList.Count];                                                      //create a string array in length of the itemcount
@@ -218,8 +218,8 @@ public class InventoryEditor : Editor
             GUI.color = Color.green;                                                                                            //set the color of all following guielements to green
             if (GUILayout.Button("Add Item"))                                                                                   //creating button with name "AddItem"
             {                
-                inv.addItemToInventory(itemID, itemValue);                                                                      //and set the settings for possible stackedItems
-                inv.stackableSettings();
+                inv.AddItemToInventory(itemID, itemValue);                                                                      //and set the settings for possible stackedItems
+                inv.StackableSettings();
             }
             inv.OnUpdateItemList();
 
