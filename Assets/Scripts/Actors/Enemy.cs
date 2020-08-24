@@ -3,18 +3,21 @@
 public class Enemy : MonoBehaviour
 {
 
-    public int HP = 1;             
-    public int Damage = 1;
+    public int maxHealth = 100;
+    public int maxMana = 100;
+    public int damage = 0;
+    public int armor = 0;
+
+    public int currentHealth = 60;
+    public int currentMana = 100;
+
     public float MoveTime = 0.1f;
     public float AggroDistance = 5;
     public int travelTurns = 1;
-    public int InventorySize = 1;
 
     public ActorMovement movement;
-    private Inventory Inventory;
 
     private Animator Animator;
-    Vector3 MoveTo;
 
     public enum EnemyState
     {
@@ -47,9 +50,6 @@ public class Enemy : MonoBehaviour
     protected void Start()
     {
         movement = transform.GetComponent<ActorMovement>();
-        this.Inventory = new Inventory(null);
-
-        this.Inventory.Size = InventorySize;
 
         //animator = GetComponent<Animator>();
         int startState = Random.Range(0, 2);
@@ -62,43 +62,32 @@ public class Enemy : MonoBehaviour
 
     }
 
-    public void ManageHealth(int loss, int gain)
+    public void CheckIfDead()
     {
-        //Set the trigger for the player animator to transition to the playerHit animation.
-        //animator.SetTrigger("Hit");
-        if (loss > 0)
+        
+        if (currentHealth <= 0)
         {
-            //animator.SetTrigger("Hit");
-            HP -= loss;
+            //TODO: play particle effect here
 
-            if (HP <= 0)
-            {
-                //TODO: play particle effect here
-
-                GameManager.Instance.RemoveEnemyFromList(this);
-                movement.myNode.occupied = false;
-                Debug.Log(this.gameObject.name + " is very dead. Their family is mortified by the news. You monster..");
-                gameObject.SetActive(false);
-            }
+            GameManager.Instance.RemoveEnemyFromList(this);
+            movement.myNode.occupied = false;
+            Debug.Log(this.gameObject.name + " is very dead. Their family is mortified by the news. You monster..");
+            gameObject.SetActive(false);
         }
-        else
-        {
-            //Set the trigger for player get health
-            //somthing to do with a health particle effect probably
-            HP += gain;
-        }
+        
     }
 
     public void Attack(Player player)
     {
         SetState(EnemyState.Attacking);
-        player.Defense(Damage);
+        player.Defense(damage);
     }
 
     public void Defense(int dmg)
     {
         SetState(EnemyState.TakingDamage);
-        ManageHealth(dmg, 0);
+        currentHealth -= dmg;
+        CheckIfDead();
     }
 
 

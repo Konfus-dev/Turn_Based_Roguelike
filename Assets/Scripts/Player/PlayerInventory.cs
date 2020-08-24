@@ -252,17 +252,11 @@ public class PlayerInventory : MonoBehaviour
             }
             if (item.itemAttributes[i].attributeName == "Armor")
             {
-                if ((Player.Instance.currentArmor + item.itemAttributes[i].attributeValue) > Player.Instance.maxArmor)
-                    Player.Instance.currentArmor = Player.Instance.maxArmor;
-                else
-                    Player.Instance.currentArmor += item.itemAttributes[i].attributeValue;
+                Player.Instance.armor += item.itemAttributes[i].attributeValue;
             }
             if (item.itemAttributes[i].attributeName == "Damage")
             {
-                if ((Player.Instance.currentDamage + item.itemAttributes[i].attributeValue) > Player.Instance.maxDamage)
-                    Player.Instance.currentDamage = Player.Instance.maxDamage;
-                else
-                    Player.Instance.currentDamage += item.itemAttributes[i].attributeValue;
+                Player.Instance.damage += item.itemAttributes[i].attributeValue;
             }
         }
         //if (HPMANACanvas != null)
@@ -281,9 +275,9 @@ public class PlayerInventory : MonoBehaviour
             if (item.itemAttributes[i].attributeName == "Mana")
                 Player.Instance.maxMana += item.itemAttributes[i].attributeValue;
             if (item.itemAttributes[i].attributeName == "Armor")
-                Player.Instance.maxArmor += item.itemAttributes[i].attributeValue;
+                Player.Instance.armor += item.itemAttributes[i].attributeValue;
             if (item.itemAttributes[i].attributeName == "Damage")
-                Player.Instance.maxDamage += item.itemAttributes[i].attributeValue;
+                Player.Instance.damage += item.itemAttributes[i].attributeValue;
         }
         //if (HPMANACanvas != null)
         //{
@@ -301,9 +295,9 @@ public class PlayerInventory : MonoBehaviour
             if (item.itemAttributes[i].attributeName == "Mana")
                 Player.Instance.maxMana -= item.itemAttributes[i].attributeValue;
             if (item.itemAttributes[i].attributeName == "Armor")
-                Player.Instance.maxArmor -= item.itemAttributes[i].attributeValue;
+                Player.Instance.armor -= item.itemAttributes[i].attributeValue;
             if (item.itemAttributes[i].attributeName == "Damage")
-                Player.Instance.maxDamage -= item.itemAttributes[i].attributeValue;
+                Player.Instance.damage -= item.itemAttributes[i].attributeValue;
         }
         //if (HPMANACanvas != null)
         //{

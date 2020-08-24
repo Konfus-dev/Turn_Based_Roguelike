@@ -104,13 +104,13 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6785541576685021730}
-  - component: {fileID: 6785541576685021731}
-  - component: {fileID: 951992941663247204}
-  - component: {fileID: 6785541576940005475}
   - component: {fileID: 6785541576940005477}
+  - component: {fileID: 951992941663247204}
+  - component: {fileID: 4907136880253905584}
+  - component: {fileID: 6549091689646523019}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -130,58 +130,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6785541576685021731
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6785541576685021729}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d26eb1ad3bc02144891e6936728c6d06, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHealth: 100
-  maxMana: 100
-  maxDamage: 0
-  maxArmor: 0
-  currentHealth: 60
-  currentMana: 100
-  currentDamage: 0
-  currentArmor: 0
-  currentState: 0
---- !u!114 &951992941663247204
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6785541576685021729}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0db4493228a4ba442a891316e3ee246f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  inventory: {fileID: 0}
-  characterSystem: {fileID: 0}
-  craftSystem: {fileID: 0}
-  HPMANACanvas: {fileID: 0}
---- !u!114 &6785541576940005475
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6785541576685021729}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3480936b03d1fe94898984b9114036f0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  myNode: {fileID: 0}
-  moving: 0
-  grid: {fileID: 0}
 --- !u!61 &6785541576940005477
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -208,3 +156,54 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.8, y: 0.8}
   m_EdgeRadius: 0
+--- !u!114 &951992941663247204
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6785541576685021729}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0db4493228a4ba442a891316e3ee246f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inventory: {fileID: 0}
+  characterSystem: {fileID: 0}
+  craftSystem: {fileID: 0}
+  HPMANACanvas: {fileID: 0}
+--- !u!114 &4907136880253905584
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6785541576685021729}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 134ec83ad11dc8e4db76b54f6a2cf9e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 2
+  maxMana: 0
+  damage: 0
+  armor: 0
+  currentHealth: 2
+  currentMana: 0
+  sprites: []
+  CurrentState: 0
+--- !u!114 &6549091689646523019
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6785541576685021729}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9b4311af350cbc4f93f40818bc72a77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myNode: {fileID: 0}
+  moving: 0
+  grid: {fileID: 0}

@@ -87,7 +87,7 @@ public class GameManager : MonoBehaviour
 				}
 			}
 
-			yield return new WaitForSeconds(Enemies[i].moveTime);
+			yield return new WaitForSeconds(Enemies[i].MoveTime);
 		}
 
 		PlayersTurn = true;

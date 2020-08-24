@@ -4,17 +4,23 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Weapon
-  - Consumable
-  - Valuable
-  - Interactable
-  - HelmArmor
-  - Shield
-  - ChestArmor
   - EquipSlot
-  - Equiped
-  - InInventory
   - NPC
+  - Slot
+  - Slots
+  - Hotbar
+  - EquipmentSystem
+  - Panel
+  - ItemIcon
+  - Item
+  - CraftSystem
+  - ResultSlot
+  - DraggingItem
+  - MainInventory
+  - Canvas
+  - EventSystem
+  - Tooltip
+  - Timer
   layers:
   - Default
   - TransparentFX
