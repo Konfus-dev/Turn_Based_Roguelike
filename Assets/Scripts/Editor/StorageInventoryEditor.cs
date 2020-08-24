@@ -12,15 +12,7 @@ public class StorageInventoryEditor : Editor
 
     private int itemID;
     private int itemValue = 1;
-    private int imageTypeIndex;
 
-    // Use this for initialization
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
     void OnEnable()
     {
         inv = target as StorageInventory;
@@ -31,13 +23,13 @@ public class StorageInventoryEditor : Editor
     {
         base.OnInspectorGUI();
         serializedObject.Update();
-        addItemGUI();
+        AddItemGUI();
         serializedObject.ApplyModifiedProperties();
     }
 
-    void addItemGUI()                                                                                                       //add a item to the inventory through the inspector
+    void AddItemGUI()                                                                                                       //add a item to the inventory through the inspector
     {
-        inv.setImportantVariables();
+        //inv.SetImportantVariables();
         EditorGUILayout.BeginHorizontal();                                                                                  //starting horizontal GUI elements
         ItemDataBaseList inventoryItemList = (ItemDataBaseList)Resources.Load("ItemDatabase");                            //loading the itemdatabase
         string[] items = new string[inventoryItemList.itemList.Count];                                                      //create a string array in length of the itemcount
@@ -50,7 +42,7 @@ public class StorageInventoryEditor : Editor
         GUI.color = Color.green;                                                                                            //set the color of all following guielements to green
         if (GUILayout.Button("Add Item"))                                                                                   //creating button with name "AddItem"
         {
-            inv.addItemToStorage(itemID, itemValue);
+            inv.AddItemToStorage(itemID, itemValue);
         }
 
         EditorGUILayout.EndHorizontal();                                                                                    //end the horizontal gui layout

@@ -10,45 +10,25 @@ using UnityEngine.EventSystems;
 public class StorageInventory : MonoBehaviour
 {
 
-    [SerializeField]
     public GameObject storageInventory;
-    [SerializeField]
     public GameObject playerInventory;
-    [SerializeField]
     public GameObject playerEquipment;
 
-    [SerializeField]
     public List<Item> storageItems = new List<Item>();
 
     [SerializeField]
     private ItemDataBaseList itemDatabase;
 
-    [SerializeField]
     public int distanceToOpenStorage;
-
-    public float timeToOpenStorage;
-
-    private InputManager inputManagerDatabase;
-
-    float startTimer;
-    float endTimer;
-    bool showTimer;
-
     public int itemAmount;
 
-    Tooltip tooltip;
-    Inventory inv;
+    private Tooltip tooltip;
+    private Inventory inv;
+    private GameObject player;
 
-    GameObject player;
+    private bool showStorage;
 
-    static Image timerImage;
-    static GameObject timer;
-
-    bool closeInv;
-
-    bool showStorage;
-
-    public void addItemToStorage(int id, int value)
+    public void AddItemToStorage(int id, int value)
     {
         Item item = itemDatabase.getItemByID(id);
         item.itemValue = value;
@@ -57,9 +37,6 @@ public class StorageInventory : MonoBehaviour
 
     void Start()
     {
-        if (inputManagerDatabase == null)
-            inputManagerDatabase = (InputManager)Resources.Load("InputManager");
-
         player = GameObject.FindGameObjectWithTag("Player");
         inv = storageInventory.GetComponent<Inventory>();
         ItemDataBaseList inventoryItemList = (ItemDataBaseList)Resources.Load("ItemDatabase");
@@ -83,21 +60,9 @@ public class StorageInventory : MonoBehaviour
             }
         }
 
-        if (GameObject.FindGameObjectWithTag("Timer") != null)
-        {
-            timerImage = GameObject.FindGameObjectWithTag("Timer").GetComponent<Image>();
-            timer = GameObject.FindGameObjectWithTag("Timer");
-            timer.SetActive(false);
-        }
         if (GameObject.FindGameObjectWithTag("Tooltip") != null)
             tooltip = GameObject.FindGameObjectWithTag("Tooltip").GetComponent<Tooltip>();
 
-    }
-
-    public void setImportantVariables()
-    {
-        if (itemDatabase == null)
-            itemDatabase = (ItemDataBaseList)Resources.Load("ItemDatabase");
     }
 
     void Update()
@@ -105,20 +70,10 @@ public class StorageInventory : MonoBehaviour
 
         float distance = Vector3.Distance(this.gameObject.transform.position, player.transform.position);
 
-        if (showTimer)
-        {
-            if (timerImage != null)
-            {
-                timer.SetActive(true);
-                float fillAmount = (Time.time - startTimer) / timeToOpenStorage;
-                timerImage.fillAmount = fillAmount;
-            }
-        }
-
-        if (distance <= distanceToOpenStorage && Input.GetKeyDown(inputManagerDatabase.StorageKeyCode))
+        if (distance <= distanceToOpenStorage)
         {
             showStorage = !showStorage;
-            StartCoroutine(OpenInventoryWithTimer());
+            OpenInventory();
         }
 
         if (distance > distanceToOpenStorage && showStorage)
@@ -127,42 +82,33 @@ public class StorageInventory : MonoBehaviour
             if (storageInventory.activeSelf)
             {
                 storageItems.Clear();
-                setListofStorage();
+                SetListofStorage();
                 storageInventory.SetActive(false);
                 playerInventory.SetActive(false);
                 playerEquipment.SetActive(false);
                 inv.DeleteAllItems();
             }
             tooltip.deactivateTooltip();
-            timerImage.fillAmount = 0;
-            timer.SetActive(false);
-            showTimer = false;
         }
     }
 
-    IEnumerator OpenInventoryWithTimer()
+    public void OpenInventory()
     {
         if (showStorage)
         {
-            startTimer = Time.time;
-            showTimer = true;
-            yield return new WaitForSeconds(timeToOpenStorage);
             if (showStorage)
             {
                 inv.ItemsInInventory.Clear();
                 storageInventory.SetActive(true);
                 playerInventory.SetActive(true);
                 playerEquipment.SetActive(true);
-                addItemsToInventory();
-                showTimer = false;
-                if (timer != null)
-                    timer.SetActive(false);
+                AddItemsToInventory();
             }
         }
         else
         {
             storageItems.Clear();
-            setListofStorage();
+            SetListofStorage();
             storageInventory.SetActive(false);
             playerInventory.SetActive(false);
             playerEquipment.SetActive(false);
@@ -175,13 +121,13 @@ public class StorageInventory : MonoBehaviour
 
 
 
-    void setListofStorage()
+    void SetListofStorage()
     {
         Inventory inv = storageInventory.GetComponent<Inventory>();
         storageItems = inv.GetItemList();
     }
 
-    void addItemsToInventory()
+    void AddItemsToInventory()
     {
         Inventory iV = storageInventory.GetComponent<Inventory>();
         for (int i = 0; i < storageItems.Count; i++)

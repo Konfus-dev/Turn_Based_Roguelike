@@ -29,11 +29,11 @@ public class IM_Manager : EditorWindow
         else
             itemAttributeList = (ItemAttributeList)Resources.Load("AttributeDatabase");
 
-        Object inputManager = Resources.Load("InputManager");
+       /* Object inputManager = Resources.Load("InputManager");
         if (inputManager == null)
             inputManagerDatabase = CreateInputManager.createInputManager();
         else
-            inputManagerDatabase = (InputManager)Resources.Load("InputManager");
+            inputManagerDatabase = (InputManager)Resources.Load("InputManager");*/
 
 
     }
