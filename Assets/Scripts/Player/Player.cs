@@ -3,23 +3,17 @@ using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
-    [SerializeField]
-    private int Damage = 1;
-    [SerializeField]
-    private int CurrHP = 2;
-    [SerializeField]
-    private int MaxHP = 2;
-    [SerializeField]
-    private int Armor = 0;
-    [SerializeField]
-    private int InventorySize = 5;
+    public float maxHealth = 100;
+    public float maxMana = 100;
+    public float maxDamage = 0;
+    public float maxArmor = 0;
 
-    [SerializeField]
-    private InventoryUI InventoryUI;
+    public float currentHealth = 60;
+    public float currentMana = 100;
+    public float currentDamage = 0;
+    public float currentArmor = 0;
 
-    private bool CheckedAtStartOfTurn = false;
-    private Inventory EquippedItems;
-    private Inventory Inventory;
+    private bool checkedAtStartOfTurn = false;
 
     public static Player Instance = null;
 
@@ -35,7 +29,7 @@ public class Player : MonoBehaviour
         InMenu
     }
 
-    public PlayerState CurrentState;
+    public PlayerState currentState;
 
     private void Awake()
     {
@@ -51,14 +45,7 @@ public class Player : MonoBehaviour
     private void Start()
     {
         Instance = this;
-        CurrentState = PlayerState.NotMoving;
-
-        this.Inventory = new Inventory(UseItem);
-        this.Inventory.Size = InventorySize;
-        this.EquippedItems = new Inventory(null);
-        this.EquippedItems.Size = 3;
-        this.InventoryUI.SetInventory(this.Inventory);
-        this.InventoryUI.SetEquippedItems(this.EquippedItems);
+        currentState = PlayerState.NotMoving;
 
         //Get a component reference to the Player's animator component
         //animator = GetComponent<Animator>();
@@ -73,50 +60,31 @@ public class Player : MonoBehaviour
     {
         if (!GameManager.Instance.PlayersTurn)
         {
-            CheckedAtStartOfTurn = false;
+            checkedAtStartOfTurn = false;
             return;
         }
-        else if (!CheckedAtStartOfTurn)
+        else if (!checkedAtStartOfTurn)
         {
-            CheckedAtStartOfTurn = true;
+            checkedAtStartOfTurn = true;
             Check();
         }
         CheckForPlayerPause();
-    }
-
-    private void UseItem(Item item)
-    {
-        if(item.Type == Item.ItemType.Consumable)
-        {
-            ManageCurrHealth(0, item.HealthMod);
-            Inventory.RemoveItem(new Item { Type = item.Type, Name = item.Name, Amount = 1, ArmorMod = item.ArmorMod, DamageMod = item.DamageMod, HealthMod = item.HealthMod });
-        }
     }
 
     private void CheckForPlayerPause()
     {
         if (Input.GetButtonDown("Pause"))
         {
-            if (!(CurrentState == PlayerState.InMenu))
+            if (!(currentState == PlayerState.InMenu))
             {
-                InventoryUI.OpenInventory();
-                CurrentState = PlayerState.InMenu;
+                
+                currentState = PlayerState.InMenu;
             }
             else
             {
-                InventoryUI.CloseInventory();
-                CurrentState = PlayerState.NotMoving;
+                
+                currentState = PlayerState.NotMoving;
             }
-        }
-    }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        ItemInWorld itemWorld = collision.GetComponent<ItemInWorld>();
-        if (itemWorld != null && (this.Inventory.GetItems().Count < this.Inventory.Size || itemWorld.Item.IsStackable()) ) 
-        {
-            this.Inventory.AddItem(itemWorld.GetItem());
-            itemWorld.SelfDestruct();
         }
     }
 
@@ -141,96 +109,11 @@ public class Player : MonoBehaviour
     {
         SceneManager.LoadScene(0);
     }
-
-    public void ManageCurrHealth(int loss, int gain)
-    {
-        loss = Mathf.Abs(loss);
-        gain = Mathf.Abs(gain);
-
-        if (loss > 0)
-        {
-            //TODO: animator.SetTrigger("Hit");
-
-            CurrHP -= loss;
-            if (CurrHP > MaxHP) CurrHP = MaxHP;
-            CheckIfGameOver();
-        }
-        else
-        {
-            //TODO: Set the trigger for player get health
-            //somthing to do with a health particle effect probably
-
-            CurrHP += gain;
-            if (CurrHP > MaxHP) CurrHP = MaxHP;
-        }
-    }
-
-    public void ManageMaxHealth(int loss, int gain)
-    {
-        loss = Mathf.Abs(loss);
-        gain = Mathf.Abs(gain);
-
-        if (loss > 0)
-        {
-            MaxHP -= loss;
-            if (MaxHP <= 0) MaxHP = 1;
-            if (CurrHP > MaxHP) CurrHP = MaxHP;
-        }
-        else
-        {
-            MaxHP += gain;
-            if (CurrHP > MaxHP) CurrHP = MaxHP;
-        }
-    }
-
-    public void ManageDamage(int loss, int gain)
-    {
-        loss = Mathf.Abs(loss);
-        gain = Mathf.Abs(gain);
-
-        if (gain > 0)
-        {
-            Damage += gain;
-        }
-        else
-        {
-            Damage -= loss;
-        }
-    }
-
-    public void ManageArmor(int loss, int gain)
-    {
-        loss = Mathf.Abs(loss);
-        gain = Mathf.Abs(gain);
-
-        if (gain > 0)
-        {
-            Armor += gain;
-        }
-        else
-        {
-            Armor -= loss;
-        }
-    }
-
-    public Inventory GetInventory()
-    {
-        return this.Inventory;
-    }
-
-    public Inventory GetEquippedItems()
-    {
-        return this.EquippedItems;
-    }
-
-    public void SetEquippedItems(Inventory items)
-    {
-        this.EquippedItems = items;
-    }
+    
 
     private void CheckIfGameOver()
     {
-        if (CurrHP <= 0)
+        if (currentHealth <= 0)
         {
             //TODO: 
             //play particle effect here

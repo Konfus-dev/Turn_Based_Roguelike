@@ -18,7 +18,7 @@ public class PlayerMovement : Movement, IMovement
                 if (!axisInUse && !moving)
                 {
                     axisInUse = true;
-                    Player.Instance.CurrentState = Player.PlayerState.Moving;
+                    Player.Instance.currentState = Player.PlayerState.Moving;
                     if (x_movement > 0)
                     {
                         MoveTo(myNode.right);
@@ -35,7 +35,7 @@ public class PlayerMovement : Movement, IMovement
                     {
                         MoveTo(myNode.down);
                     }
-                    Player.Instance.CurrentState = Player.PlayerState.NotMoving;
+                    Player.Instance.currentState = Player.PlayerState.NotMoving;
                     GameManager.Instance.PlayersTurn = false;
                 }
             }
