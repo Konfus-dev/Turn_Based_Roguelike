@@ -20,12 +20,12 @@ public class PlayerInventory : MonoBehaviour
 
         inventoryUI.SetInventory(inventory);
 
-        //testing
-        inventory.AddItem(new Item { itemName = "Sword_1", damageMod = 1, armorMod = 0, healthMod = 0, amount = 1, maxStackAmount = 1, type = Item.ItemType.Weapon });
-        inventory.AddItem(new Item { itemName = "Sword_2", damageMod = 2, armorMod = 0, healthMod = 0, amount = 1, maxStackAmount = 1, type = Item.ItemType.Weapon });
-        inventory.AddItem(new Item { itemName = "Sword_3", damageMod = 3, armorMod = 0, healthMod = 0, amount = 1, maxStackAmount = 1, type = Item.ItemType.Weapon });
-        inventory.AddItem(new Item { itemName = "Sword_4", damageMod = 4, armorMod = 0, healthMod = 0, amount = 1, maxStackAmount = 1, type = Item.ItemType.Weapon });
-        inventory.AddItem(new Item { itemName = "Sword_5", damageMod = 5, armorMod = 0, healthMod = 0, amount = 1, maxStackAmount = 1, type = Item.ItemType.Weapon });
+            //testing
+            inventory.AddItem(new Item { itemName = "Sword_1", damageMod = 1, armorMod = 0, healthMod = 0, amount = 1, maxStackAmount = 1, type = Item.ItemType.Weapon });
+            inventory.AddItem(new Item { itemName = "Sword_2", damageMod = 2, armorMod = 0, healthMod = 0, amount = 1, maxStackAmount = 1, type = Item.ItemType.Weapon });
+            inventory.AddItem(new Item { itemName = "Sword_3", damageMod = 3, armorMod = 0, healthMod = 0, amount = 1, maxStackAmount = 1, type = Item.ItemType.Weapon });
+            inventory.AddItem(new Item { itemName = "Sword_4", damageMod = 4, armorMod = 0, healthMod = 0, amount = 1, maxStackAmount = 1, type = Item.ItemType.Weapon });
+            inventory.AddItem(new Item { itemName = "Sword_5", damageMod = 5, armorMod = 0, healthMod = 0, amount = 1, maxStackAmount = 1, type = Item.ItemType.Weapon });
 
         equippedItems = new Inventory(null)
         {

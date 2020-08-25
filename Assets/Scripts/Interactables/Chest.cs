@@ -1,13 +1,35 @@
-﻿
+﻿using UnityEngine;
+
 public class Chest : Interactable
 {
+    public Sprite openChestSprite;
+    private InventoryUI chestUI;
+    private Inventory chestInventory;
 
-    //private Animator animator;                    //Used to store a reference to the interactables's animator component.
-    private Item ChestItem;
-
-    void Awake()
+    private void Start()
     {
-        //animator = GetComponent<Animator>();
+        chestInventory = new Inventory(null)
+        {
+            size = 16
+        };
+
+            //testing
+            chestInventory.AddItem(new Item { itemName = "Helmet_1", damageMod = 0, armorMod = 1, healthMod = 0, amount = 1, maxStackAmount = 1, type = Item.ItemType.HelmArmor });
+            chestInventory.AddItem(new Item { itemName = "Helmet_2", damageMod = 0, armorMod = 2, healthMod = 1, amount = 1, maxStackAmount = 1, type = Item.ItemType.HelmArmor });
+            chestInventory.AddItem(new Item { itemName = "Helmet_3", damageMod = 0, armorMod = 3, healthMod = -1, amount = 1, maxStackAmount = 1, type = Item.ItemType.HelmArmor });
+            chestInventory.AddItem(new Item { itemName = "Items_Consumable_14", damageMod = 0, armorMod = 0, healthMod = 0, amount = 10, maxStackAmount = 10, type = Item.ItemType.Consumable });
+
+        chestUI = GameObject.FindGameObjectWithTag("WorldInventory").GetComponent<InventoryUI>();
+
+        chestUI.SetInventory(chestInventory);
+    }
+
+    private void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.C))
+        {
+            OpenChest();
+        }
     }
 
     public override void Interact<T>(T component)
@@ -19,7 +41,8 @@ public class Chest : Interactable
 
     private void OpenChest()
     {
-        Destroy(gameObject);
-        ItemWorld.DropItem(this.transform.position, ChestItem);
+        chestUI.OpenInventory();
+        this.GetComponent<SpriteRenderer>().sprite = openChestSprite;
     }
+
 }

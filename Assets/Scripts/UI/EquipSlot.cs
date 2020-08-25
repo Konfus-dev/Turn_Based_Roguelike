@@ -59,8 +59,6 @@ public class EquipSlot : MonoBehaviour, IDropHandler
 
         background.enabled = false;
 
-        drag.transform.tag = "Equipped";
-
     }
 
     private void IfNotEquipped()

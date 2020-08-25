@@ -31,8 +31,6 @@ public class ItemSlot : MonoBehaviour, IDropHandler
             RectTransform rectTrans = eventData.pointerDrag.GetComponent<RectTransform>();
             DragItem drag = rectTrans.GetComponent<DragItem>();
 
-            rectTrans.tag = "InInventory";
-
             if (drag.inventory != slotInventory)
             {
                 drag.inventory.RemoveItem(drag.item, null, false);
