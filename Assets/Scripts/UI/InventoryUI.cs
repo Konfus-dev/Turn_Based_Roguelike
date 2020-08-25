@@ -61,7 +61,10 @@ public class InventoryUI : MonoBehaviour
             foreach (Transform slot in slotsContainer)
             {
                 if (slot.childCount == 1 && slot.CompareTag("InventorySlot"))
+                {
                     itemSlot = slot;
+                    break;
+                }
             }
 
             if (itemSlot == null) continue;

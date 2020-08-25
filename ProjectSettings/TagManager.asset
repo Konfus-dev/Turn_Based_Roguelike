@@ -10,14 +10,13 @@ TagManager:
   - HelmArmor
   - ChestArmor
   - EquipSlot
-  - InInventory
   - NPC
   - DragItem
-  - Equipped
   - Weapon|Shield
   - Shield
   - Weapon
   - InventorySlot
+  - WorldInventory
   layers:
   - Default
   - TransparentFX
