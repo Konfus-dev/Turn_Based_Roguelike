@@ -81,9 +81,20 @@ public class InventoryUI : MonoBehaviour
             itemRectTransform.GetComponent<Button_UI>().MouseRightClickFunc = () =>
             {
                 // add right click to drop item
-                Item itemDup = new Item { type = item.type, itemName = item.itemName, amount = item.amount, armorMod = item.armorMod, damageMod = item.damageMod, healthMod = item.healthMod };
-                inventory.RemoveItem(item, itemRectTransform.gameObject, true);
-                ItemWorld.DropItem(Player.Instance.transform.position, itemDup);
+                if (this.gameObject.CompareTag("WorldInventory"))
+                {
+                    if (Player.Instance.inventories.inventory.GetItems().Count <= Player.Instance.inventories.inventory.size) return;
+                    Item itemDup = new Item { type = item.type, itemName = item.itemName, amount = item.amount, armorMod = item.armorMod, damageMod = item.damageMod, healthMod = item.healthMod };
+                    inventory.RemoveItem(item, itemRectTransform.gameObject, true);
+                    Player.Instance.inventories.inventory.AddItem(itemDup);
+                }
+                else
+                {
+                    Item itemDup = new Item { type = item.type, itemName = item.itemName, amount = item.amount, armorMod = item.armorMod, damageMod = item.damageMod, healthMod = item.healthMod };
+                    inventory.RemoveItem(item, itemRectTransform.gameObject, true);
+                    ItemWorld.DropItem(Player.Instance.transform.position, itemDup);
+                }
+
             };
 
             Image itemIcon = itemRectTransform.Find("Icon").gameObject.GetComponent<Image>();
