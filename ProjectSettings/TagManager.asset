@@ -4,28 +4,20 @@
 TagManager:
   serializedVersion: 2
   tags:
+  - Consumable
+  - Valuable
+  - Interactable
+  - HelmArmor
+  - ChestArmor
   - EquipSlot
-<<<<<<< HEAD
-  - NPC
-  - Slot
-  - Slots
-  - Hotbar
-  - EquipmentSystem
-  - Panel
-  - ItemIcon
-  - Item
-  - CraftSystem
-  - ResultSlot
-  - DraggingItem
-  - MainInventory
-  - Canvas
-  - EventSystem
-  - Tooltip
-  - Timer
-=======
-  - Equiped
   - InInventory
->>>>>>> parent of 93f984c... Combat system and ghost-death working!
+  - NPC
+  - DragItem
+  - Equipped
+  - Weapon|Shield
+  - Shield
+  - Weapon
+  - InventorySlot
   layers:
   - Default
   - TransparentFX

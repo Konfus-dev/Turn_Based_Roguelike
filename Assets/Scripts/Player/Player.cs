@@ -1,17 +1,14 @@
 ﻿using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
-    public int maxHealth = 100;
-    public int maxMana = 100;
-    public int damage = 0;
-    public int armor = 0;
+    public ActorStats playerStats;
+    public PlayerInventory inventories;
 
-    public int currentHealth = 60;
-    public int currentMana = 100;
+    [SerializeField]
+    private Sprite[] sprites;
 
-    private bool CheckedAtStartOfTurn = false;
+    private bool checkedAtStartOfTurn = false;
 
     public static Player Instance = null;
 
@@ -29,15 +26,36 @@ public class Player : MonoBehaviour
 
     public PlayerState CurrentState;
 
-    private void Awake()
+    public bool SetState(PlayerState state)
     {
+        if (GetState() != PlayerState.Ghosting && System.Enum.IsDefined(typeof(PlayerState), state))
+        {
+            CurrentState = state;
+            transform.GetChild(0).GetComponent<SpriteRenderer>().sprite = sprites[(int)state];
+            return true;
+        }
+        return false;
+    }
+
+    public PlayerState GetState()
+    {
+        return CurrentState;
+    }
+
+    private void Start()
+    {
+        inventories = this.GetComponent<PlayerInventory>();
+
+        CurrentState = PlayerState.NotMoving;
+
+        Instance = this;
+
         if (Instance == null)
             Instance = this;
 
         else if (Instance != this)
             Destroy(gameObject);
 
-        CurrentState = PlayerState.NotMoving;
         DontDestroyOnLoad(gameObject);
     }
 
@@ -50,49 +68,34 @@ public class Player : MonoBehaviour
     {
         if (!GameManager.Instance.PlayersTurn)
         {
-            CheckedAtStartOfTurn = false;
+            checkedAtStartOfTurn = false;
             return;
         }
-        else if (!CheckedAtStartOfTurn)
+        else if (!checkedAtStartOfTurn)
         {
-            CheckedAtStartOfTurn = true;
+            checkedAtStartOfTurn = true;
             Check();
         }
-        CheckForPlayerPause();
     }
 
-    private void CheckForPlayerPause()
+    public void Check()
     {
-        if (Input.GetButtonDown("Pause"))
-        {
-            if (!(CurrentState == PlayerState.InMenu))
-            {
-                CurrentState = PlayerState.InMenu;
-            }
-            else
-            {
-<<<<<<< HEAD
-                SetState(PlayerState.NotMoving);
-                Check();
-=======
-                InventoryUI.CloseInventory();
-                CurrentState = PlayerState.NotMoving;
->>>>>>> parent of 93f984c... Combat system and ghost-death working!
-            }
-        }
+        //any checks that need done put in here (check should be performed at the start of a turn and end) 
+        CheckIfDead();
+    }
+
+    public void Attack(Enemy enemy)
+    {
+        enemy.enemyStats.currentHealth -= playerStats.damage - enemy.enemyStats.armor;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-<<<<<<< HEAD
-        //ItemInWorld itemWorld = collision.GetComponent<ItemInWorld>();
-        if (GetState() != PlayerState.Ghosting) 
-=======
-        ItemInWorld itemWorld = collision.GetComponent<ItemInWorld>();
-        if (itemWorld != null && (this.Inventory.GetItems().Count < this.Inventory.Size || itemWorld.Item.IsStackable()) ) 
->>>>>>> parent of 93f984c... Combat system and ghost-death working!
+        ItemWorld itemWorld = collision.GetComponent<ItemWorld>();
+        if (GetState() != PlayerState.Ghosting && itemWorld != null && (this.inventories.inventory.GetItems().Count < this.inventories.inventory.size || itemWorld.item.IsStackable()) ) 
         {
-            
+            this.inventories.inventory.AddItem(itemWorld.GetItem());
+            itemWorld.SelfDestruct();
         }
     }
 
@@ -106,82 +109,20 @@ public class Player : MonoBehaviour
         }
     }
 
-    public void Check()
-    {
-        //any checks that need done put in here (check should be performed at the start of a turn and end) 
-<<<<<<< HEAD
-        CheckIfDead();
-=======
-
-        CheckIfGameOver();
->>>>>>> parent of 93f984c... Combat system and ghost-death working!
-    }
-
-    private void Restart()
-    {
-        SceneManager.LoadScene(0);
-    }
-
-    public void ManageDamage(int loss, int gain)
-    {
-        loss = Mathf.Abs(loss);
-        gain = Mathf.Abs(gain);
-
-        if (gain > 0)
-        {
-            damage += gain;
-        }
-        else
-        {
-            damage -= loss;
-        }
-    }
-
-<<<<<<< HEAD
-    public void Attack(Enemy enemy)
-    {
-        if (SetState(PlayerState.Attacking)) 
-        {
-            Debug.Log("Attacking " + GetState());
-            enemy.Defense(damage);
-        }
-    }
-
-    public void Defense(int dmg)
-    {
-        if (SetState(PlayerState.TakingDamage))
-        {
-            currentHealth -= dmg - armor;
-        }
-    }
-   
+    
 
     private void CheckIfDead()
-=======
-    public Inventory GetInventory()
     {
-        return this.Inventory;
-    }
-
-    public Inventory GetEquippedItems()
-    {
-        return this.EquippedItems;
-    }
-
-    public void SetEquippedItems(Inventory items)
-    {
-        this.EquippedItems = items;
-    }
-
-    private void CheckIfGameOver()
->>>>>>> parent of 93f984c... Combat system and ghost-death working!
-    {
-        if (currentHealth <= 0)
+        if (playerStats.currentHealth <= 0)
         {
             //TODO: 
             //play particle effect here
             //Call the GameOver function of GameManager.
             //GameManager.instance.GameOver();
+
+            SetState(PlayerState.Ghosting);
+
         }
     }
+    
 }

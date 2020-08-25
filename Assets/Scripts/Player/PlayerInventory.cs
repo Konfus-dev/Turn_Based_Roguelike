@@ -1,159 +1,67 @@
-﻿using UnityEngine;
-using System.Collections;
-using UnityEngine.UI;
-using UnityEngine.EventSystems;
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 
 public class PlayerInventory : MonoBehaviour
 {
-    public GameObject inventory;
-    public GameObject characterSystem;
-    public GameObject craftSystem;
+    [HideInInspector]
+    public Inventory equippedItems;
+    [HideInInspector]
+    public Inventory inventory;
 
-    private Inventory craftSystemInventory;
-    private CraftSystem cS;
-    private Inventory mainInventory;
-    private Inventory characterSystemInventory;
-    private Tooltip toolTip;
-    private InputManager inputManagerDatabase;
+    public InventoryUI inventoryUI;
 
     private void Start()
     {
-        if (inputManagerDatabase == null)
-            inputManagerDatabase = (InputManager)Resources.Load("InputManager");
+        inventory = new Inventory(UseItem)
+        {
+            size = 5
+        };
 
-        if (craftSystem != null)
-            cS = craftSystem.GetComponent<CraftSystem>();
+        inventoryUI.SetInventory(inventory);
 
-        if (GameObject.FindGameObjectWithTag("Tooltip") != null)
-            toolTip = GameObject.FindGameObjectWithTag("Tooltip").GetComponent<Tooltip>();
+        //testing
+        inventory.AddItem(new Item { itemName = "Sword_1", damageMod = 1, armorMod = 0, healthMod = 0, amount = 1, maxStackAmount = 1, type = Item.ItemType.Weapon });
+        inventory.AddItem(new Item { itemName = "Sword_2", damageMod = 2, armorMod = 0, healthMod = 0, amount = 1, maxStackAmount = 1, type = Item.ItemType.Weapon });
+        inventory.AddItem(new Item { itemName = "Sword_3", damageMod = 3, armorMod = 0, healthMod = 0, amount = 1, maxStackAmount = 1, type = Item.ItemType.Weapon });
+        inventory.AddItem(new Item { itemName = "Sword_4", damageMod = 4, armorMod = 0, healthMod = 0, amount = 1, maxStackAmount = 1, type = Item.ItemType.Weapon });
+        inventory.AddItem(new Item { itemName = "Sword_5", damageMod = 5, armorMod = 0, healthMod = 0, amount = 1, maxStackAmount = 1, type = Item.ItemType.Weapon });
 
-        if (inventory != null)
-            mainInventory = inventory.GetComponent<Inventory>();
+        equippedItems = new Inventory(null)
+        {
+            size = 4
+        };
 
-        if (characterSystem != null)
-            characterSystemInventory = characterSystem.GetComponent<Inventory>();
-
-        if (craftSystem != null)
-            craftSystemInventory = craftSystem.GetComponent<Inventory>();
     }
 
     private void Update()
     {
-        if (Input.GetKeyDown(inputManagerDatabase.CharacterSystemKeyCode))
+        CheckOpenCloseInventory();
+    }
+
+    private void UseItem(Item item, GameObject itemGameObj)
+    {
+        if (item.type == Item.ItemType.Consumable)
         {
-            if (!characterSystem.activeSelf)
+            inventory.RemoveItem(new Item { type = item.type, itemName = item.itemName, amount = 1, armorMod = item.armorMod, damageMod = item.damageMod, healthMod = item.healthMod }, itemGameObj, false);
+        }
+    }
+
+    private void CheckOpenCloseInventory()
+    {
+        if (Input.GetButtonDown("Inventory"))
+        {
+            if (!(Player.Instance.CurrentState == Player.PlayerState.InMenu))
             {
-                characterSystemInventory.OpenInventory();
+                inventoryUI.OpenInventory();
+                Player.Instance.SetState(Player.PlayerState.InMenu); 
             }
             else
             {
-                if (toolTip != null)
-                    toolTip.deactivateTooltip();
-                characterSystemInventory.CloseInventory();
-            }
-        }
-
-        if (Input.GetKeyDown(inputManagerDatabase.InventoryKeyCode))
-        {
-            if (!inventory.activeSelf)
-            {
-                mainInventory.OpenInventory();
-            }
-            else
-            {
-                if (toolTip != null)
-                    toolTip.deactivateTooltip();
-                mainInventory.CloseInventory();
-            }
-        }
-
-        if (Input.GetKeyDown(inputManagerDatabase.CraftSystemKeyCode))
-        {
-            if (!craftSystem.activeSelf)
-                craftSystemInventory.OpenInventory();
-            else
-            {
-                if (cS != null)
-                    cS.backToInventory();
-                if (toolTip != null)
-                    toolTip.deactivateTooltip();
-                craftSystemInventory.CloseInventory();
-            }
-        }
-
-    }
-
-    public void OnEnable()
-    {
-        Inventory.ItemEquip += OnGearItem;
-        Inventory.ItemConsumed += OnConsumeItem;
-        Inventory.UnEquipItem += OnUnEquipItem;
-    }
-
-    public void OnDisable()
-    {
-        Inventory.ItemEquip -= OnGearItem;
-        Inventory.ItemConsumed -= OnConsumeItem;
-        Inventory.UnEquipItem -= OnUnEquipItem;
-    }
-
-    public void OnConsumeItem(Item item)
-    {
-        for (int i = 0; i < item.itemAttributes.Count; i++)
-        {
-            if (item.itemAttributes[i].attributeName == "Health")
-            {
-                if ((Player.Instance.currentHealth + item.itemAttributes[i].attributeValue) > Player.Instance.maxHealth)
-                    Player.Instance.currentHealth = Player.Instance.maxHealth;
-                else
-                    Player.Instance.currentHealth += item.itemAttributes[i].attributeValue;
-            }
-            if (item.itemAttributes[i].attributeName == "Mana")
-            {
-                if ((Player.Instance.currentMana + item.itemAttributes[i].attributeValue) > Player.Instance.maxMana)
-                    Player.Instance.currentMana = Player.Instance.maxMana;
-                else
-                    Player.Instance.currentMana += item.itemAttributes[i].attributeValue;
-            }
-            if (item.itemAttributes[i].attributeName == "Armor")
-            {
-                Player.Instance.armor += item.itemAttributes[i].attributeValue;
-            }
-            if (item.itemAttributes[i].attributeName == "Damage")
-            {
-                Player.Instance.damage += item.itemAttributes[i].attributeValue;
+                inventoryUI.CloseInventory();
+                Player.Instance.SetState(Player.PlayerState.NotMoving);
+                Player.Instance.Check();
             }
         }
     }
-
-    public void OnGearItem(Item item)
-    {
-        for (int i = 0; i < item.itemAttributes.Count; i++)
-        {
-            if (item.itemAttributes[i].attributeName == "Health")
-                Player.Instance.maxHealth += item.itemAttributes[i].attributeValue;
-            if (item.itemAttributes[i].attributeName == "Mana")
-                Player.Instance.maxMana += item.itemAttributes[i].attributeValue;
-            if (item.itemAttributes[i].attributeName == "Armor")
-                Player.Instance.armor += item.itemAttributes[i].attributeValue;
-            if (item.itemAttributes[i].attributeName == "Damage")
-                Player.Instance.damage += item.itemAttributes[i].attributeValue;
-        }
-    }
-
-    public void OnUnEquipItem(Item item)
-    {
-        for (int i = 0; i < item.itemAttributes.Count; i++)
-        {
-            if (item.itemAttributes[i].attributeName == "Health")
-                Player.Instance.maxHealth -= item.itemAttributes[i].attributeValue;
-            if (item.itemAttributes[i].attributeName == "Mana")
-                Player.Instance.maxMana -= item.itemAttributes[i].attributeValue;
-            if (item.itemAttributes[i].attributeName == "Armor")
-                Player.Instance.armor -= item.itemAttributes[i].attributeValue;
-            if (item.itemAttributes[i].attributeName == "Damage")
-                Player.Instance.damage -= item.itemAttributes[i].attributeValue;
-        }
-    }
-
 }
