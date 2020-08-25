@@ -395,11 +395,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 703622503}
     m_Modifications:
-    - target: {fileID: 1472599513, guid: a58aefc924c069048b4fe586afd1031b, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: -795670248450164716, guid: fc0420c356aa117468ca6ce3b32c00d3,
-        type: 3}
     - target: {fileID: 5316450022257734709, guid: a58aefc924c069048b4fe586afd1031b,
         type: 3}
       propertyPath: targetPosition
@@ -420,25 +415,10 @@ PrefabInstance:
       propertyPath: grid
       value: 
       objectReference: {fileID: 1583416674}
-    - target: {fileID: 6196407550615269119, guid: a58aefc924c069048b4fe586afd1031b,
-        type: 3}
-      propertyPath: travelTurns
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 6196407550615269119, guid: a58aefc924c069048b4fe586afd1031b,
-        type: 3}
-      propertyPath: AggroDistance
-      value: 4
-      objectReference: {fileID: 0}
     - target: {fileID: 6785541576685021729, guid: a58aefc924c069048b4fe586afd1031b,
         type: 3}
       propertyPath: m_Name
       value: Enemy (2)
-      objectReference: {fileID: 0}
-    - target: {fileID: 6785541576685021729, guid: a58aefc924c069048b4fe586afd1031b,
-        type: 3}
-      propertyPath: m_TagString
-      value: NPC
       objectReference: {fileID: 0}
     - target: {fileID: 6785541576685021730, guid: a58aefc924c069048b4fe586afd1031b,
         type: 3}
@@ -1164,6 +1144,7 @@ Transform:
   m_Father: {fileID: 30843239}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
+<<<<<<< HEAD
 --- !u!1001 &621343017
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1405,6 +1386,8 @@ Transform:
   m_Father: {fileID: 2084183166}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+=======
+>>>>>>> parent of 93f984c... Combat system and ghost-death working!
 --- !u!1001 &696380492
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1693,25 +1676,10 @@ PrefabInstance:
       propertyPath: grid
       value: 
       objectReference: {fileID: 1583416674}
-    - target: {fileID: 6196407550615269119, guid: a58aefc924c069048b4fe586afd1031b,
-        type: 3}
-      propertyPath: travelTurns
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6196407550615269119, guid: a58aefc924c069048b4fe586afd1031b,
-        type: 3}
-      propertyPath: HP
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 6785541576685021729, guid: a58aefc924c069048b4fe586afd1031b,
         type: 3}
       propertyPath: m_Name
       value: Enemy
-      objectReference: {fileID: 0}
-    - target: {fileID: 6785541576685021729, guid: a58aefc924c069048b4fe586afd1031b,
-        type: 3}
-      propertyPath: m_TagString
-      value: NPC
       objectReference: {fileID: 0}
     - target: {fileID: 6785541576685021730, guid: a58aefc924c069048b4fe586afd1031b,
         type: 3}
@@ -2706,20 +2674,10 @@ PrefabInstance:
       propertyPath: grid
       value: 
       objectReference: {fileID: 1583416674}
-    - target: {fileID: 6196407550615269119, guid: a58aefc924c069048b4fe586afd1031b,
-        type: 3}
-      propertyPath: HP
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 6785541576685021729, guid: a58aefc924c069048b4fe586afd1031b,
         type: 3}
       propertyPath: m_Name
       value: Enemy (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 6785541576685021729, guid: a58aefc924c069048b4fe586afd1031b,
-        type: 3}
-      propertyPath: m_TagString
-      value: NPC
       objectReference: {fileID: 0}
     - target: {fileID: 6785541576685021730, guid: a58aefc924c069048b4fe586afd1031b,
         type: 3}
@@ -3254,6 +3212,7 @@ Tilemap:
   m_GameObject: {fileID: 1583416672}
   m_Enabled: 1
   m_Tiles:
+<<<<<<< HEAD
   - first: {x: -5, y: -7, z: 0}
     second:
       serializedVersion: 2
@@ -3353,11 +3312,13 @@ Tilemap:
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
       m_AllTileFlags: 1073741826
+=======
+>>>>>>> parent of 93f984c... Combat system and ghost-death working!
   - first: {x: -4, y: -6, z: 0}
     second:
       serializedVersion: 2
       m_TileIndex: 1
-      m_TileSpriteIndex: 0
+      m_TileSpriteIndex: 2
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -3366,6 +3327,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 1
+<<<<<<< HEAD
       m_TileSpriteIndex: 0
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
@@ -3394,6 +3356,9 @@ Tilemap:
       serializedVersion: 2
       m_TileIndex: 1
       m_TileSpriteIndex: 1
+=======
+      m_TileSpriteIndex: 2
+>>>>>>> parent of 93f984c... Combat system and ghost-death working!
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -3402,7 +3367,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 1
-      m_TileSpriteIndex: 0
+      m_TileSpriteIndex: 2
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -3411,7 +3376,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 1
-      m_TileSpriteIndex: 1
+      m_TileSpriteIndex: 2
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -3450,6 +3415,7 @@ Tilemap:
       m_TileSpriteIndex: 11
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
+<<<<<<< HEAD
       m_TileObjectToInstantiateIndex: 65535
       m_AllTileFlags: 1073741826
   - first: {x: -8, y: -5, z: 0}
@@ -3460,12 +3426,15 @@ Tilemap:
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
+=======
+      m_TileObjectToInstantiateIndex: 2
+>>>>>>> parent of 93f984c... Combat system and ghost-death working!
       m_AllTileFlags: 1073741826
   - first: {x: -7, y: -5, z: 0}
     second:
       serializedVersion: 2
       m_TileIndex: 1
-      m_TileSpriteIndex: 0
+      m_TileSpriteIndex: 2
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -3474,7 +3443,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 1
-      m_TileSpriteIndex: 0
+      m_TileSpriteIndex: 2
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -3483,7 +3452,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 1
-      m_TileSpriteIndex: 0
+      m_TileSpriteIndex: 2
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -3501,7 +3470,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 1
-      m_TileSpriteIndex: 0
+      m_TileSpriteIndex: 2
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -3510,7 +3479,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 1
-      m_TileSpriteIndex: 1
+      m_TileSpriteIndex: 2
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -3519,7 +3488,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 1
-      m_TileSpriteIndex: 0
+      m_TileSpriteIndex: 2
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -3528,7 +3497,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 1
-      m_TileSpriteIndex: 1
+      m_TileSpriteIndex: 2
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -3537,7 +3506,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 1
-      m_TileSpriteIndex: 0
+      m_TileSpriteIndex: 2
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -3596,6 +3565,7 @@ Tilemap:
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
       m_AllTileFlags: 1073741826
+<<<<<<< HEAD
   - first: {x: -9, y: -4, z: 0}
     second:
       serializedVersion: 2
@@ -3605,11 +3575,13 @@ Tilemap:
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
       m_AllTileFlags: 1073741826
+=======
+>>>>>>> parent of 93f984c... Combat system and ghost-death working!
   - first: {x: -8, y: -4, z: 0}
     second:
       serializedVersion: 2
       m_TileIndex: 1
-      m_TileSpriteIndex: 1
+      m_TileSpriteIndex: 2
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -3749,6 +3721,7 @@ Tilemap:
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
       m_AllTileFlags: 1073741826
+<<<<<<< HEAD
   - first: {x: -10, y: -3, z: 0}
     second:
       serializedVersion: 2
@@ -3758,11 +3731,13 @@ Tilemap:
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
       m_AllTileFlags: 1073741826
+=======
+>>>>>>> parent of 93f984c... Combat system and ghost-death working!
   - first: {x: -9, y: -3, z: 0}
     second:
       serializedVersion: 2
       m_TileIndex: 1
-      m_TileSpriteIndex: 1
+      m_TileSpriteIndex: 2
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -3771,7 +3746,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 1
-      m_TileSpriteIndex: 0
+      m_TileSpriteIndex: 1
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -4203,6 +4178,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 1
+<<<<<<< HEAD
       m_TileSpriteIndex: 1
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
@@ -4212,6 +4188,8 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 1
+=======
+>>>>>>> parent of 93f984c... Combat system and ghost-death working!
       m_TileSpriteIndex: 2
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
@@ -4356,6 +4334,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 1
+<<<<<<< HEAD
       m_TileSpriteIndex: 0
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
@@ -4365,6 +4344,8 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 1
+=======
+>>>>>>> parent of 93f984c... Combat system and ghost-death working!
       m_TileSpriteIndex: 2
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
@@ -4509,6 +4490,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 1
+<<<<<<< HEAD
       m_TileSpriteIndex: 1
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
@@ -4518,6 +4500,8 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 1
+=======
+>>>>>>> parent of 93f984c... Combat system and ghost-death working!
       m_TileSpriteIndex: 2
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
@@ -4658,6 +4642,7 @@ Tilemap:
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
       m_AllTileFlags: 1073741826
+<<<<<<< HEAD
   - first: {x: 6, y: 2, z: 0}
     second:
       serializedVersion: 2
@@ -4676,6 +4661,8 @@ Tilemap:
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
       m_AllTileFlags: 1073741826
+=======
+>>>>>>> parent of 93f984c... Combat system and ghost-death working!
   - first: {x: -8, y: 3, z: 0}
     second:
       serializedVersion: 2
@@ -4802,6 +4789,7 @@ Tilemap:
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
       m_AllTileFlags: 1073741826
+<<<<<<< HEAD
   - first: {x: 6, y: 3, z: 0}
     second:
       serializedVersion: 2
@@ -4820,6 +4808,8 @@ Tilemap:
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
       m_AllTileFlags: 1073741826
+=======
+>>>>>>> parent of 93f984c... Combat system and ghost-death working!
   - first: {x: -6, y: 4, z: 0}
     second:
       serializedVersion: 2
@@ -4878,7 +4868,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 1
-      m_TileSpriteIndex: 0
+      m_TileSpriteIndex: 1
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -4887,7 +4877,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 1
-      m_TileSpriteIndex: 1
+      m_TileSpriteIndex: 2
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -4928,6 +4918,7 @@ Tilemap:
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
       m_AllTileFlags: 1073741826
+<<<<<<< HEAD
   - first: {x: 6, y: 4, z: 0}
     second:
       serializedVersion: 2
@@ -4946,6 +4937,8 @@ Tilemap:
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
       m_AllTileFlags: 1073741826
+=======
+>>>>>>> parent of 93f984c... Combat system and ghost-death working!
   - first: {x: -5, y: 5, z: 0}
     second:
       serializedVersion: 2
@@ -4995,6 +4988,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 1
+<<<<<<< HEAD
       m_TileSpriteIndex: 1
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
@@ -5005,6 +4999,9 @@ Tilemap:
       serializedVersion: 2
       m_TileIndex: 1
       m_TileSpriteIndex: 0
+=======
+      m_TileSpriteIndex: 2
+>>>>>>> parent of 93f984c... Combat system and ghost-death working!
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -5036,6 +5033,7 @@ Tilemap:
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
       m_AllTileFlags: 1073741826
+<<<<<<< HEAD
   - first: {x: 5, y: 5, z: 0}
     second:
       serializedVersion: 2
@@ -5135,11 +5133,13 @@ Tilemap:
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
       m_AllTileFlags: 1073741826
+=======
+>>>>>>> parent of 93f984c... Combat system and ghost-death working!
   m_AnimatedTiles: {}
   m_TileAssetArray:
   - m_RefCount: 33
     m_Data: {fileID: 11400000, guid: 5c00e904af79aa946a03b381f70f7e18, type: 2}
-  - m_RefCount: 147
+  - m_RefCount: 109
     m_Data: {fileID: 11400000, guid: 278a8bad88c977f4183dae971118a5b2, type: 2}
   - m_RefCount: 0
     m_Data: {fileID: 0}
@@ -5148,12 +5148,12 @@ Tilemap:
   - m_RefCount: 28
     m_Data: {fileID: 11400000, guid: 1ab5d29ec9ab95f4ebf5df1e45d2b424, type: 2}
   m_TileSpriteArray:
-  - m_RefCount: 28
+  - m_RefCount: 14
     m_Data: {fileID: 858130439448993242, guid: 15afb0dc273dd1c459ef7c1d0864266f, type: 3}
-  - m_RefCount: 32
+  - m_RefCount: 21
     m_Data: {fileID: 6130523851443508636, guid: 15afb0dc273dd1c459ef7c1d0864266f,
       type: 3}
-  - m_RefCount: 87
+  - m_RefCount: 74
     m_Data: {fileID: -7752843367164953650, guid: 15afb0dc273dd1c459ef7c1d0864266f,
       type: 3}
   - m_RefCount: 4
@@ -5222,7 +5222,7 @@ Tilemap:
     m_Data: {fileID: 4798375877231627739, guid: 1f18c44753dda8545b396b4f78dc5f19,
       type: 3}
   m_TileMatrixArray:
-  - m_RefCount: 203
+  - m_RefCount: 165
     m_Data:
       e00: 1
       e01: 0
@@ -5295,11 +5295,12 @@ Tilemap:
       e32: 0
       e33: 1
   m_TileColorArray:
-  - m_RefCount: 209
+  - m_RefCount: 171
     m_Data: {r: 1, g: 1, b: 1, a: 1}
   - m_RefCount: 0
     m_Data: {r: -3.8194752e-23, g: -3.8194752e-23, b: -3.8194752e-23, a: -3.8194752e-23}
   m_TileObjectToInstantiateArray:
+<<<<<<< HEAD
   - m_RefCount: 0
     m_Data: {fileID: 0}
   - m_RefCount: 0
@@ -5308,10 +5309,24 @@ Tilemap:
     m_Data: {fileID: 0}
   - m_RefCount: 0
     m_Data: {fileID: 0}
+=======
+  - m_RefCount: 33
+    m_Data: {fileID: 6236421972105261661, guid: 0aa11b9dc3c9301449d506597f84551e,
+      type: 3}
+  - m_RefCount: 109
+    m_Data: {fileID: 6236421972105261661, guid: 5172565873a8bc743b4cc58a36e2ef02,
+      type: 3}
+  - m_RefCount: 28
+    m_Data: {fileID: 6236421972105261661, guid: d446699d051a4a944947f37a779a0b11,
+      type: 3}
+  - m_RefCount: 1
+    m_Data: {fileID: 6236421972105261661, guid: 2b5d2e7e03934f04983909b7d2ff7eb3,
+      type: 3}
+>>>>>>> parent of 93f984c... Combat system and ghost-death working!
   m_AnimationFrameRate: 1
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Origin: {x: -10, y: -7, z: 0}
-  m_Size: {x: 18, y: 15, z: 1}
+  m_Origin: {x: -10, y: -6, z: 0}
+  m_Size: {x: 18, y: 12, z: 1}
   m_TileAnchor: {x: 0.5, y: 0.5, z: 0}
   m_TileOrientation: 0
   m_TileOrientationMatrix:
@@ -5469,6 +5484,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+<<<<<<< HEAD
   - {fileID: 44339679}
   - {fileID: 751552610}
   - {fileID: 2084183166}
@@ -5479,6 +5495,17 @@ Transform:
   - {fileID: 1703538730}
   - {fileID: 1699262044}
   - {fileID: 1099664970}
+=======
+  - {fileID: 884266782}
+  - {fileID: 51570570}
+  - {fileID: 1158716548}
+  - {fileID: 1000388793}
+  - {fileID: 710782171518717436}
+  - {fileID: 532280006}
+  - {fileID: 1054045103}
+  - {fileID: 1487160064}
+  - {fileID: 1491660242}
+>>>>>>> parent of 93f984c... Combat system and ghost-death working!
   m_Father: {fileID: 1650482159}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -6147,11 +6174,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 6785541576685021729, guid: 071ce00c8661c1c4daf362513086dc36,
-        type: 3}
-      propertyPath: m_TagString
-      value: Player
-      objectReference: {fileID: 0}
     - target: {fileID: 6785541576685021730, guid: 071ce00c8661c1c4daf362513086dc36,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -6209,13 +6231,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6785541576685021731, guid: 071ce00c8661c1c4daf362513086dc36,
         type: 3}
-      propertyPath: sprites.Array.size
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 6785541576685021731, guid: 071ce00c8661c1c4daf362513086dc36,
-        type: 3}
       propertyPath: InventoryUI
       value: 
+<<<<<<< HEAD
       objectReference: {fileID: 0}
     - target: {fileID: 6785541576685021731, guid: 071ce00c8661c1c4daf362513086dc36,
         type: 3}
@@ -6265,6 +6283,9 @@ PrefabInstance:
       value: 
       objectReference: {fileID: -8135909024930345854, guid: 9855f5cc4077f4d46b16153d5cefb787,
         type: 3}
+=======
+      objectReference: {fileID: 880737543}
+>>>>>>> parent of 93f984c... Combat system and ghost-death working!
     - target: {fileID: 6785541576940005475, guid: 071ce00c8661c1c4daf362513086dc36,
         type: 3}
       propertyPath: gM

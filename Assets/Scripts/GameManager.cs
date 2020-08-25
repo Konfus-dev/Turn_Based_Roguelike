@@ -43,11 +43,6 @@ public class GameManager : MonoBehaviour
 		Enemies.Add(script);
 	}
 
-	public void RemoveEnemyFromList(Enemy script)
-	{
-		Enemies.Remove(script);
-	}
-
 	public void GameOver()
 	{
 		//levelText.text = "Game Over";
@@ -72,11 +67,11 @@ public class GameManager : MonoBehaviour
 
 		for (int i = 0; i < Enemies.Count; i++)
 		{
-			Enemies[i].movement.myNode = Enemies[i].movement.grid.NodeFromPosition(Enemies[i].transform.position);
-			//Debug.Log("enemy moving " + Enemies[i].travelTurns + " time(s)");
+			Enemies[i].movement.myNode = Enemies[i].grid.NodeFromPosition(Enemies[i].transform.position);
+			Debug.Log("enemy moving " + Enemies[i].travelTurns + " time(s)");
 			for (int j = 0; j < Enemies[i].travelTurns; j++)
 			{
-				if (Enemies[i].movement.MoveEnemy())
+				if (Enemies[i].MoveEnemy())
 				{
 
 

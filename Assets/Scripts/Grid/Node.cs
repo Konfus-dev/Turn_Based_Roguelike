@@ -26,12 +26,29 @@ public class Node : MonoBehaviour/*, IComparable<Node>*/
         return "Node " + gameObject.name + ": " + transform.position;
     }
 
+    // Start is called before the first frame update
     void Start()
     {
+        //Debug.Log(this.gameObject.name);
         if (name.Length > 0)
         {
             this.gameObject.name = name;
         }
     }
 
+    /*int IComparable<Node>.CompareTo(Node other)
+    {
+        if (this.traverseCost > other.traverseCost)
+        {
+            return 1;
+        }
+        else if(this.traverseCost == other.traverseCost)
+        {
+            return 0;
+        }
+        else
+        {
+            return -1;
+        }
+    }*/
 }

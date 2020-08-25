@@ -47,15 +47,4 @@ public abstract class Movement : MonoBehaviour
         }
         moving = false;
     }
-
-    public bool CanMove(out RaycastHit2D hit, Vector2 dir)
-    {
-        hit = Physics2D.Raycast((Vector2)transform.position, dir, 1f, LayerMask.GetMask("Default"), 0);
-        if (hit.collider != null && ((hit.collider.tag == "NPC" && transform.tag != "NPC") || hit.collider.tag == "Interactable" || hit.collider.tag == "Player"))
-        {
-            Debug.Log("Attempting to interact with " + hit.collider.gameObject.name);
-            return false;
-        }
-        return true;
-    }
 }
