@@ -2,29 +2,28 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[System.Serializable]
 public class Inventory : MonoBehaviour
 {
     public int size = 5;
     public event EventHandler onItemListChanged;
 
-    private List<Item> items;
-    private Action<Item, GameObject> useItemAction;
+    private List<ItemData> itemsData;
+    private Action<ItemData, GameObject> useItemAction;
 
-    public Inventory(Action<Item, GameObject> useItemAction)
+    public Inventory(Action<ItemData, GameObject> useItemAction)
     {
         this.useItemAction = useItemAction;
-        items = new List<Item>();
+        itemsData = new List<ItemData>();
     }
 
-    public void AddItem(Item item)
+    public void AddItem(ItemData item)
     {
-        if (items.Contains(item)) items.Remove(item);
+        if (itemsData.Contains(item)) itemsData.Remove(item);
 
         if (item.IsStackable())
         {
             bool itemInInventory = false;
-            foreach (Item inventoryItem in items)
+            foreach (ItemData inventoryItem in itemsData)
             {
                 if (inventoryItem.itemName == item.itemName)
                 {
@@ -35,25 +34,25 @@ public class Inventory : MonoBehaviour
             }
             if (!itemInInventory)
             {
-                items.Add(item);
+                itemsData.Add(item);
             }
         }
         else
         {
-            items.Add(item);
+            itemsData.Add(item);
         }
 
         onItemListChanged?.Invoke(this, EventArgs.Empty);
     }
 
-    public void RemoveItem(Item item, GameObject itemGameObj, bool destroy)
+    public void RemoveItem(ItemData item, GameObject itemGameObj, bool destroy)
     {
-        if (items.Count == 0) return;
+        if (itemsData.Count == 0) return;
 
         if (item.IsStackable())
         {
-            Item itemInInventory = null;
-            foreach (Item inventoryItem in items)
+            ItemData itemInInventory = null;
+            foreach (ItemData inventoryItem in itemsData)
             {
                 if (inventoryItem.itemName == item.itemName)
                 {
@@ -63,26 +62,26 @@ public class Inventory : MonoBehaviour
             }
             if (itemInInventory != null && itemInInventory.amount <= 0)
             {
-                items.Remove(itemInInventory);
+                itemsData.Remove(itemInInventory);
                 if(itemGameObj != null) Destroy(itemGameObj);
             }
         }
         else
         {
-            items.Remove(item);
+            itemsData.Remove(item);
             if (destroy && itemGameObj != null) Destroy(itemGameObj);
         }
 
-        if (item.type == Item.ItemType.Consumable) onItemListChanged?.Invoke(this, EventArgs.Empty);
+        if (item.type == ItemData.ItemType.Consumable) onItemListChanged?.Invoke(this, EventArgs.Empty);
     }
 
-    public void UseItem(Item item, GameObject itemGameObj)
+    public void UseItem(ItemData item, GameObject itemGameObj)
     {
         useItemAction(item, itemGameObj);
     }
 
-    public List<Item> GetItems()
+    public List<ItemData> GetItems()
     {
-        return items;
+        return itemsData;
     }
 }

@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class PlayerInventory : MonoBehaviour
 {
@@ -21,11 +19,11 @@ public class PlayerInventory : MonoBehaviour
         inventoryUI.SetInventory(inventory);
 
             //testing
-            inventory.AddItem(new Item { itemName = "Sword_1", damageMod = 1, armorMod = 0, healthMod = 0, amount = 1, maxStackAmount = 1, type = Item.ItemType.Weapon });
-            inventory.AddItem(new Item { itemName = "Sword_2", damageMod = 2, armorMod = 0, healthMod = 0, amount = 1, maxStackAmount = 1, type = Item.ItemType.Weapon });
-            inventory.AddItem(new Item { itemName = "Sword_3", damageMod = 3, armorMod = 0, healthMod = 0, amount = 1, maxStackAmount = 1, type = Item.ItemType.Weapon });
-            inventory.AddItem(new Item { itemName = "Sword_4", damageMod = 4, armorMod = 0, healthMod = 0, amount = 1, maxStackAmount = 1, type = Item.ItemType.Weapon });
-            inventory.AddItem(new Item { itemName = "Sword_5", damageMod = 5, armorMod = 0, healthMod = 0, amount = 1, maxStackAmount = 1, type = Item.ItemType.Weapon });
+            inventory.AddItem(new ItemData { itemName = "Sword_1", damageMod = 1, armorMod = 0, healthMod = 0, amount = 1, maxStackAmount = 1, type = ItemData.ItemType.Weapon });
+            inventory.AddItem(new ItemData { itemName = "Sword_2", damageMod = 2, armorMod = 0, healthMod = 0, amount = 1, maxStackAmount = 1, type = ItemData.ItemType.Weapon });
+            inventory.AddItem(new ItemData { itemName = "Sword_3", damageMod = 3, armorMod = 0, healthMod = 0, amount = 1, maxStackAmount = 1, type = ItemData.ItemType.Weapon });
+            inventory.AddItem(new ItemData { itemName = "Sword_4", damageMod = 4, armorMod = 0, healthMod = 0, amount = 1, maxStackAmount = 1, type = ItemData.ItemType.Weapon });
+            inventory.AddItem(new ItemData { itemName = "Sword_5", damageMod = 5, armorMod = 0, healthMod = 0, amount = 1, maxStackAmount = 1, type = ItemData.ItemType.Weapon });
 
         equippedItems = new Inventory(null)
         {
@@ -39,11 +37,11 @@ public class PlayerInventory : MonoBehaviour
         CheckOpenCloseInventory();
     }
 
-    private void UseItem(Item item, GameObject itemGameObj)
+    private void UseItem(ItemData item, GameObject itemGameObj)
     {
-        if (item.type == Item.ItemType.Consumable)
+        if (item.type == ItemData.ItemType.Consumable)
         {
-            inventory.RemoveItem(new Item { type = item.type, itemName = item.itemName, amount = 1, armorMod = item.armorMod, damageMod = item.damageMod, healthMod = item.healthMod }, itemGameObj, false);
+            inventory.RemoveItem(new ItemData { type = item.type, itemName = item.itemName, amount = 1, armorMod = item.armorMod, damageMod = item.damageMod, healthMod = item.healthMod }, itemGameObj, false);
         }
     }
 

@@ -91,8 +91,8 @@ public class Player : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        ItemWorld itemWorld = collision.GetComponent<ItemWorld>();
-        if (GetState() != PlayerState.Ghosting && itemWorld != null && (this.inventories.inventory.GetItems().Count < this.inventories.inventory.size || itemWorld.item.IsStackable()) ) 
+        Item itemWorld = collision.GetComponent<Item>();
+        if (GetState() != PlayerState.Ghosting && itemWorld != null && (this.inventories.inventory.GetItems().Count < this.inventories.inventory.size || itemWorld.itemData.IsStackable()) ) 
         {
             this.inventories.inventory.AddItem(itemWorld.GetItem());
             itemWorld.SelfDestruct();

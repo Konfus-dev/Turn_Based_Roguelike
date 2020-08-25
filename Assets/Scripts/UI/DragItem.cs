@@ -7,7 +7,7 @@ public class DragItem : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDrag
     private Canvas canvas;
     private RectTransform rectTransform;
     private CanvasGroup canvasGroup;
-    public Item item;
+    public ItemData item;
     public Inventory inventory;
     public Transform parent;
 

@@ -14,10 +14,10 @@ public class Chest : Interactable
         };
 
             //testing
-            chestInventory.AddItem(new Item { itemName = "Helmet_1", damageMod = 0, armorMod = 1, healthMod = 0, amount = 1, maxStackAmount = 1, type = Item.ItemType.HelmArmor });
-            chestInventory.AddItem(new Item { itemName = "Helmet_2", damageMod = 0, armorMod = 2, healthMod = 1, amount = 1, maxStackAmount = 1, type = Item.ItemType.HelmArmor });
-            chestInventory.AddItem(new Item { itemName = "Helmet_3", damageMod = 0, armorMod = 3, healthMod = -1, amount = 1, maxStackAmount = 1, type = Item.ItemType.HelmArmor });
-            chestInventory.AddItem(new Item { itemName = "Items_Consumable_14", damageMod = 0, armorMod = 0, healthMod = 0, amount = 10, maxStackAmount = 10, type = Item.ItemType.Consumable });
+            chestInventory.AddItem(new ItemData { itemName = "Helmet_1", damageMod = 0, armorMod = 1, healthMod = 0, amount = 1, maxStackAmount = 1, type = ItemData.ItemType.HelmArmor });
+            chestInventory.AddItem(new ItemData { itemName = "Helmet_2", damageMod = 0, armorMod = 2, healthMod = 1, amount = 1, maxStackAmount = 1, type = ItemData.ItemType.HelmArmor });
+            chestInventory.AddItem(new ItemData { itemName = "Helmet_3", damageMod = 0, armorMod = 3, healthMod = -1, amount = 1, maxStackAmount = 1, type = ItemData.ItemType.HelmArmor });
+            chestInventory.AddItem(new ItemData { itemName = "Items_Consumable_14", damageMod = 0, armorMod = 0, healthMod = 0, amount = 10, maxStackAmount = 10, type = ItemData.ItemType.Consumable });
 
         chestUI = GameObject.FindGameObjectWithTag("WorldInventory").GetComponent<InventoryUI>();
 

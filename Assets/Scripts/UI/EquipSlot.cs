@@ -17,7 +17,7 @@ public class EquipSlot : MonoBehaviour, IDropHandler
 
     public Image background;
 
-    private Item lastItemEquipped;
+    private ItemData lastItemEquipped;
 
     private void Update()
     {
@@ -75,7 +75,7 @@ public class EquipSlot : MonoBehaviour, IDropHandler
         
     }
 
-    private void ApplyItemMods(Item item)
+    private void ApplyItemMods(ItemData item)
     {
         Player.Instance.playerStats.armor += item.armorMod;
 
@@ -84,7 +84,7 @@ public class EquipSlot : MonoBehaviour, IDropHandler
         Player.Instance.playerStats.damage += item.damageMod;
     }
 
-    private void UnApplyItemMods(Item item)
+    private void UnApplyItemMods(ItemData item)
     {
         Player.Instance.playerStats.armor -= item.armorMod;
 

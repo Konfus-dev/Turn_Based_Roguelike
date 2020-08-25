@@ -50,11 +50,11 @@ public class InventoryUI : MonoBehaviour
 
     private void Refresh()
     {
-        List<Item> itemsInInventory = inventory.GetItems();
+        List<ItemData> itemsInInventory = inventory.GetItems();
 
         for (int i = 0; i < itemsInInventory.Count; i++)
         {
-            Item item = itemsInInventory[i];
+            ItemData item = itemsInInventory[i];
 
             Transform itemSlot = null; 
 
@@ -84,15 +84,15 @@ public class InventoryUI : MonoBehaviour
                 if (this.gameObject.CompareTag("WorldInventory"))
                 {
                     if (Player.Instance.inventories.inventory.GetItems().Count <= Player.Instance.inventories.inventory.size) return;
-                    Item itemDup = new Item { type = item.type, itemName = item.itemName, amount = item.amount, armorMod = item.armorMod, damageMod = item.damageMod, healthMod = item.healthMod };
+                    ItemData itemDup = new ItemData { type = item.type, itemName = item.itemName, amount = item.amount, armorMod = item.armorMod, damageMod = item.damageMod, healthMod = item.healthMod };
                     inventory.RemoveItem(item, itemRectTransform.gameObject, true);
                     Player.Instance.inventories.inventory.AddItem(itemDup);
                 }
                 else
                 {
-                    Item itemDup = new Item { type = item.type, itemName = item.itemName, amount = item.amount, armorMod = item.armorMod, damageMod = item.damageMod, healthMod = item.healthMod };
+                    ItemData itemDup = new ItemData { type = item.type, itemName = item.itemName, amount = item.amount, armorMod = item.armorMod, damageMod = item.damageMod, healthMod = item.healthMod };
                     inventory.RemoveItem(item, itemRectTransform.gameObject, true);
-                    ItemWorld.DropItem(Player.Instance.transform.position, itemDup);
+                    Item.DropItem(Player.Instance.transform.position, itemDup);
                 }
 
             };
