@@ -85,7 +85,7 @@ public class Player : MonoBehaviour
         CheckIfDead();
     }
 
-    public void Attack(Enemy enemy)
+    public void Attack(NPC enemy)
     {
         enemy.enemyStats.currentHealth -= playerStats.damage - enemy.enemyStats.armor;
     }

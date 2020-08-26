@@ -55,9 +55,9 @@ public class PlayerMovement : Movement, IMovement
         bool canMove = CanMove(out hit, dir); // base.CanMove(out hit); <- should be apart of movement class to check if can move using the raycast toward player movement
 
         Interactable Interactable = null;
-        Enemy Enemy = null;
+        NPC Enemy = null;
         if (!canMove) Interactable = hit.transform.GetComponent<Interactable>();
-        if (!canMove) Enemy = hit.transform.GetComponent<Enemy>();
+        if (!canMove) Enemy = hit.transform.GetComponent<NPC>();
 
         if (Interactable != null) OnCantMove(Interactable);
         else if (Enemy != null) OnCantMove(Enemy);
@@ -86,7 +86,7 @@ public class PlayerMovement : Movement, IMovement
             // enemy.HP -+ player.Damage;
             if (Player.Instance.GetState() != Player.PlayerState.Ghosting)
             {
-                Enemy enemy = component.GetComponent<Enemy>();
+                NPC enemy = component.GetComponent<NPC>();
                 Debug.Log(transform.gameObject.name + " attacking npc: " + enemy.transform.gameObject.name);
                 Player.Instance.Attack(enemy);
             }

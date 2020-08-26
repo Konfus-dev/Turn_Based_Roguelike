@@ -7,26 +7,26 @@ public class ActorMovement : Movement, IMovement
 {
     private NodePathfinding pathfinding;
     private Transform Target;
-    public Enemy actor;
+    public NPC actor;
     public Vector2 direction;
 
     void Start()
     {
         pathfinding = transform.GetComponent<NodePathfinding>();
         Target = Player.Instance.transform;
-        actor = transform.GetComponent<Enemy>();
+        actor = transform.GetComponent<NPC>();
     }
 
     public bool MoveEnemy()
     {
-        if (actor.GetState() == Enemy.EnemyState.Sleeping)
+        if (actor.GetState() == NPC.EnemyState.Sleeping)
         {
             return false;
         }
         float distance = Vector3.Distance(Target.transform.position, this.transform.position);
 
         if (distance <= actor.aggroDistance && Player.Instance.GetState() != Player.PlayerState.Ghosting
-            && actor.SetState(Enemy.EnemyState.Moving))
+            && actor.SetState(NPC.EnemyState.Moving))
         {
             Node bestFootForward = pathfinding.FindStep(transform.position, Target.position);
             if (bestFootForward != null)
@@ -59,7 +59,7 @@ public class ActorMovement : Movement, IMovement
             }
             return false;
         }
-        else if (actor.SetState(Enemy.EnemyState.Wandering))
+        else if (actor.SetState(NPC.EnemyState.Wandering))
         {
             RandomMovePosWeighted();
             return true;

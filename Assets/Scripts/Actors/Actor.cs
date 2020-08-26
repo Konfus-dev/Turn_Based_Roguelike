@@ -7,10 +7,10 @@ public class Actor : Interactable
 
     private void Start()
     {
-        Enemy enemy = this.GetComponent<Enemy>();
-        if(enemy != null)
+        NPC npc = this.GetComponent<NPC>();
+        if(npc != null)
         {
-            enemy.CurrentState = Enemy.EnemyState.Docile;
+            npc.CurrentState = NPC.EnemyState.Docile;
         }
     }
 

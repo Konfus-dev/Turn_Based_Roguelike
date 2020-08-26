@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class Enemy : MonoBehaviour
+public class NPC : MonoBehaviour
 {
     public ActorStats enemyStats;
     public float moveTime = 0.1f;

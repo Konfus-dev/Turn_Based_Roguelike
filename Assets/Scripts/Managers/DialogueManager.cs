@@ -21,7 +21,28 @@ public class DialogueManager : MonoBehaviour
 			Destroy(gameObject);
 	}
 
-	public void StartDialogue(Dialogue dialogue, Text textContainer, float textSpeed)
+	public void StartDialogue(DialogueData dialogue, Text textContainer)
+    {
+		foreach(string line in dialogue.lines)
+		{
+			this.lines.Enqueue(line);
+        }
+
+		DisplayNextLine();
+    }
+
+	private void DisplayNextLine()
+    {
+		if(lines.Count == 0)
+        {
+			EndDialogue();
+			return;
+        }
+
+		string line = lines.Dequeue();
+    }
+
+	private void EndDialogue()
     {
 
     }

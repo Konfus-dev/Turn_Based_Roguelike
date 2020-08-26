@@ -1,13 +1,12 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using UnityEngine.UI;
 using UnityEngine;
 
 public class Dialogue : MonoBehaviour
 {
-    public Dialogue dialogue;
-
+    public DialogueData dialogue;
+    public Text dialogueContainer;
     public void TriggerDialue()
     {
-
+        DialogueManager.Instance.StartDialogue(dialogue, dialogueContainer);
     }
 }

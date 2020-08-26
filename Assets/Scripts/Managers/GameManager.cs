@@ -13,7 +13,7 @@ public class GameManager : MonoBehaviour
 	/*private Text LevelText;
 	private GameObject LevelImage;
 	private int Level = 1;*/
-	private List<Enemy> Enemies;  
+	private List<NPC> Enemies;  
 
 	//Awake is always called before any Start functions
 	void Awake()
@@ -26,7 +26,7 @@ public class GameManager : MonoBehaviour
 
 		//DontDestroyOnLoad(gameObject);
 
-		Enemies = new List<Enemy>();
+		Enemies = new List<NPC>();
 	}
 
 	//Update is called every frame.
@@ -38,12 +38,12 @@ public class GameManager : MonoBehaviour
 		StartCoroutine(MoveEnemies());
 	}
 
-	public void AddEnemyToList(Enemy script)
+	public void AddEnemyToList(NPC script)
 	{
 		Enemies.Add(script);
 	}
 
-	public void RemoveEnemyFromList(Enemy script)
+	public void RemoveEnemyFromList(NPC script)
 	{
 		Enemies.Remove(script);
 	}
