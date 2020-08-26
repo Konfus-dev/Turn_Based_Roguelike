@@ -15,6 +15,9 @@ public class Enemy : MonoBehaviour
 
     public enum EnemyState
     {
+        Ally,
+        Friendly,
+        Docile,
         Sleeping,
         Moving,
         Wandering,

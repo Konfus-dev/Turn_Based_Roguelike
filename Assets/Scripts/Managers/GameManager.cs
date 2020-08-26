@@ -24,7 +24,7 @@ public class GameManager : MonoBehaviour
 		else if (Instance != this)
 			Destroy(gameObject);
 
-		DontDestroyOnLoad(gameObject);
+		//DontDestroyOnLoad(gameObject);
 
 		Enemies = new List<Enemy>();
 	}
