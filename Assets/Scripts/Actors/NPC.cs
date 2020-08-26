@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class NPC : MonoBehaviour
+public class NPC : Interactable
 {
     public ActorStats enemyStats;
     public float moveTime = 0.1f;
@@ -89,8 +89,9 @@ public class NPC : MonoBehaviour
         }
     }
 
-    public void Attack(Player player)
+    public void Attack(Interactable actor)
     {
+        //set up to where they can also attack npc's
         SetState(EnemyState.Attacking);
         Player.Instance.playerStats.currentHealth -= this.enemyStats.damage - Player.Instance.playerStats.armor;
     }
@@ -101,5 +102,12 @@ public class NPC : MonoBehaviour
         ManageHealth(dmg, 0);
     }
 
-
+    public override void Interact<T>(T component)
+    {
+        Interactable interactable = component.GetComponent<Interactable>();
+        if (interactable != null)
+        {
+            Attack(interactable);
+        }
+    }
 }

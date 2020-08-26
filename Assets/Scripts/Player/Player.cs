@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class Player : MonoBehaviour
+public class Player : Interactable
 {
     public ActorStats playerStats;
     public PlayerInventory inventories;
@@ -128,5 +128,9 @@ public class Player : MonoBehaviour
 
         }
     }
-    
+
+    public override void Interact<T>(T component)
+    {
+        throw new System.NotImplementedException();
+    }
 }
