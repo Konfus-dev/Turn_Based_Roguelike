@@ -24,20 +24,18 @@ public class ItemSlot : MonoBehaviour, IDropHandler
     {
         if(eventData.pointerDrag != null)
         {
-            Debug.Log("Drop on inv slot");
-
             if (this.transform.childCount > 1) return;
 
             RectTransform rectTrans = eventData.pointerDrag.GetComponent<RectTransform>();
             DragItem drag = rectTrans.GetComponent<DragItem>();
 
-            if (drag.inventory != slotInventory)
-            {
-                drag.inventory.RemoveItem(drag.item, null, false);
-                slotInventory.AddItem(drag.item);
-            }
+            drag.inventory.RemoveItemNoUpdate(drag.item, null, false);
 
-            rectTrans.GetComponent<DragItem>().parent = this.transform;
+            slotInventory.AddItemNoUpdate(drag.item);
+
+            drag.inventory = slotInventory;
+
+            drag.GetComponent<DragItem>().parent = this.transform;
 
         }
     }

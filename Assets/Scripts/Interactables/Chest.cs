@@ -6,18 +6,19 @@ public class Chest : Interactable
     private InventoryUI chestUI;
     private Inventory chestInventory;
 
+    
     private void Start()
     {
-        chestInventory = new Inventory(null)
+        chestInventory = new Inventory(Player.Instance.gameObject.GetComponent<PlayerInventory>().UseItem)
         {
             size = 16
         };
 
             //testing
-            chestInventory.AddItem(new ItemData { itemName = "Helmet_1", damageMod = 0, armorMod = 1, healthMod = 0, amount = 1, maxStackAmount = 1, type = ItemData.ItemType.HelmArmor });
-            chestInventory.AddItem(new ItemData { itemName = "Helmet_2", damageMod = 0, armorMod = 2, healthMod = 1, amount = 1, maxStackAmount = 1, type = ItemData.ItemType.HelmArmor });
-            chestInventory.AddItem(new ItemData { itemName = "Helmet_3", damageMod = 0, armorMod = 3, healthMod = -1, amount = 1, maxStackAmount = 1, type = ItemData.ItemType.HelmArmor });
-            chestInventory.AddItem(new ItemData { itemName = "Items_Consumable_14", damageMod = 0, armorMod = 0, healthMod = 0, amount = 10, maxStackAmount = 10, type = ItemData.ItemType.Consumable });
+            chestInventory.AddItem(new ItemData { itemName = "Helmet_1", damageMod = 0, armorMod = 1, healthMod = 0, manaMod = 0, amount = 1, maxStackAmount = 1, type = ItemData.ItemType.HelmArmor });
+            chestInventory.AddItem(new ItemData { itemName = "Helmet_2", damageMod = 0, armorMod = 2, healthMod = 1, manaMod = 0, amount = 1, maxStackAmount = 1, type = ItemData.ItemType.HelmArmor });
+            chestInventory.AddItem(new ItemData { itemName = "Helmet_3", damageMod = 0, armorMod = 3, healthMod = -1, manaMod = 0, amount = 1, maxStackAmount = 1, type = ItemData.ItemType.HelmArmor });
+            chestInventory.AddItem(new ItemData { itemName = "Items_Consumable_14", damageMod = 0, armorMod = 0, healthMod = 1, manaMod = 0, amount = 10, maxStackAmount = 10, type = ItemData.ItemType.Consumable });
 
         chestUI = GameObject.FindGameObjectWithTag("WorldInventory").GetComponent<InventoryUI>();
 

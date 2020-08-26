@@ -47,9 +47,9 @@ public class EquipSlot : MonoBehaviour, IDropHandler
     {
         lastItemEquipped = drag.item;
 
-        drag.inventory.RemoveItem(drag.item, null, false);
+        drag.inventory.RemoveItemNoUpdate(drag.item, drag.gameObject, false);
 
-        Player.Instance.inventories.equippedItems.AddItem(drag.item);
+        Player.Instance.inventories.equippedItems.AddItemNoUpdate(drag.item);
 
         ApplyItemMods(drag.item);
 

@@ -17,6 +17,7 @@ TagManager:
   - Weapon
   - InventorySlot
   - WorldInventory
+  - Item
   layers:
   - Default
   - TransparentFX

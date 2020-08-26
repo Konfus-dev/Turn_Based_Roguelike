@@ -76,6 +76,7 @@ public class Player : MonoBehaviour
             checkedAtStartOfTurn = true;
             Check();
         }
+        CheckStats();
     }
 
     public void Check()
@@ -109,7 +110,11 @@ public class Player : MonoBehaviour
         }
     }
 
-    
+    private void CheckStats()
+    {
+        if (playerStats.currentMana > playerStats.maxMana) playerStats.currentMana = playerStats.maxMana;
+        if (playerStats.currentHealth > playerStats.maxHealth) playerStats.currentHealth = playerStats.maxHealth;
+    }
 
     private void CheckIfDead()
     {

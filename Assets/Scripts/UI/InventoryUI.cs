@@ -24,6 +24,19 @@ public class InventoryUI : MonoBehaviour
         CloseInventory();
     }
 
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            string items = "";
+            foreach (ItemData i in this.inventory.GetItems()) 
+            {
+                items += i.itemName + ", ";
+            }
+            Debug.Log(this.tag + " " + items);
+        }
+    }
+
     public void OpenInventory()
     {
         inventoryManager.ShowItem();
@@ -60,6 +73,26 @@ public class InventoryUI : MonoBehaviour
 
             foreach (Transform slot in slotsContainer)
             {
+                /*if (slot.childCount > 1 && !slot.CompareTag("EquipSlot"))
+                {
+                    foreach (Transform itemInSlot in slot)
+                    {
+                        if (itemInSlot.CompareTag(("Item")))
+                        {
+                            Text textInItem = itemInSlot.Find("Number").GetComponent<Text>();
+
+                            if (itemInSlot.GetComponent<DragItem>().item.amount > 1)
+                            {
+                                textInItem.text = itemInSlot.GetComponent<DragItem>().item.amount.ToString();
+                            }
+                            else
+                            {
+                                textInItem.text = "";
+                            }
+                        }
+                    }
+                }*/
+
                 if (slot.childCount == 1 && slot.CompareTag("InventorySlot"))
                 {
                     itemSlot = slot;
@@ -71,18 +104,22 @@ public class InventoryUI : MonoBehaviour
 
             RectTransform itemRectTransform = Instantiate(itemTemplate, itemSlot).GetComponent<RectTransform>();
 
+            itemRectTransform.GetComponent<DragItem>().inventory = this.inventory;
+            itemRectTransform.GetComponent<DragItem>().item = item;
+
             itemRectTransform.anchoredPosition = Vector3.zero;
 
             itemRectTransform.GetComponent<Button_UI>().ClickFunc = () =>
             {
                 // add left click to use item
-                inventory.UseItem(item, null);
+                inventory.UseItem(item, itemRectTransform.gameObject);
             };
             itemRectTransform.GetComponent<Button_UI>().MouseRightClickFunc = () =>
             {
                 // add right click to drop item
                 if (this.gameObject.CompareTag("WorldInventory"))
                 {
+                    Debug.Log("Item in world inv");
                     if (Player.Instance.inventories.inventory.GetItems().Count <= Player.Instance.inventories.inventory.size) return;
                     ItemData itemDup = new ItemData { type = item.type, itemName = item.itemName, amount = item.amount, armorMod = item.armorMod, damageMod = item.damageMod, healthMod = item.healthMod };
                     inventory.RemoveItem(item, itemRectTransform.gameObject, true);
@@ -90,6 +127,7 @@ public class InventoryUI : MonoBehaviour
                 }
                 else
                 {
+                    Debug.Log("Item in player inv");
                     ItemData itemDup = new ItemData { type = item.type, itemName = item.itemName, amount = item.amount, armorMod = item.armorMod, damageMod = item.damageMod, healthMod = item.healthMod };
                     inventory.RemoveItem(item, itemRectTransform.gameObject, true);
                     Item.DropItem(Player.Instance.transform.position, itemDup);
@@ -110,9 +148,6 @@ public class InventoryUI : MonoBehaviour
             {
                 text.text = "";
             }
-
-            itemRectTransform.GetComponent<DragItem>().inventory = this.inventory;
-            itemRectTransform.GetComponent<DragItem>().item = item;
 
             itemRectTransform.gameObject.SetActive(true);
 
