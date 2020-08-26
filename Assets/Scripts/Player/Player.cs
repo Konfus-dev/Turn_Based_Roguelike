@@ -20,7 +20,6 @@ public class Player : MonoBehaviour
         Attacking,
         TakingDamage,
         Ghosting,
-        Healing,
         InMenu
     }
 

@@ -55,12 +55,10 @@ public class PlayerMovement : Movement, IMovement
         bool canMove = CanMove(out hit, dir); // base.CanMove(out hit); <- should be apart of movement class to check if can move using the raycast toward player movement
 
         Interactable Interactable = null;
-        NPC Enemy = null;
+
         if (!canMove) Interactable = hit.transform.GetComponent<Interactable>();
-        if (!canMove) Enemy = hit.transform.GetComponent<NPC>();
 
         if (Interactable != null) OnCantMove(Interactable);
-        else if (Enemy != null) OnCantMove(Enemy);
 
         Player.Instance.Check();
 
@@ -80,7 +78,7 @@ public class PlayerMovement : Movement, IMovement
             interactable.Interact<Player>(Player.Instance);
             Debug.Log(transform.gameObject.name + " interacting with: " + interactable.transform.gameObject.name);
         }
-        else
+        /*else
         {
             // do stuff with enemy (if running into enemy player is prolly trying to attack enemy so maybe do something like:
             // enemy.HP -+ player.Damage;
@@ -90,6 +88,6 @@ public class PlayerMovement : Movement, IMovement
                 Debug.Log(transform.gameObject.name + " attacking npc: " + enemy.transform.gameObject.name);
                 Player.Instance.Attack(enemy);
             }
-        }
+        }*/
     }
 }
