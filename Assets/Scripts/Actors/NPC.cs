@@ -62,7 +62,7 @@ public class NPC : Interactable
 
     }
 
-    public void ManageHealth(int loss, int gain)
+    public void OnHealthChange(int loss, int gain)
     {
         //Set the trigger for the player animator to transition to the playerHit animation.
         //animator.SetTrigger("Hit");
@@ -83,8 +83,6 @@ public class NPC : Interactable
         }
         else
         {
-            //Set the trigger for player get health
-            //somthing to do with a health particle effect probably
             enemyStats.currentHealth += gain;
         }
     }
@@ -99,7 +97,7 @@ public class NPC : Interactable
     public void Defense(int dmg)
     {
         SetState(EnemyState.TakingDamage);
-        ManageHealth(dmg, 0);
+        OnHealthChange(dmg, 0);
     }
 
     public override void Interact<T>(T component)
