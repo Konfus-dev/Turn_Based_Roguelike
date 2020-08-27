@@ -10,15 +10,13 @@ public class Inventory : MonoBehaviour
     public int size;
 
     private List<ItemData> itemsData;
-    private Action<ItemData, GameObject> useItemAction;
 
-    public Inventory(Action<ItemData, GameObject> useItemAction)
+    public Inventory()
     {
-        this.useItemAction = useItemAction;
         itemsData = new List<ItemData>();
     }
 
-    public void AddItem(ItemData item)
+    public void AddItem(ItemData item, bool update)
     {
         if (itemsData.Contains(item)) itemsData.Remove(item);
 
@@ -44,11 +42,11 @@ public class Inventory : MonoBehaviour
             itemsData.Add(item);
         }
 
-        onItemListChanged?.Invoke(this, EventArgs.Empty);
+        if (update) onItemListChanged?.Invoke(this, EventArgs.Empty);
     }
     
 
-    public void RemoveItem(ItemData item, GameObject itemGameObj)
+    public void RemoveItem(ItemData item, GameObject itemGameObj, bool update)
     {
         if (itemsData.Count == 0) return;
 
@@ -75,12 +73,7 @@ public class Inventory : MonoBehaviour
             if (itemGameObj != null) Destroy(itemGameObj);
         }
 
-        if (item.type == ItemData.ItemType.Consumable) onItemListChanged?.Invoke(this, EventArgs.Empty);
-    }
-
-    public void UseItem(ItemData item, GameObject itemGameObj)
-    {
-        useItemAction(item, itemGameObj);
+        if (update) onItemListChanged?.Invoke(this, EventArgs.Empty);
     }
 
     public List<ItemData> GetItems()

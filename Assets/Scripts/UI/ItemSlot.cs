@@ -4,8 +4,7 @@ using UnityEngine.UI;
 
 public class ItemSlot : MonoBehaviour, IDropHandler
 {
-    [SerializeField]
-    private InventoryUI inventoryUI;
+    public InventoryUI inventoryUI;
 
     private Inventory slotInventory;
 
@@ -23,14 +22,26 @@ public class ItemSlot : MonoBehaviour, IDropHandler
             RectTransform rectTrans = eventData.pointerDrag.GetComponent<RectTransform>();
             DragItem drag = rectTrans.GetComponent<DragItem>();
 
-            if(drag.inventory != slotInventory)
-            {
-                drag.inventory.RemoveItem(drag.item, drag.gameObject);
+            ItemData itemDataDup = new ItemData 
+            { 
+                id = drag.item.id, 
+                type = drag.item.type,
+                itemName = drag.item.itemName, 
+                amount = drag.item.amount, 
+                armorMod = drag.item.armorMod, 
+                damageMod = drag.item.damageMod, 
+                healthMod = drag.item.healthMod, 
+                manaMod = drag.item.manaMod 
+            };
 
-                slotInventory.AddItem(drag.item);
+            drag.inventory.RemoveItem(drag.item, null, false);
 
-                drag.inventory = slotInventory;
-            }
+            slotInventory.AddItem(itemDataDup, false);
+
+            drag.item = itemDataDup;
+            drag.inventory = slotInventory;
+
+            Debug.Log(drag.item.itemName + " " + drag.item.amount);
 
             drag.GetComponent<DragItem>().parent = this.transform;
 

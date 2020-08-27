@@ -8484,7 +8484,7 @@ GameObject:
   - component: {fileID: 6212671855190451588}
   - component: {fileID: 6212671855190451590}
   - component: {fileID: 6212671855190451589}
-  - component: {fileID: 1424664856281888804}
+  - component: {fileID: 5040289952866621392}
   m_Layer: 5
   m_Name: Item_Template
   m_TagString: Item
@@ -8586,7 +8586,7 @@ MonoBehaviour:
     armorMod: 0
   inventory: {fileID: 0}
   parent: {fileID: 0}
---- !u!114 &1424664856281888804
+--- !u!114 &5040289952866621392
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8595,18 +8595,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 6212671855190451587}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 602f74cbbbd80034b96f88091a8e7c1d, type: 3}
+  m_Script: {fileID: 11500000, guid: 5288c83be3747974a9e28d1d5d857c7c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hoverBehaviourType: 0
-  hoverBehaviour_Color_Enter: {r: 0, g: 0, b: 0, a: 0}
-  hoverBehaviour_Color_Exit: {r: 0, g: 0, b: 0, a: 0}
-  hoverBehaviour_Image: {fileID: 0}
-  hoverBehaviour_Sprite_Exit: {fileID: 0}
-  hoverBehaviour_Sprite_Enter: {fileID: 0}
-  hoverBehaviour_Move: 0
-  hoverBehaviour_Move_Amount: {x: 0, y: 0}
-  triggerMouseOutFuncOnClick: 0
 --- !u!1 &6212671855346137461
 GameObject:
   m_ObjectHideFlags: 0

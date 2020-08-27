@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using UnityEngine.UI;
 
 public class PlayerInventory : MonoBehaviour
 {
@@ -12,7 +11,7 @@ public class PlayerInventory : MonoBehaviour
 
     private void Start()
     {
-        inventory = new Inventory(UseItem)
+        inventory = new Inventory()
         {
             size = 5
         };
@@ -20,13 +19,12 @@ public class PlayerInventory : MonoBehaviour
         inventoryUI.SetInventory(inventory);
 
             //testing
-            inventory.AddItem(new ItemData { itemName = "Sword_1", damageMod = 1, armorMod = 0, healthMod = 0, manaMod = 0, amount = 1, maxStackAmount = 1, type = ItemData.ItemType.Weapon });
-            inventory.AddItem(new ItemData { itemName = "Sword_2", damageMod = 2, armorMod = 0, healthMod = 0, manaMod = 0, amount = 1, maxStackAmount = 1, type = ItemData.ItemType.Weapon });
-            inventory.AddItem(new ItemData { itemName = "Helmet_3", damageMod = 3, armorMod = 0, healthMod = 0, manaMod = 0, amount = 1, maxStackAmount = 1, type = ItemData.ItemType.Weapon });
-            inventory.AddItem(new ItemData { itemName = "Items_Consumable_14", damageMod = 0, armorMod = 0, healthMod = 1, manaMod = 0, amount = 10, maxStackAmount = 10, type = ItemData.ItemType.Consumable });
-            inventory.AddItem(new ItemData { itemName = "Sword_5", damageMod = 5, armorMod = 0, healthMod = 0, manaMod = 0, amount = 1, maxStackAmount = 1, type = ItemData.ItemType.Weapon });
+            inventory.AddItem(new ItemData { itemName = "Sword_1", damageMod = 1, armorMod = 0, healthMod = 0, manaMod = 0, amount = 1, maxStackAmount = 1, type = ItemData.ItemType.Weapon }, true);
+            inventory.AddItem(new ItemData { itemName = "Sword_2", damageMod = 2, armorMod = 0, healthMod = 0, manaMod = 0, amount = 1, maxStackAmount = 1, type = ItemData.ItemType.Weapon }, true);
+            inventory.AddItem(new ItemData { itemName = "Helmet_3", damageMod = 3, armorMod = 0, healthMod = 0, manaMod = 0, amount = 1, maxStackAmount = 1, type = ItemData.ItemType.Weapon }, true);
+            inventory.AddItem(new ItemData { itemName = "Items_Consumable_14", damageMod = 0, armorMod = 0, healthMod = 1, manaMod = 0, amount = 10, maxStackAmount = 10, type = ItemData.ItemType.Consumable }, true);
 
-        equippedItems = new Inventory(null)
+        equippedItems = new Inventory()
         {
             size = 4
         };
@@ -36,38 +34,6 @@ public class PlayerInventory : MonoBehaviour
     {
         CheckOpenCloseInventory();
         
-    }
-
-    public void UseItem(ItemData item, GameObject itemGameObj)
-    {
-        if (item.type == ItemData.ItemType.Consumable) 
-        {
-            item.amount--;
-
-            if(item.amount <= 0)
-            {
-                inventory.RemoveItem(item, itemGameObj);
-            }
-
-            ApplyItemModsOnUse(item);
-
-            Text text = itemGameObj.GetComponent<RectTransform>().Find("Number").GetComponent<Text>();
-
-            if (item.amount > 1)
-            {
-                text.text = item.amount.ToString();
-            }
-            else
-            {
-                text.text = "";
-            }
-        }
-    }
-
-    private void ApplyItemModsOnUse(ItemData item)
-    {
-        Player.Instance.playerStats.currentHealth += item.healthMod;
-        Player.Instance.playerStats.currentMana += item.manaMod;
     }
 
     private void CheckOpenCloseInventory()

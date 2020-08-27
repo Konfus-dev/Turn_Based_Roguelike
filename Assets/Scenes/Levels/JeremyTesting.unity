@@ -3136,6 +3136,23 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6785541576685021731, guid: 071ce00c8661c1c4daf362513086dc36,
+        type: 3}
+      propertyPath: sprites.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6785541576685021731, guid: 071ce00c8661c1c4daf362513086dc36,
+        type: 3}
+      propertyPath: sprites.Array.data[0]
+      value: 
+      objectReference: {fileID: -5660379987200926046, guid: fc0420c356aa117468ca6ce3b32c00d3,
+        type: 3}
+    - target: {fileID: 6785541576685021731, guid: 071ce00c8661c1c4daf362513086dc36,
+        type: 3}
+      propertyPath: sprites.Array.data[1]
+      value: 
+      objectReference: {fileID: 3918784972347920814, guid: fc0420c356aa117468ca6ce3b32c00d3,
+        type: 3}
     - target: {fileID: 6785541576940005475, guid: 071ce00c8661c1c4daf362513086dc36,
         type: 3}
       propertyPath: grid
@@ -5125,14 +5142,6 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 747111438, guid: cf9dcb4f299c7e64fa2ea9fec83262ee, type: 3}
-      propertyPath: m_RaycastTarget
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 747111438, guid: cf9dcb4f299c7e64fa2ea9fec83262ee, type: 3}
-      propertyPath: m_Maskable
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1186783711, guid: cf9dcb4f299c7e64fa2ea9fec83262ee, type: 3}
       propertyPath: m_AnchorMin.y
       value: 0
@@ -5179,40 +5188,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1218679055, guid: cf9dcb4f299c7e64fa2ea9fec83262ee, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1271538135, guid: cf9dcb4f299c7e64fa2ea9fec83262ee, type: 3}
-      propertyPath: m_IgnoreParentGroups
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1424664854600405756, guid: cf9dcb4f299c7e64fa2ea9fec83262ee,
-        type: 3}
-      propertyPath: BehaviorAtStart
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1424664854600405759, guid: cf9dcb4f299c7e64fa2ea9fec83262ee,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1424664855414955250, guid: cf9dcb4f299c7e64fa2ea9fec83262ee,
-        type: 3}
-      propertyPath: m_RaycastTarget
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1424664855414955250, guid: cf9dcb4f299c7e64fa2ea9fec83262ee,
-        type: 3}
-      propertyPath: m_Maskable
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2372843262008179105, guid: cf9dcb4f299c7e64fa2ea9fec83262ee,
-        type: 3}
-      propertyPath: m_RaycastTarget
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2372843262008179105, guid: cf9dcb4f299c7e64fa2ea9fec83262ee,
-        type: 3}
-      propertyPath: m_Maskable
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6212671854050024990, guid: cf9dcb4f299c7e64fa2ea9fec83262ee,
@@ -5274,11 +5249,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: UI
-      objectReference: {fileID: 0}
-    - target: {fileID: 6212671854918047917, guid: cf9dcb4f299c7e64fa2ea9fec83262ee,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cf9dcb4f299c7e64fa2ea9fec83262ee, type: 3}

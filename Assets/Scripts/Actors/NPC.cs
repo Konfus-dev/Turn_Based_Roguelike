@@ -47,7 +47,7 @@ public class NPC : Interactable
     protected void Start()
     {
         movement = transform.GetComponent<ActorMovement>();
-        this.inventory = new Inventory(null);
+        this.inventory = new Inventory();
 
         this.inventory.size = inventorySize;
 

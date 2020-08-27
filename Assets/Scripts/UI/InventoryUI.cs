@@ -1,5 +1,4 @@
-﻿using CodeMonkey.Utils;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -11,8 +10,8 @@ public class InventoryUI : MonoBehaviour
     [HideInInspector]
     public Inventory inventory;
 
-    [SerializeField]
-    private Transform slotsContainer;
+    public Transform slotsContainer;
+
     [SerializeField]
     private Transform itemTemplate;
     
@@ -102,32 +101,6 @@ public class InventoryUI : MonoBehaviour
             itemRectTransform.GetComponent<DragItem>().item = item;
 
             itemRectTransform.anchoredPosition = Vector3.zero;
-
-            itemRectTransform.GetComponent<Button_UI>().ClickFunc = () =>
-            {
-                // add left click to use item
-                inventory.UseItem(item, itemRectTransform.gameObject);
-            };
-            itemRectTransform.GetComponent<Button_UI>().MouseRightClickFunc = () =>
-            {
-                // add right click to drop item
-                if (this.gameObject.CompareTag("WorldInventory"))
-                {
-                    Debug.Log("Item in world inv");
-                    if (Player.Instance.inventories.inventory.GetItems().Count <= Player.Instance.inventories.inventory.size) return;
-                    ItemData itemDup = new ItemData { type = item.type, itemName = item.itemName, amount = item.amount, armorMod = item.armorMod, damageMod = item.damageMod, healthMod = item.healthMod };
-                    inventory.RemoveItem(item, itemRectTransform.gameObject);
-                    Player.Instance.inventories.inventory.AddItem(itemDup);
-                }
-                else
-                {
-                    Debug.Log("Item in player inv");
-                    ItemData itemDup = new ItemData { type = item.type, itemName = item.itemName, amount = item.amount, armorMod = item.armorMod, damageMod = item.damageMod, healthMod = item.healthMod };
-                    inventory.RemoveItem(item, itemRectTransform.gameObject);
-                    Item.DropItem(Player.Instance.transform.position, itemDup);
-                }
-
-            };
 
             Image itemIcon = itemRectTransform.Find("Icon").gameObject.GetComponent<Image>();
             itemIcon.sprite = item.GetSprite();

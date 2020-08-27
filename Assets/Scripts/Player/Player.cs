@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 
 public class Player : Interactable
 {
@@ -88,13 +89,14 @@ public class Player : Interactable
     {
         enemy.enemyStats.currentHealth -= playerStats.damage - enemy.enemyStats.armor;
     }
+    
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         Item itemWorld = collision.GetComponent<Item>();
         if (GetState() != PlayerState.Ghosting && itemWorld != null && (this.inventories.inventory.GetItems().Count < this.inventories.inventory.size || itemWorld.itemData.IsStackable()) ) 
         {
-            this.inventories.inventory.AddItem(itemWorld.GetItem());
+            this.inventories.inventory.AddItem(itemWorld.GetItem(), true);
             itemWorld.SelfDestruct();
         }
     }
