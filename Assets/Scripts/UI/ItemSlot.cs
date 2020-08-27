@@ -14,12 +14,6 @@ public class ItemSlot : MonoBehaviour, IDropHandler
         slotInventory = inventoryUI.inventory;
     }
 
-    private void Update()
-    {
-        /*if (Player.Instance.inventories.inventoryUI.draggingItem) this.GetComponent<Image>().raycastTarget = false;
-        else this.GetComponent<Image>().raycastTarget = true;*/
-    }
-
     public void OnDrop(PointerEventData eventData)
     {
         if(eventData.pointerDrag != null)
@@ -29,11 +23,14 @@ public class ItemSlot : MonoBehaviour, IDropHandler
             RectTransform rectTrans = eventData.pointerDrag.GetComponent<RectTransform>();
             DragItem drag = rectTrans.GetComponent<DragItem>();
 
-            drag.inventory.RemoveItemNoUpdate(drag.item, null, false);
+            if(drag.inventory != slotInventory)
+            {
+                drag.inventory.RemoveItem(drag.item, drag.gameObject);
 
-            slotInventory.AddItemNoUpdate(drag.item);
+                slotInventory.AddItem(drag.item);
 
-            drag.inventory = slotInventory;
+                drag.inventory = slotInventory;
+            }
 
             drag.GetComponent<DragItem>().parent = this.transform;
 

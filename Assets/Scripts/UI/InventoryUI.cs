@@ -33,7 +33,7 @@ public class InventoryUI : MonoBehaviour
             {
                 items += i.itemName + ", ";
             }
-            Debug.Log(this.tag + " " + items);
+            Debug.Log(this.tag + ": " + items);
         }
     }
 
@@ -44,6 +44,7 @@ public class InventoryUI : MonoBehaviour
 
     public void CloseInventory()
     {
+        this.GetComponent<Doozy.Engine.UI.UIView>().RectTransform.anchoredPosition = this.GetComponent<RectTransform>().anchoredPosition;
         inventoryManager.HideItem();
     }
 
@@ -73,37 +74,30 @@ public class InventoryUI : MonoBehaviour
 
             foreach (Transform slot in slotsContainer)
             {
-                /*if (slot.childCount > 1 && !slot.CompareTag("EquipSlot"))
+                if(slot.CompareTag("InventorySlot"))
                 {
-                    foreach (Transform itemInSlot in slot)
+                    if (slot.childCount == 1)
                     {
-                        if (itemInSlot.CompareTag(("Item")))
-                        {
-                            Text textInItem = itemInSlot.Find("Number").GetComponent<Text>();
-
-                            if (itemInSlot.GetComponent<DragItem>().item.amount > 1)
-                            {
-                                textInItem.text = itemInSlot.GetComponent<DragItem>().item.amount.ToString();
-                            }
-                            else
-                            {
-                                textInItem.text = "";
-                            }
-                        }
+                        itemSlot = slot;
+                        break;
                     }
-                }*/
-
-                if (slot.childCount == 1 && slot.CompareTag("InventorySlot"))
-                {
-                    itemSlot = slot;
-                    break;
+                    else if (slot.GetChild(1).GetComponent<DragItem>().item.id == item.id)
+                    {
+                        if (i == itemsInInventory.Count - 1) return;
+                        i++;
+                        item = itemsInInventory[i];
+                    }
                 }
             }
 
-            if (itemSlot == null) continue;
+            if (itemSlot == null)
+            {
+                continue;
+            }
 
             RectTransform itemRectTransform = Instantiate(itemTemplate, itemSlot).GetComponent<RectTransform>();
 
+            itemRectTransform.GetComponent<DragItem>().parent = itemSlot;
             itemRectTransform.GetComponent<DragItem>().inventory = this.inventory;
             itemRectTransform.GetComponent<DragItem>().item = item;
 
@@ -122,14 +116,14 @@ public class InventoryUI : MonoBehaviour
                     Debug.Log("Item in world inv");
                     if (Player.Instance.inventories.inventory.GetItems().Count <= Player.Instance.inventories.inventory.size) return;
                     ItemData itemDup = new ItemData { type = item.type, itemName = item.itemName, amount = item.amount, armorMod = item.armorMod, damageMod = item.damageMod, healthMod = item.healthMod };
-                    inventory.RemoveItem(item, itemRectTransform.gameObject, true);
+                    inventory.RemoveItem(item, itemRectTransform.gameObject);
                     Player.Instance.inventories.inventory.AddItem(itemDup);
                 }
                 else
                 {
                     Debug.Log("Item in player inv");
                     ItemData itemDup = new ItemData { type = item.type, itemName = item.itemName, amount = item.amount, armorMod = item.armorMod, damageMod = item.damageMod, healthMod = item.healthMod };
-                    inventory.RemoveItem(item, itemRectTransform.gameObject, true);
+                    inventory.RemoveItem(item, itemRectTransform.gameObject);
                     Item.DropItem(Player.Instance.transform.position, itemDup);
                 }
 
