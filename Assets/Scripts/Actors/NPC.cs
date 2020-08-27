@@ -51,7 +51,7 @@ public class NPC : Interactable
 
         this.inventory.size = inventorySize;
 
-        //animator = GetComponent<Animator>();
+        //animator = GetComponent<Animator>();  
         int startState = Random.Range(0, 2);
 
         //randomly decide if enemy starts in sleeping or wandering state
