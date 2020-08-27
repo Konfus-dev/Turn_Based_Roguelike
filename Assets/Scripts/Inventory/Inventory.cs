@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class Inventory : MonoBehaviour
 {
-    public event EventHandler onItemListChanged;
+    public event EventHandler OnItemListChanged;
 
     public int size;
 
@@ -16,18 +16,24 @@ public class Inventory : MonoBehaviour
         itemsData = new List<ItemData>();
     }
 
-    public void AddItem(ItemData item, bool update)
+    public bool AddItem(ItemData item, bool update)
     {
         if (itemsData.Contains(item)) itemsData.Remove(item);
+
+        bool destroyItem = true;
 
         if (item.IsStackable())
         {
             bool itemInInventory = false;
             foreach (ItemData inventoryItem in itemsData)
             {
-                if (inventoryItem.id == item.id)
+                if (inventoryItem.itemName == item.itemName)
                 {
-                    if (inventoryItem.amount == item.maxStackAmount) break;
+                    if (inventoryItem.amount == item.maxStackAmount)
+                    {
+                        destroyItem = false;
+                        break;
+                    }
                     inventoryItem.amount += item.amount;
                     itemInInventory = true;
                 }
@@ -42,7 +48,8 @@ public class Inventory : MonoBehaviour
             itemsData.Add(item);
         }
 
-        if (update) onItemListChanged?.Invoke(this, EventArgs.Empty);
+        if (update) OnItemListChanged?.Invoke(this, EventArgs.Empty);
+        return destroyItem;
     }
     
 
@@ -73,7 +80,7 @@ public class Inventory : MonoBehaviour
             if (itemGameObj != null) Destroy(itemGameObj);
         }
 
-        if (update) onItemListChanged?.Invoke(this, EventArgs.Empty);
+        if (update) OnItemListChanged?.Invoke(this, EventArgs.Empty);
     }
 
     public List<ItemData> GetItems()

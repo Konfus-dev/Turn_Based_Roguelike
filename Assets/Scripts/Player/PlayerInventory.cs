@@ -21,7 +21,7 @@ public class PlayerInventory : MonoBehaviour
             //testing
             inventory.AddItem(new ItemData { itemName = "Sword_1", damageMod = 1, armorMod = 0, healthMod = 0, manaMod = 0, amount = 1, maxStackAmount = 1, type = ItemData.ItemType.Weapon }, true);
             inventory.AddItem(new ItemData { itemName = "Sword_2", damageMod = 2, armorMod = 0, healthMod = 0, manaMod = 0, amount = 1, maxStackAmount = 1, type = ItemData.ItemType.Weapon }, true);
-            inventory.AddItem(new ItemData { itemName = "Helmet_3", damageMod = 3, armorMod = 0, healthMod = 0, manaMod = 0, amount = 1, maxStackAmount = 1, type = ItemData.ItemType.Weapon }, true);
+            inventory.AddItem(new ItemData { itemName = "Helmet_3", damageMod = 3, armorMod = 0, healthMod = 0, manaMod = 0, amount = 1, maxStackAmount = 1, type = ItemData.ItemType.HelmArmor }, true);
             inventory.AddItem(new ItemData { itemName = "Items_Consumable_14", damageMod = 0, armorMod = 0, healthMod = 1, manaMod = 0, amount = 10, maxStackAmount = 10, type = ItemData.ItemType.Consumable }, true);
 
         equippedItems = new Inventory()

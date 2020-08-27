@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class InventoryUI : MonoBehaviour
 {
@@ -51,7 +52,7 @@ public class InventoryUI : MonoBehaviour
     {
         this.inventory = inventory;
 
-        this.inventory.onItemListChanged += Inventory_OnItemListChanged;
+        this.inventory.OnItemListChanged += Inventory_OnItemListChanged;
 
         Refresh();
     }
@@ -105,7 +106,7 @@ public class InventoryUI : MonoBehaviour
             Image itemIcon = itemRectTransform.Find("Icon").gameObject.GetComponent<Image>();
             itemIcon.sprite = item.GetSprite();
 
-            Text text = itemRectTransform.Find("Number").GetComponent<Text>();
+            TMP_Text text = itemRectTransform.Find("Number").GetComponent<TMP_Text>();
 
             if (item.amount > 1)
             {

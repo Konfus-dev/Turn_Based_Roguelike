@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.EventSystems;
-using UnityEngine.UI;
+using TMPro;
 
 public class UseItem : MonoBehaviour, IPointerClickHandler
 {
@@ -82,7 +82,7 @@ public class UseItem : MonoBehaviour, IPointerClickHandler
 
             itemInv.RemoveItem(itemDataDup, null, false);
 
-            Text text = itemGameObj.GetComponent<RectTransform>().Find("Number").GetComponent<Text>();
+            TMP_Text text = itemGameObj.GetComponent<RectTransform>().Find("Number").GetComponent<TMP_Text>();
 
             if (item.amount > 1)
             {

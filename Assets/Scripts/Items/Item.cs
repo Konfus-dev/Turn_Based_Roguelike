@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class Item : MonoBehaviour
 {
@@ -7,12 +8,12 @@ public class Item : MonoBehaviour
     public ItemData itemData;
     
     private SpriteRenderer spriteRenderer;
-    private Text text;
+    private TMP_Text text;
 
     private void Awake()
     {
 
-        this.text = transform.GetChild(0).transform.Find("Text").GetComponent<Text>();
+        this.text = transform.GetChild(0).transform.Find("Text").GetComponent<TMP_Text>();
         string ItemName = this.GetComponent<SpriteRenderer>().sprite.name;
 
         if (this.itemData != null)
