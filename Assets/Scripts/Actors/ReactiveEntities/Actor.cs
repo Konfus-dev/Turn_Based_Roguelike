@@ -1,8 +1,6 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class Actor : Interactable
+public class Actor : MonoBehaviour
 {
 
     private void Start()
@@ -22,8 +20,4 @@ public class Actor : Interactable
         }
     }
 
-    public override void Interact<T>(T component)
-    {
-        throw new System.NotImplementedException();
-    }
 }

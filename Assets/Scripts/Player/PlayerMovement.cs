@@ -54,9 +54,9 @@ public class PlayerMovement : Movement, IMovement
 
         bool canMove = CanMove(out hit, dir); // base.CanMove(out hit); <- should be apart of movement class to check if can move using the raycast toward player movement
 
-        Interactable Interactable = null;
+        ReactiveEntity Interactable = null;
 
-        if (!canMove) Interactable = hit.transform.GetComponent<Interactable>();
+        if (!canMove) Interactable = hit.transform.GetComponent<ReactiveEntity>();
 
         if (Interactable != null) OnCantMove(Interactable);
 
@@ -70,7 +70,7 @@ public class PlayerMovement : Movement, IMovement
     public void OnCantMove<T>(T component) where T : Component
     {
         if (Player.Instance.GetState() == Player.PlayerState.Ghosting) return;
-        Interactable interactable = component.GetComponent<Interactable>();
+        ReactiveEntity interactable = component.GetComponent<ReactiveEntity>();
 
         if (interactable != null)
         {

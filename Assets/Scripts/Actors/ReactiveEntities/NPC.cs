@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class NPC : Interactable
+public class NPC : ReactiveEntity
 {
     public ActorStats enemyStats;
     public float moveTime = 0.1f;
@@ -87,7 +87,7 @@ public class NPC : Interactable
         }
     }
 
-    public void Attack(Interactable actor)
+    public void Attack(ReactiveEntity actor)
     {
         //set up to where they can also attack npc's
         SetState(EnemyState.Attacking);
@@ -102,7 +102,7 @@ public class NPC : Interactable
 
     public override void Interact<T>(T component)
     {
-        Interactable interactable = component.GetComponent<Interactable>();
+        ReactiveEntity interactable = component.GetComponent<ReactiveEntity>();
         if (interactable != null)
         {
             Attack(interactable);

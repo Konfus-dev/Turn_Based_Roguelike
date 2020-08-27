@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class Chest : Interactable
+public class Chest : ReactiveEntity
 {
     public Sprite openChestSprite;
     private InventoryUI chestUI;

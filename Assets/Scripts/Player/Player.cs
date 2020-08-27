@@ -1,7 +1,6 @@
 ﻿using UnityEngine;
-using UnityEngine.UI;
 
-public class Player : Interactable
+public class Player : ReactiveEntity
 {
     public ActorStats playerStats;
     public PlayerInventory inventories;
@@ -103,10 +102,10 @@ public class Player : Interactable
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        Interactable interactable = collision.gameObject.GetComponent<Interactable>();
+        ReactiveEntity interactable = collision.gameObject.GetComponent<ReactiveEntity>();
         if (interactable != null)
         {
-            collision.gameObject.GetComponent<Interactable>()
+            collision.gameObject.GetComponent<ReactiveEntity>()
                 .Interact<Player>(this);
         }
     }

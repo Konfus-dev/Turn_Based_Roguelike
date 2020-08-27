@@ -1,7 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using System.Threading;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class ActorMovement : Movement, IMovement
 {
@@ -140,9 +137,9 @@ public class ActorMovement : Movement, IMovement
 
         bool canMove = CanMove(out hit, dir); // base.CanMove(out hit); <- should be apart of movement class to check if can move using the raycast toward player movement
 
-        Interactable Interactable = null;
+        ReactiveEntity Interactable = null;
         Player Player = null;
-        if (!canMove) Interactable = hit.transform.GetComponent<Interactable>();
+        if (!canMove) Interactable = hit.transform.GetComponent<ReactiveEntity>();
         if (!canMove) Player = hit.transform.GetComponent<Player>();
 
         if (Interactable != null) OnCantMove(Interactable);
@@ -153,7 +150,7 @@ public class ActorMovement : Movement, IMovement
 
     public void OnCantMove<T>(T component) where T : Component
     {
-        Interactable interactable = component.GetComponent<Interactable>();
+        ReactiveEntity interactable = component.GetComponent<ReactiveEntity>();
 
         if (interactable != null)
         {
