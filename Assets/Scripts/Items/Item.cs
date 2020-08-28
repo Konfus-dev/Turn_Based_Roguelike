@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using UnityEngine.UI;
 using TMPro;
 
 public class Item : MonoBehaviour
@@ -13,17 +12,19 @@ public class Item : MonoBehaviour
     private void Awake()
     {
 
-        this.text = transform.GetChild(0).transform.Find("Text").GetComponent<TMP_Text>();
+        text = transform.GetChild(0).transform.Find("Text").GetComponent<TMP_Text>();
         string ItemName = this.GetComponent<SpriteRenderer>().sprite.name;
 
         if (this.itemData != null)
         {
+            itemData = new ItemData { itemName = ItemName, description = itemData.description, amount = this.itemData.amount, damageMod = this.itemData.damageMod, healthMod = this.itemData.healthMod, armorMod = this.itemData.armorMod };
 
-            if (this.tag == "Weapon|Shield") this.itemData = new ItemData { type = ItemData.ItemType.Weapon, itemName = ItemName, amount = this.itemData.amount, damageMod = this.itemData.damageMod, healthMod = this.itemData.healthMod, armorMod = this.itemData.armorMod };
-            else if (this.tag == "ChestArmor") this.itemData = new ItemData { type = ItemData.ItemType.ChestArmor, itemName = ItemName, amount = this.itemData.amount, damageMod = this.itemData.damageMod, healthMod = this.itemData.healthMod, armorMod = this.itemData.armorMod };
-            else if (this.tag == "HelmArmor") this.itemData = new ItemData { type = ItemData.ItemType.HelmArmor, itemName = ItemName, amount = this.itemData.amount, damageMod = this.itemData.damageMod, healthMod = this.itemData.healthMod, armorMod = this.itemData.armorMod };
-            else if (this.tag == "Consumable") this.itemData = new ItemData { type = ItemData.ItemType.Consumable, itemName = ItemName, amount = this.itemData.amount, damageMod = this.itemData.damageMod, healthMod = this.itemData.healthMod, armorMod = this.itemData.armorMod };
-            else if (this.tag == "Valuable") this.itemData = new ItemData { type = ItemData.ItemType.Valuable, itemName = ItemName, amount = this.itemData.amount, damageMod = this.itemData.damageMod, healthMod = this.itemData.healthMod, armorMod = this.itemData.armorMod };
+            if (CompareTag("Weapon|Shield")) itemData.type = ItemData.ItemType.Weapon;
+            else if (CompareTag("ChestArmor")) itemData.type = ItemData.ItemType.ChestArmor;
+            else if (CompareTag("HelmArmor")) itemData.type = ItemData.ItemType.HelmArmor;
+            else if (CompareTag("FootArmor")) itemData.type = ItemData.ItemType.FootArmor;
+            else if (CompareTag("Consumable")) itemData.type = ItemData.ItemType.Consumable;
+            else if (CompareTag("Valuable")) itemData.type = ItemData.ItemType.Valuable;
 
             if (this.itemData.amount > 1)
             {
@@ -48,8 +49,8 @@ public class Item : MonoBehaviour
         Item itemInWorld = ItemWorldTemplate.gameObject.AddComponent<Item>();
 
         itemInWorld.gameObject.SetActive(true);
-        itemInWorld.spriteRenderer = ItemWorldTemplate.GetComponent<SpriteRenderer>();
         itemInWorld.SetItem(item);
+        itemInWorld.spriteRenderer = ItemWorldTemplate.GetComponent<SpriteRenderer>();
         itemInWorld.spriteRenderer.sprite = item.GetSprite();
 
         return itemInWorld;
@@ -63,8 +64,7 @@ public class Item : MonoBehaviour
     public void SetItem(ItemData item)
     {
         this.tag = item.type.ToString();
-        this.itemData = item;
-        spriteRenderer.sprite = this.itemData.GetSprite();
+        this.itemData = item.Copy();
 
         if(this.itemData.amount > 1)
         {

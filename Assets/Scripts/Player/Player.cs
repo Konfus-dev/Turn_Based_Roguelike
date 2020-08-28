@@ -95,8 +95,8 @@ public class Player : ReactiveEntity
         Item itemWorld = collision.GetComponent<Item>();
         if (GetState() != PlayerState.Ghosting && itemWorld != null && (this.inventories.inventory.GetItems().Count < this.inventories.inventory.size) ) 
         {
-            this.inventories.inventory.AddItem(itemWorld.GetItem(), true);
-            itemWorld.SelfDestruct();
+            bool selfDestruct = this.inventories.inventory.AddItem(itemWorld.GetItem(), true);
+            if (selfDestruct) itemWorld.SelfDestruct();
         }
     }
 

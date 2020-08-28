@@ -10,6 +10,7 @@ public class EquipSlot : MonoBehaviour, IDropHandler
     {
         HelmArmor,
         ChestArmor,
+        FootArmor,
         Weapon
     }
 
@@ -33,29 +34,29 @@ public class EquipSlot : MonoBehaviour, IDropHandler
             if (this.transform.childCount > 2) return;
 
             RectTransform rectTrans = eventData.pointerDrag.GetComponent<RectTransform>();
-            DragItem drag = rectTrans.GetComponent<DragItem>();
+            ItemUI itemUI = rectTrans.GetComponent<ItemUI>();
 
-            if (drag.item.type.ToString() == this.type.ToString())
+            if (itemUI.item.type.ToString() == this.type.ToString())
             {
-                EquipItem(drag);
+                EquipItem(itemUI);
             }
             
         }
     }
 
-    private void EquipItem(DragItem drag)
+    private void EquipItem(ItemUI itemUI)
     {
-        lastItemEquipped = drag.item;
+        lastItemEquipped = itemUI.item.Copy();
 
-        drag.inventory.RemoveItem(drag.item, null, false);
+        Player.Instance.inventories.equippedItems.AddItem(lastItemEquipped, false);
 
-        Player.Instance.inventories.equippedItems.AddItem(drag.item, false);
+        itemUI.itemInventory.RemoveItem(itemUI.item, null, false);
 
-        ApplyItemMods(drag.item);
+        ApplyItemMods(itemUI.item);
 
-        drag.inventory = Player.Instance.inventories.equippedItems;
+        itemUI.itemInventory = Player.Instance.inventories.equippedItems;
 
-        drag.GetComponent<DragItem>().parent = this.transform;
+        itemUI.GetComponent<ItemUI>().parent = this.transform;
 
         background.enabled = false;
 

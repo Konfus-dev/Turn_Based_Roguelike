@@ -33,7 +33,7 @@ public class InventoryUI : MonoBehaviour
             {
                 items += i.itemName + ", ";
             }
-            Debug.Log(this.tag + ": " + items);
+            Debug.Log(this.name + ": " + items);
         }
     }
 
@@ -64,13 +64,30 @@ public class InventoryUI : MonoBehaviour
 
     private void Refresh()
     {
+        List<ItemData> itemsRefresh = new List<ItemData>();
         List<ItemData> itemsInInventory = inventory.GetItems();
 
         for (int i = 0; i < itemsInInventory.Count; i++)
         {
             ItemData item = itemsInInventory[i];
+            itemsRefresh.Add(item);
+            foreach (Transform slot in slotsContainer)
+            {
+                if (slot.CompareTag("InventorySlot"))
+                {
+                    if (slot.childCount == 1) continue;
+                    else if (slot.GetChild(1).GetComponent<ItemUI>().item.id == item.id)
+                    {
+                        itemsRefresh.Remove(item);
+                    }
+                }
+            }
+        }
 
-            Transform itemSlot = null; 
+        for (int i = 0; i < itemsRefresh.Count; i++)
+        {
+            ItemData item = itemsRefresh[i];
+            Transform itemSlot = null;
 
             foreach (Transform slot in slotsContainer)
             {
@@ -80,12 +97,6 @@ public class InventoryUI : MonoBehaviour
                     {
                         itemSlot = slot;
                         break;
-                    }
-                    else if (slot.GetChild(1).GetComponent<DragItem>().item.id == item.id)
-                    {
-                        if (i == itemsInInventory.Count - 1) return;
-                        i++;
-                        item = itemsInInventory[i];
                     }
                 }
             }
@@ -97,9 +108,9 @@ public class InventoryUI : MonoBehaviour
 
             RectTransform itemRectTransform = Instantiate(itemTemplate, itemSlot).GetComponent<RectTransform>();
 
-            itemRectTransform.GetComponent<DragItem>().parent = itemSlot;
-            itemRectTransform.GetComponent<DragItem>().inventory = this.inventory;
-            itemRectTransform.GetComponent<DragItem>().item = item;
+            itemRectTransform.GetComponent<ItemUI>().parent = itemSlot;
+            itemRectTransform.GetComponent<ItemUI>().itemInventory = this.inventory;
+            itemRectTransform.GetComponent<ItemUI>().item = item;
 
             itemRectTransform.anchoredPosition = Vector3.zero;
 

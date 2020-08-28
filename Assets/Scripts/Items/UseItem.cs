@@ -8,19 +8,20 @@ public class UseItem : MonoBehaviour, IPointerClickHandler
     {
         if (eventData.button == PointerEventData.InputButton.Left)
         {
-            ConsumeItem(this.GetComponent<DragItem>().item, this.gameObject, this.GetComponent<DragItem>().inventory);
+            ConsumeItem(this.GetComponent<ItemUI>().item, this.gameObject, this.GetComponent<ItemUI>().itemInventory);
         }
 
         else if (eventData.button == PointerEventData.InputButton.Right)
         {
-            DragItem drag = this.GetComponent<DragItem>();
+            ItemUI itemUI = this.GetComponent<ItemUI>();
+            ItemData itemDup = itemUI.item.Copy();
 
             if (this.transform.parent.GetComponent<ItemSlot>().inventoryUI.gameObject.CompareTag("WorldInventory"))
             {
                 if (Player.Instance.inventories.inventory.GetItems().Count == Player.Instance.inventories.inventory.size) return;
 
-                drag.inventory.RemoveItem(drag.item, null, false);
-                Player.Instance.inventories.inventory.AddItem(drag.item, false);
+                itemUI.itemInventory.RemoveItem(itemUI.item, null, false);
+                Player.Instance.inventories.inventory.AddItem(itemDup, false);
 
                 Transform itemSlot = null;
 
@@ -45,18 +46,10 @@ public class UseItem : MonoBehaviour, IPointerClickHandler
             else
             {
                 Debug.Log("Item in player inv");
-                ItemData itemDup = new ItemData 
-                { 
-                    type = drag.item.type, 
-                    itemName = drag.item.itemName, 
-                    amount = drag.item.amount, 
-                    armorMod = drag.item.armorMod, 
-                    damageMod = drag.item.damageMod, 
-                    healthMod = drag.item.healthMod 
-                };
 
-                drag.inventory.RemoveItem(drag.item, this.GetComponent<RectTransform>().gameObject, true);
                 Item.DropItem(Player.Instance.transform.position, itemDup);
+                itemUI.itemInventory.RemoveItem(itemUI.item, itemUI.gameObject, true);
+                Destroy(itemUI.gameObject);
             }
         }
 
@@ -69,6 +62,7 @@ public class UseItem : MonoBehaviour, IPointerClickHandler
             ItemData itemDataDup = new ItemData
             {
                 id = item.id,
+                description = item.description,
                 type = item.type,
                 itemName = item.itemName,
                 amount = 1,

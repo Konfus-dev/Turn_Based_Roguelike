@@ -18,7 +18,7 @@ public class Inventory : MonoBehaviour
 
     public bool AddItem(ItemData item, bool update)
     {
-        if (itemsData.Contains(item)) itemsData.Remove(item);
+        //if (itemsData.Contains(item)) itemsData.Remove(item);
 
         bool destroyItem = true;
 
@@ -55,8 +55,6 @@ public class Inventory : MonoBehaviour
 
     public void RemoveItem(ItemData item, GameObject itemGameObj, bool update)
     {
-        if (itemsData.Count == 0) return;
-
         if (item.IsStackable())
         {
             ItemData itemInInventory = null;

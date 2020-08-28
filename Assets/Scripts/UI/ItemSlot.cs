@@ -19,30 +19,20 @@ public class ItemSlot : MonoBehaviour, IDropHandler
             if (this.transform.childCount > 1) return;
 
             RectTransform rectTrans = eventData.pointerDrag.GetComponent<RectTransform>();
-            DragItem drag = rectTrans.GetComponent<DragItem>();
+            ItemUI itemUI = rectTrans.GetComponent<ItemUI>();
 
-            ItemData itemDataDup = new ItemData 
-            { 
-                id = drag.item.id, 
-                type = drag.item.type,
-                itemName = drag.item.itemName, 
-                amount = drag.item.amount, 
-                armorMod = drag.item.armorMod, 
-                damageMod = drag.item.damageMod, 
-                healthMod = drag.item.healthMod, 
-                manaMod = drag.item.manaMod 
-            };
+            ItemData itemDataDup = itemUI.item.Copy();
 
-            drag.inventory.RemoveItem(drag.item, null, false);
+            itemUI.itemInventory.RemoveItem(itemUI.item, null, false);
 
             slotInventory.AddItem(itemDataDup, false);
 
-            drag.item = itemDataDup;
-            drag.inventory = slotInventory;
+            itemUI.item = itemDataDup;
+            itemUI.itemInventory = slotInventory;
 
-            Debug.Log(drag.item.itemName + " " + drag.item.amount);
+            Debug.Log(itemUI.item.itemName + " " + itemUI.item.amount);
 
-            drag.GetComponent<DragItem>().parent = this.transform;
+            itemUI.GetComponent<ItemUI>().parent = this.transform;
 
         }
     }
