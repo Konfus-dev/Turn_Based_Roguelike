@@ -13,8 +13,6 @@ TagManager:
   - NPC
   - DragItem
   - Weapon|Shield
-  - Shield
-  - Weapon
   - InventorySlot
   - WorldInventory
   - Item

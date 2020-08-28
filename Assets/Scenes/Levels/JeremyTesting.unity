@@ -370,6 +370,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Item_Shield_4
       objectReference: {fileID: 0}
+    - target: {fileID: 9050992287246356202, guid: c45f268a5301ce14f8d61bce673665e4,
+        type: 3}
+      propertyPath: m_TagString
+      value: Weapon|Shield
+      objectReference: {fileID: 0}
     - target: {fileID: 9050992287246356203, guid: c45f268a5301ce14f8d61bce673665e4,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -646,6 +651,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Item_Consumable_13
+      objectReference: {fileID: 0}
+    - target: {fileID: 9050992287246356202, guid: c45f268a5301ce14f8d61bce673665e4,
+        type: 3}
+      propertyPath: m_TagString
+      value: Consumable
       objectReference: {fileID: 0}
     - target: {fileID: 9050992287246356203, guid: c45f268a5301ce14f8d61bce673665e4,
         type: 3}
@@ -2869,6 +2879,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 6785541576685021729, guid: 071ce00c8661c1c4daf362513086dc36,
+        type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 6785541576685021730, guid: 071ce00c8661c1c4daf362513086dc36,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2998,6 +3013,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Item_Helmet_7
+      objectReference: {fileID: 0}
+    - target: {fileID: 9050992287246356202, guid: c45f268a5301ce14f8d61bce673665e4,
+        type: 3}
+      propertyPath: m_TagString
+      value: HelmArmor
       objectReference: {fileID: 0}
     - target: {fileID: 9050992287246356203, guid: c45f268a5301ce14f8d61bce673665e4,
         type: 3}
@@ -3226,6 +3246,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Item_Consumable_14
       objectReference: {fileID: 0}
+    - target: {fileID: 9050992287246356202, guid: c45f268a5301ce14f8d61bce673665e4,
+        type: 3}
+      propertyPath: m_TagString
+      value: Consumable
+      objectReference: {fileID: 0}
     - target: {fileID: 9050992287246356203, guid: c45f268a5301ce14f8d61bce673665e4,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3436,6 +3461,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Item_Sword_7
+      objectReference: {fileID: 0}
+    - target: {fileID: 9050992287246356202, guid: c45f268a5301ce14f8d61bce673665e4,
+        type: 3}
+      propertyPath: m_TagString
+      value: Weapon|Shield
       objectReference: {fileID: 0}
     - target: {fileID: 9050992287246356203, guid: c45f268a5301ce14f8d61bce673665e4,
         type: 3}
@@ -4007,6 +4037,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Item_Consumable_14
       objectReference: {fileID: 0}
+    - target: {fileID: 9050992287246356202, guid: c45f268a5301ce14f8d61bce673665e4,
+        type: 3}
+      propertyPath: m_TagString
+      value: Consumable
+      objectReference: {fileID: 0}
     - target: {fileID: 9050992287246356203, guid: c45f268a5301ce14f8d61bce673665e4,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4251,6 +4286,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1177124048006680882, guid: c45f268a5301ce14f8d61bce673665e4, type: 3}
+    - {fileID: 9050992287246356204, guid: c45f268a5301ce14f8d61bce673665e4, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: c45f268a5301ce14f8d61bce673665e4, type: 3}
 --- !u!4 &1973653237 stripped
 Transform:
@@ -4269,6 +4305,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Item_Sword_5
+      objectReference: {fileID: 0}
+    - target: {fileID: 9050992287246356202, guid: c45f268a5301ce14f8d61bce673665e4,
+        type: 3}
+      propertyPath: m_TagString
+      value: Weapon|Shield
       objectReference: {fileID: 0}
     - target: {fileID: 9050992287246356203, guid: c45f268a5301ce14f8d61bce673665e4,
         type: 3}
@@ -4428,6 +4469,11 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3919821276753660709, guid: cf9dcb4f299c7e64fa2ea9fec83262ee,
+        type: 3}
+      propertyPath: m_text
+      value: Backpack
+      objectReference: {fileID: 0}
     - target: {fileID: 6212671854050024990, guid: cf9dcb4f299c7e64fa2ea9fec83262ee,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4487,6 +4533,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: UI
+      objectReference: {fileID: 0}
+    - target: {fileID: 6212671854437872892, guid: cf9dcb4f299c7e64fa2ea9fec83262ee,
+        type: 3}
+      propertyPath: m_Color.a
+      value: 0.9019608
+      objectReference: {fileID: 0}
+    - target: {fileID: 6212671854471163169, guid: cf9dcb4f299c7e64fa2ea9fec83262ee,
+        type: 3}
+      propertyPath: m_Color.a
+      value: 0.9019608
+      objectReference: {fileID: 0}
+    - target: {fileID: 6212671854918047917, guid: cf9dcb4f299c7e64fa2ea9fec83262ee,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cf9dcb4f299c7e64fa2ea9fec83262ee, type: 3}
