@@ -16,6 +16,7 @@ TagManager:
   - InventorySlot
   - WorldInventory
   - Item
+  - FootArmor
   layers:
   - Default
   - TransparentFX

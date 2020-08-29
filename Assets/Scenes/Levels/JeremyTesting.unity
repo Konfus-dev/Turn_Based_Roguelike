@@ -640,6 +640,24 @@ PrefabInstance:
       objectReference: {fileID: 1973653237}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7bed28e1b7e9f4440a57333c1a7ec602, type: 3}
+--- !u!1 &403368121 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6212671854367507586, guid: cf9dcb4f299c7e64fa2ea9fec83262ee,
+    type: 3}
+  m_PrefabInstance: {fileID: 1424664855149048393}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &403368123
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 403368121}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06556509d4e8c9e44b0b97bc11c33833, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &585604819
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4534,6 +4552,31 @@ PrefabInstance:
       propertyPath: m_Name
       value: UI
       objectReference: {fileID: 0}
+    - target: {fileID: 6212671854367507589, guid: cf9dcb4f299c7e64fa2ea9fec83262ee,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6212671854367507589, guid: cf9dcb4f299c7e64fa2ea9fec83262ee,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.4308237
+      objectReference: {fileID: 0}
+    - target: {fileID: 6212671854367507589, guid: cf9dcb4f299c7e64fa2ea9fec83262ee,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 6212671854367507589, guid: cf9dcb4f299c7e64fa2ea9fec83262ee,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 52.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6212671854367507589, guid: cf9dcb4f299c7e64fa2ea9fec83262ee,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 80
+      objectReference: {fileID: 0}
     - target: {fileID: 6212671854437872892, guid: cf9dcb4f299c7e64fa2ea9fec83262ee,
         type: 3}
       propertyPath: m_Color.a
@@ -4548,6 +4591,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6212671855456431928, guid: cf9dcb4f299c7e64fa2ea9fec83262ee,
+        type: 3}
+      propertyPath: ShowBehavior.Animation.Scale.Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6212671855456431928, guid: cf9dcb4f299c7e64fa2ea9fec83262ee,
+        type: 3}
+      propertyPath: HideBehavior.Animation.Scale.Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6212671855456431928, guid: cf9dcb4f299c7e64fa2ea9fec83262ee,
+        type: 3}
+      propertyPath: ShowBehavior.Animation.Fade.Duration
+      value: 0.4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cf9dcb4f299c7e64fa2ea9fec83262ee, type: 3}
