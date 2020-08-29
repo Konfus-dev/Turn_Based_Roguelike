@@ -56,7 +56,7 @@ public class ItemUI : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDragHa
             Debug.Log("HIYA");
             if(item.amount > item.maxStackAmount)
             {
-                itemDropped.item.amount = (item.amount - item.maxStackAmount);
+                itemDropped.item.amount = (item.amount - item.maxStackAmount); 
                 item.amount = item.maxStackAmount;
 
                 TMP_Text text = this.GetComponent<RectTransform>().Find("Number").GetComponent<TMP_Text>();
