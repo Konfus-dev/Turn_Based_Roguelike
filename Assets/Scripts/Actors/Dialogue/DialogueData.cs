@@ -1,12 +1,12 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+
 
 [System.Serializable]
 public class DialogueData
 {
-    public string actorName;
+    public string name;
     [TextArea(3, 20)]
     public string[] lines;
-    public int textDisplaySpeed;
+    public int talkSpeed;
+    public AudioClip voice;
 }

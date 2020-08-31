@@ -1,13 +1,15 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class SoundManager : MonoBehaviour
 {
     public static SoundManager Instance = null;
 
-    void Awake()
+    private AudioSource source;
+
+    private void Awake()
     {
+        source = GetComponent<AudioSource>();
+
         if (Instance == null)
             Instance = this;
 
@@ -15,9 +17,8 @@ public class SoundManager : MonoBehaviour
             Destroy(gameObject);
     }
 
-    // Update is called once per frame
-    void Update()
+    public void PlaySound(AudioClip sound)
     {
-        
+        source.PlayOneShot(sound);
     }
 }
