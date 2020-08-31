@@ -11,39 +11,32 @@ public class DialogueManager : MonoBehaviour
 	public Text nameContainer;
 	public Text dialogueContainer;
 
-	public Color[] colors;
-	public char[] colorKeys;
-
 	public Font[] fonts;
 	public char[] fontKeys;
 
 	public float[] speeds;
 	public char[] speedKeys;
 
-	public float[] sizes;
-	public char[] sizeKeys;
-
 	private Queue<string> lines;
 
-	private Dictionary<char, Color> colorDictionary;
 	private Dictionary<char, Font> fontDictionary;
-	private Dictionary<char, Font> speedDictionary;
-	private Dictionary<char, Font> sizeDictionary;
+	private Dictionary<char, float> speedDictionary;
 
 
 	void Awake()
 	{
 		lines = new Queue<string>();
-		colorDictionary = new Dictionary<char, Color>();
 		fontDictionary = new Dictionary<char, Font>();
+		speedDictionary = new Dictionary<char, float>();
 
-		for(int c = 0; c < colors.Length; c++)
-        {
-			colorDictionary.Add(colorKeys[c], colors[c]);
-		}
 		for (int f = 0; f < fonts.Length; f++)
 		{
 			fontDictionary.Add(fontKeys[f], fonts[f]);
+		}
+
+		for (int s = 0; s < speeds.Length; s++)
+		{
+			speedDictionary.Add(speedKeys[s], speeds[s]);
 		}
 
 		if (Instance == null)
