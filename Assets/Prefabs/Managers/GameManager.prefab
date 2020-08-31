@@ -285,8 +285,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47f51e20a0e917447b7449831ae1c49b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  emotes: []
-  keys: []
+  emotes:
+  - {fileID: 6509644087346291261, guid: 5ef7f9beb495d7444addda0b30fefba2, type: 3}
+  - {fileID: -2877042636311670597, guid: 5ef7f9beb495d7444addda0b30fefba2, type: 3}
+  - {fileID: 5558695129916953958, guid: 5ef7f9beb495d7444addda0b30fefba2, type: 3}
+  - {fileID: 1745791416500057658, guid: 5ef7f9beb495d7444addda0b30fefba2, type: 3}
+  - {fileID: -8891604735698524477, guid: 5ef7f9beb495d7444addda0b30fefba2, type: 3}
+  - {fileID: -3775351302423127228, guid: 5ef7f9beb495d7444addda0b30fefba2, type: 3}
+  - {fileID: -1281131133936966373, guid: 5ef7f9beb495d7444addda0b30fefba2, type: 3}
+  - {fileID: 3634180593510938870, guid: 5ef7f9beb495d7444addda0b30fefba2, type: 3}
+  keys:
+  - Poisoned
+  - Stunned
+  - Exclamation
+  - Question
+  - Heart
+  - Skull
+  - X
+  - Smile
 --- !u!1 &6500331650134809481
 GameObject:
   m_ObjectHideFlags: 0
