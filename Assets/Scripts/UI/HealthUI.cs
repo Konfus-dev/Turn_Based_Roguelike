@@ -4,14 +4,19 @@ using UnityEngine;
 
 public class HealthUI : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public GameObject heart;
+
+    public void AddHearts(int num)
     {
-        
+        for(int h = 0; h < num; h++)
+        {
+            GameObject _heart = Instantiate(heart);
+            _heart.transform.parent = this.transform;
+            _heart.transform.localScale = heart.transform.localScale;
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    public void SyncHealth()
     {
         
     }

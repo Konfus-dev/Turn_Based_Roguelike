@@ -8,4 +8,9 @@ public class SyncUICharacter : MonoBehaviour
     {
         this.GetComponent<UnityEngine.UI.Image>().sprite = GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<SpriteRenderer>().sprite;
     }
+
+    public void Sync()
+    {
+        this.GetComponent<UnityEngine.UI.Image>().sprite = GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<SpriteRenderer>().sprite;
+    }
 }

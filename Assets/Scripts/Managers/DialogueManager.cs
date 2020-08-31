@@ -97,20 +97,18 @@ public class DialogueManager : MonoBehaviour
 			else if(parse)
             {
 				//TODO: finish functionality to change text color, size, speed and font with a marker ex: <r> hello 
-				if (colorDictionary.ContainsKey(c))
-                {
+				if (c == '!')
+				{
+					ResetDialogueVisuals();
+					continue;
+				}
 
-                }
 				if (fontDictionary.ContainsKey(c))
                 {
 
                 }
 				if (speedDictionary.ContainsKey(c))
                 {
-
-                }
-                if (sizeDictionary.ContainsKey(c))
-				{
 
                 }
 				continue;
@@ -128,5 +126,10 @@ public class DialogueManager : MonoBehaviour
 			yield return new WaitForSeconds(textSpeed);
 		}
 	}
+
+	private void ResetDialogueVisuals()
+    {
+
+    }
 
 }

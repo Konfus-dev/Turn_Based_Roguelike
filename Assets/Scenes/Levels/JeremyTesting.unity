@@ -522,24 +522,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 304444613}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &403368121 stripped
+--- !u!1 &418868038 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 6212671854367507586, guid: cf9dcb4f299c7e64fa2ea9fec83262ee,
+  m_CorrespondingSourceObject: {fileID: 259612916, guid: cf9dcb4f299c7e64fa2ea9fec83262ee,
     type: 3}
   m_PrefabInstance: {fileID: 1424664855149048393}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &403368123
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 403368121}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 06556509d4e8c9e44b0b97bc11c33833, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &585604819
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4275,6 +4263,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 259612916, guid: cf9dcb4f299c7e64fa2ea9fec83262ee, type: 3}
+      propertyPath: m_Name
+      value: heart
+      objectReference: {fileID: 0}
     - target: {fileID: 259612917, guid: cf9dcb4f299c7e64fa2ea9fec83262ee, type: 3}
       propertyPath: m_AnchorMin.y
       value: 0
@@ -4299,6 +4291,10 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 852020963, guid: cf9dcb4f299c7e64fa2ea9fec83262ee, type: 3}
+      propertyPath: heart
+      value: 
+      objectReference: {fileID: 418868038}
     - target: {fileID: 1186783711, guid: cf9dcb4f299c7e64fa2ea9fec83262ee, type: 3}
       propertyPath: m_AnchorMin.y
       value: 0
@@ -4346,11 +4342,6 @@ PrefabInstance:
     - target: {fileID: 1218679055, guid: cf9dcb4f299c7e64fa2ea9fec83262ee, type: 3}
       propertyPath: m_SizeDelta.y
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3919821276753660709, guid: cf9dcb4f299c7e64fa2ea9fec83262ee,
-        type: 3}
-      propertyPath: m_text
-      value: Backpack
       objectReference: {fileID: 0}
     - target: {fileID: 6212671854050024990, guid: cf9dcb4f299c7e64fa2ea9fec83262ee,
         type: 3}
@@ -4412,60 +4403,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: UI
       objectReference: {fileID: 0}
-    - target: {fileID: 6212671854367507589, guid: cf9dcb4f299c7e64fa2ea9fec83262ee,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6212671854367507589, guid: cf9dcb4f299c7e64fa2ea9fec83262ee,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1.4308237
-      objectReference: {fileID: 0}
-    - target: {fileID: 6212671854367507589, guid: cf9dcb4f299c7e64fa2ea9fec83262ee,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0.9
-      objectReference: {fileID: 0}
-    - target: {fileID: 6212671854367507589, guid: cf9dcb4f299c7e64fa2ea9fec83262ee,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 52.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6212671854367507589, guid: cf9dcb4f299c7e64fa2ea9fec83262ee,
-        type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 80
-      objectReference: {fileID: 0}
-    - target: {fileID: 6212671854437872892, guid: cf9dcb4f299c7e64fa2ea9fec83262ee,
-        type: 3}
-      propertyPath: m_Color.a
-      value: 0.9019608
-      objectReference: {fileID: 0}
-    - target: {fileID: 6212671854471163169, guid: cf9dcb4f299c7e64fa2ea9fec83262ee,
-        type: 3}
-      propertyPath: m_Color.a
-      value: 0.9019608
-      objectReference: {fileID: 0}
     - target: {fileID: 6212671854918047917, guid: cf9dcb4f299c7e64fa2ea9fec83262ee,
         type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6212671855456431928, guid: cf9dcb4f299c7e64fa2ea9fec83262ee,
-        type: 3}
-      propertyPath: ShowBehavior.Animation.Scale.Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6212671855456431928, guid: cf9dcb4f299c7e64fa2ea9fec83262ee,
-        type: 3}
-      propertyPath: HideBehavior.Animation.Scale.Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6212671855456431928, guid: cf9dcb4f299c7e64fa2ea9fec83262ee,
-        type: 3}
-      propertyPath: ShowBehavior.Animation.Fade.Duration
-      value: 0.4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cf9dcb4f299c7e64fa2ea9fec83262ee, type: 3}
