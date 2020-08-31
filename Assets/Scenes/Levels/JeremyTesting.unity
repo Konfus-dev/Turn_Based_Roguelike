@@ -2745,11 +2745,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 6785541576685021729, guid: 071ce00c8661c1c4daf362513086dc36,
-        type: 3}
-      propertyPath: m_TagString
-      value: Player
-      objectReference: {fileID: 0}
     - target: {fileID: 6785541576685021730, guid: 071ce00c8661c1c4daf362513086dc36,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2805,23 +2800,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6785541576685021731, guid: 071ce00c8661c1c4daf362513086dc36,
-        type: 3}
-      propertyPath: sprites.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6785541576685021731, guid: 071ce00c8661c1c4daf362513086dc36,
-        type: 3}
-      propertyPath: sprites.Array.data[0]
-      value: 
-      objectReference: {fileID: 2907586270996676911, guid: fc0420c356aa117468ca6ce3b32c00d3,
-        type: 3}
-    - target: {fileID: 6785541576685021731, guid: 071ce00c8661c1c4daf362513086dc36,
-        type: 3}
-      propertyPath: sprites.Array.data[1]
-      value: 
-      objectReference: {fileID: -5660379987200926046, guid: fc0420c356aa117468ca6ce3b32c00d3,
-        type: 3}
     - target: {fileID: 6785541576940005475, guid: 071ce00c8661c1c4daf362513086dc36,
         type: 3}
       propertyPath: grid
@@ -4295,6 +4273,16 @@ PrefabInstance:
       propertyPath: heart
       value: 
       objectReference: {fileID: 418868038}
+    - target: {fileID: 852020963, guid: cf9dcb4f299c7e64fa2ea9fec83262ee, type: 3}
+      propertyPath: halfHeart
+      value: 
+      objectReference: {fileID: -973230543563519097, guid: 5ef7f9beb495d7444addda0b30fefba2,
+        type: 3}
+    - target: {fileID: 852020963, guid: cf9dcb4f299c7e64fa2ea9fec83262ee, type: 3}
+      propertyPath: emptyHeart
+      value: 
+      objectReference: {fileID: -4757767627310859730, guid: 5ef7f9beb495d7444addda0b30fefba2,
+        type: 3}
     - target: {fileID: 1186783711, guid: cf9dcb4f299c7e64fa2ea9fec83262ee, type: 3}
       propertyPath: m_AnchorMin.y
       value: 0

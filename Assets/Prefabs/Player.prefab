@@ -110,7 +110,7 @@ GameObject:
   - component: {fileID: 653915625}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -143,14 +143,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerStats:
-    maxHealth: 2
+    maxHealth: 6
     maxMana: 0
     damage: 1
     armor: 0
     currentHealth: 2
     currentMana: 0
   inventories: {fileID: 0}
-  sprites: []
+  sprites:
+  - {fileID: 2907586270996676911, guid: fc0420c356aa117468ca6ce3b32c00d3, type: 3}
+  - {fileID: -5660379987200926046, guid: fc0420c356aa117468ca6ce3b32c00d3, type: 3}
   CurrentState: 1
 --- !u!114 &6785541576940005475
 MonoBehaviour:
