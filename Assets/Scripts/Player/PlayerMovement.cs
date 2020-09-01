@@ -33,7 +33,7 @@ public class PlayerMovement : Movement, IMovement
                     {
                         MoveTo(myNode.down);
                     }
-                    Player.Instance.SetState(Player.PlayerState.NotMoving);
+                    Player.Instance.SetState(Player.PlayerState.Idle);
                     GameManager.Instance.PlayersTurn = false;
                 }
             }

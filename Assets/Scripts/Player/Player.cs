@@ -14,8 +14,8 @@ public class Player : ReactiveEntity
 
     public enum PlayerState
     {
+        Idle,
         Moving,
-        NotMoving,
         Interacting,
         Attacking,
         TakingDamage,
@@ -45,7 +45,7 @@ public class Player : ReactiveEntity
     {
         inventories = this.GetComponent<PlayerInventory>();
 
-        CurrentState = PlayerState.NotMoving;
+        CurrentState = PlayerState.Idle;
 
         Instance = this;
 

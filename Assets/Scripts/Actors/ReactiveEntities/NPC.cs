@@ -16,11 +16,13 @@ public class NPC : ReactiveEntity
 
     public enum ActionState
     {
+        Idle,
         Sleeping,
         Fleeing,
         MovingToTarget,
         Wandering, 
         Attacking,
+        TakingDamage,
         Healing,
         Gaurding
     }

@@ -48,7 +48,7 @@ public class PlayerInventory : MonoBehaviour
             else
             {
                 inventoryUI.CloseInventory();
-                Player.Instance.SetState(Player.PlayerState.NotMoving);
+                Player.Instance.SetState(Player.PlayerState.Idle);
                 Player.Instance.Check();
             }
         }
