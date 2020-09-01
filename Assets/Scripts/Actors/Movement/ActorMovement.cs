@@ -16,14 +16,14 @@ public class ActorMovement : Movement, IMovement
 
     public bool MoveEnemy()
     {
-        if (actor.GetState() == NPC.MovementState.Sleeping)
+        if (actor.GetState() == NPC.ActionState.Sleeping)
         {
             return false;
         }
         float distance = Vector3.Distance(Target.transform.position, this.transform.position);
 
         if (distance <= actor.aggroDistance && Player.Instance.GetState() != Player.PlayerState.Ghosting
-            && actor.SetState(NPC.MovementState.MovingToTarget))
+            && actor.SetState(NPC.ActionState.MovingToTarget))
         {
             Node bestFootForward = pathfinding.FindStep(transform.position, Target.position);
             if (bestFootForward != null)
@@ -56,7 +56,7 @@ public class ActorMovement : Movement, IMovement
             }
             return false;
         }
-        else if (actor.SetState(NPC.MovementState.Wandering))
+        else if (actor.SetState(NPC.ActionState.Wandering))
         {
             RandomMovePosWeighted();
             return true;
