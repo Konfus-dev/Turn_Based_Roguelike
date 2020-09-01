@@ -38,13 +38,15 @@ public class NPC : ReactiveEntity
     }
 
 
-    public MovementState MoveState;
+    public MovementState moveState;
+    public ActionState actionState;
+    public AllianceState allianceState;
 
     public bool SetState(MovementState state)
     {
         if (System.Enum.IsDefined(typeof(MovementState), state))
         {
-            MoveState = state;
+            moveState = state;
             return true;
         }
         return false;
@@ -52,7 +54,7 @@ public class NPC : ReactiveEntity
 
     public MovementState GetState()
     {
-        return MoveState;
+        return moveState;
     }
 
     protected void Start()
