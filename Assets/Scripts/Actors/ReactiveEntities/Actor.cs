@@ -8,7 +8,7 @@ public class Actor : MonoBehaviour
         NPC npc = this.GetComponent<NPC>();
         if(npc != null)
         {
-            npc.CurrentState = NPC.EnemyState.Docile;
+            npc.MoveState = NPC.MovementState.Docile;
         }
     }
 

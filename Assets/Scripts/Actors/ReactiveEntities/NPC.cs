@@ -13,35 +13,46 @@ public class NPC : ReactiveEntity
 
     private Animator animator;
 
-    public enum EnemyState
+
+    public enum MovementState
+    {
+        Sleeping,
+        Fleeing,
+        MovingToTarget,
+        Wandering
+    }
+
+    public enum ActionState
+    {
+        Attacking,
+        Healing,
+        Gaurding
+    }
+
+    public enum AllianceState
     {
         Ally,
         Friendly,
         Docile,
-        Sleeping,
-        Moving,
-        Wandering,
-        Attacking,
-        TakingDamage,
-        Healing
+        Enemy
     }
 
 
-    public EnemyState CurrentState;
+    public MovementState MoveState;
 
-    public bool SetState(EnemyState state)
+    public bool SetState(MovementState state)
     {
-        if (System.Enum.IsDefined(typeof(EnemyState), state))
+        if (System.Enum.IsDefined(typeof(MovementState), state))
         {
-            CurrentState = state;
+            MoveState = state;
             return true;
         }
         return false;
     }
 
-    public EnemyState GetState()
+    public MovementState GetState()
     {
-        return CurrentState;
+        return MoveState;
     }
 
     protected void Start()
@@ -90,13 +101,13 @@ public class NPC : ReactiveEntity
     public void Attack(ReactiveEntity actor)
     {
         //set up to where they can also attack npc's
-        SetState(EnemyState.Attacking);
+        SetState(MovementState.Attacking);
         Player.Instance.playerStats.currentHealth -= this.enemyStats.damage - Player.Instance.playerStats.armor;
     }
 
     public void Defense(int dmg)
     {
-        SetState(EnemyState.TakingDamage);
+        SetState(MovementState.TakingDamage);
         OnHealthChange(dmg, 0);
     }
 

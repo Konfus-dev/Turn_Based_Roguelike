@@ -2800,6 +2800,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6785541576685021731, guid: 071ce00c8661c1c4daf362513086dc36,
+        type: 3}
+      propertyPath: playerStats.currentHealth
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 6785541576940005475, guid: 071ce00c8661c1c4daf362513086dc36,
         type: 3}
       propertyPath: grid
@@ -4282,6 +4287,11 @@ PrefabInstance:
       propertyPath: emptyHeart
       value: 
       objectReference: {fileID: -4757767627310859730, guid: 5ef7f9beb495d7444addda0b30fefba2,
+        type: 3}
+    - target: {fileID: 852020963, guid: cf9dcb4f299c7e64fa2ea9fec83262ee, type: 3}
+      propertyPath: fullHeart
+      value: 
+      objectReference: {fileID: 1882049266617422724, guid: 5ef7f9beb495d7444addda0b30fefba2,
         type: 3}
     - target: {fileID: 1186783711, guid: cf9dcb4f299c7e64fa2ea9fec83262ee, type: 3}
       propertyPath: m_AnchorMin.y
