@@ -3,18 +3,16 @@
 public class Actor : MonoBehaviour
 {
 
+    private NPC npc;
+
     private void Start()
     {
-        NPC npc = this.GetComponent<NPC>();
-        if(npc != null)
-        {
-            npc.MoveState = NPC.MovementState.Docile;
-        }
+        npc = this.GetComponent<NPC>();
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if(Input.GetButtonDown("Interact"))
+        if (Input.GetButtonDown("Interact"))
         {
             
         }
