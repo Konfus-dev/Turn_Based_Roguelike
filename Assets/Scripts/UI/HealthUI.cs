@@ -46,7 +46,10 @@ public class HealthUI : MonoBehaviour
 
         if (currPlayerHealth == maxPlayerHealth)
         {
-            this.transform.GetChild(this.transform.childCount - 1).GetComponent<Image>().sprite = fullHeart;
+            for (int i = 0; i < this.transform.childCount; i++)
+            {
+                this.transform.GetChild(i).GetComponent<Image>().sprite = fullHeart;
+            }
             return;
         }
 

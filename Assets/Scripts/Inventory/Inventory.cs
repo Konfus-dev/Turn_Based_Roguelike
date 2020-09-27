@@ -9,7 +9,7 @@ public class Inventory : MonoBehaviour
 
     public int size;
 
-    private List<ItemData> itemsData;
+    public List<ItemData> itemsData;
 
     public Inventory()
     {

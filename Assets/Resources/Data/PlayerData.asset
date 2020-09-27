@@ -1,0 +1,63 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb342c0fc46fdb64fb01b58097ff6c28, type: 3}
+  m_Name: PlayerData
+  m_EditorClassIdentifier: 
+  entityName: Player
+  entityStats:
+    maxHealth: 6
+    maxMana: 0
+    currentHealth: -1
+    currentMana: 0
+    damage: 1
+    armor: 0
+  entityInventory:
+  - type: 4
+    itemName: Items_Consumable_13
+    description: 
+    amount: 10
+    maxStackAmount: 1
+    manaMod: 0
+    damageMod: 0
+    healthMod: 0
+    armorMod: 0
+  entityEquippedItems:
+  - type: 2
+    itemName: Torso_1
+    description: 
+    amount: 10
+    maxStackAmount: 1
+    manaMod: 0
+    damageMod: 0
+    healthMod: 0
+    armorMod: 0
+  - type: 0
+    itemName: Shield_4
+    description: 
+    amount: 10
+    maxStackAmount: 1
+    manaMod: 0
+    damageMod: 0
+    healthMod: 0
+    armorMod: 0
+  - type: 0
+    itemName: Sword_5
+    description: 
+    amount: 10
+    maxStackAmount: 1
+    manaMod: 0
+    damageMod: 0
+    healthMod: 0
+    armorMod: 0
+  loadingPosition: {x: 2.5, y: 15.5, z: 0}
+  latestAttacker: BigBoss
+  latestAttackedByMe: BigBoss

@@ -8,15 +8,32 @@ public class GridNodes : MonoBehaviour
     public Vector3[] locations;
     public Dictionary<Vector3, Node> nodeFromLocation = new Dictionary<Vector3, Node>();
 
+    private void Start()
+    {
+        Player.Instance.gameObject.SetActive(false);
+    }
+
     void Update()
     {
         if (checkItems)
         {
-            checkItems = false;
             MakeChildrenUseful();
-            PlayerMovement playerMovement = Player.Instance.GetComponent<PlayerMovement>();
-            playerMovement.Spawn(NodeFromPosition(playerMovement.transform.position));
+            Player.Instance.gameObject.SetActive(true);
+            SetupPlayer();
+            checkItems = false;
         }
+    }
+
+    public bool SetupPlayer()
+    {
+        PlayerMovement playerMovement = Player.Instance.GetComponent<PlayerMovement>();
+        return playerMovement.MoveTo(NodeFromPosition(playerMovement.transform.position), 0);
+    }
+
+    public bool SetupPlayer(Vector3 pos)
+    {
+        PlayerMovement playerMovement = Player.Instance.GetComponent<PlayerMovement>();
+        return playerMovement.MoveTo(NodeFromPosition(pos), 0);
     }
 
     void MakeChildrenUseful()

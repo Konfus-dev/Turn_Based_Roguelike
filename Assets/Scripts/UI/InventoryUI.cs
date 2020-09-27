@@ -62,7 +62,7 @@ public class InventoryUI : MonoBehaviour
         Refresh();
     }
 
-    private void Refresh()
+    public void Refresh()
     {
         List<ItemData> itemsRefresh = new List<ItemData>();
         List<ItemData> itemsInInventory = inventory.GetItems();

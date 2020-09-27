@@ -24,7 +24,7 @@ public class NPC : ReactiveEntity
         Attacking,
         TakingDamage,
         Healing,
-        Gaurding
+        Guarding
     }
 
     public enum AllianceState
@@ -68,7 +68,7 @@ public class NPC : ReactiveEntity
         //if (startState == 0) CurrentState = EnemyState.Sleeping;
         //else CurrentState = EnemyState.Wandering;
 
-        GameManager.Instance.AddEnemyToList(this);
+        GameManager.Instance.AddNPCToList(this);
 
     }
 
@@ -85,7 +85,7 @@ public class NPC : ReactiveEntity
             {
                 //TODO: play particle effect here
 
-                GameManager.Instance.RemoveEnemyFromList(this);
+                GameManager.Instance.RemoveNPCFromList(this);
                 movement.myNode.occupied = false;
                 Debug.Log(this.gameObject.name + " is very dead. Their family is mortified by the news. You monster..");
                 gameObject.SetActive(false);
@@ -99,15 +99,30 @@ public class NPC : ReactiveEntity
 
     public void Attack(ReactiveEntity actor)
     {
+        //Debug.Log("trying to attack player");
         //set up to where they can also attack npc's
         SetState(ActionState.Attacking);
-        Player.Instance.playerStats.currentHealth -= this.enemyStats.damage - Player.Instance.playerStats.armor;
+        if (actor.GetComponent<Player>())
+        {
+            Player.Instance.Defense(this.enemyStats.damage, gameObject.name);
+        }
+        else
+        {
+            NPC enemy = actor.GetComponent<NPC>();
+            if (enemy != null)
+            {
+                enemy.Defense(this.enemyStats.damage, gameObject.name);
+            }
+        }
     }
 
-    public void Defense(int dmg)
+    public void Defense(int dmg, string enemyName)
     {
         SetState(ActionState.TakingDamage);
-        OnHealthChange(dmg, 0);
+        if (dmg - enemyStats.armor >= 0)
+        {
+            OnHealthChange(dmg - enemyStats.armor, 0);
+        }
     }
 
     public override void Interact<T>(T component)
@@ -115,7 +130,12 @@ public class NPC : ReactiveEntity
         ReactiveEntity interactable = component.GetComponent<ReactiveEntity>();
         if (interactable != null)
         {
-            Attack(interactable);
+            Player pl = interactable.GetComponent<Player>();
+            if (pl != null)
+            {
+                //Debug.Log(pl.gameObject.name + " attacking " + gameObject.name);
+                pl.Attack(this);
+            }
         }
     }
 }

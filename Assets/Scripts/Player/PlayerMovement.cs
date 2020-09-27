@@ -52,6 +52,8 @@ public class PlayerMovement : Movement, IMovement
     {
         RaycastHit2D hit;
 
+        //if (Player.Instance.GetState() == Player.PlayerState.Ghosting) return true;
+
         bool canMove = CanMove(out hit, dir); // base.CanMove(out hit); <- should be apart of movement class to check if can move using the raycast toward player movement
 
         ReactiveEntity Interactable = null;
@@ -69,25 +71,14 @@ public class PlayerMovement : Movement, IMovement
 
     public void OnCantMove<T>(T component) where T : Component
     {
-        if (Player.Instance.GetState() == Player.PlayerState.Ghosting) return;
+        if (Player.Instance.GetState() == Player.PlayerState.Ghosting && !component.transform.GetComponent<Statue>()) return;
         ReactiveEntity interactable = component.GetComponent<ReactiveEntity>();
 
-        if (interactable != null)
+        if (interactable != null && GetComponent<Player>())
         {
             // interact with interactable
-            interactable.Interact<Player>(Player.Instance);
             Debug.Log(transform.gameObject.name + " interacting with: " + interactable.transform.gameObject.name);
+            interactable.Interact<ReactiveEntity>(GetComponent<Player>());
         }
-        /*else
-        {
-            // do stuff with enemy (if running into enemy player is prolly trying to attack enemy so maybe do something like:
-            // enemy.HP -+ player.Damage;
-            if (Player.Instance.GetState() != Player.PlayerState.Ghosting)
-            {
-                NPC enemy = component.GetComponent<NPC>();
-                Debug.Log(transform.gameObject.name + " attacking npc: " + enemy.transform.gameObject.name);
-                Player.Instance.Attack(enemy);
-            }
-        }*/
     }
 }

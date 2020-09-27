@@ -14,7 +14,7 @@ public class ActorMovement : Movement, IMovement
         actor = transform.GetComponent<NPC>();
     }
 
-    public bool MoveEnemy()
+    public bool MoveNPC()
     {
         if (actor.GetState() == NPC.ActionState.Sleeping)
         {
@@ -157,14 +157,13 @@ public class ActorMovement : Movement, IMovement
             // interact with interactable Have to decide if npcs can interact with stuff
             //interactable.Interact<Player>(Player.Instance);
             //Debug.Log(transform.gameObject.name + " interacting with: " + interactable.transform.gameObject.name);
-        }
-        else
-        {
-            // do stuff with enemy (if running into enemy player is prolly trying to attack enemy so maybe do something like:
-            // enemy.HP -+ player.Damage;
-            Player player = component.GetComponent<Player>();
-            Debug.Log(transform.gameObject.name + " attacking player: " + player.transform.gameObject.name);
-            actor.Attack(player);
+
+            if ((interactable.CompareTag("Player") || interactable.CompareTag("NPC")) && GetComponent<NPC>())
+            {
+                // do stuff with enemy (if running into player, enemy is prolly trying to attack player so maybe do something like:
+                Debug.Log(transform.gameObject.name + " interacting with: " + interactable.transform.gameObject.name);
+                interactable.Interact(GetComponent<NPC>());
+            }
         }
     }
 
