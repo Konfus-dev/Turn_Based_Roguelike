@@ -40,7 +40,6 @@ public class EquipSlot : MonoBehaviour, IDropHandler
             {
                 EquipItem(itemUI);
             }
-            
         }
     }
 
@@ -59,7 +58,6 @@ public class EquipSlot : MonoBehaviour, IDropHandler
         itemUI.GetComponent<ItemUI>().parent = this.transform;
 
         background.enabled = false;
-
     }
 
     private void IfNotEquipped()

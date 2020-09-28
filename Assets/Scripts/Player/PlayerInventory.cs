@@ -24,6 +24,7 @@ public class PlayerInventory : MonoBehaviour
             inventory.AddItem(new ItemData { itemName = "Helmet_3", description = "helm 3", damageMod = 3, armorMod = 0, healthMod = 0, manaMod = 0, amount = 1, maxStackAmount = 1, type = ItemData.ItemType.HelmArmor }, false);
             inventory.AddItem(new ItemData { itemName = "Items_Consumable_14", description = "health potion", damageMod = 0, armorMod = 0, healthMod = 1, manaMod = 0, amount = 10, maxStackAmount = 10, type = ItemData.ItemType.Consumable }, true);
             */
+
         equippedItems = new Inventory()
         {
             size = 4
@@ -33,7 +34,6 @@ public class PlayerInventory : MonoBehaviour
     private void Update()
     {
         CheckOpenCloseInventory();
-        
     }
 
     private void CheckOpenCloseInventory()
